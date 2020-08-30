@@ -2,8 +2,8 @@
 
 namespace VSynth{ namespace Waveforms {
 
-Square::Square(int samplingRate, int numChannels, Sint16 amplitude)
-: Waveform(samplingRate, numChannels, amplitude){
+Square::Square(int samplingRate, int tone, Sint16 amplitude)
+: Waveform(samplingRate, tone, amplitude){
 
 }
 
@@ -12,13 +12,14 @@ Square::~Square(){
 }
 
 Sint16 Square::nextSample(){
+    Sint16 sampleValue;
     if(mSampleIndex < mNumSamples/2){
-        incrementSampleIndex();
-        return mAmplitude;
+        sampleValue = mAmplitude;
     }else{
-        incrementSampleIndex();
-        return -mAmplitude;
+        sampleValue = -mAmplitude;
     }
+    incrementSampleIndex();
+    return sampleValue;
 }
 
 }};

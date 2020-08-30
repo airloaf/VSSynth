@@ -1,5 +1,6 @@
 #include <SDL2/SDL.h>
 
+#include "SawTooth.h"
 #include "Square.h"
 
 // Taken from https://ericscrivner.me/2017/10/getting-circular-sdl-audio/
@@ -22,15 +23,16 @@ int main(int argc, char *argv[]){
     SDL_Window *window;
     window = SDL_CreateWindow("SDL_Test_Windows", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
 
-    // Create a square waveform
+    // Create waveforms
     VSynth::Waveforms::Square square(48000, 262, 1000);
+    VSynth::Waveforms::SawTooth sawTooth(48000, 262, 5000);
 
     SDL_AudioSpec requested = {};
     requested.freq = 48000;
     requested.channels = 2;
     requested.format = AUDIO_S16;
     requested.samples = 4096;
-    requested.userdata = &square;
+    requested.userdata = &sawTooth;
     requested.callback = &fillAudioDeviceBuffer;
 
     SDL_AudioSpec obtainedSettings = {};
