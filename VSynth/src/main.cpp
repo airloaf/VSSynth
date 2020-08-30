@@ -2,11 +2,12 @@
 
 #include "SawTooth.h"
 #include "Square.h"
+#include "Triangle.h"
 
 // Taken from https://ericscrivner.me/2017/10/getting-circular-sdl-audio/
 void fillAudioDeviceBuffer(void* userData, Uint8* buffer, int length) {
     Sint16 *sampleBuffer = (Sint16 *) buffer;
-    VSynth::Waveforms::Waveform *wave = (VSynth::Waveforms::Waveform *) userData;
+    VSynth::Waveforms::Waveform *wave = (*(VSynth::Waveforms::Waveform **) userData);
     
     // Write the samples to the audio buffer
     int numToWrite = length / (sizeof(Sint16) * 2);
@@ -24,15 +25,18 @@ int main(int argc, char *argv[]){
     window = SDL_CreateWindow("SDL_Test_Windows", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
 
     // Create waveforms
-    VSynth::Waveforms::Square square(48000, 262, 1000);
+    VSynth::Waveforms::Square square(48000, 262, 5000);
     VSynth::Waveforms::SawTooth sawTooth(48000, 262, 5000);
+    VSynth::Waveforms::Triangle triangle(48000, 262, 5000);
+
+    VSynth::Waveforms::Waveform *waveform = &triangle;
 
     SDL_AudioSpec requested = {};
     requested.freq = 48000;
     requested.channels = 2;
     requested.format = AUDIO_S16;
     requested.samples = 4096;
-    requested.userdata = &sawTooth;
+    requested.userdata = &waveform;
     requested.callback = &fillAudioDeviceBuffer;
 
     SDL_AudioSpec obtainedSettings = {};
@@ -47,11 +51,16 @@ int main(int argc, char *argv[]){
         while(SDL_PollEvent(&e) > 0){
             if(e.type == SDL_QUIT){
                 running = false;
-            }
-            if(e.type == SDL_KEYDOWN){
+            }else if(e.type == SDL_KEYDOWN){
                 if(e.key.keysym.sym == SDLK_p){
                     paused = !paused;
                     SDL_PauseAudioDevice(deviceID, paused? 0: 1);
+                }else if(e.key.keysym.sym == SDLK_1){
+                    waveform = &square;
+                }else if(e.key.keysym.sym == SDLK_2){
+                    waveform = &sawTooth;
+                }else if(e.key.keysym.sym == SDLK_3){
+                    waveform = &triangle;
                 }
             }
         }
