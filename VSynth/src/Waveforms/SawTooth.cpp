@@ -8,7 +8,7 @@ SawTooth::SawTooth(unsigned int samplingRate, unsigned int tone, Sint16 amplitud
 SawTooth::~SawTooth(){}
 
 Sint16 SawTooth::nextSample(){
-    Sint16 sampleValue = -mAmplitude + (Sint16) (((float) mSampleIndex / (float) mNumSamples) * (float) mAmplitude);
+    Sint16 sampleValue = -mAmplitude + (Sint16) (((float) mSampleIndex / (float) mNumSamples) * 2 * (float) mAmplitude);
     incrementSampleIndex();
     return sampleValue;
 }
