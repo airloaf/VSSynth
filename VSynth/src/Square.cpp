@@ -3,13 +3,9 @@
 namespace VSynth{ namespace Waveforms {
 
 Square::Square(int samplingRate, int tone, Sint16 amplitude)
-: Waveform(samplingRate, tone, amplitude){
+: Waveform(samplingRate, tone, amplitude){}
 
-}
-
-Square::~Square(){
-
-}
+Square::~Square(){}
 
 Sint16 Square::nextSample(){
     Sint16 sampleValue;

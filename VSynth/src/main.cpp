@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 
 #include "SawTooth.h"
+#include "Sine.h"
 #include "Square.h"
 #include "Triangle.h"
 
@@ -26,10 +27,11 @@ int main(int argc, char *argv[]){
 
     // Create waveforms
     VSynth::Waveforms::Square square(48000, 262, 5000);
+    VSynth::Waveforms::Sine sine(48000, 262, 5000);
     VSynth::Waveforms::SawTooth sawTooth(48000, 262, 5000);
     VSynth::Waveforms::Triangle triangle(48000, 262, 5000);
 
-    VSynth::Waveforms::Waveform *waveform = &triangle;
+    VSynth::Waveforms::Waveform *waveform = &square;
 
     SDL_AudioSpec requested = {};
     requested.freq = 48000;
@@ -58,8 +60,10 @@ int main(int argc, char *argv[]){
                 }else if(e.key.keysym.sym == SDLK_1){
                     waveform = &square;
                 }else if(e.key.keysym.sym == SDLK_2){
-                    waveform = &sawTooth;
+                    waveform = &sine;
                 }else if(e.key.keysym.sym == SDLK_3){
+                    waveform = &sawTooth;
+                }else if(e.key.keysym.sym == SDLK_4){
                     waveform = &triangle;
                 }
             }

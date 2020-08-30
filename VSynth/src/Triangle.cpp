@@ -3,13 +3,9 @@
 namespace VSynth { namespace Waveforms {
 
 Triangle::Triangle(int samplingRate, int tone, Sint16 amplitude)
-: Waveform(samplingRate, tone, amplitude){
+: Waveform(samplingRate, tone, amplitude){}
 
-}
-
-Triangle::~Triangle(){
-
-}
+Triangle::~Triangle(){}
 
 Sint16 Triangle::nextSample(){
     Sint16 sampleValue;
