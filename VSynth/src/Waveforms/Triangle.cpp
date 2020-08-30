@@ -2,7 +2,7 @@
 
 namespace VSynth { namespace Waveforms {
 
-Triangle::Triangle(int samplingRate, int tone, Sint16 amplitude)
+Triangle::Triangle(unsigned int samplingRate, unsigned int tone, Sint16 amplitude)
 : Waveform(samplingRate, tone, amplitude){}
 
 Triangle::~Triangle(){}

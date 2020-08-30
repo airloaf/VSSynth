@@ -9,7 +9,7 @@ namespace VSynth{ namespace Waveforms{
  */
 class Waveform{
     public:
-        Waveform(int samplingRate, int tone, Sint16 amplitude);
+        Waveform(unsigned unsigned int samplingRate, unsigned unsigned int tone, Sint16 amplitude);
         ~Waveform();
 
         /**
@@ -27,8 +27,8 @@ class Waveform{
         void incrementSampleIndex();
 
         Sint16 mAmplitude;
-        int mNumSamples;
-        int mSampleIndex;
+        unsigned int mNumSamples;
+        unsigned int mSampleIndex;
 };
 
 }};

@@ -2,7 +2,7 @@
 
 namespace VSynth { namespace Waveforms{
 
-Waveform::Waveform(int samplingRate, int tone, Sint16 amplitude){
+Waveform::Waveform(unsigned int samplingRate, unsigned int tone, Sint16 amplitude){
     mAmplitude = amplitude;
     mNumSamples = samplingRate / (tone);
 

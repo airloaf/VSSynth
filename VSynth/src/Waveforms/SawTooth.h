@@ -6,7 +6,7 @@ namespace VSynth { namespace Waveforms {
 
 class SawTooth: public Waveform {
     public:
-        SawTooth(int samplingRate, int tone, Sint16 amplitude);
+        SawTooth(unsigned int samplingRate, unsigned int tone, Sint16 amplitude);
         ~SawTooth();
 
         Sint16 nextSample();

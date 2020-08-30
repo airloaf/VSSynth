@@ -1,9 +1,9 @@
 #include <SDL2/SDL.h>
 
-#include "SawTooth.h"
-#include "Sine.h"
-#include "Square.h"
-#include "Triangle.h"
+#include "Waveforms/SawTooth.h"
+#include "Waveforms/Sine.h"
+#include "Waveforms/Square.h"
+#include "Waveforms/Triangle.h"
 
 // Taken from https://ericscrivner.me/2017/10/getting-circular-sdl-audio/
 void fillAudioDeviceBuffer(void* userData, Uint8* buffer, int length) {

@@ -4,7 +4,7 @@
 
 namespace VSynth { namespace Waveforms {
 
-Sine::Sine(int samplingRate, int tone, Sint16 amplitude)
+Sine::Sine(unsigned int samplingRate, unsigned int tone, Sint16 amplitude)
 : Waveform(samplingRate, tone, amplitude){}
 
 Sine::~Sine(){}

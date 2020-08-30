@@ -2,7 +2,7 @@
 
 namespace VSynth { namespace Waveforms {
 
-SawTooth::SawTooth(int samplingRate, int tone, Sint16 amplitude)
+SawTooth::SawTooth(unsigned int samplingRate, unsigned int tone, Sint16 amplitude)
 : Waveform(samplingRate, tone, amplitude){}
 
 SawTooth::~SawTooth(){}
