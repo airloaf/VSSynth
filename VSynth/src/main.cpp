@@ -1,19 +1,19 @@
 #include <SDL2/SDL.h>
 
-#include "Waveforms/SawTooth.h"
-#include "Waveforms/Sine.h"
-#include "Waveforms/Square.h"
-#include "Waveforms/Triangle.h"
+#include "Oscillators/SawTooth.h"
+#include "Oscillators/Sine.h"
+#include "Oscillators/Square.h"
+#include "Oscillators/Triangle.h"
 
 // Taken from https://ericscrivner.me/2017/10/getting-circular-sdl-audio/
 void fillAudioDeviceBuffer(void* userData, Uint8* buffer, int length) {
     Sint16 *sampleBuffer = (Sint16 *) buffer;
-    VSynth::Waveforms::Waveform *wave = (*(VSynth::Waveforms::Waveform **) userData);
+    VSynth::Oscillator::Oscillator *wave = (*(VSynth::Oscillator::Oscillator **) userData);
     
     // Write the samples to the audio buffer
     int numToWrite = length / (sizeof(Sint16) * 2);
     for(int sample = 0; sample < numToWrite; sample++){
-        Sint16 sampleValue = wave->nextSample();
+        Sint16 sampleValue = wave->nextSample(1000000.0f / 48000.0f) * 20000;
         *sampleBuffer++ = sampleValue; // Left channel value
         *sampleBuffer++ = sampleValue; // Right channel value
     }
@@ -26,12 +26,12 @@ int main(int argc, char *argv[]){
     window = SDL_CreateWindow("SDL_Test_Windows", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
 
     // Create waveforms
-    VSynth::Waveforms::Square square(48000, 262, 5000);
-    VSynth::Waveforms::Sine sine(48000, 262, 5000);
-    VSynth::Waveforms::SawTooth sawTooth(48000, 262, 5000);
-    VSynth::Waveforms::Triangle triangle(48000, 262, 5000);
+    VSynth::Oscillator::Square square(262);
+    VSynth::Oscillator::Sine sine(262);
+    VSynth::Oscillator::SawTooth sawTooth(262);
+    VSynth::Oscillator::Triangle triangle(262);
 
-    VSynth::Waveforms::Waveform *waveform = &square;
+    VSynth::Oscillator::Oscillator *waveform = &square;
 
     SDL_AudioSpec requested = {};
     requested.freq = 48000;
