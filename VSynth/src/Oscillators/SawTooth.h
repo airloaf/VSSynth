@@ -9,7 +9,7 @@ class SawTooth: public Oscillator {
         SawTooth(unsigned int frequency);
         ~SawTooth();
 
-        float nextSample(double deltaTime);
+        float generateNextSample();
 };
 
 }};

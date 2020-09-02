@@ -9,7 +9,7 @@ class Triangle: public Oscillator {
         Triangle(unsigned int frequency);
         ~Triangle();
 
-        float nextSample(double deltaTime);
+        float generateNextSample();
 };
 
 }};

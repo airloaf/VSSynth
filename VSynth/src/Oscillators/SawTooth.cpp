@@ -7,8 +7,7 @@ SawTooth::SawTooth(unsigned int frequency)
 
 SawTooth::~SawTooth(){}
 
-float SawTooth::nextSample(double deltaTime){
-    updateTime(deltaTime);
+float SawTooth::generateNextSample(){
     return -1.0f + percentageComplete() * 2.0f;
 }
 

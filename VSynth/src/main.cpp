@@ -5,6 +5,10 @@
 #include "Oscillators/Square.h"
 #include "Oscillators/Triangle.h"
 
+// Accurate up to a frequency 6000 Hz
+#define FREQUENCY 262 
+#define AMPLITUDE 20000
+
 // Taken from https://ericscrivner.me/2017/10/getting-circular-sdl-audio/
 void fillAudioDeviceBuffer(void* userData, Uint8* buffer, int length) {
     Sint16 *sampleBuffer = (Sint16 *) buffer;
@@ -13,7 +17,7 @@ void fillAudioDeviceBuffer(void* userData, Uint8* buffer, int length) {
     // Write the samples to the audio buffer
     int numToWrite = length / (sizeof(Sint16) * 2);
     for(int sample = 0; sample < numToWrite; sample++){
-        Sint16 sampleValue = wave->nextSample(1000000.0f / 48000.0f) * 20000;
+        Sint16 sampleValue = wave->nextSample(1000000.0f / 48000.0f) * AMPLITUDE;
         *sampleBuffer++ = sampleValue; // Left channel value
         *sampleBuffer++ = sampleValue; // Right channel value
     }
@@ -26,10 +30,10 @@ int main(int argc, char *argv[]){
     window = SDL_CreateWindow("SDL_Test_Windows", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
 
     // Create waveforms
-    VSynth::Oscillator::Square square(262);
-    VSynth::Oscillator::Sine sine(262);
-    VSynth::Oscillator::SawTooth sawTooth(262);
-    VSynth::Oscillator::Triangle triangle(262);
+    VSynth::Oscillator::Square square(FREQUENCY);
+    VSynth::Oscillator::Sine sine(FREQUENCY);
+    VSynth::Oscillator::SawTooth sawTooth(FREQUENCY);
+    VSynth::Oscillator::Triangle triangle(FREQUENCY);
 
     VSynth::Oscillator::Oscillator *waveform = &square;
 

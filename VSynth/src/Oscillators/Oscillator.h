@@ -11,11 +11,11 @@ class Oscillator{
         ~Oscillator();
 
         /**
-         * @brief Get the next sample for the waveform
+         * @brief Get the next sample for the oscillator 
          * @param deltaTime - the time since last sample in nanoseconds 
          * @return float value between -1.0f and 1.0f 
          */
-        virtual float nextSample(double deltaTime) = 0;
+        float nextSample(double deltaTime);
 
         /**
          * @brief Resets the oscillator
@@ -23,6 +23,12 @@ class Oscillator{
         void reset();
 
     protected:
+
+        /**
+         * @brief Generates the next sample for the oscillator
+         * @return float value between -1.0f and 1.0f
+         */
+        virtual float generateNextSample() = 0;
 
         /**
          * @brief Updates the current timestep of the oscillator

@@ -7,8 +7,7 @@ Triangle::Triangle(unsigned int frequency)
 
 Triangle::~Triangle(){}
 
-float Triangle::nextSample(double deltaTime){
-    updateTime(deltaTime);
+float Triangle::generateNextSample(){
     float percentage = percentageComplete();
     if(percentage <= 0.5){
         return -1.0f + percentage * 4.0f;

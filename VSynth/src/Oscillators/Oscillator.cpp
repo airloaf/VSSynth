@@ -9,8 +9,11 @@ Oscillator::Oscillator(unsigned int frequency){
     reset();
 }
 
-Oscillator::~Oscillator(){
+Oscillator::~Oscillator(){}
 
+float Oscillator::nextSample(double deltaTime){
+    updateTime(deltaTime);
+    return generateNextSample();
 }
 
 float Oscillator::percentageComplete(){

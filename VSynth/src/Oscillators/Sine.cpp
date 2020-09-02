@@ -13,8 +13,7 @@ float toRadians(float degrees){
     return degrees * (3.14159265359f / 180.0f);
 }
 
-float Sine::nextSample(double deltaTime){
-    updateTime(deltaTime);
+float Sine::generateNextSample(){
     return sin(toRadians(percentageComplete() * 360.0f));
 }
 
