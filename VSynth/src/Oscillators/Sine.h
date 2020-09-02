@@ -9,6 +9,7 @@ class Sine: public Oscillator {
         Sine(unsigned int frequency);
         ~Sine();
 
+    private:
         float generateNextSample();
 };
 

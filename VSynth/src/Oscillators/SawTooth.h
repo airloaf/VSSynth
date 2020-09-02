@@ -9,6 +9,7 @@ class SawTooth: public Oscillator {
         SawTooth(unsigned int frequency);
         ~SawTooth();
 
+    private:
         float generateNextSample();
 };
 

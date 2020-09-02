@@ -17,7 +17,7 @@ void fillAudioDeviceBuffer(void* userData, Uint8* buffer, int length) {
     // Write the samples to the audio buffer
     int numToWrite = length / (sizeof(Sint16) * 2);
     for(int sample = 0; sample < numToWrite; sample++){
-        Sint16 sampleValue = wave->nextSample(1000000.0f / 48000.0f) * AMPLITUDE;
+        Sint16 sampleValue = (Sint16) (wave->nextSample(1000000.0f / 48000.0f) * AMPLITUDE);
         *sampleBuffer++ = sampleValue; // Left channel value
         *sampleBuffer++ = sampleValue; // Right channel value
     }

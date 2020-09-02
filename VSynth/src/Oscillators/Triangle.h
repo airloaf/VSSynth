@@ -9,6 +9,7 @@ class Triangle: public Oscillator {
         Triangle(unsigned int frequency);
         ~Triangle();
 
+    private:
         float generateNextSample();
 };
 

@@ -9,6 +9,7 @@ class Square: public Oscillator {
         Square(unsigned int frequency);
         ~Square();
 
+    private:
         float generateNextSample();
 };
 

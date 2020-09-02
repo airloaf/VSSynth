@@ -17,11 +17,6 @@ class Oscillator{
          */
         float nextSample(double deltaTime);
 
-        /**
-         * @brief Resets the oscillator
-         */
-        void reset();
-
     protected:
 
         /**
@@ -35,6 +30,11 @@ class Oscillator{
          * @param deltaTime 
          */
         void updateTime(double deltaTime);
+
+        /**
+         * @brief Resets the oscillator
+         */
+        void reset();
 
         /**
          * @brief Percent oscillator has gone through

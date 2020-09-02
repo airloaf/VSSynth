@@ -4,7 +4,7 @@
 
 namespace VSynth { namespace Oscillator{
 
-Oscillator::Oscillator(unsigned int frequency){
+Oscillator::Oscillator(unsigned int frequency): mTime(0){
     mDuration = 1000000.0f / frequency;
     reset();
 }
