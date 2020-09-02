@@ -1,5 +1,7 @@
 # VSynth
-A synthesizer library using C++ and SDL2 
+Software synthesizer library for C++ using SDL2.
+
+Frequencies are accurate up to 6K Hz, tested using the online tone generated (See Resources Section Below)
 
 ## Dependencies
 - CMake
