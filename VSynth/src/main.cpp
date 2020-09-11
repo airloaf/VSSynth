@@ -5,9 +5,11 @@
 #include "Oscillators/Square.h"
 #include "Oscillators/Triangle.h"
 
-// Accurate up to a frequency 6000 Hz
-#define FREQUENCY 262 
-#define AMPLITUDE 20000
+#define FREQUENCY 3
+#define AMPLITUDE 1000
+#define SAMPLING_RATE 48000
+
+const double sampleDeltaTime = 1.0f / (double) SAMPLING_RATE;
 
 // Taken from https://ericscrivner.me/2017/10/getting-circular-sdl-audio/
 void fillAudioDeviceBuffer(void* userData, Uint8* buffer, int length) {
@@ -17,7 +19,7 @@ void fillAudioDeviceBuffer(void* userData, Uint8* buffer, int length) {
     // Write the samples to the audio buffer
     int numToWrite = length / (sizeof(Sint16) * 2);
     for(int sample = 0; sample < numToWrite; sample++){
-        Sint16 sampleValue = (Sint16) (wave->nextSample(1000000.0f / 48000.0f) * AMPLITUDE);
+        Sint16 sampleValue = (Sint16) (wave->nextSample(sampleDeltaTime) * AMPLITUDE);
         *sampleBuffer++ = sampleValue; // Left channel value
         *sampleBuffer++ = sampleValue; // Right channel value
     }
@@ -30,23 +32,23 @@ int main(int argc, char *argv[]){
     window = SDL_CreateWindow("SDL_Test_Windows", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
 
     // Create waveforms
-    VSynth::Oscillator::Square square(FREQUENCY);
-    VSynth::Oscillator::Sine sine(FREQUENCY);
     VSynth::Oscillator::SawTooth sawTooth(FREQUENCY);
+    VSynth::Oscillator::Sine sine(FREQUENCY);
+    VSynth::Oscillator::Square square(FREQUENCY);
     VSynth::Oscillator::Triangle triangle(FREQUENCY);
 
-    VSynth::Oscillator::Oscillator *waveform = &square;
+    VSynth::Oscillator::Oscillator *waveform = &sawTooth;
 
+    SDL_AudioSpec obtained = {};
     SDL_AudioSpec requested = {};
-    requested.freq = 48000;
     requested.channels = 2;
-    requested.format = AUDIO_S16;
     requested.samples = 4096;
+    requested.format = AUDIO_S16;
+    requested.freq = SAMPLING_RATE;
     requested.userdata = &waveform;
     requested.callback = &fillAudioDeviceBuffer;
 
-    SDL_AudioSpec obtainedSettings = {};
-    SDL_AudioDeviceID deviceID = SDL_OpenAudioDevice(nullptr, 0, &requested, &obtainedSettings, 0);
+    SDL_AudioDeviceID deviceID = SDL_OpenAudioDevice(nullptr, 0, &requested, &obtained, 0);
 
     SDL_PauseAudioDevice(deviceID, 0);
 
@@ -62,11 +64,11 @@ int main(int argc, char *argv[]){
                     paused = !paused;
                     SDL_PauseAudioDevice(deviceID, paused? 0: 1);
                 }else if(e.key.keysym.sym == SDLK_1){
-                    waveform = &square;
+                    waveform = &sawTooth;
                 }else if(e.key.keysym.sym == SDLK_2){
                     waveform = &sine;
                 }else if(e.key.keysym.sym == SDLK_3){
-                    waveform = &sawTooth;
+                    waveform = &square;
                 }else if(e.key.keysym.sym == SDLK_4){
                     waveform = &triangle;
                 }
