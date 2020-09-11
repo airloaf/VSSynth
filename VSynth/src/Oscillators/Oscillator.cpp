@@ -1,14 +1,11 @@
 #include "Oscillator.h"
 
+#define _USE_MATH_DEFINES // PI definition
 #include <cmath>
 
 namespace VSynth { namespace Oscillator{
 
-Oscillator::Oscillator(unsigned int frequency): mTime(0){
-    mDuration = 1000000.0f / frequency;
-    reset();
-}
-
+Oscillator::Oscillator(unsigned int frequency): mTime(0), mFrequency(frequency){}
 Oscillator::~Oscillator(){}
 
 float Oscillator::nextSample(double deltaTime){
@@ -16,16 +13,16 @@ float Oscillator::nextSample(double deltaTime){
     return generateNextSample();
 }
 
-float Oscillator::percentageComplete(){
-    return (float) mTime / (float) mDuration;
-}
-
 void Oscillator::updateTime(double deltaTime){
-    mTime = fmod(mTime + deltaTime, mDuration);
+    mTime += deltaTime;
+    // since frequency is an integer number,
+    // mTime only needs to be between 0 and 1,
+    // so we only keep the decimal portion of this number
+    mTime -= (int) mTime;
 }
 
-void Oscillator::reset(){
-    mTime = 0;
+double Oscillator::freqToRad(){
+    return mFrequency * 2.0f * M_PI;
 }
 
 }};

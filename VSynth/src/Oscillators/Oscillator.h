@@ -32,18 +32,13 @@ class Oscillator{
         void updateTime(double deltaTime);
 
         /**
-         * @brief Resets the oscillator
+         * @brief Converts frequency to radians
+         * @return double 
          */
-        void reset();
+        double freqToRad();
 
-        /**
-         * @brief Percent oscillator has gone through
-         * @return float 
-         */
-        float percentageComplete();
-
-        double mDuration; // the duration for a single oscillation in nanoseconds 
-        double mTime; // The current time in nanoseconds 
+        unsigned int mFrequency; // the frequency of the oscillator 
+        double mTime; // The current time in seconds
 };
 
 }};

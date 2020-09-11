@@ -5,16 +5,11 @@
 namespace VSynth { namespace Oscillator {
 
 Sine::Sine(unsigned int frequency)
-: Oscillator(frequency){}
-
+: Oscillator(frequency) {}
 Sine::~Sine(){}
 
-float toRadians(float degrees){
-    return degrees * (3.14159265359f / 180.0f);
-}
-
 float Sine::generateNextSample(){
-    return sin(toRadians(percentageComplete() * 360.0f));
+    return sin(freqToRad() * mTime);
 }
 
 }};

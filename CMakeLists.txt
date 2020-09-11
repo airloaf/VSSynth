@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.9)
 
+# Library locations (Change these to the appropriate path on your machine)
 set(INCLUDE_DIR C:/DevelopmentLibraries/include/)
 set(LIB_DIR C:/DevelopmentLibraries/lib/x64)
 
