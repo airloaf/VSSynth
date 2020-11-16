@@ -1,5 +1,7 @@
 #include "Envelope.h"
 
+#include <algorithm>
+
 namespace VSynth
 {
 
@@ -33,7 +35,7 @@ namespace VSynth
             }
         }
 
-        return amplitude;
+        return std::max(amplitude, 0.0); // Check in case amplitude goes negative
     }
 
     void Envelope::updateTime(double deltaTime)
