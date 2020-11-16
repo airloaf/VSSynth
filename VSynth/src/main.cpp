@@ -50,9 +50,9 @@ int main(int argc, char *argv[]){
     VSynth::Oscillator::Oscillator *waveform = &sawTooth;
 
     VSynth::ADSREnvelope adsr;
-    adsr.attackTime = 0.10f;
-    adsr.decayTime = 0.10f;
-    adsr.releaseTime = 0.10f;
+    adsr.attackTime = 0.01f;
+    adsr.decayTime = 0.01f;
+    adsr.releaseTime = 0.80f;
     adsr.attack = 1.0f;
     adsr.sustain = 0.8f;
     VSynth::Envelope envelope(adsr);
@@ -94,7 +94,7 @@ int main(int argc, char *argv[]){
                 }else if(e.key.keysym.sym == SDLK_4){
                     waveform = &triangle;
                 }else if(e.key.keysym.sym == SDLK_SPACE){
-                    envelope.press();
+                    envelope.hold();
                 }
             }else if(e.type == SDL_KEYUP){
                 if(e.key.keysym.sym == SDLK_SPACE){

@@ -3,8 +3,8 @@
 namespace VSynth
 {
 
-    Envelope::Envelope(ADSREnvelope adsr):
-    mPressed(false), mActive(false), mADSR(adsr)
+    Envelope::Envelope(const ADSREnvelope adsr):
+    mHold(false), mActive(false), mADSR(adsr)
     {
     }
 
@@ -16,11 +16,11 @@ namespace VSynth
         return ((offset / length) * (end - start)) + start;
     }
 
-    double Envelope::getAmplitude()
+    double Envelope::getAmplitude() const
     {
         double amplitude = 0;
         if(mActive){
-            if(mPressed){
+            if(mHold){
                 if(mTime < mADSR.attackTime){
                     amplitude = linearInterpolate(0, mADSR.attack, mADSR.attackTime, mTime);
                 }else if(mTime < (mADSR.decayTime + mADSR.attackTime)){
@@ -48,11 +48,11 @@ namespace VSynth
         }
     }
 
-    void Envelope::press()
+    void Envelope::hold()
     {
-        if(!mPressed){
+        if(!mHold){
             mActive = true;
-            mPressed = true;
+            mHold = true;
             mTime = 0;
             mReleaseStart = 0;
         }
@@ -60,7 +60,7 @@ namespace VSynth
 
     void Envelope::release()
     {
-        mPressed = false;
+        mHold = false;
         mReleaseStart = mTime;
     }
 

@@ -15,13 +15,13 @@ struct ADSREnvelope{
 class Envelope
 {
     public:
-        Envelope(ADSREnvelope adsr);
+        Envelope(const ADSREnvelope adsr);
         virtual ~Envelope();
 
-        double getAmplitude();
+        double getAmplitude() const;
         void updateTime(double deltaTime);
 
-        void press();
+        void hold();
         void release();
 
     private:
@@ -30,7 +30,7 @@ class Envelope
         double mTime;
         double mReleaseStart;
 
-        bool mPressed;
+        bool mHold;
         bool mActive;
 };
 }; // namespace VSynth
