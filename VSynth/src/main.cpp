@@ -52,9 +52,10 @@ int main(int argc, char *argv[]){
     VSynth::ADSREnvelope adsr;
     adsr.attackTime = 0.01f;
     adsr.decayTime = 0.01f;
-    adsr.releaseTime = 0.80f;
+    adsr.releaseTime = 0.01f;
     adsr.attack = 1.0f;
     adsr.sustain = 0.8f;
+    adsr.sustainable = false;
     VSynth::Envelope envelope(adsr);
 
     AudioData *audioData = new AudioData();

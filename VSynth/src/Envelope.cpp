@@ -40,7 +40,7 @@ namespace VSynth
     {
         if(mActive){
             mTime += deltaTime;
-            if(mReleaseStart != 0){
+            if(mReleaseStart != 0){ // Check if the release section of the ADSR curve is done
                 if(mTime > (mReleaseStart + mADSR.releaseTime)){
                     mActive = false;
                 }
@@ -54,7 +54,11 @@ namespace VSynth
             mActive = true;
             mHold = true;
             mTime = 0;
-            mReleaseStart = 0;
+            if(mADSR.sustainable){
+                mReleaseStart = 0;
+            }else{
+                mReleaseStart = mADSR.attackTime + mADSR.decayTime;
+            }
         }
     }
 
