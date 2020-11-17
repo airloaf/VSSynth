@@ -1,4 +1,5 @@
 #include <SDL2/SDL.h>
+#include <list>
 
 #include "Oscillators/SawTooth.h"
 #include "Oscillators/Sine.h"
@@ -6,11 +7,16 @@
 #include "Oscillators/Triangle.h"
 #include "Envelope.h"
 
-#define FREQUENCY 1000
+#define FREQUENCY 0200
 #define AMPLITUDE 1000
 #define SAMPLING_RATE 48000
 
 const double sampleDeltaTime = 1.0f / (double) SAMPLING_RATE;
+
+struct Instrument {
+    std::list<VSynth::Oscillator::Oscillator> oscs;
+    VSynth::Envelope *env;
+};
 
 struct AudioData {
     VSynth::Oscillator::Oscillator **osc;
@@ -47,15 +53,15 @@ int main(int argc, char *argv[]){
     VSynth::Oscillator::Square square(FREQUENCY);
     VSynth::Oscillator::Triangle triangle(FREQUENCY);
 
-    VSynth::Oscillator::Oscillator *waveform = &sawTooth;
+    VSynth::Oscillator::Oscillator *waveform = &square;
 
     VSynth::ADSREnvelope adsr;
-    adsr.attackTime = 0.01f;
-    adsr.decayTime = 0.01f;
-    adsr.releaseTime = 0.01f;
+    adsr.attackTime = 0.10f;
+    adsr.decayTime = 0.20f;
+    adsr.releaseTime = 0.40f;
     adsr.attack = 1.0f;
     adsr.sustain = 0.8f;
-    adsr.sustainable = false;
+    adsr.sustainable = true;
     VSynth::Envelope envelope(adsr);
 
     AudioData *audioData = new AudioData();
@@ -76,25 +82,13 @@ int main(int argc, char *argv[]){
     SDL_PauseAudioDevice(deviceID, 0);
 
     bool running = true;
-    bool paused = false;
     while(running){
         SDL_Event e;
         while(SDL_PollEvent(&e) > 0){
             if(e.type == SDL_QUIT){
                 running = false;
             }else if(e.type == SDL_KEYDOWN){
-                if(e.key.keysym.sym == SDLK_p){
-                    paused = !paused;
-                    SDL_PauseAudioDevice(deviceID, paused? 0: 1);
-                }else if(e.key.keysym.sym == SDLK_1){
-                    waveform = &sawTooth;
-                }else if(e.key.keysym.sym == SDLK_2){
-                    waveform = &sine;
-                }else if(e.key.keysym.sym == SDLK_3){
-                    waveform = &square;
-                }else if(e.key.keysym.sym == SDLK_4){
-                    waveform = &triangle;
-                }else if(e.key.keysym.sym == SDLK_SPACE){
+                if(e.key.keysym.sym == SDLK_SPACE){
                     envelope.hold();
                 }
             }else if(e.type == SDL_KEYUP){
