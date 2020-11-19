@@ -19,8 +19,6 @@ struct Instrument {
 
 void fillBuffer(void* userData, Uint8* buffer, int length) {
     Sint16 *sampleBuffer = (Sint16 *) buffer;
-    // Instrument *instruments = (Instrument *) userData;
-    // double *time = instruments->time;
     std::vector<Instrument> *instruments = (std::vector<Instrument> *) userData;
 
     int numToWrite = length / (sizeof(Sint16) * 2);
@@ -36,12 +34,6 @@ void fillBuffer(void* userData, Uint8* buffer, int length) {
             sampleValue += instrumentSample;
         }
 
-        // *time += sampleDeltaTime;
-        // instruments->envelope->updateTime(sampleDeltaTime);
-        // sampleValue = instruments->wave(*time)
-        // * instruments->envelope->getAmplitude()
-        // * AMPLITUDE;
-        
         *sampleBuffer++ = sampleValue; // Left channel value
         *sampleBuffer++ = sampleValue; // Right channel value
     }
