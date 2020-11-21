@@ -1,12 +1,11 @@
 #include <SDL2/SDL.h>
-#include <functional>
 #include <vector>
 
 #include "Envelope.h"
 #include "Waveforms.h"
 
 #define FREQUENCY 350
-#define AMPLITUDE 9000
+#define AMPLITUDE 3000
 #define SAMPLING_RATE 48000
 
 const double sampleDeltaTime = 1.0f / (double) SAMPLING_RATE;
@@ -39,6 +38,10 @@ void fillBuffer(void* userData, Uint8* buffer, int length) {
     }
 }
 
+std::vector<Instrument> createInstruments(){
+
+}
+
 int main(int argc, char *argv[]){
     SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO);
 
@@ -52,12 +55,12 @@ int main(int argc, char *argv[]){
     pianoADSR.decayTime = 0.20f;
     pianoADSR.releaseTime = 0.40f;
     pianoADSR.attack = 1.0f;
-    pianoADSR.sustain = 0.8f;
+    pianoADSR.sustain = 0.3f;
     VSynth::Envelope e4Envelope(pianoADSR);
     VSynth::Envelope f4Envelope(pianoADSR);
 
     std::function<double (double)> wave =
-    std::bind(VSynth::Waveforms::sine, 350, std::placeholders::_1);
+    std::bind(VSynth::Waveforms::sine, 5, std::placeholders::_1);
 
     Instrument instrument;
     instrument.envelope = &e4Envelope;
@@ -67,15 +70,13 @@ int main(int argc, char *argv[]){
     double e4Time = 0;
     Instrument e4;
     e4.envelope = &e4Envelope;
-    e4.wave =
-    std::bind(VSynth::Waveforms::square, 330, std::placeholders::_1);
+    e4.wave = std::bind(VSynth::Waveforms::modulatedWave, 330, std::placeholders::_1, 0.01, wave, VSynth::Waveforms::triangle);
     e4.time = &e4Time;
     
     double f4Time = 0;
     Instrument f4;
     f4.envelope = &f4Envelope;
-    f4.wave =
-    std::bind(VSynth::Waveforms::square, 350, std::placeholders::_1);
+    f4.wave = std::bind(VSynth::Waveforms::modulatedWave, 350, std::placeholders::_1, 0.01, wave, VSynth::Waveforms::triangle);
     f4.time = &f4Time;
 
     std::vector<Instrument> instruments;
