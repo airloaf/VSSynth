@@ -8,6 +8,9 @@ namespace VSynth
  * This envelope should be used to modulate the amplitude of a waveform.
  */
 struct ADSREnvelope{
+    ADSREnvelope(double attack, double sustain, double attackTime, double decayTime, double releaseTime):
+    attack(attack), sustain(sustain), attackTime(attackTime), decayTime(decayTime), releaseTime(releaseTime), sustainable(true)
+    {}
     ADSREnvelope(): sustainable(true)
     {}
 
