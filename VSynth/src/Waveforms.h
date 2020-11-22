@@ -12,9 +12,13 @@ namespace VSynth
         double sawtooth(double frequency, double time);
         double triangle(double frequency, double time);
 
-        double modulatedWave(double frequency, double time, double modulatorAmplitude,
+        double modulatedWave(
+            std::function<double (double, double)> wave,
+            double frequency,
+            double modulatorAmplitude,
             std::function<double (double)> freqOsc,
-            std::function<double (double, double)> wave);
+            double time
+        );
 
     }; // namespace Waveforms
 }; // namespace VSynth

@@ -33,9 +33,11 @@ namespace VSynth
         }
         
         double modulatedWave(
-            double frequency, double time, double modulatorAmplitude,
+            std::function<double (double, double)> wave,
+            double frequency,
+            double modulatorAmplitude,
             std::function<double (double)> freqOsc,
-            std::function<double (double, double)> wave
+            double time
         ){
             // This is ugly, but it works
             return wave(frequency + (modulatorAmplitude * frequency * freqOsc(time) / (time * 2.0 * 3.1415926535)), time);
