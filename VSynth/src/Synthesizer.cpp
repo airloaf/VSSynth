@@ -25,10 +25,10 @@ namespace VSynth
                 Sint16 instrumentSample = 0;
                 
                 *(synthData->time) += sampleDeltaTime;
-                // it->envelope->updateTime(sampleDeltaTime);
+                it->envelope->updateTime(sampleDeltaTime);
                 
                 instrumentSample = it->wave(*(synthData->time))
-                // * it->envelope->getAmplitude()
+                * it->envelope->getAmplitude()
                 * it->amplitude;
                 
                 sampleValue += instrumentSample;
@@ -48,41 +48,14 @@ namespace VSynth
     {
     }
 
-    // std::vector<Instrument> createInstruments()
-    // {
-    //     std::vector<Instrument> instruments;
-    //     ADSREnvelope pianoADSR(0.10f, 0.20f, 0.40f, 1.0f, 0.3f);
-    //     Envelope e4Envelope(pianoADSR);
-    //     Envelope f4Envelope(pianoADSR);
 
-    //     std::function<double(double)> wave =
-    //         std::bind(Waveforms::sine, 5, std::placeholders::_1);
-
-    //     Instrument e4;
-    //     e4.envelope = new Envelope(pianoADSR);
-    //     e4.wave = std::bind(Waveforms::modulatedWave, 330, std::placeholders::_1, 0.01, wave, Waveforms::square);
-
-    //     Instrument f4;
-    //     f4.envelope = new Envelope(pianoADSR);
-    //     f4.wave = std::bind(Waveforms::modulatedWave, 350, std::placeholders::_1, 0.01, wave, Waveforms::square);
-
-    //     instruments.push_back(e4);
-    //     instruments.push_back(f4);
-    //     return instruments;
-    // }
+    void Synthesizer::addInstrument(const Instrument instrument){
+        mSynthData.instruments.push_back(instrument);
+    }
 
     void Synthesizer::open()
     {
         mTime = 0;
-        mSynthData.time = &mTime;
-        Instrument e4;
-        e4.envelope = nullptr;
-        // e4.wave = std::bind(Waveforms::modulatedWave, 330, std::placeholders::_1, 0.01, wave, Waveforms::square);
-        e4.wave = std::bind(Waveforms::sine, 330, std::placeholders::_1);
-        std::function<double (double)> wave = std::bind(Waveforms::sine, 5, std::placeholders::_1);
-        e4.wave = std::bind(Waveforms::modulatedWave, 330, std::placeholders::_1, 0.01, wave, Waveforms::square);
-        e4.amplitude = 4000;
-        mSynthData.instruments.push_back(e4);
 
         SDL_AudioSpec obtained = {};
         SDL_AudioSpec requested = {};

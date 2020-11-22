@@ -8,8 +8,8 @@ namespace VSynth{
     struct Instrument
     {
         std::function<double(double)> wave;
-        Sint16 amplitude;
         VSynth::Envelope *envelope;
+        Sint16 amplitude;
     };
 
     struct SynthData {
@@ -28,6 +28,8 @@ namespace VSynth{
 
             void unpause();
             void pause();
+
+            void addInstrument(const Instrument instrument);
 
         private:
             SDL_AudioDeviceID mDeviceID;
