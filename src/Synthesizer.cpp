@@ -1,6 +1,6 @@
-#include "Envelope.h"
-#include "Waveforms.h"
-#include "Synthesizer.h"
+#include <VSynth/Envelope.h>
+#include <VSynth/Synthesizer.h>
+#include <VSynth/Waveforms.h>
 
 #define FREQUENCY 350
 #define AMPLITUDE 3000
@@ -13,7 +13,7 @@ namespace VSynth
     void fillBuffer(void *userData, Uint8 *buffer, int length)
     {
         Sint16 *sampleBuffer = (Sint16 *)buffer;
-        SynthData *synthData = (SynthData *) userData;
+        SynthData *synthData = (SynthData *)userData;
 
         int numToWrite = length / (sizeof(Sint16) * 2);
         for (int sample = 0; sample < numToWrite; sample++)
@@ -23,14 +23,12 @@ namespace VSynth
             for (auto it = synthData->instruments.begin(); it != synthData->instruments.end(); it++)
             {
                 Sint16 instrumentSample = 0;
-                
+
                 *(synthData->time) += sampleDeltaTime;
                 it->envelope->updateTime(sampleDeltaTime);
-                
-                instrumentSample = it->wave(*(synthData->time))
-                * it->envelope->getAmplitude()
-                * it->amplitude;
-                
+
+                instrumentSample = it->wave(*(synthData->time)) * it->envelope->getAmplitude() * it->amplitude;
+
                 sampleValue += instrumentSample;
             }
 
@@ -48,8 +46,8 @@ namespace VSynth
     {
     }
 
-
-    void Synthesizer::addInstrument(const Instrument instrument){
+    void Synthesizer::addInstrument(const Instrument instrument)
+    {
         mSynthData.instruments.push_back(instrument);
     }
 

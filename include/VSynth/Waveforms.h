@@ -13,12 +13,11 @@ namespace VSynth
         double triangle(double frequency, double time);
 
         double modulatedWave(
-            std::function<double (double, double)> wave,
+            std::function<double(double, double)> wave,
             double frequency,
             double modulatorAmplitude,
-            std::function<double (double)> freqOsc,
-            double time
-        );
+            std::function<double(double)> freqOsc,
+            double time);
 
     }; // namespace Waveforms
-}; // namespace VSynth
+};     // namespace VSynth

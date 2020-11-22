@@ -1,10 +1,9 @@
 #include <SDL2/SDL.h>
 #include <vector>
 
-#include "Envelope.h"
-#include "Waveforms.h"
-
-#include "Synthesizer.h"
+#include <VSynth/Envelope.h>
+#include <VSynth/Synthesizer.h>
+#include <VSynth/Waveforms.h>
 
 using namespace VSynth;
 
@@ -30,8 +29,7 @@ int main(int argc, char *argv[])
                         330.0,
                         0.01,
                         freqOsc,
-                        std::placeholders::_1
-                        );
+                        std::placeholders::_1);
     e4.amplitude = 3000;
     e4.envelope = &e4Envelope;
 
@@ -41,8 +39,7 @@ int main(int argc, char *argv[])
                         350.0,
                         0.01,
                         freqOsc,
-                        std::placeholders::_1
-                        );
+                        std::placeholders::_1);
     f4.amplitude = 3000;
     f4.envelope = &f4Envelope;
 

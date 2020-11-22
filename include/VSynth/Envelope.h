@@ -3,24 +3,27 @@
 namespace VSynth
 {
 
-/**
+    /**
  * @brief ADSR envelope
  * This envelope should be used to modulate the amplitude of a waveform.
  */
-struct ADSREnvelope{
-    ADSREnvelope(double attack, double sustain, double attackTime, double decayTime, double releaseTime):
-    attack(attack), sustain(sustain), attackTime(attackTime), decayTime(decayTime), releaseTime(releaseTime), sustainable(true)
-    {}
-    ADSREnvelope(): sustainable(true)
-    {}
+    struct ADSREnvelope
+    {
+        ADSREnvelope(double attack, double sustain, double attackTime, double decayTime, double releaseTime)
+        :attack(attack), sustain(sustain), attackTime(attackTime), decayTime(decayTime), releaseTime(releaseTime), sustainable(true)
+        {
+        }
+        ADSREnvelope() : sustainable(true)
+        {
+        }
 
-    double attack, sustain;
-    double attackTime, decayTime, releaseTime;
-    bool sustainable;
-};
+        double attack, sustain;
+        double attackTime, decayTime, releaseTime;
+        bool sustainable;
+    };
 
-class Envelope
-{
+    class Envelope
+    {
     public:
         Envelope(const ADSREnvelope adsr);
         virtual ~Envelope();
@@ -32,12 +35,11 @@ class Envelope
         void release();
 
     private:
-
         ADSREnvelope mADSR;
         double mTime;
         double mReleaseStart;
 
         bool mHold;
         bool mActive;
-};
+    };
 }; // namespace VSynth
