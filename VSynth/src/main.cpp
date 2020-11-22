@@ -8,6 +8,8 @@
 #define AMPLITUDE 3000
 #define SAMPLING_RATE 48000
 
+using namespace VSynth;
+
 const double sampleDeltaTime = 1.0f / (double) SAMPLING_RATE;
 
 struct Instrument {
@@ -39,7 +41,27 @@ void fillBuffer(void* userData, Uint8* buffer, int length) {
 }
 
 std::vector<Instrument> createInstruments(){
+    std::vector<Instrument> instruments;
+    ADSREnvelope pianoADSR(0.10f, 0.20f, 0.40f, 1.0f, 0.3f);
+    Envelope e4Envelope(pianoADSR);
+    Envelope f4Envelope(pianoADSR);
 
+    std::function<double (double)> wave =
+    std::bind(Waveforms::sine, 5, std::placeholders::_1);
+
+    Instrument e4;
+    e4.envelope = new Envelope(pianoADSR);
+    e4.wave = std::bind(Waveforms::modulatedWave, 330, std::placeholders::_1, 0.01, wave, Waveforms::square);
+    e4.time = new double;
+    
+    Instrument f4;
+    f4.envelope = new Envelope(pianoADSR);
+    f4.wave = std::bind(Waveforms::modulatedWave, 350, std::placeholders::_1, 0.01, wave, Waveforms::square);
+    f4.time = new double;
+
+    instruments.push_back(e4);
+    instruments.push_back(f4);
+    return instruments;
 }
 
 int main(int argc, char *argv[]){
@@ -48,40 +70,7 @@ int main(int argc, char *argv[]){
     SDL_Window *window;
     window = SDL_CreateWindow("SDL_Test_Windows", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
 
-    double time = 0;
-
-    VSynth::ADSREnvelope pianoADSR;
-    pianoADSR.attackTime = 0.10f;
-    pianoADSR.decayTime = 0.20f;
-    pianoADSR.releaseTime = 0.40f;
-    pianoADSR.attack = 1.0f;
-    pianoADSR.sustain = 0.3f;
-    VSynth::Envelope e4Envelope(pianoADSR);
-    VSynth::Envelope f4Envelope(pianoADSR);
-
-    std::function<double (double)> wave =
-    std::bind(VSynth::Waveforms::sine, 5, std::placeholders::_1);
-
-    Instrument instrument;
-    instrument.envelope = &e4Envelope;
-    instrument.wave = wave;
-    instrument.time = &time;
-
-    double e4Time = 0;
-    Instrument e4;
-    e4.envelope = &e4Envelope;
-    e4.wave = std::bind(VSynth::Waveforms::modulatedWave, 330, std::placeholders::_1, 0.01, wave, VSynth::Waveforms::triangle);
-    e4.time = &e4Time;
-    
-    double f4Time = 0;
-    Instrument f4;
-    f4.envelope = &f4Envelope;
-    f4.wave = std::bind(VSynth::Waveforms::modulatedWave, 350, std::placeholders::_1, 0.01, wave, VSynth::Waveforms::triangle);
-    f4.time = &f4Time;
-
-    std::vector<Instrument> instruments;
-    instruments.push_back(e4);
-    instruments.push_back(f4);
+    auto instruments = createInstruments();
 
     SDL_AudioSpec obtained = {};
     SDL_AudioSpec requested = {};
