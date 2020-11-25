@@ -25,7 +25,7 @@ namespace VSynth
             {
                 Sint16 instrumentSample = 0;
 
-                it->envelope->updateTime(sampleDeltaTime);
+                it->envelope->update(sampleDeltaTime);
 
                 double envAmp = it->envelope->getAmplitude();
                 if(envAmp != 0){

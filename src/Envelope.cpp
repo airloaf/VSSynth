@@ -46,7 +46,7 @@ namespace VSynth
         return std::max(amplitude, 0.0); // Check in case amplitude goes negative
     }
 
-    void Envelope::updateTime(double deltaTime)
+    void Envelope::update(double deltaTime)
     {
         if (mActive)
         {

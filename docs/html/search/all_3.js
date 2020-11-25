@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['synthdata_3',['SynthData',['../structVSynth_1_1SynthData.html',1,'VSynth']]],
-  ['synthesizer_4',['Synthesizer',['../classVSynth_1_1Synthesizer.html',1,'VSynth']]]
+  ['getamplitude_4',['getAmplitude',['../classVSynth_1_1Envelope.html#a1930a80f83e0f9f438c81f1cb18b9de2',1,'VSynth::Envelope']]]
 ];

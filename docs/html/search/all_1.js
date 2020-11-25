@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['envelope_1',['Envelope',['../classVSynth_1_1Envelope.html',1,'VSynth']]]
+  ['close_2',['close',['../classVSynth_1_1Synthesizer.html#a4376b0239221a4472c72485f0acd1130',1,'VSynth::Synthesizer']]]
 ];
