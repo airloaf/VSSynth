@@ -1,8 +1,9 @@
 #pragma once
 
 #include <SDL2/SDL.h>
-#include <list>
+
 #include <functional>
+#include <vector>
 
 namespace VSynth
 {
@@ -16,7 +17,7 @@ namespace VSynth
     struct SynthData
     {
         double *time;
-        std::list<Instrument> instruments;
+        std::vector<Instrument> instruments;
     };
 
     class Synthesizer

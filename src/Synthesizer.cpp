@@ -20,16 +20,18 @@ namespace VSynth
         {
             Sint16 sampleValue = 0;
 
-            for (auto it = synthData->instruments.begin(); it != synthData->instruments.end(); it++)
+            *(synthData->time) += sampleDeltaTime;
+            for (auto it = synthData->instruments.begin(); it != synthData->instruments.end(); ++it)
             {
                 Sint16 instrumentSample = 0;
 
-                *(synthData->time) += sampleDeltaTime;
                 it->envelope->updateTime(sampleDeltaTime);
 
-                instrumentSample = it->wave(*(synthData->time)) * it->envelope->getAmplitude() * it->amplitude;
-
-                sampleValue += instrumentSample;
+                double envAmp = it->envelope->getAmplitude();
+                if(envAmp != 0){
+                    instrumentSample = it->wave(*(synthData->time)) * it->amplitude * envAmp;
+                    sampleValue += instrumentSample;
+                }
             }
 
             *sampleBuffer++ = sampleValue; // Left channel value
