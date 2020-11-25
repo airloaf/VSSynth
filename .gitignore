@@ -34,5 +34,6 @@
 # vscode
 .vscode/
 
-# Build folder
+# Build files
 build/
+docs/Doxyfile_cmake
