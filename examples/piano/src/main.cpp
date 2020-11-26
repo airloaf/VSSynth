@@ -29,12 +29,6 @@ std::vector<PianoKey> pianoKeys = {
     {SDLK_k, 523, Envelope(pianoADSR)}
 };
 
-
-        double freqToRad(double frequency)
-        {
-            return frequency * 2.0 * 3.1415926535;
-        }
-
 void createInstruments(Synthesizer &synth)
 {
 
@@ -47,7 +41,7 @@ void createInstruments(Synthesizer &synth)
     for (auto it = pianoKeys.begin(); it != pianoKeys.end(); it++)
     {
         Instrument instrument;
-        instrument.amplitude = 3000;
+        instrument.amplitude = 6000;
         instrument.envelope = &it->env;
         instrument.wave = std::bind(
             Waveforms::modulatedWave,
