@@ -4,11 +4,18 @@
 
 namespace VSynth
 {
+    /**
+     * @brief Basic waveform repository
+     * 
+     * This namespace encompasses many of the common waveforms an
+     * audio synthesizer would use.
+     * 
+     */
     namespace Waveforms
     {
 
         /**
-         * @brief Generates a 50% sine wave
+         * @brief Generates a 50% pulse wave
          * 
          * @param frequency
          * @param time 

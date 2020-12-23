@@ -1,4 +1,4 @@
-#include <VSynth/Envelope.h>
+#include <VSynth/utils/Envelope.h>
 
 #include <algorithm>
 

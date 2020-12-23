@@ -2,7 +2,7 @@
 
 #include <functional>
 
-#include "../Envelope.h"
+#include "../utils/Envelope.h"
 #include "../SoundGenerator.h"
 
 namespace VSynth
@@ -19,7 +19,7 @@ namespace VSynth
         virtual ~Instrument();
 
         virtual double sample(double time) = 0;
-        
+
         virtual void holdNote(double frequency) = 0;
         virtual void releaseNote(double frequency) = 0;
 

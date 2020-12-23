@@ -1,11 +1,11 @@
 #include <SDL2/SDL.h>
 #include <vector>
 
-#include <VSynth/Envelope.h>
 #include <VSynth/Synthesizer.h>
-#include <VSynth/Waveforms.h>
-#include <VSynth/Generators/PolyphonicInstrument.h>
-#include <VSynth/Generators/MonophonicInstrument.h>
+#include <VSynth/generators/MonophonicInstrument.h>
+#include <VSynth/generators/PolyphonicInstrument.h>
+#include <VSynth/utils/Envelope.h>
+#include <VSynth/utils/Waveforms.h>
 
 using namespace VSynth;
 
@@ -27,7 +27,7 @@ std::vector<PianoKey> pianoKeys = {
 
 Instrument *createInstrument()
 {
-    return new MonophonicInstrument(
+    return new PolyphonicInstrument(
         [](double freq, double time) {
             return 0.5 * (Waveforms::sine(freq, time) +
                           0.5 * Waveforms::sine(freq * 2, time) +
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO);
 
     SDL_Window *window;
-    window = SDL_CreateWindow("SDL_Test_Windows", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
+    window = SDL_CreateWindow("Piano Example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
 
     Instrument *piano = createInstrument();
 

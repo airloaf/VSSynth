@@ -1,6 +1,5 @@
 #pragma once
 
-#include <functional>
 #include <mutex>
 #include <vector>
 
@@ -14,7 +13,6 @@ namespace VSynth
      * multiple notes simultaneously. Real life examples
      * include: stringed instruments, piano and certain
      * percussive instruments like the xylophone.
-     * 
      */
     class PolyphonicInstrument : public Instrument
     {

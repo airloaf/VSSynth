@@ -1,13 +1,16 @@
 #pragma once
 
-#include <functional>
-#include <mutex>
-#include <vector>
-
 #include "Instrument.h"
 
 namespace VSynth
 {
+    /**
+     * @brief Device capable of playing a single note at a time.
+     * A monophonic instrument is capable of playing
+     * only a single note at a time. Real life examples
+     * include: woodwind, brass and many of the 
+     * percussive instruments.
+     */
     class MonophonicInstrument : public Instrument
     {
     public:

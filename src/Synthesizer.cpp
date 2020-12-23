@@ -1,6 +1,4 @@
-#include <VSynth/Envelope.h>
 #include <VSynth/Synthesizer.h>
-#include <VSynth/Waveforms.h>
 
 #define SAMPLING_RATE 48000
 

@@ -1,4 +1,4 @@
-#include <VSynth/Waveforms.h>
+#include <VSynth/utils/Waveforms.h>
 
 #include <cmath>
 #define _USE_MATH_DEFINES // PI definition

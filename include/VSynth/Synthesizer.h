@@ -5,7 +5,6 @@
 #include <functional>
 #include <vector>
 
-#include "Envelope.h"
 #include "SoundGenerator.h"
 
 namespace VSynth
