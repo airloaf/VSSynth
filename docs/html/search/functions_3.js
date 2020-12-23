@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getamplitude_36',['getAmplitude',['../classVSynth_1_1Envelope.html#a1930a80f83e0f9f438c81f1cb18b9de2',1,'VSynth::Envelope']]]
+  ['getamplitude_38',['getAmplitude',['../classVSynth_1_1Envelope.html#a1930a80f83e0f9f438c81f1cb18b9de2',1,'VSynth::Envelope']]]
 ];

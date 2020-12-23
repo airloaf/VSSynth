@@ -6,6 +6,7 @@
 #include <VSynth/generators/PolyphonicInstrument.h>
 #include <VSynth/utils/Envelope.h>
 #include <VSynth/utils/Waveforms.h>
+#include <VSynth/utils/Notes.h>
 
 using namespace VSynth;
 
@@ -16,14 +17,14 @@ struct PianoKey
 };
 
 std::vector<PianoKey> pianoKeys = {
-    {SDLK_a, 262},
-    {SDLK_s, 294},
-    {SDLK_d, 330},
-    {SDLK_f, 350},
-    {SDLK_g, 392},
-    {SDLK_h, 440},
-    {SDLK_j, 494},
-    {SDLK_k, 523}};
+    {SDLK_a, Notes::C4},
+    {SDLK_s, Notes::D4},
+    {SDLK_d, Notes::E4},
+    {SDLK_f, Notes::F4},
+    {SDLK_g, Notes::G4},
+    {SDLK_h, Notes::A4},
+    {SDLK_j, Notes::B4},
+    {SDLK_k, Notes::C5}};
 
 Instrument *createInstrument()
 {
