@@ -6,9 +6,8 @@ namespace VSynth
 {
 
     Instrument::Instrument(
-        std::function<double(double, double)> wave,
-        const ADSREnvelope &adsr)
-        : mWave(wave), mADSR(adsr)
+        std::function<double(double, double)> wave)
+        : mWave(wave)
     {
     }
 

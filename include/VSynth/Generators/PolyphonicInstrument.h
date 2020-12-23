@@ -8,6 +8,14 @@
 
 namespace VSynth
 {
+    /**
+     * @brief Device capable of playing notes simultaneously
+     * A polyphonic instrument is capable of playing
+     * multiple notes simultaneously. Real life examples
+     * include: stringed instruments, piano and certain
+     * percussive instruments like the xylophone.
+     * 
+     */
     class PolyphonicInstrument : public Instrument
     {
     public:
@@ -23,6 +31,8 @@ namespace VSynth
         void releaseNote(double frequency);
 
     private:
+        ADSREnvelope mADSR;
+
         std::mutex mEnvLock;
         std::vector<std::pair<double, Envelope>> mEnvelopes;
 

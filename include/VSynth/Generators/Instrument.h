@@ -14,8 +14,7 @@ namespace VSynth
     class Instrument : public SoundGenerator
     {
     public:
-        Instrument(std::function<double(double, double)> wave,
-                   const ADSREnvelope &adsr);
+        Instrument(std::function<double(double, double)> wave);
 
         virtual ~Instrument();
 
@@ -25,7 +24,6 @@ namespace VSynth
         virtual void releaseNote(double frequency) = 0;
 
     protected:
-        ADSREnvelope mADSR;
         std::function<double(double, double)> mWave;
     };
 } // namespace VSynth

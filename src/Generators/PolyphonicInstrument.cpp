@@ -8,7 +8,7 @@ namespace VSynth
     PolyphonicInstrument::PolyphonicInstrument(
         std::function<double(double, double)> wave,
         const ADSREnvelope &adsr)
-        : Instrument(wave, adsr), mPrevSample(0)
+        : Instrument(wave), mADSR(adsr), mPrevSample(0)
     {
     }
 

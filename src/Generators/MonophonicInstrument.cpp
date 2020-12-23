@@ -8,7 +8,7 @@ namespace VSynth
     MonophonicInstrument::MonophonicInstrument(
         std::function<double(double, double)> wave,
         const ADSREnvelope &adsr)
-        : Instrument(wave, adsr), mEnvelope(adsr), mPrevSample(0)
+        : Instrument(wave), mEnvelope(adsr), mPrevSample(0)
     {
     }
 
@@ -36,6 +36,9 @@ namespace VSynth
 
     void MonophonicInstrument::releaseNote(double frequency)
     {
-        mEnvelope.release();
+        if (mCurrentNote == frequency)
+        {
+            mEnvelope.release();
+        }
     }
 } // namespace VSynth
