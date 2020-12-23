@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['synthesizer_16',['Synthesizer',['../classVSynth_1_1Synthesizer.html',1,'VSynth']]]
+  ['monophonicinstrument_28',['MonophonicInstrument',['../classVSynth_1_1MonophonicInstrument.html',1,'VSynth']]]
 ];

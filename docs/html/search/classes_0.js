@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['adsrenvelope_13',['ADSREnvelope',['../structVSynth_1_1ADSREnvelope.html',1,'VSynth']]]
+  ['adsrenvelope_25',['ADSREnvelope',['../structVSynth_1_1ADSREnvelope.html',1,'VSynth']]]
 ];

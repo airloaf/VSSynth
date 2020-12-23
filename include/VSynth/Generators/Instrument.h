@@ -8,8 +8,7 @@
 namespace VSynth
 {
     /**
-     * @brief Instrument representation
-     * An instrument can play a variety of notes along with an Envelope.
+     * @brief Device capable of playing multiple notes with an ADSR envelope 
      */
     class Instrument : public SoundGenerator
     {
@@ -18,9 +17,25 @@ namespace VSynth
 
         virtual ~Instrument();
 
+        /**
+         * @brief Samples the instrument at the given time
+         * 
+         * @param time
+         * @return double 
+         */
         virtual double sample(double time) = 0;
 
+        /**
+         * @brief Holds the given note
+         * 
+         * @param frequency - the note
+         */
         virtual void holdNote(double frequency) = 0;
+        /**
+         * @brief Releases the given note
+         * 
+         * @param frequency - the note
+         */
         virtual void releaseNote(double frequency) = 0;
 
     protected:
