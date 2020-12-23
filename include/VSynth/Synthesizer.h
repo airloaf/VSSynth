@@ -6,7 +6,7 @@
 #include <vector>
 
 #include "Envelope.h"
-#include "Instrument.h"
+#include "SoundGenerator.h"
 
 namespace VSynth
 {
@@ -14,7 +14,7 @@ namespace VSynth
     struct SynthData
     {
         double *time;
-        std::vector<Instrument *> instruments;
+        std::vector<SoundGenerator *> soundGenerators;
     };
 
     /**
@@ -55,11 +55,11 @@ namespace VSynth
         void pause();
 
         /**
-         * @brief Add instrument to synthesizer
+         * @brief Adds a sound generator to the synthesizer
          * 
-         * @param instrument 
+         * @param soundGenerator 
          */
-        void addInstrument(Instrument *instrument);
+        void addSoundGenerator(SoundGenerator *soundGenerator);
 
     private:
         SDL_AudioDeviceID mDeviceID;

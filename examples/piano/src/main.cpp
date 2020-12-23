@@ -4,6 +4,8 @@
 #include <VSynth/Envelope.h>
 #include <VSynth/Synthesizer.h>
 #include <VSynth/Waveforms.h>
+#include <VSynth/Generators/PolyphonicInstrument.h>
+#include <VSynth/Generators/MonophonicInstrument.h>
 
 using namespace VSynth;
 
@@ -25,7 +27,7 @@ std::vector<PianoKey> pianoKeys = {
 
 Instrument *createInstrument()
 {
-    return new Instrument(
+    return new MonophonicInstrument(
         [](double freq, double time) {
             return 0.5 * (Waveforms::sine(freq, time) +
                           0.5 * Waveforms::sine(freq * 2, time) +
@@ -50,7 +52,7 @@ int main(int argc, char *argv[])
 
     Synthesizer synth;
     synth.open();
-    synth.addInstrument(piano);
+    synth.addSoundGenerator(piano);
     synth.unpause();
 
     bool running = true;

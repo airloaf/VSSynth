@@ -1,22 +1,22 @@
-#include <VSynth/Instrument.h>
+#include <VSynth/Generators/PolyphonicInstrument.h>
 
 #include <algorithm>
 
 namespace VSynth
 {
 
-    Instrument::Instrument(
+    PolyphonicInstrument::PolyphonicInstrument(
         std::function<double(double, double)> wave,
         const ADSREnvelope &adsr)
-        : mWave(wave), mADSR(adsr), mPrevSample(0)
+        : Instrument(wave, adsr), mPrevSample(0)
     {
     }
 
-    Instrument::~Instrument()
+    PolyphonicInstrument::~PolyphonicInstrument()
     {
     }
 
-    double Instrument::sample(double time)
+    double PolyphonicInstrument::sample(double time)
     {
         double delta = time - mPrevSample;
         mPrevSample = time;
@@ -34,30 +34,28 @@ namespace VSynth
         return sample;
     }
 
-    void Instrument::holdNote(double frequency)
+    void PolyphonicInstrument::holdNote(double frequency)
     {
         mEnvLock.lock();
         auto it = std::find_if(mEnvelopes.begin(), mEnvelopes.end(),
-            [frequency](std::pair<double, Envelope> a)
-                {return a.first == frequency;}
-            );
+                               [frequency](std::pair<double, Envelope> a) { return a.first == frequency; });
         if (it == mEnvelopes.end())
         {
             mEnvelopes.push_back({frequency, Envelope(mADSR)});
             mEnvelopes.back().second.hold();
-        }else{
+        }
+        else
+        {
             it->second.hold();
         }
         mEnvLock.unlock();
     }
 
-    void Instrument::releaseNote(double frequency)
+    void PolyphonicInstrument::releaseNote(double frequency)
     {
         mEnvLock.lock();
         auto it = std::find_if(mEnvelopes.begin(), mEnvelopes.end(),
-            [frequency](std::pair<double, Envelope> a)
-                {return a.first == frequency;}
-            );
+                               [frequency](std::pair<double, Envelope> a) { return a.first == frequency; });
         it->second.release();
         mEnvLock.unlock();
     }

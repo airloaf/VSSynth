@@ -19,7 +19,7 @@ namespace VSynth
             Sint16 sampleValue = 0;
 
             *(synthData->time) += sampleDeltaTime;
-            for (auto it = synthData->instruments.begin(); it != synthData->instruments.end(); ++it)
+            for (auto it = synthData->soundGenerators.begin(); it != synthData->soundGenerators.end(); ++it)
             {
                 sampleValue += (*it)->sample(*(synthData->time)) * 6000.0;
             }
@@ -38,9 +38,9 @@ namespace VSynth
     {
     }
 
-    void Synthesizer::addInstrument(Instrument *instrument)
+    void Synthesizer::addSoundGenerator(SoundGenerator *soundGenerator)
     {
-        mSynthData.instruments.push_back(instrument);
+        mSynthData.soundGenerators.push_back(soundGenerator);
     }
 
     void Synthesizer::open()
