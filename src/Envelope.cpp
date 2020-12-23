@@ -4,7 +4,8 @@
 
 namespace VSynth
 {
-    Envelope::Envelope(const ADSREnvelope adsr) : mHold(false), mActive(false), mADSR(adsr)
+    Envelope::Envelope(const ADSREnvelope adsr)
+    : mHold(false), mActive(false), mADSR(adsr)
     {
     }
 

@@ -29,29 +29,27 @@ std::vector<PianoKey> pianoKeys = {
     {SDLK_k, 523, Envelope(pianoADSR)}
 };
 
+Instrument *wave = nullptr;
+
 void createInstruments(Synthesizer &synth)
 {
 
-    std::function<double(double)> wave =
-    std::bind(
-        Waveforms::sine,
-        5,
-        std::placeholders::_1);
+    wave = new Instrument(
+        [](double freq, double time){
+            return 0.5 * (
+                Waveforms::sine(freq, time) +
+                0.5 * Waveforms::sine(freq*2, time) +
+                0.25 * Waveforms::sine(freq*3, time) +
+                0.125 * Waveforms::sine(freq*4, time) +
+                0.0625 * Waveforms::sine(freq*5, time) +
+                0.03125 * Waveforms::sine(freq*6, time) +
+                0.015625 * Waveforms::sine(freq*7, time)
+            );
+        },
+        pianoADSR
+    );
 
-    for (auto it = pianoKeys.begin(); it != pianoKeys.end(); it++)
-    {
-        Instrument instrument;
-        instrument.amplitude = 6000;
-        instrument.envelope = &it->env;
-        instrument.wave = std::bind(
-            Waveforms::modulatedWave,
-            Waveforms::triangle,
-            it->frequency,
-            0.01,
-            wave,
-            std::placeholders::_1);
-        synth.addInstrument(instrument);
-    }
+    synth.addInstrument(wave);
 }
 
 int main(int argc, char *argv[])
@@ -84,11 +82,13 @@ int main(int argc, char *argv[])
                     {
                         if (e.type == SDL_KEYDOWN)
                         {
-                            it->env.hold();
+                            // it->env.hold();
+                            wave->holdNote(it->frequency);
                         }
                         else if (e.type == SDL_KEYUP)
                         {
-                            it->env.release();
+                            // it->env.release();
+                            wave->releaseNote(it->frequency);
                         }
                     }
                 }

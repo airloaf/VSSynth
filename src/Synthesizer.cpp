@@ -2,8 +2,6 @@
 #include <VSynth/Synthesizer.h>
 #include <VSynth/Waveforms.h>
 
-#define FREQUENCY 350
-#define AMPLITUDE 3000
 #define SAMPLING_RATE 48000
 
 namespace VSynth
@@ -23,15 +21,7 @@ namespace VSynth
             *(synthData->time) += sampleDeltaTime;
             for (auto it = synthData->instruments.begin(); it != synthData->instruments.end(); ++it)
             {
-                Sint16 instrumentSample = 0;
-
-                it->envelope->update(sampleDeltaTime);
-
-                double envAmp = it->envelope->getAmplitude();
-                if(envAmp != 0){
-                    instrumentSample = it->wave(*(synthData->time)) * it->amplitude * envAmp;
-                    sampleValue += instrumentSample;
-                }
+                sampleValue += (*it)->sample(*(synthData->time)) * 6000.0;
             }
 
             *sampleBuffer++ = sampleValue; // Left channel value
@@ -48,7 +38,7 @@ namespace VSynth
     {
     }
 
-    void Synthesizer::addInstrument(const Instrument instrument)
+    void Synthesizer::addInstrument(Instrument *instrument)
     {
         mSynthData.instruments.push_back(instrument);
     }

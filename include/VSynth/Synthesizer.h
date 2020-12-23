@@ -5,28 +5,16 @@
 #include <functional>
 #include <vector>
 
+#include "Envelope.h"
+#include "Instrument.h"
+
 namespace VSynth
 {
-
-    /**
-     * @brief Representation of a single instrument/voice
-     * 
-     * Each instrument is composed of:
-     * A waveform which takes in a time and returns a value from [-1, 1]
-     * An envelope to trigger the instrument
-     * Amplitude to combine with the waveform
-     */
-    struct Instrument
-    {
-        std::function<double(double)> wave;
-        VSynth::Envelope *envelope;
-        Sint16 amplitude;
-    };
 
     struct SynthData
     {
         double *time;
-        std::vector<Instrument> instruments;
+        std::vector<Instrument *> instruments;
     };
 
     /**
@@ -71,7 +59,7 @@ namespace VSynth
          * 
          * @param instrument 
          */
-        void addInstrument(const Instrument instrument);
+        void addInstrument(Instrument *instrument);
 
     private:
         SDL_AudioDeviceID mDeviceID;
