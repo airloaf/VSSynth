@@ -24,7 +24,7 @@
    <div id="projectname">VSynth
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">C++ Audio Synthesizer</div>
+   <div id="projectbrief">C++ Audio Synthesizer using SDL 2</div>
   </td>
  </tr>
  </tbody>
@@ -87,86 +87,19 @@ typedef std::function&lt; double(double, double)&gt;&#160;</td><td class="memIte
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aafa3f904dfa6258cd1f137b8a4dc3f3e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceVSynth_1_1Patches.html#a517e5c73d60a382ee22e247f71017d09">Patch</a>&#160;</td><td class="memItemRight" valign="bottom"><b>PIANO</b></td></tr>
+<tr class="memitem:aafa3f904dfa6258cd1f137b8a4dc3f3e"><td class="memItemLeft" align="right" valign="top"><a id="aafa3f904dfa6258cd1f137b8a4dc3f3e"></a>
+const <a class="el" href="namespaceVSynth_1_1Patches.html#a517e5c73d60a382ee22e247f71017d09">Patch</a>&#160;</td><td class="memItemRight" valign="bottom"><b>PIANO</b></td></tr>
 <tr class="separator:aafa3f904dfa6258cd1f137b8a4dc3f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2781038598103dcae15dffec74a8f808"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceVSynth_1_1Patches.html#a517e5c73d60a382ee22e247f71017d09">Patch</a>&#160;</td><td class="memItemRight" valign="bottom"><b>XYLOPHONE</b></td></tr>
+<tr class="memitem:a2781038598103dcae15dffec74a8f808"><td class="memItemLeft" align="right" valign="top"><a id="a2781038598103dcae15dffec74a8f808"></a>
+const <a class="el" href="namespaceVSynth_1_1Patches.html#a517e5c73d60a382ee22e247f71017d09">Patch</a>&#160;</td><td class="memItemRight" valign="bottom"><b>XYLOPHONE</b></td></tr>
 <tr class="separator:a2781038598103dcae15dffec74a8f808"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b5de3584aa12dec258c70d657a657a5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceVSynth_1_1Patches.html#a517e5c73d60a382ee22e247f71017d09">Patch</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ORGAN</b></td></tr>
+<tr class="memitem:a0b5de3584aa12dec258c70d657a657a5"><td class="memItemLeft" align="right" valign="top"><a id="a0b5de3584aa12dec258c70d657a657a5"></a>
+const <a class="el" href="namespaceVSynth_1_1Patches.html#a517e5c73d60a382ee22e247f71017d09">Patch</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ORGAN</b></td></tr>
 <tr class="separator:a0b5de3584aa12dec258c70d657a657a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A collection of different synth patches. </p>
-</div><h2 class="groupheader">Variable Documentation</h2>
-<a id="a0b5de3584aa12dec258c70d657a657a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b5de3584aa12dec258c70d657a657a5">&#9670;&nbsp;</a></span>ORGAN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="namespaceVSynth_1_1Patches.html#a517e5c73d60a382ee22e247f71017d09">Patch</a> VSynth::Patches::ORGAN</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keywordtype">double</span> freq, <span class="keywordtype">double</span> time) {</div>
-<div class="line">            <span class="keywordflow">return</span> 0.5 * (Waveforms::sine(freq, time) +</div>
-<div class="line">                          0.5 * Waveforms::sine(freq * 2, time) +</div>
-<div class="line">                          0.25 * Waveforms::sine(freq * 4, time) +</div>
-<div class="line">                          0.125 * Waveforms::sine(freq * 8, time) +</div>
-<div class="line">                          0.0625 * Waveforms::sine(freq * 16, time) +</div>
-<div class="line">                          0.03125 * Waveforms::sine(freq * 32, time) +</div>
-<div class="line">                          0.015625 * Waveforms::sine(freq * 64, time));</div>
-<div class="line">        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aafa3f904dfa6258cd1f137b8a4dc3f3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafa3f904dfa6258cd1f137b8a4dc3f3e">&#9670;&nbsp;</a></span>PIANO</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="namespaceVSynth_1_1Patches.html#a517e5c73d60a382ee22e247f71017d09">Patch</a> VSynth::Patches::PIANO</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keywordtype">double</span> freq, <span class="keywordtype">double</span> time) {</div>
-<div class="line">            <span class="keywordflow">return</span> 0.5 * (Waveforms::sine(freq, time) +</div>
-<div class="line">                          0.5 * Waveforms::sine(freq * 2, time) +</div>
-<div class="line">                          0.25 * Waveforms::sine(freq * 3, time) +</div>
-<div class="line">                          0.125 * Waveforms::sine(freq * 4, time) +</div>
-<div class="line">                          0.0625 * Waveforms::sine(freq * 5, time) +</div>
-<div class="line">                          0.03125 * Waveforms::sine(freq * 6, time) +</div>
-<div class="line">                          0.015625 * Waveforms::sine(freq * 7, time));</div>
-<div class="line">        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a2781038598103dcae15dffec74a8f808"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2781038598103dcae15dffec74a8f808">&#9670;&nbsp;</a></span>XYLOPHONE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="namespaceVSynth_1_1Patches.html#a517e5c73d60a382ee22e247f71017d09">Patch</a> VSynth::Patches::XYLOPHONE</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keywordtype">double</span> freq, <span class="keywordtype">double</span> time) {</div>
-<div class="line">            <span class="keywordflow">return</span> 0.5 * (Waveforms::triangle(freq, time) +</div>
-<div class="line">                          0.5 * Waveforms::triangle(freq, time) +</div>
-<div class="line">                          0.25 * Waveforms::triangle(freq, time) +</div>
-<div class="line">                          0.125 * Waveforms::triangle(freq, time) +</div>
-<div class="line">                          0.0625 * Waveforms::triangle(freq, time) +</div>
-<div class="line">                          0.03125 * Waveforms::triangle(freq, time) +</div>
-<div class="line">                          0.015625 * Waveforms::triangle(freq, time));</div>
-<div class="line">        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

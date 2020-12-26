@@ -1,0 +1,5 @@
+<map id="VSynth::MonophonicInstrument" name="VSynth::MonophonicInstrument">
+<area shape="rect" id="node1" title="Device capable of playing a single note at a time. A monophonic instrument is capable of playing only..." alt="" coords="5,155,209,181"/>
+<area shape="rect" id="node2" href="$classVSynth_1_1Instrument.html" title="Device capable of playing multiple notes with an ADSR envelope." alt="" coords="40,80,175,107"/>
+<area shape="rect" id="node3" href="$classVSynth_1_1SoundGenerator.html" title="Sound generator." alt="" coords="24,5,191,32"/>
+</map>

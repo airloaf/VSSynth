@@ -50,7 +50,7 @@ void setSequencerBeat(Sequencer &seq){
     seq.queueNote(Notes::E4, 4.00, 0.25);
     seq.queueNote(Notes::G4, 4.25, 0.25);
     seq.queueNote(Notes::G4, 4.50, 0.50);
-    seq.sortEvents();
+    seq.sortNotes();
 }
 
 int main(int argc, char *argv[])

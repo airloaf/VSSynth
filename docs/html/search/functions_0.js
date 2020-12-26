@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['addsoundgenerator_38',['addSoundGenerator',['../classVSynth_1_1Synthesizer.html#ac06c573c03814ec7b5f0f29561f709ca',1,'VSynth::Synthesizer']]]
+  ['addsoundgenerator_42',['addSoundGenerator',['../classVSynth_1_1Synthesizer.html#ac06c573c03814ec7b5f0f29561f709ca',1,'VSynth::Synthesizer']]]
 ];

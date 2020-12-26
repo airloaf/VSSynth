@@ -1,0 +1,6 @@
+<map id="VSynth::Instrument" name="VSynth::Instrument">
+<area shape="rect" id="node1" title="Device capable of playing multiple notes with an ADSR envelope." alt="" coords="152,80,287,107"/>
+<area shape="rect" id="node3" href="$classVSynth_1_1MonophonicInstrument.html" title="Device capable of playing a single note at a time. A monophonic instrument is capable of playing only..." alt="" coords="5,155,209,181"/>
+<area shape="rect" id="node4" href="$classVSynth_1_1PolyphonicInstrument.html" title="Device capable of playing notes simultaneously A polyphonic instrument is capable of playing multiple..." alt="" coords="233,155,432,181"/>
+<area shape="rect" id="node2" href="$classVSynth_1_1SoundGenerator.html" title="Sound generator." alt="" coords="136,5,303,32"/>
+</map>
