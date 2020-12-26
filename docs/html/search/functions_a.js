@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['triangle_50',['triangle',['../namespaceVSynth_1_1Waveforms.html#ad41f81a178b7c2ab75a316cf4b73294f',1,'VSynth::Waveforms']]]
+  ['triangle_53',['triangle',['../namespaceVSynth_1_1Waveforms.html#aa47fd0a3aa6a39457c0143d5bc9674a3',1,'VSynth::Waveforms']]]
 ];
