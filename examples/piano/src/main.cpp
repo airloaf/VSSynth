@@ -1,16 +1,15 @@
 #include <SDL2/SDL.h>
-#include <vector>
 
 #include <VSynth/Synthesizer.h>
 #include <VSynth/generators/MonophonicInstrument.h>
 #include <VSynth/generators/PolyphonicInstrument.h>
 #include <VSynth/utils/Envelope.h>
-#include <VSynth/utils/Waveforms.h>
 #include <VSynth/utils/Notes.h>
-
 #include <VSynth/utils/Patches.h>
+#include <VSynth/utils/Waveforms.h>
 
 #include <map>
+#include <vector>
 
 using namespace VSynth;
 
@@ -74,6 +73,7 @@ int main(int argc, char *argv[])
             }
             else
             {
+                // Check which keys are being pressed and play the appropriate note
                 for (auto it = pianoKeys.begin(); it != pianoKeys.end(); it++)
                 {
                     if (e.key.keysym.sym == it->key)
@@ -97,7 +97,8 @@ int main(int argc, char *argv[])
         }
     }
 
-    // Cleanup 
+    // Cleanup
+    synth.pause();
     synth.close();
     SDL_DestroyWindow(window);
     SDL_Quit();
