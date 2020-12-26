@@ -25,7 +25,7 @@ namespace VSynth
     {
     public:
         Synthesizer();
-        ~Synthesizer();
+        virtual ~Synthesizer();
 
         /**
          * @brief Creates the internal audio device

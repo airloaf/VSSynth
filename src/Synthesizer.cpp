@@ -33,8 +33,7 @@ namespace VSynth
     }
 
     Synthesizer::~Synthesizer()
-    {
-    }
+    {}
 
     void Synthesizer::addSoundGenerator(SoundGenerator *soundGenerator)
     {
