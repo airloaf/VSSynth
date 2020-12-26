@@ -4,17 +4,24 @@
 
 namespace VSynth
 {
+    /**
+     * @brief Collection of waveform primitives
+     * 
+     * This namespace encompasses many of the common waveforms an
+     * audio synthesizer would want to use.
+     * 
+     */
     namespace Waveforms
     {
 
         /**
-         * @brief Generates a 50% sine wave
+         * @brief Generates a 50% pulse wave
          * 
          * @param frequency
          * @param time 
          * @return double 
          */
-        double square(double frequency, double time);
+        const double square(double frequency, double time);
 
         /**
          * @brief Generates a sine wave
@@ -23,7 +30,7 @@ namespace VSynth
          * @param time 
          * @return double 
          */
-        double sine(double frequency, double time);
+        const double sine(double frequency, double time);
 
         /**
          * @brief Generates a sawtooth wave
@@ -32,7 +39,7 @@ namespace VSynth
          * @param time 
          * @return double 
          */
-        double sawtooth(double frequency, double time);
+        const double sawtooth(double frequency, double time);
 
         /**
          * @brief Generates a triangle wave
@@ -41,7 +48,7 @@ namespace VSynth
          * @param time 
          * @return double 
          */
-        double triangle(double frequency, double time);
+        const double triangle(double frequency, double time);
 
         /**
          * @brief Generates a waveform with a low frequency oscillator
@@ -53,7 +60,7 @@ namespace VSynth
          * @param time 
          * @return double 
          */
-        double modulatedWave(
+        const double modulatedWave(
             std::function<double(double, double)> wave,
             double frequency,
             double modulatorAmplitude,

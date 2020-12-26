@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['release_24',['release',['../classVSynth_1_1Envelope.html#a26c90903b8ac458b76407f2b5545ab54',1,'VSynth::Envelope']]]
+  ['pause_50',['pause',['../classVSynth_1_1Synthesizer.html#a56bb0e89b47f4fa18603e1fe1d39b79e',1,'VSynth::Synthesizer']]]
 ];

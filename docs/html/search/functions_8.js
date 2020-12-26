@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['unpause_25',['unpause',['../classVSynth_1_1Synthesizer.html#adf40f3db8fe52fdf582c7d4a2bec71a7',1,'VSynth::Synthesizer']]],
-  ['update_26',['update',['../classVSynth_1_1Envelope.html#aeb815fcefbb8502327ac8bce7fbe848e',1,'VSynth::Envelope']]]
+  ['queuenote_51',['queueNote',['../classVSynth_1_1Sequencer.html#a6bf0325ad956a4712d12fd0d7884c522',1,'VSynth::Sequencer']]]
 ];

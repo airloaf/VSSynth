@@ -5,28 +5,15 @@
 #include <functional>
 #include <vector>
 
+#include "SoundGenerator.h"
+
 namespace VSynth
 {
-
-    /**
-     * @brief Representation of a single instrument/voice
-     * 
-     * Each instrument is composed of:
-     * A waveform which takes in a time and returns a value from [-1, 1]
-     * An envelope to trigger the instrument
-     * Amplitude to combine with the waveform
-     */
-    struct Instrument
-    {
-        std::function<double(double)> wave;
-        VSynth::Envelope *envelope;
-        Sint16 amplitude;
-    };
 
     struct SynthData
     {
         double *time;
-        std::vector<Instrument> instruments;
+        std::vector<SoundGenerator *> soundGenerators;
     };
 
     /**
@@ -38,7 +25,7 @@ namespace VSynth
     {
     public:
         Synthesizer();
-        ~Synthesizer();
+        virtual ~Synthesizer();
 
         /**
          * @brief Creates the internal audio device
@@ -67,11 +54,11 @@ namespace VSynth
         void pause();
 
         /**
-         * @brief Add instrument to synthesizer
+         * @brief Adds a sound generator to the synthesizer
          * 
-         * @param instrument 
+         * @param soundGenerator 
          */
-        void addInstrument(const Instrument instrument);
+        void addSoundGenerator(SoundGenerator *soundGenerator);
 
     private:
         SDL_AudioDeviceID mDeviceID;

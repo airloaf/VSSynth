@@ -1,70 +1,65 @@
 #include <SDL2/SDL.h>
+
+#include <VSynth/Synthesizer.h>
+#include <VSynth/generators/MonophonicInstrument.h>
+#include <VSynth/generators/PolyphonicInstrument.h>
+#include <VSynth/utils/Envelope.h>
+#include <VSynth/utils/Notes.h>
+#include <VSynth/utils/Patches.h>
+#include <VSynth/utils/Waveforms.h>
+
+#include <map>
 #include <vector>
 
-#include <VSynth/Envelope.h>
-#include <VSynth/Synthesizer.h>
-#include <VSynth/Waveforms.h>
-
-#include <cmath>
-
 using namespace VSynth;
-
-ADSREnvelope pianoADSR(0.90f, 0.60f, 0.20f, 0.20f, 0.50f);
 
 struct PianoKey
 {
     char key;
     double frequency;
-    Envelope env;
 };
 
 std::vector<PianoKey> pianoKeys = {
-    {SDLK_a, 262, Envelope(pianoADSR)},
-    {SDLK_s, 294, Envelope(pianoADSR)},
-    {SDLK_d, 330, Envelope(pianoADSR)},
-    {SDLK_f, 350, Envelope(pianoADSR)},
-    {SDLK_g, 392, Envelope(pianoADSR)},
-    {SDLK_h, 440, Envelope(pianoADSR)},
-    {SDLK_j, 494, Envelope(pianoADSR)},
-    {SDLK_k, 523, Envelope(pianoADSR)}
-};
-
-void createInstruments(Synthesizer &synth)
-{
-
-    std::function<double(double)> wave =
-    std::bind(
-        Waveforms::sine,
-        5,
-        std::placeholders::_1);
-
-    for (auto it = pianoKeys.begin(); it != pianoKeys.end(); it++)
-    {
-        Instrument instrument;
-        instrument.amplitude = 6000;
-        instrument.envelope = &it->env;
-        instrument.wave = std::bind(
-            Waveforms::modulatedWave,
-            Waveforms::triangle,
-            it->frequency,
-            0.01,
-            wave,
-            std::placeholders::_1);
-        synth.addInstrument(instrument);
-    }
-}
+    {SDLK_a, Notes::C4},
+    {SDLK_w, Notes::Cs4},
+    {SDLK_s, Notes::D4},
+    {SDLK_e, Notes::Ds4},
+    {SDLK_d, Notes::E4},
+    {SDLK_f, Notes::F4},
+    {SDLK_t, Notes::Fs4},
+    {SDLK_g, Notes::G4},
+    {SDLK_y, Notes::Gs4},
+    {SDLK_h, Notes::A4},
+    {SDLK_u, Notes::As4},
+    {SDLK_j, Notes::B4},
+    {SDLK_k, Notes::C5},
+    {SDLK_l, Notes::D5},
+    {SDLK_SEMICOLON, Notes::E5}};
 
 int main(int argc, char *argv[])
 {
+    // SDL initialization
     SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO);
 
+    // Create SDL Window to grab keyboard input
     SDL_Window *window;
-    window = SDL_CreateWindow("SDL_Test_Windows", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
+    window = SDL_CreateWindow("Piano Example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
 
+    // Create an instrument with the following envelope and patch
+    ADSREnvelope pianoEnvelope(0.90f, 0.60f, 0.20f, 0.20f, 0.50f);
+    Instrument *piano = new PolyphonicInstrument(
+        Patches::PIANO,
+        pianoEnvelope);
+
+    // Creating a synthesizer
     Synthesizer synth;
     synth.open();
-    createInstruments(synth);
+    synth.addSoundGenerator(piano);
     synth.unpause();
+
+    // Keep track of pressed keys, this is important since the
+    // SDL_KEYDOWN event will keep emitting as long as the key is held
+    std::map<char, bool> pressedKeys;
 
     bool running = true;
     while (running)
@@ -78,17 +73,23 @@ int main(int argc, char *argv[])
             }
             else
             {
+                // Check which keys are being pressed and play the appropriate note
                 for (auto it = pianoKeys.begin(); it != pianoKeys.end(); it++)
                 {
                     if (e.key.keysym.sym == it->key)
                     {
                         if (e.type == SDL_KEYDOWN)
                         {
-                            it->env.hold();
+                            if (!pressedKeys[it->key])
+                            {
+                                piano->holdNote(it->frequency);
+                                pressedKeys[it->key] = true;
+                            }
                         }
                         else if (e.type == SDL_KEYUP)
                         {
-                            it->env.release();
+                            pressedKeys[it->key] = false;
+                            piano->releaseNote(it->frequency);
                         }
                     }
                 }
@@ -96,8 +97,9 @@ int main(int argc, char *argv[])
         }
     }
 
+    // Cleanup
+    synth.pause();
     synth.close();
-
     SDL_DestroyWindow(window);
     SDL_Quit();
 

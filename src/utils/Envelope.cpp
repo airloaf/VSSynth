@@ -1,10 +1,11 @@
-#include <VSynth/Envelope.h>
+#include <VSynth/utils/Envelope.h>
 
 #include <algorithm>
 
 namespace VSynth
 {
-    Envelope::Envelope(const ADSREnvelope adsr) : mHold(false), mActive(false), mADSR(adsr)
+    Envelope::Envelope(const ADSREnvelope adsr)
+    : mHold(false), mActive(false), mADSR(adsr)
     {
     }
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['open_22',['open',['../classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec',1,'VSynth::Synthesizer']]]
+  ['modulatedwave_48',['modulatedWave',['../namespaceVSynth_1_1Waveforms.html#ab39960a6c231817ad54097546ce788b4',1,'VSynth::Waveforms']]]
 ];

@@ -24,7 +24,7 @@
    <div id="projectname">VSynth
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">C++ Audio Synthesizer</div>
+   <div id="projectbrief">C++ Audio Synthesizer using SDL 2</div>
   </td>
  </tr>
  </tbody>
@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_275d33c551e9d3c8e9a219fd3aed934e.html">VSynth</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_275d33c551e9d3c8e9a219fd3aed934e.html">VSynth</a></li><li class="navelem"><a class="el" href="dir_f35553fbdc64b699a6cdd35330c324be.html">utils</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -77,27 +77,32 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>VSynth</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">namespace </span>Waveforms</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">double</span> square(<span class="keywordtype">double</span> frequency, <span class="keywordtype">double</span> time);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">double</span> sine(<span class="keywordtype">double</span> frequency, <span class="keywordtype">double</span> time);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">double</span> sawtooth(<span class="keywordtype">double</span> frequency, <span class="keywordtype">double</span> time);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">double</span> triangle(<span class="keywordtype">double</span> frequency, <span class="keywordtype">double</span> time);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">double</span> modulatedWave(</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            std::function&lt;<span class="keywordtype">double</span>(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>)&gt; wave,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordtype">double</span> frequency,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordtype">double</span> modulatorAmplitude,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            std::function&lt;<span class="keywordtype">double</span>(<span class="keywordtype">double</span>)&gt; freqOsc,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordtype">double</span> time);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }; <span class="comment">// namespace Waveforms</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};     <span class="comment">// namespace VSynth</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespaceVSynth_1_1Waveforms.html">   14</a></span>&#160;    <span class="keyword">namespace </span>Waveforms</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceVSynth_1_1Waveforms.html#ae41261225654aae72693dbe07aabf3bd">   24</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="namespaceVSynth_1_1Waveforms.html#ae41261225654aae72693dbe07aabf3bd">square</a>(<span class="keywordtype">double</span> frequency, <span class="keywordtype">double</span> time);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="namespaceVSynth_1_1Waveforms.html#a9386af7f189e0671673361f650b4f895">   33</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="namespaceVSynth_1_1Waveforms.html#a9386af7f189e0671673361f650b4f895">sine</a>(<span class="keywordtype">double</span> frequency, <span class="keywordtype">double</span> time);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="namespaceVSynth_1_1Waveforms.html#a3886f521488dff667ecbccec766cdb84">   42</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="namespaceVSynth_1_1Waveforms.html#a3886f521488dff667ecbccec766cdb84">sawtooth</a>(<span class="keywordtype">double</span> frequency, <span class="keywordtype">double</span> time);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="namespaceVSynth_1_1Waveforms.html#aa47fd0a3aa6a39457c0143d5bc9674a3">   51</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="namespaceVSynth_1_1Waveforms.html#aa47fd0a3aa6a39457c0143d5bc9674a3">triangle</a>(<span class="keywordtype">double</span> frequency, <span class="keywordtype">double</span> time);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="namespaceVSynth_1_1Waveforms.html#ab39960a6c231817ad54097546ce788b4">   63</a></span>&#160;        <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="namespaceVSynth_1_1Waveforms.html#ab39960a6c231817ad54097546ce788b4">modulatedWave</a>(</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            std::function&lt;<span class="keywordtype">double</span>(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>)&gt; wave,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordtype">double</span> frequency,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordtype">double</span> modulatorAmplitude,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            std::function&lt;<span class="keywordtype">double</span>(<span class="keywordtype">double</span>)&gt; freqOsc,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordtype">double</span> time);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }; <span class="comment">// namespace Waveforms</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};     <span class="comment">// namespace VSynth</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceVSynth_1_1Waveforms_html_a3886f521488dff667ecbccec766cdb84"><div class="ttname"><a href="namespaceVSynth_1_1Waveforms.html#a3886f521488dff667ecbccec766cdb84">VSynth::Waveforms::sawtooth</a></div><div class="ttdeci">const double sawtooth(double frequency, double time)</div><div class="ttdoc">Generates a sawtooth wave.</div></div>
+<div class="ttc" id="anamespaceVSynth_1_1Waveforms_html_a9386af7f189e0671673361f650b4f895"><div class="ttname"><a href="namespaceVSynth_1_1Waveforms.html#a9386af7f189e0671673361f650b4f895">VSynth::Waveforms::sine</a></div><div class="ttdeci">const double sine(double frequency, double time)</div><div class="ttdoc">Generates a sine wave.</div></div>
+<div class="ttc" id="anamespaceVSynth_1_1Waveforms_html_ae41261225654aae72693dbe07aabf3bd"><div class="ttname"><a href="namespaceVSynth_1_1Waveforms.html#ae41261225654aae72693dbe07aabf3bd">VSynth::Waveforms::square</a></div><div class="ttdeci">const double square(double frequency, double time)</div><div class="ttdoc">Generates a 50% pulse wave.</div></div>
+<div class="ttc" id="anamespaceVSynth_1_1Waveforms_html_aa47fd0a3aa6a39457c0143d5bc9674a3"><div class="ttname"><a href="namespaceVSynth_1_1Waveforms.html#aa47fd0a3aa6a39457c0143d5bc9674a3">VSynth::Waveforms::triangle</a></div><div class="ttdeci">const double triangle(double frequency, double time)</div><div class="ttdoc">Generates a triangle wave.</div></div>
+<div class="ttc" id="anamespaceVSynth_1_1Waveforms_html_ab39960a6c231817ad54097546ce788b4"><div class="ttname"><a href="namespaceVSynth_1_1Waveforms.html#ab39960a6c231817ad54097546ce788b4">VSynth::Waveforms::modulatedWave</a></div><div class="ttdeci">const double modulatedWave(std::function&lt; double(double, double)&gt; wave, double frequency, double modulatorAmplitude, std::function&lt; double(double)&gt; freqOsc, double time)</div><div class="ttdoc">Generates a waveform with a low frequency oscillator.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

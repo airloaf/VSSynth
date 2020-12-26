@@ -17,3 +17,4 @@ An example piano application is provided. The piano application uses the home-ro
 - [SDL Audio Buffer tutorial](https://ericscrivner.me/2017/10/getting-circular-sdl-audio/)
 - [Example Tone Generator](https://www.szynalski.com/tone-generator/)
 - [javidx9/OneLoneCoder Synthesizer series](https://youtu.be/tgamhuQnOkM)
+- [Note/frequency table](https://pages.mtu.edu/~suits/notefreqs.html)
