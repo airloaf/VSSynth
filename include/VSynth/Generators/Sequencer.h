@@ -7,17 +7,6 @@
 namespace VSynth
 {
 
-    /**
-     * @brief Note events for the sequencer
-     * 
-     * A note event consists of a note and a boolean representing
-     * if the note is to be held or released.
-     */
-    struct NoteEvent
-    {
-        double note;
-        bool hold;
-    };
 
     /**
      * @brief Note Sequencer for Instruments
@@ -33,10 +22,36 @@ namespace VSynth
 
         double sample(double time);
 
-        void addNoteEvent(NoteEvent event, double time);
-        void sortEvents();
+        /**
+         * @brief Queue a note to be played
+         * 
+         * @param note The note to play (Frequency in Hertz)
+         * @param startTime Time to start the note (Seconds)
+         * @param duration How long to hold the note (Seconds)
+         */
+        void queueNote(double note, double startTime, double duration);
+
+        /**
+         * @brief Sort all notes by their queued times
+         *
+         * You should call this function after you have finished
+         * calling queueNote(). You only need to call it once, after all
+         * other calls to queueNote().
+         * 
+         * This is important if you have queued notes out of order.
+         * This includes notes that have a duration that lasts after the
+         * next queued note begins.
+         * 
+         */
+        void sortNotes();
 
     private:
+        struct NoteEvent
+        {
+            double note;
+            bool hold;
+        };
+
         Instrument *mInstrument;
         double mTime;
         double mPrev;

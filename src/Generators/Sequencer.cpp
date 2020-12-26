@@ -43,14 +43,14 @@ namespace VSynth
         return mInstrument->sample(time);
     }
 
-    void Sequencer::addNoteEvent(NoteEvent event, double time)
+    void Sequencer::queueNote(double note, double startTime, double duration)
     {
-        mEvents.push_back({event, time});
-        // Reset the event iterator
+        mEvents.push_back({{note, true}, startTime});
+        mEvents.push_back({{note, false}, startTime + duration});
         mEventIt = mEvents.begin();
     }
 
-    void Sequencer::sortEvents()
+    void Sequencer::sortNotes()
     {
         std::sort(
             mEvents.begin(),
@@ -58,6 +58,8 @@ namespace VSynth
             [](const auto &rhs, const auto &lhs) {
                 return rhs.second < lhs.second;
             });
+
+        mEventIt = mEvents.begin();
     }
 
 }; // namespace VSynth

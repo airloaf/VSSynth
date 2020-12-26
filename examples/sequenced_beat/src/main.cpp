@@ -37,14 +37,20 @@ std::vector<PianoKey> pianoKeys = {
     {SDLK_SEMICOLON, Notes::E5}};
 
 void setSequencerBeat(Sequencer &seq){
-    seq.addNoteEvent({Notes::A4, true}, 1.0);
-    seq.addNoteEvent({Notes::A4, false}, 2.0);
-    seq.addNoteEvent({Notes::As4, true}, 2.0);
-    seq.addNoteEvent({Notes::As4, false}, 3.0);
-    seq.addNoteEvent({Notes::B4, true}, 3.0);
-    seq.addNoteEvent({Notes::B4, false}, 4.0);
-    seq.addNoteEvent({Notes::E5, true}, 4.0);
-    seq.addNoteEvent({Notes::E5, false}, 5.0);
+    seq.queueNote(Notes::E4, 1.00, 0.25);
+    seq.queueNote(Notes::D4, 1.25, 0.25);
+    seq.queueNote(Notes::C4, 1.50, 0.25);
+    seq.queueNote(Notes::D4, 1.75, 0.25);
+    seq.queueNote(Notes::E4, 2.00, 0.25);
+    seq.queueNote(Notes::E4, 2.25, 0.25);
+    seq.queueNote(Notes::E4, 2.50, 0.50);
+    seq.queueNote(Notes::D4, 3.00, 0.25);
+    seq.queueNote(Notes::D4, 3.25, 0.25);
+    seq.queueNote(Notes::D4, 3.50, 0.50);
+    seq.queueNote(Notes::E4, 4.00, 0.25);
+    seq.queueNote(Notes::G4, 4.25, 0.25);
+    seq.queueNote(Notes::G4, 4.50, 0.50);
+    seq.sortEvents();
 }
 
 int main(int argc, char *argv[])
