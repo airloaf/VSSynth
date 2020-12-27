@@ -84,11 +84,19 @@ namespace VSynth
         void release();
 
     private:
-        ADSREnvelope mADSR;
-        double mTime;
-        double mReleaseStart;
 
+        // Different curves of the ADSR + an invalid section to represent no sound
+        enum Curves {
+            ATTACK,
+            DECAY,
+            SUSTAIN,
+            RELEASE,
+            INACTIVE
+        } mCurrentCurve;
+
+        ADSREnvelope mADSR;
+        
         bool mHold;
-        bool mActive;
+        double mAmplitude;
     };
 }; // namespace VSynth

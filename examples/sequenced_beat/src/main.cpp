@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
     window = SDL_CreateWindow("Piano Example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
 
     // Create an instrument with the following envelope and patch
-    ADSREnvelope pianoEnvelope(0.90f, 0.60f, 0.20f, 0.20f, 0.50f);
+    ADSREnvelope pianoEnvelope(0.90f, 0.30f, 0.10f, 0.10f, 0.50f);
     Instrument *piano = new PolyphonicInstrument(
         Patches::PIANO,
         pianoEnvelope);
