@@ -1,4 +1,5 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 #include <VSynth/Synthesizer.h>
 #include <VSynth/generators/MonophonicInstrument.h>
@@ -19,6 +20,7 @@ struct PianoKey
     double frequency;
 };
 
+// Keyboard to Piano Notes
 std::vector<PianoKey> pianoKeys = {
     {SDLK_a, Notes::C4},
     {SDLK_w, Notes::Cs4},
@@ -33,17 +35,27 @@ std::vector<PianoKey> pianoKeys = {
     {SDLK_u, Notes::As4},
     {SDLK_j, Notes::B4},
     {SDLK_k, Notes::C5},
+    {SDLK_o, Notes::Cs5},
     {SDLK_l, Notes::D5},
+    {SDLK_p, Notes::Ds5},
     {SDLK_SEMICOLON, Notes::E5}};
 
 int main(int argc, char *argv[])
 {
     // SDL initialization
     SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO);
+    IMG_Init(IMG_INIT_PNG);
 
     // Create SDL Window to grab keyboard input
     SDL_Window *window;
     window = SDL_CreateWindow("Piano Example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
+    SDL_Surface *windowSurface = SDL_GetWindowSurface(window);
+
+    // Render Keybindings to screen
+    SDL_Surface *keyBindImage = IMG_Load("assets/KeyMap.png");
+    SDL_BlitSurface(keyBindImage, nullptr, windowSurface, nullptr);
+    SDL_UpdateWindowSurface(window);
+
 
     // Create an instrument with the following envelope and patch
     ADSREnvelope pianoEnvelope(1.00f, 0.30f, 0.10f, 0.10f, 0.50f);
@@ -100,7 +112,10 @@ int main(int argc, char *argv[])
     // Cleanup
     synth.pause();
     synth.close();
+
+    SDL_FreeSurface(keyBindImage);
     SDL_DestroyWindow(window);
+    IMG_Quit();
     SDL_Quit();
 
     return 0;

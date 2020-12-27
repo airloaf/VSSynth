@@ -25,6 +25,7 @@ target_link_libraries(VSynth PUBLIC SDL2main)
 file(GLOB_RECURSE PIANO_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/piano/src/*.cpp)
 add_executable(Piano ${PIANO_SRCS})
 target_link_libraries(Piano VSynth)
+target_link_libraries(Piano SDL2_image)
 
 target_include_directories(Piano PUBLIC include)
 
@@ -32,6 +33,7 @@ target_include_directories(Piano PUBLIC include)
 file(GLOB_RECURSE SEQ_BEAT_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/sequenced_beat/src/*.cpp)
 add_executable(SeqBeat ${SEQ_BEAT_SRCS})
 target_link_libraries(SeqBeat VSynth)
+target_link_libraries(SeqBeat SDL2_image)
 
 target_include_directories(SeqBeat PUBLIC include)
 
