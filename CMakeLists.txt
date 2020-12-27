@@ -35,19 +35,6 @@ target_link_libraries(SeqBeat VSynth)
 
 target_include_directories(SeqBeat PUBLIC include)
 
-# Midi Example
-file(GLOB_RECURSE MIDI_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/midi/src/*.cpp)
-add_executable(MIDI ${MIDI_SRCS})
-target_link_libraries(MIDI PUBLIC VSynth)
-target_link_libraries(MIDI PUBLIC midifile)
-
-target_include_directories(MIDI PUBLIC include)
-
-# Set include and link directories
-target_include_directories(MIDI PUBLIC ${INCLUDE_DIR})
-target_link_directories(MIDI PUBLIC ${LIB_DIR})
-
-
 # Doxygen Docs
 # Look for package, Doxygen
 find_package(Doxygen)
