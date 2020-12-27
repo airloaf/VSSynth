@@ -19,7 +19,7 @@ namespace VSynth
             *(synthData->time) += sampleDeltaTime;
             for (auto it = synthData->soundGenerators.begin(); it != synthData->soundGenerators.end(); ++it)
             {
-                sampleValue += (*it)->sample(*(synthData->time)) * 6000.0;
+                sampleValue += (*it)->sample(*(synthData->time)) * (*it)->getAmplitude();
             }
 
             *sampleBuffer++ = sampleValue; // Left channel value

@@ -1,7 +1,5 @@
 #include <VSynth/utils/Envelope.h>
 
-#include <algorithm>
-
 namespace VSynth
 {
     Envelope::Envelope(const ADSREnvelope adsr)
