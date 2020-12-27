@@ -7,8 +7,9 @@ namespace VSynth
 
     Sequencer::Sequencer(Instrument *instrument)
         : mInstrument(instrument),
-          mPrev(0),
-          mTime(0)
+          mStartTime(0),
+          mCurTime(0),
+          mLoop(false)
     {
     }
 
@@ -18,26 +19,31 @@ namespace VSynth
 
     double Sequencer::sample(double time)
     {
+        mCurTime = time;
 
-        double delta = time - mPrev;
-        mPrev = time;
-
-        mTime += delta;
-        if (mEventIt != mEvents.end())
+        // Play all notes ready to be enqueued
+        while (
+            mEventIt != mEvents.end() &&
+            (mEventIt->second < (mCurTime - mStartTime)))
         {
-            if (mEventIt->second < mTime)
+            NoteEvent ev = mEventIt->first;
+            if (ev.hold)
             {
-                NoteEvent ev = mEventIt->first;
-                if (ev.hold)
-                {
-                    mInstrument->holdNote(ev.note);
-                }
-                else
-                {
-                    mInstrument->releaseNote(ev.note);
-                }
-                mEventIt++;
+                mInstrument->holdNote(ev.note);
             }
+            else
+            {
+                mInstrument->releaseNote(ev.note);
+            }
+            mEventIt++;
+        }
+
+        // Loop if needed
+        if (mEventIt == mEvents.end() && mLoop)
+        {
+            mEventIt = mEvents.begin();
+            mStartTime = time;
+            mCurTime = time;
         }
 
         return mInstrument->sample(time);
@@ -60,6 +66,11 @@ namespace VSynth
             });
 
         mEventIt = mEvents.begin();
+    }
+
+    void Sequencer::setLooping(bool loop)
+    {
+        mLoop = loop;
     }
 
 }; // namespace VSynth

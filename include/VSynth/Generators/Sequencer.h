@@ -45,6 +45,12 @@ namespace VSynth
          */
         void sortNotes();
 
+        /**
+         * @brief Set the sequencer to loop at end of note sequence
+         * @param loop 
+         */
+        void setLooping(bool loop);
+
     private:
         struct NoteEvent
         {
@@ -53,8 +59,11 @@ namespace VSynth
         };
 
         Instrument *mInstrument;
-        double mTime;
-        double mPrev;
+
+        double mStartTime;
+        double mCurTime;
+
+        bool mLoop;
 
         std::vector<std::pair<NoteEvent, double>> mEvents;
         std::vector<std::pair<NoteEvent, double>>::iterator mEventIt;
