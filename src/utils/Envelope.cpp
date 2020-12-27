@@ -5,7 +5,7 @@
 namespace VSynth
 {
     Envelope::Envelope(const ADSREnvelope adsr)
-    : mHold(false), mActive(false), mADSR(adsr)
+        : mHold(false), mActive(false), mADSR(adsr)
     {
     }
 
@@ -53,7 +53,13 @@ namespace VSynth
         {
             mTime += deltaTime;
             if (mReleaseStart != 0)
-            { // Check if the release section of the ADSR curve is done
+            {
+
+                if(!mADSR.sustainable && mTime >= mReleaseStart){
+                    mHold = false;
+                }
+
+                // Check if the release section of the ADSR curve is done
                 if (mTime > (mReleaseStart + mADSR.releaseTime))
                 {
                     mActive = false;
