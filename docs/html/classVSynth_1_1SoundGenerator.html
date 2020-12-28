@@ -69,6 +69,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classVSynth_1_1SoundGenerator-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">VSynth::SoundGenerator Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -97,13 +98,96 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5991bc46057fc03fe42b695d42d08428"><td class="memItemLeft" align="right" valign="top"><a id="a5991bc46057fc03fe42b695d42d08428"></a>
 virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>sample</b> (double time)=0</td></tr>
 <tr class="separator:a5991bc46057fc03fe42b695d42d08428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35f376e137010e541adc8e6a36247258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1SoundGenerator.html#a35f376e137010e541adc8e6a36247258">setVolume</a> (double percent)</td></tr>
+<tr class="memdesc:a35f376e137010e541adc8e6a36247258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the volume at a certain percent.  <a href="classVSynth_1_1SoundGenerator.html#a35f376e137010e541adc8e6a36247258">More...</a><br /></td></tr>
+<tr class="separator:a35f376e137010e541adc8e6a36247258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56b1d543b7cb8d56fb0e48118981ea10"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1SoundGenerator.html#a56b1d543b7cb8d56fb0e48118981ea10">getVolume</a> ()</td></tr>
+<tr class="memdesc:a56b1d543b7cb8d56fb0e48118981ea10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current volume as a percent [0, 100].  <a href="classVSynth_1_1SoundGenerator.html#a56b1d543b7cb8d56fb0e48118981ea10">More...</a><br /></td></tr>
+<tr class="separator:a56b1d543b7cb8d56fb0e48118981ea10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bbad7e35d93abb2618b139c83fc4018"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1SoundGenerator.html#a7bbad7e35d93abb2618b139c83fc4018">getAmplitude</a> ()</td></tr>
+<tr class="memdesc:a7bbad7e35d93abb2618b139c83fc4018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amplitude for synthesizer.  <a href="classVSynth_1_1SoundGenerator.html#a7bbad7e35d93abb2618b139c83fc4018">More...</a><br /></td></tr>
+<tr class="separator:a7bbad7e35d93abb2618b139c83fc4018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a6adcd34e842e5272e970d3a87d15f4af"><td class="memItemLeft" align="right" valign="top"><a id="a6adcd34e842e5272e970d3a87d15f4af"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>mAmplitude</b></td></tr>
+<tr class="separator:a6adcd34e842e5272e970d3a87d15f4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Sound generator. </p>
 <p>Interface for creating sound generating devices </p>
 
 <p class="definition">Definition at line <a class="el" href="SoundGenerator_8h_source.html#l00011">11</a> of file <a class="el" href="SoundGenerator_8h_source.html">SoundGenerator.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7bbad7e35d93abb2618b139c83fc4018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bbad7e35d93abb2618b139c83fc4018">&#9670;&nbsp;</a></span>getAmplitude()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double VSynth::SoundGenerator::getAmplitude </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Amplitude for synthesizer. </p>
+<p>Sound generators, when sampled, return a value in [-1.0, 1.0]. This value will be multiplied by the amplitude returned by this function. The amplitude will be a value such that it can fit in a 16-bit signed integer.</p>
+<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+
+</div>
+</div>
+<a id="a56b1d543b7cb8d56fb0e48118981ea10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56b1d543b7cb8d56fb0e48118981ea10">&#9670;&nbsp;</a></span>getVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double VSynth::SoundGenerator::getVolume </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the current volume as a percent [0, 100]. </p>
+<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+
+</div>
+</div>
+<a id="a35f376e137010e541adc8e6a36247258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35f376e137010e541adc8e6a36247258">&#9670;&nbsp;</a></span>setVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VSynth::SoundGenerator::setVolume </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>percent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the volume at a certain percent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">percent</td><td>- volume as a percent in range [0,100] </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="SoundGenerator_8h_source.html">SoundGenerator.h</a></li>
 </ul>
 </div><!-- contents -->

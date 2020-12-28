@@ -82,6 +82,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:aa8a33f816c3cf5b5c18aa0fc39458901"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Synthesizer.html#aa8a33f816c3cf5b5c18aa0fc39458901">Synthesizer</a> (unsigned int samplingRates=24000, unsigned int numFrames=20)</td></tr>
+<tr class="memdesc:aa8a33f816c3cf5b5c18aa0fc39458901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a> object.  <a href="classVSynth_1_1Synthesizer.html#aa8a33f816c3cf5b5c18aa0fc39458901">More...</a><br /></td></tr>
+<tr class="separator:aa8a33f816c3cf5b5c18aa0fc39458901"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a983a672d0bcb0f0f126b1ee05ecd16ec"><td class="memItemLeft" align="right" valign="top"><a id="a983a672d0bcb0f0f126b1ee05ecd16ec"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec">open</a> ()</td></tr>
 <tr class="memdesc:a983a672d0bcb0f0f126b1ee05ecd16ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the internal audio device. <br /></td></tr>
@@ -104,8 +107,46 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="textblock"><p>Entrypoint and interface for audio synthesis. </p>
 <p>Creates a software synthesizer. The synthesizer can be manipulated by adding instruments. </p>
 
-<p class="definition">Definition at line <a class="el" href="Synthesizer_8h_source.html#l00024">24</a> of file <a class="el" href="Synthesizer_8h_source.html">Synthesizer.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="Synthesizer_8h_source.html#l00025">25</a> of file <a class="el" href="Synthesizer_8h_source.html">Synthesizer.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa8a33f816c3cf5b5c18aa0fc39458901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8a33f816c3cf5b5c18aa0fc39458901">&#9670;&nbsp;</a></span>Synthesizer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VSynth::Synthesizer::Synthesizer </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>samplingRates</em> = <code>24000</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>numFrames</em> = <code>20</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">samplingRates</td><td>- Sampling rate (# of samples per second). 48,000 is a common number, but higher values are computationally intensive </td></tr>
+    <tr><td class="paramname">numFrames</td><td>- Number of sampling frames. A sampling frame is an instance where sound generators are sampled. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac06c573c03814ec7b5f0f29561f709ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac06c573c03814ec7b5f0f29561f709ca">&#9670;&nbsp;</a></span>addSoundGenerator()</h2>
 

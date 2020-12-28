@@ -1,5 +1,10 @@
 # Piano
-Plays notes between C4 - C5 with the home-row keys. Each key uses a low frequency oscillator.
+
+Plays the notes C4 -> E5, including the sharp and flat notes in between.
 
 ## Usage
-The piano application uses the home-row keys (A -> K) to play notes C4 - C5.
+
+The Homerow keys [A -> ;] correspond to C4 -> E5.
+
+Sharp and flat notes are on the QWERTY row.
+Keys {W, E, T, Y, U} correspond to {C#4, D#4, F#4, G#4, A#4} respectively.

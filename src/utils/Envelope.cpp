@@ -1,11 +1,9 @@
 #include <VSynth/utils/Envelope.h>
 
-#include <algorithm>
-
 namespace VSynth
 {
     Envelope::Envelope(const ADSREnvelope adsr)
-    : mHold(false), mActive(false), mADSR(adsr)
+        : mHold(false), mADSR(adsr), mAmplitude(0)
     {
     }
 
@@ -13,77 +11,59 @@ namespace VSynth
     {
     }
 
-    double linearInterpolate(double start, double end, double length, double offset)
-    {
-        return ((offset / length) * (end - start)) + start;
-    }
-
     double Envelope::getAmplitude() const
     {
-        double amplitude = 0;
-        if (mActive)
-        {
-            if (mHold)
-            {
-                if (mTime < mADSR.attackTime)
-                {
-                    amplitude = linearInterpolate(0, mADSR.attack, mADSR.attackTime, mTime);
-                }
-                else if (mTime < (mADSR.decayTime + mADSR.attackTime))
-                {
-                    amplitude = linearInterpolate(mADSR.attack, mADSR.sustain, mADSR.decayTime, mTime - mADSR.attackTime);
-                }
-                else
-                {
-                    amplitude = mADSR.sustain;
-                }
-            }
-            else
-            {
-                amplitude = linearInterpolate(mADSR.sustain, 0, mADSR.releaseTime, mTime - mReleaseStart);
-            }
-        }
-
-        return std::max(amplitude, 0.0); // Check in case amplitude goes negative
+        return mAmplitude;
     }
 
     void Envelope::update(double deltaTime)
     {
-        if (mActive)
-        {
-            mTime += deltaTime;
-            if (mReleaseStart != 0)
-            { // Check if the release section of the ADSR curve is done
-                if (mTime > (mReleaseStart + mADSR.releaseTime))
-                {
-                    mActive = false;
+
+        double attackSlope = (mADSR.attack / mADSR.attackTime);
+        double decaySlope = ((mADSR.attack - mADSR.sustain) / mADSR.decayTime);
+        double releaseSlope = (mADSR.sustain / mADSR.releaseTime);
+
+        switch(mCurrentCurve){
+            case Curves::ATTACK:
+                mAmplitude += (attackSlope * deltaTime);
+                if(mAmplitude >= mADSR.attack){
+                    mAmplitude = mADSR.attack;
+                    mCurrentCurve = Curves::DECAY;
                 }
-            }
+            break;
+            case Curves::DECAY:
+                mAmplitude -= (decaySlope * deltaTime);
+                if(mAmplitude <= mADSR.sustain){
+                    mAmplitude = mADSR.sustain;
+                    
+                    mCurrentCurve = mADSR.sustainable?
+                        Curves::SUSTAIN: Curves::RELEASE;
+                }
+            break;
+            case Curves::SUSTAIN:
+                if(!mHold){
+                    mCurrentCurve = Curves::RELEASE;
+                }
+            break;
+            case Curves::RELEASE:
+                mAmplitude -= (releaseSlope * deltaTime);
+                if(mAmplitude <= 0){
+                    mAmplitude = 0;
+                    mCurrentCurve = Curves::INACTIVE;
+                }
+            break;
         }
     }
 
     void Envelope::hold()
     {
-        if (!mHold)
-        {
-            mActive = true;
-            mHold = true;
-            mTime = 0;
-            if (mADSR.sustainable)
-            {
-                mReleaseStart = 0;
-            }
-            else
-            {
-                mReleaseStart = mADSR.attackTime + mADSR.decayTime;
-            }
-        }
+        mHold = true;
+        mCurrentCurve = Curves::ATTACK;
     }
 
     void Envelope::release()
     {
         mHold = false;
-        mReleaseStart = mTime;
     }
 
 }; // namespace VSynth
