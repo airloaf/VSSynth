@@ -1,16 +1,14 @@
 #include <VSynth/Synthesizer.h>
 
-#define SAMPLING_RATE 48000
-
 namespace VSynth
 {
-    const double sampleDeltaTime = 1.0f / (double)SAMPLING_RATE;
-
     void fillBuffer(void *userData, Uint8 *buffer, int length)
     {
         Sint16 *sampleBuffer = (Sint16 *)buffer;
         SynthData *synthData = (SynthData *)userData;
+        double sampleDeltaTime = synthData->sampleDeltaTime;
 
+        // Write samples to audio buffer
         int numToWrite = length / (sizeof(Sint16) * 2);
         for (int sample = 0; sample < numToWrite; sample++)
         {
@@ -27,13 +25,16 @@ namespace VSynth
         }
     }
 
-    Synthesizer::Synthesizer()
+    Synthesizer::Synthesizer(unsigned int samplingRate, unsigned int numFrames)
+        : mSamplingRate(samplingRate), mNumFrames(numFrames)
     {
+        mSynthData.sampleDeltaTime = 1.0 / (double)mSamplingRate;
         mSynthData.time = &mTime;
     }
 
     Synthesizer::~Synthesizer()
-    {}
+    {
+    }
 
     void Synthesizer::addSoundGenerator(SoundGenerator *soundGenerator)
     {
@@ -46,10 +47,10 @@ namespace VSynth
 
         SDL_AudioSpec obtained = {};
         SDL_AudioSpec requested = {};
-        requested.channels = 2;
-        requested.samples = 4096;
+        requested.freq = mSamplingRate;
+        requested.samples = mSamplingRate / mNumFrames;
         requested.format = AUDIO_S16;
-        requested.freq = SAMPLING_RATE;
+        requested.channels = 2;
         requested.userdata = &mSynthData;
         requested.callback = &fillBuffer;
 

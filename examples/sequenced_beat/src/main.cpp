@@ -34,10 +34,13 @@ std::vector<PianoKey> pianoKeys = {
     {SDLK_u, Notes::As4},
     {SDLK_j, Notes::B4},
     {SDLK_k, Notes::C5},
+    {SDLK_o, Notes::Cs5},
     {SDLK_l, Notes::D5},
+    {SDLK_p, Notes::Ds5},
     {SDLK_SEMICOLON, Notes::E5}};
 
-void setSequencerBeat(Sequencer &seq){
+void setSequencerBeat(Sequencer &seq)
+{
     seq.queueNote(Notes::E4, 1.00, 0.25);
     seq.queueNote(Notes::D4, 1.25, 0.25);
     seq.queueNote(Notes::C4, 1.50, 0.25);

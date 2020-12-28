@@ -13,6 +13,7 @@ namespace VSynth
     struct SynthData
     {
         double *time;
+        double sampleDeltaTime;
         std::vector<SoundGenerator *> soundGenerators;
     };
 
@@ -24,7 +25,13 @@ namespace VSynth
     class Synthesizer
     {
     public:
-        Synthesizer();
+        /**
+         * @brief Construct a new Synthesizer object
+         * 
+         * @param samplingRates - Sampling rate (# of samples per second). 48,000 is a common number, but higher values are computationally intensive
+         * @param numFrames - Number of sampling frames. A sampling frame is an instance where sound generators are sampled. 
+         */
+        Synthesizer(unsigned int samplingRates=24000, unsigned int numFrames=20);
         virtual ~Synthesizer();
 
         /**
@@ -62,7 +69,11 @@ namespace VSynth
 
     private:
         SDL_AudioDeviceID mDeviceID;
+
         double mTime;
+
+        unsigned int mSamplingRate;
+        unsigned int mNumFrames;
 
         SynthData mSynthData;
     };

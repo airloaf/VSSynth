@@ -56,7 +56,6 @@ int main(int argc, char *argv[])
     SDL_BlitSurface(keyBindImage, nullptr, windowSurface, nullptr);
     SDL_UpdateWindowSurface(window);
 
-
     // Create an instrument with the following envelope and patch
     ADSREnvelope pianoEnvelope(1.00f, 0.30f, 0.10f, 0.10f, 0.50f);
     Instrument *piano = new PolyphonicInstrument(
