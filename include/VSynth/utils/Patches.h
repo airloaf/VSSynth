@@ -17,13 +17,16 @@ namespace VSynth
         typedef std::function<double(double, double)> Patch;
 
         const Patch PIANO = [](double freq, double time) {
+            // return 0.5 * (Waveforms::sine(freq, time) +
+            //               0.5 * Waveforms::sine(freq * 2, time) +
+            //               0.25 * Waveforms::sine(freq * 3, time) +
+            //               0.125 * Waveforms::sine(freq * 4, time) +
+            //               0.0625 * Waveforms::sine(freq * 5, time) +
+            //               0.03125 * Waveforms::sine(freq * 6, time) +
+            //               0.015625 * Waveforms::sine(freq * 7, time));
             return 0.5 * (Waveforms::sine(freq, time) +
                           0.5 * Waveforms::sine(freq * 2, time) +
-                          0.25 * Waveforms::sine(freq * 3, time) +
-                          0.125 * Waveforms::sine(freq * 4, time) +
-                          0.0625 * Waveforms::sine(freq * 5, time) +
-                          0.03125 * Waveforms::sine(freq * 6, time) +
-                          0.015625 * Waveforms::sine(freq * 7, time));
+                          0.25 * Waveforms::sine(freq * 3, time));
         };
 
         const Patch XYLOPHONE = [](double freq, double time) {
