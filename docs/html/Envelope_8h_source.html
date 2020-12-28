@@ -106,14 +106,22 @@ $(function() {
 <div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classVSynth_1_1Envelope.html#a26c90903b8ac458b76407f2b5545ab54">   84</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Envelope.html#a26c90903b8ac458b76407f2b5545ab54">release</a>();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="structVSynth_1_1ADSREnvelope.html">ADSREnvelope</a> mADSR;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">double</span> mTime;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">double</span> mReleaseStart;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">bool</span> mHold;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">bool</span> mActive;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    };</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}; <span class="comment">// namespace VSynth</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// Different curves of the ADSR + an invalid section to represent no sound</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">enum</span> Curves {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            ATTACK,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            DECAY,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            SUSTAIN,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            RELEASE,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            INACTIVE</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        } mCurrentCurve;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="structVSynth_1_1ADSREnvelope.html">ADSREnvelope</a> mADSR;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">bool</span> mHold;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">double</span> mAmplitude;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    };</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}; <span class="comment">// namespace VSynth</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassVSynth_1_1Envelope_html_a22eea838c70b36f4f70f329756055ebf"><div class="ttname"><a href="classVSynth_1_1Envelope.html#a22eea838c70b36f4f70f329756055ebf">VSynth::Envelope::Envelope</a></div><div class="ttdeci">Envelope(const ADSREnvelope adsr)</div><div class="ttdoc">Construct a new Envelope object.</div></div>
 <div class="ttc" id="aclassVSynth_1_1Envelope_html_a26c90903b8ac458b76407f2b5545ab54"><div class="ttname"><a href="classVSynth_1_1Envelope.html#a26c90903b8ac458b76407f2b5545ab54">VSynth::Envelope::release</a></div><div class="ttdeci">void release()</div><div class="ttdoc">releases</div></div>
