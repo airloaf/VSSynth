@@ -64,6 +64,7 @@ namespace VSynth
     void Envelope::release()
     {
         mHold = false;
+        mCurrentCurve = Curves::RELEASE;
     }
 
 }; // namespace VSynth

@@ -22,6 +22,10 @@ namespace VSynth
                           0.25 * Waveforms::sine(freq * 3, time));
         };
 
+        const Patch BRASS = [](double freq, double time) {
+            return 0.5 * (Waveforms::sawtooth((freq / 4) + (0.002 * freq * Waveforms::sine(1, time) / (time * 2.0 * 3.1415926)), time) + 0.001 * Waveforms::noise());
+        };
+
         const Patch XYLOPHONE = [](double freq, double time) {
             return 0.5 * (Waveforms::triangle(freq, time) +
                           0.5 * Waveforms::triangle(freq, time) +

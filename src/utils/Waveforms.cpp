@@ -1,12 +1,21 @@
 #include <VSynth/utils/Waveforms.h>
 
 #include <cmath>
+#include <cstdlib>
 #define _USE_MATH_DEFINES // PI definition
 
 namespace VSynth
 {
     namespace Waveforms
     {
+
+        const double pulse(double frequency, double time, double percent)
+        {
+            percent /= 100;
+            double period = 1.0 / frequency;
+            double offset = fmod(time, period);
+            return offset > (percent * period) ? 1.0 : -1.0;
+        }
 
         const double square(double frequency, double time)
         {
@@ -33,6 +42,11 @@ namespace VSynth
         const double triangle(double frequency, double time)
         {
             return asin(sin(freqToRad(frequency) * time));
+        }
+
+        const double noise()
+        {
+            return (rand() % 3) - 1;
         }
 
         const double modulatedWave(

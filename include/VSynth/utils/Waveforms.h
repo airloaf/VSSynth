@@ -15,6 +15,16 @@ namespace VSynth
     {
 
         /**
+         * @brief Generates a pulse wave at a given percent
+         * 
+         * @param frequency 
+         * @param time 
+         * @param percent in range [0, 100]
+         * @return const double 
+         */
+        const double pulse(double frequency, double time, double percent);
+
+        /**
          * @brief Generates a 50% pulse wave
          * 
          * @param frequency
@@ -49,6 +59,13 @@ namespace VSynth
          * @return double 
          */
         const double triangle(double frequency, double time);
+
+        /**
+         * @brief Generates random noise
+         * 
+         * @return const double 
+         */
+        const double noise();
 
         /**
          * @brief Generates a waveform with a low frequency oscillator
