@@ -60,8 +60,8 @@ int main(int argc, char *argv[])
     {
         // Create a sequencer for the beat
         VSynth::Sequencer seq(new VSynth::PolyphonicInstrument(
-            VSynth::Patches::GLOCKENSPIEL,
-            VSynth::Patches::GLOCKENSPIEL_ENVELOPE));
+            VSynth::Patches::REED,
+            VSynth::Patches::REED_ENVELOPE));
         seqs.push_back(seq);
     }
 
