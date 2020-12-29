@@ -54,15 +54,14 @@ int main(int argc, char *argv[])
     window = SDL_CreateWindow("MIDI", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
 
     // Create an instrument with the following envelope and patch
-    VSynth::ADSREnvelope pianoEnvelope(0.90f, 0.30f, 0.1f, 0.1f, 0.50f);
     std::vector<VSynth::Sequencer> seqs;
 
     for (int i = 0; i < 16; i++)
     {
         // Create a sequencer for the beat
         VSynth::Sequencer seq(new VSynth::PolyphonicInstrument(
-            VSynth::Patches::PIANO,
-            pianoEnvelope));
+            VSynth::Patches::BRASS,
+            VSynth::Patches::BRASS_ENVELOPE));
         seqs.push_back(seq);
     }
 

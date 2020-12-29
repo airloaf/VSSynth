@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Envelope.h"
 #include "Waveforms.h"
 
 namespace VSynth
@@ -23,8 +24,9 @@ namespace VSynth
         };
 
         const Patch BRASS = [](double freq, double time) {
-            return 0.5 * (Waveforms::sawtooth((freq / 4) + (0.002 * freq * Waveforms::sine(1, time) / (time * 2.0 * 3.1415926)), time) + 0.001 * Waveforms::noise());
+            return 0.5 * (Waveforms::pulse(freq, time, 25) + 0.25 *Waveforms::sawtooth(freq, time) + 0.0001 * Waveforms::noise());
         };
+        const ADSREnvelope BRASS_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 0.05f);
 
         const Patch XYLOPHONE = [](double freq, double time) {
             return 0.5 * (Waveforms::triangle(freq, time) +
