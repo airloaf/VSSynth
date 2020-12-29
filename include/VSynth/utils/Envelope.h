@@ -16,8 +16,8 @@ namespace VSynth
     */
     struct ADSREnvelope
     {
-        ADSREnvelope(double attack, double sustain, double attackTime, double decayTime, double releaseTime)
-            : attack(attack), sustain(sustain), attackTime(attackTime), decayTime(decayTime), releaseTime(releaseTime), sustainable(true)
+        ADSREnvelope(double attack, double sustain, double attackTime, double decayTime, double releaseTime, bool sustainable=true)
+            : attack(attack), sustain(sustain), attackTime(attackTime), decayTime(decayTime), releaseTime(releaseTime), sustainable(sustainable)
         {
         }
         ADSREnvelope() : sustainable(true)
