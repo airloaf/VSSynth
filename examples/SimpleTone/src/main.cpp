@@ -1,6 +1,6 @@
 #include <SDL2/SDL.h>
 
-#include <VSynth/Generators/Tone.h>
+#include <VSynth/generators/Tone.h>
 #include <VSynth/Synthesizer.h>
 #include <VSynth/utils/Notes.h>
 #include <VSynth/utils/Waveforms.h>
