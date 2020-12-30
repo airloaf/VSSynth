@@ -1,4 +1,4 @@
-#include <VSynth/Generators/PolyphonicInstrument.h>
+#include <VSynth/generators/PolyphonicInstrument.h>
 
 #include <algorithm>
 

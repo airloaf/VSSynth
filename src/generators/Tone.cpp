@@ -1,4 +1,4 @@
-#include <VSynth/Generators/Tone.h>
+#include <VSynth/generators/Tone.h>
 
 namespace VSynth
 {
