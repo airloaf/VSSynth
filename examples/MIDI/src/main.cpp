@@ -9,15 +9,12 @@
 #include <VSynth/utils/Envelope.h>
 #include <VSynth/utils/Patches.h>
 
+#include "MIDISequencer.h"
+
 #include <algorithm>
 #include <vector>
 
-double noteToFrequency(int midiNote)
-{
-    return 440.0 * pow(2.0, ((double)midiNote - 69.0) / 12.0);
-}
-
-void addNotesToSequencer(std::vector<VSynth::Sequencer> &seqs, smf::MidiFile &file)
+void addNotesToSequencer(std::vector<MIDISequencer> &seqs, smf::MidiFile &file)
 {
     int tracks = file.getTrackCount();
 
@@ -27,11 +24,13 @@ void addNotesToSequencer(std::vector<VSynth::Sequencer> &seqs, smf::MidiFile &fi
         {
             if (file[track][event].isNoteOn())
             {
-                double note = noteToFrequency(file[track][event].getP1());
-                double startTime = file[track][event].seconds;
                 double duration = file[track][event].getDurationInSeconds();
+                double startTime = file[track][event].seconds;
+                int channel = file[track][event].getChannelNibble();
+                int note = file[track][event].getP1();
+                int velocity= file[track][event].getP2();
 
-                seqs[file[track][event].getChannelNibble()].queueNote(note, startTime, duration);
+                seqs[channel].addNotePlayEvent(note, velocity, startTime, duration);
             }
         }
     }
@@ -39,11 +38,12 @@ void addNotesToSequencer(std::vector<VSynth::Sequencer> &seqs, smf::MidiFile &fi
 
 int main(int argc, char *argv[])
 {
-    if(argc <= 1){
-        return 0;
-    }
     smf::MidiFile midifile;
-    midifile.read(argv[1]);
+    if(argc <= 1){
+        midifile.read("../../midis/hisworld.mid");
+    }else{
+        midifile.read(argv[1]);
+    }
 
     midifile.doTimeAnalysis();
     midifile.linkNotePairs();
@@ -53,25 +53,19 @@ int main(int argc, char *argv[])
     SDL_Window *window;
     window = SDL_CreateWindow("MIDI", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
 
-    // Create an instrument with the following envelope and patch
-    std::vector<VSynth::Sequencer> seqs;
-
-    for (int i = 0; i < 16; i++)
-    {
-        // Create a sequencer for the beat
-        VSynth::Sequencer seq(new VSynth::PolyphonicInstrument(
-            VSynth::Patches::REED,
-            VSynth::Patches::REED_ENVELOPE));
-        seqs.push_back(seq);
+    std::vector<MIDISequencer> sequencers;
+    for(int i = 0; i < 16; i++){
+        MIDISequencer seq(new MIDIChannel(VSynth::Patches::GLOCKENSPIEL));
+        sequencers.push_back(seq);
     }
 
-    addNotesToSequencer(seqs, midifile);
+    addNotesToSequencer(sequencers, midifile);
 
     VSynth::Synthesizer synth(25000, 50);
     synth.open();
-    for(auto it = seqs.begin(); it != seqs.end(); it++){
-        it->sortNotes();
-        synth.addSoundGenerator(&(*it));
+    for(int i = 0; i < 16; i++){
+        sequencers[i].sortEventsByTime();
+        synth.addSoundGenerator(&sequencers[i]);
     }
     synth.unpause();
 
