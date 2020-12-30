@@ -57,10 +57,10 @@ int main(int argc, char *argv[])
     SDL_UpdateWindowSurface(window);
 
     // Create an instrument with the following envelope and patch
-    ADSREnvelope pianoEnvelope(1.00f, 0.30f, 0.10f, 0.10f, 0.50f);
+    ADSREnvelope pianoEnvelope(1.00f, 0.50f, 0.10f, 0.10f, 0.50f);
     Instrument *piano = new PolyphonicInstrument(
-        Patches::PIANO,
-        pianoEnvelope);
+        Patches::REED,
+        Patches::REED_ENVELOPE);
 
     // Creating a synthesizer
     Synthesizer synth;

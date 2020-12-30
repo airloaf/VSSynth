@@ -16,8 +16,8 @@ namespace VSynth
     */
     struct ADSREnvelope
     {
-        ADSREnvelope(double attack, double sustain, double attackTime, double decayTime, double releaseTime)
-            : attack(attack), sustain(sustain), attackTime(attackTime), decayTime(decayTime), releaseTime(releaseTime), sustainable(true)
+        ADSREnvelope(double attack, double sustain, double attackTime, double decayTime, double releaseTime, bool sustainable=true)
+            : attack(attack), sustain(sustain), attackTime(attackTime), decayTime(decayTime), releaseTime(releaseTime), sustainable(sustainable)
         {
         }
         ADSREnvelope() : sustainable(true)
@@ -47,6 +47,12 @@ namespace VSynth
          * @param adsr - ADSR data
          */
         Envelope(const ADSREnvelope adsr);
+
+        /**
+         * @brief Construct a new Envelope object
+         */
+        Envelope();
+
         virtual ~Envelope();
 
         /**
@@ -66,6 +72,12 @@ namespace VSynth
          * @param deltaTime - time in milliseconds
          */
         void update(double deltaTime);
+
+        /**
+         * @brief Sets a new ADSR for this envelope
+         * @param adsr
+         */
+        void setADSR(const ADSREnvelope adsr);
 
         /**
          * @brief Starts the envelopes modulation

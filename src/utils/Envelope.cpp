@@ -6,6 +6,11 @@ namespace VSynth
         : mHold(false), mADSR(adsr), mAmplitude(0)
     {
     }
+    
+    Envelope::Envelope()
+        : mHold(false), mAmplitude(0), mADSR({0, 0, 0, 0, 0})
+    {
+    }
 
     Envelope::~Envelope()
     {
@@ -55,6 +60,10 @@ namespace VSynth
         }
     }
 
+    void Envelope::setADSR(const ADSREnvelope adsr){
+        mADSR = adsr;
+    }
+
     void Envelope::hold()
     {
         mHold = true;
@@ -64,6 +73,7 @@ namespace VSynth
     void Envelope::release()
     {
         mHold = false;
+        mCurrentCurve = Curves::RELEASE;
     }
 
 }; // namespace VSynth
