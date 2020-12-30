@@ -1,4 +1,5 @@
 #include "MIDIChannel.h"
+#include "MIDIPatches.h"
 
 #define VELCOCITY_MAX 127.0
 
@@ -42,5 +43,8 @@ void MIDIChannel::handleEvent(const MIDI_EVENT &event)
     {
         mNotes[event.note].on = false;
         mNotes[event.note].velocity = event.velocity;
+    }
+    else if(event.type == MIDI_EVENT_TYPE::PROGRAM_CHANGE){
+        mPatch = PATCHES[event.program];
     }
 }

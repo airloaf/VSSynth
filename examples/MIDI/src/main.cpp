@@ -6,6 +6,7 @@
 #include <VSynth/utils/Envelope.h>
 #include <VSynth/utils/Patches.h>
 
+#include "MIDIPatches.h"
 #include "MIDISequencer.h"
 
 #include <algorithm>
@@ -19,15 +20,22 @@ void addNotesToSequencer(std::vector<MIDISequencer> &seqs, smf::MidiFile &file)
     {
         for (int event = 0; event < file[track].size(); event++)
         {
-            if (file[track][event].isNoteOn())
+            double startTime = file[track][event].seconds;
+            int channel = file[track][event].getChannelNibble();
+            
+            smf::MidiEvent midiEvent = file[track][event];
+            
+            if (midiEvent.isNoteOn())
             {
                 double duration = file[track][event].getDurationInSeconds();
-                double startTime = file[track][event].seconds;
-                int channel = file[track][event].getChannelNibble();
                 int note = file[track][event].getP1();
                 int velocity= file[track][event].getP2();
 
                 seqs[channel].addNotePlayEvent(note, velocity, startTime, duration);
+            }else if(midiEvent.isPatchChange()){
+                int patch = file[track][event].getP1();
+                
+                seqs[channel].addProgramChangeEvent(patch, startTime);
             }
         }
     }
@@ -37,7 +45,7 @@ int main(int argc, char *argv[])
 {
     smf::MidiFile midifile;
     if(argc <= 1){
-        midifile.read("../../midis/Marble Machine.mid");
+        midifile.read("../../midis/HisWorld.mid");
     }else{
         midifile.read(argv[1]);
     }
