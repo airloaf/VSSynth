@@ -47,6 +47,12 @@ namespace VSynth
          * @param adsr - ADSR data
          */
         Envelope(const ADSREnvelope adsr);
+
+        /**
+         * @brief Construct a new Envelope object
+         */
+        Envelope();
+
         virtual ~Envelope();
 
         /**
@@ -66,6 +72,12 @@ namespace VSynth
          * @param deltaTime - time in milliseconds
          */
         void update(double deltaTime);
+
+        /**
+         * @brief Sets a new ADSR for this envelope
+         * @param adsr
+         */
+        void setADSR(const ADSREnvelope adsr);
 
         /**
          * @brief Starts the envelopes modulation

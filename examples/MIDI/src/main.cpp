@@ -22,19 +22,21 @@ void addNotesToSequencer(std::vector<MIDISequencer> &seqs, smf::MidiFile &file)
         {
             double startTime = file[track][event].seconds;
             int channel = file[track][event].getChannelNibble();
-            
+
             smf::MidiEvent midiEvent = file[track][event];
-            
+
             if (midiEvent.isNoteOn())
             {
                 double duration = file[track][event].getDurationInSeconds();
                 int note = file[track][event].getP1();
-                int velocity= file[track][event].getP2();
+                int velocity = file[track][event].getP2();
 
                 seqs[channel].addNotePlayEvent(note, velocity, startTime, duration);
-            }else if(midiEvent.isPatchChange()){
+            }
+            else if (midiEvent.isPatchChange())
+            {
                 int patch = file[track][event].getP1();
-                
+
                 seqs[channel].addProgramChangeEvent(patch, startTime);
             }
         }
@@ -44,9 +46,12 @@ void addNotesToSequencer(std::vector<MIDISequencer> &seqs, smf::MidiFile &file)
 int main(int argc, char *argv[])
 {
     smf::MidiFile midifile;
-    if(argc <= 1){
-        midifile.read("../../midis/HisWorld.mid");
-    }else{
+    if (argc <= 1)
+    {
+        midifile.read("../../midis/Take-Five-1.mid");
+    }
+    else
+    {
         midifile.read(argv[1]);
     }
 
@@ -59,8 +64,12 @@ int main(int argc, char *argv[])
     window = SDL_CreateWindow("MIDI", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
 
     std::vector<MIDISequencer> sequencers;
-    for(int i = 0; i < 16; i++){
-        MIDISequencer seq(new MIDIChannel(VSynth::Patches::GLOCKENSPIEL));
+    for (int i = 0; i < 16; i++)
+    {
+        MIDISequencer seq(new MIDIChannel(
+            VSynth::Patches::GLOCKENSPIEL,
+            VSynth::Patches::GLOCKENSPIEL_ENVELOPE
+            ));
         sequencers.push_back(seq);
     }
 
@@ -68,7 +77,8 @@ int main(int argc, char *argv[])
 
     VSynth::Synthesizer synth(25000, 50);
     synth.open();
-    for(int i = 0; i < 16; i++){
+    for (int i = 0; i < 16; i++)
+    {
         sequencers[i].setVolume(50);
         sequencers[i].sortEventsByTime();
         synth.addSoundGenerator(&sequencers[i]);

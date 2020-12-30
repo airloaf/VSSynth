@@ -1,6 +1,7 @@
 #pragma once
 
 #include <VSynth/SoundGenerator.h>
+#include <VSynth/utils/Envelope.h>
 
 #include <functional>
 #include <vector>
@@ -41,7 +42,10 @@ class MIDIChannel: public VSynth::SoundGenerator
 {
 
 public:
-    MIDIChannel(std::function<double(double, double)> patch);
+    MIDIChannel(
+        const std::function<double(double, double)> patch,
+        const VSynth::ADSREnvelope adsr
+        );
     ~MIDIChannel();
 
     double sample(double time);
@@ -53,9 +57,11 @@ private:
     struct NoteData {
         bool on;
         uint8_t velocity;
+        VSynth::Envelope env;
     };
 
+    double mPrevSample;
+    
     std::function<double(double, double)> mPatch;
-
     std::vector<NoteData> mNotes;
 };

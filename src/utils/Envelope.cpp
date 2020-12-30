@@ -6,6 +6,11 @@ namespace VSynth
         : mHold(false), mADSR(adsr), mAmplitude(0)
     {
     }
+    
+    Envelope::Envelope()
+        : mHold(false), mAmplitude(0), mADSR({0, 0, 0, 0, 0})
+    {
+    }
 
     Envelope::~Envelope()
     {
@@ -53,6 +58,10 @@ namespace VSynth
                 }
             break;
         }
+    }
+
+    void Envelope::setADSR(const ADSREnvelope adsr){
+        mADSR = adsr;
     }
 
     void Envelope::hold()

@@ -22,6 +22,7 @@ namespace VSynth
                           0.5 * Waveforms::sine(freq * 2, time) +
                           0.25 * Waveforms::sine(freq * 3, time));
         };
+        const ADSREnvelope PIANO_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 0.30f);
 
         const Patch BRASS = [](double freq, double time) {
             return 0.5 * (Waveforms::pulse(freq / 2, time, 25) + 0.25 * Waveforms::sawtooth(freq, time) + 0.0001 * Waveforms::noise());
@@ -61,5 +62,6 @@ namespace VSynth
                           0.03125 * Waveforms::sine(freq * 32, time) +
                           0.015625 * Waveforms::sine(freq * 64, time));
         };
+        const ADSREnvelope ORGAN_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 0.40f);
     }; // namespace Patches
 };     // namespace VSynth
