@@ -49,7 +49,13 @@ public:
     void handleEvent(const MIDI_EVENT &event);
 
 private:
+
+    struct NoteData {
+        bool on;
+        uint8_t velocity;
+    };
+
     std::function<double(double, double)> mPatch;
 
-    std::vector<bool> mNotes;
+    std::vector<NoteData> mNotes;
 };

@@ -2,9 +2,6 @@
 
 #include <SDL2/SDL.h>
 
-#include <VSynth/Generators/MonophonicInstrument.h>
-#include <VSynth/Generators/PolyphonicInstrument.h>
-#include <VSynth/Generators/Sequencer.h>
 #include <VSynth/Synthesizer.h>
 #include <VSynth/utils/Envelope.h>
 #include <VSynth/utils/Patches.h>
@@ -40,7 +37,7 @@ int main(int argc, char *argv[])
 {
     smf::MidiFile midifile;
     if(argc <= 1){
-        midifile.read("../../midis/hisworld.mid");
+        midifile.read("../../midis/Marble Machine.mid");
     }else{
         midifile.read(argv[1]);
     }
@@ -64,6 +61,7 @@ int main(int argc, char *argv[])
     VSynth::Synthesizer synth(25000, 50);
     synth.open();
     for(int i = 0; i < 16; i++){
+        sequencers[i].setVolume(50);
         sequencers[i].sortEventsByTime();
         synth.addSoundGenerator(&sequencers[i]);
     }
