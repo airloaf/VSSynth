@@ -20,6 +20,15 @@ target_link_directories(VSynth PUBLIC ${LIB_DIR})
 # Link Libraries for SDL2
 target_link_libraries(VSynth PUBLIC SDL2)
 
+# Tone Example
+file(GLOB_RECURSE SIMPLE_TONE_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/SimpleTone/src/*.cpp)
+add_executable(SimpleTone ${SIMPLE_TONE_SRCS})
+target_link_libraries(SimpleTone SDL2)
+target_link_libraries(SimpleTone SDL2main)
+target_link_libraries(SimpleTone VSynth)
+
+target_include_directories(SimpleTone PUBLIC include)
+
 # Piano Example
 file(GLOB_RECURSE PIANO_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/piano/src/*.cpp)
 add_executable(Piano ${PIANO_SRCS})

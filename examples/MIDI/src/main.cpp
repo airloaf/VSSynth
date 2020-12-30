@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     smf::MidiFile midifile;
     if (argc <= 1)
     {
-        midifile.read("../../midis/Take-Five-1.mid");
+        midifile.read("../../midis/HisWorld.mid");
     }
     else
     {
