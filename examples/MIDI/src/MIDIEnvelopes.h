@@ -32,22 +32,22 @@ const VSynth::ADSREnvelope ENVELOPES[] = {
     ORGAN_ENVELOPE,        //22 Accordion
     ORGAN_ENVELOPE,        //23 Harmonica
     ORGAN_ENVELOPE,        //24 Tango Accordion
-    PIANO_ENVELOPE,        //25 Acoustic Guitar (nylon)
-    PIANO_ENVELOPE,        //26 Acoustic Guitar (steel)
-    PIANO_ENVELOPE,        //27 Electric Guitar (jazz)
-    PIANO_ENVELOPE,        //28 Electric Guitar (clean)
-    PIANO_ENVELOPE,        //29 Electric Guitar (muted)
-    PIANO_ENVELOPE,        //30 Overdriven Guitar
-    PIANO_ENVELOPE,        //31 Distortion Guitar
-    PIANO_ENVELOPE,        //32 Guitar Harmonics
-    BRASS_ENVELOPE,        //33 Acoustic Bass
-    BRASS_ENVELOPE,        //34 Electric Bass (finger)
-    BRASS_ENVELOPE,        //35 Electric Bass (pick)
-    BRASS_ENVELOPE,        //36 Fretless Bass
-    BRASS_ENVELOPE,        //37 Slap Bass 1
-    BRASS_ENVELOPE,        //38 Slap Bass 2
-    BRASS_ENVELOPE,        //39 Synth Bass 1
-    BRASS_ENVELOPE,        //40 Synth Bass 2
+    GUITAR_ENVELOPE,       //25 Acoustic Guitar (nylon)
+    GUITAR_ENVELOPE,       //26 Acoustic Guitar (steel)
+    GUITAR_ENVELOPE,       //27 Electric Guitar (jazz)
+    GUITAR_ENVELOPE,       //28 Electric Guitar (clean)
+    GUITAR_ENVELOPE,       //29 Electric Guitar (muted)
+    GUITAR_ENVELOPE,       //30 Overdriven Guitar
+    GUITAR_ENVELOPE,       //31 Distortion Guitar
+    GUITAR_ENVELOPE,       //32 Guitar Harmonics
+    GUITAR_ENVELOPE,       //33 Acoustic Bass
+    GUITAR_ENVELOPE,       //34 Electric Bass (finger)
+    GUITAR_ENVELOPE,       //35 Electric Bass (pick)
+    GUITAR_ENVELOPE,       //36 Fretless Bass
+    GUITAR_ENVELOPE,       //37 Slap Bass 1
+    GUITAR_ENVELOPE,       //38 Slap Bass 2
+    GUITAR_ENVELOPE,       //39 Synth Bass 1
+    GUITAR_ENVELOPE,       //40 Synth Bass 2
     PIANO_ENVELOPE,        //41 Violin
     PIANO_ENVELOPE,        //42 Viola
     PIANO_ENVELOPE,        //43 Cello

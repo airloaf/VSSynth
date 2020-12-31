@@ -30,18 +30,20 @@ namespace VSynth
         const ADSREnvelope BRASS_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 0.05f);
 
         const Patch REED = [](double freq, double time) {
-            return 0.5 * (Waveforms::pulse(freq * 2, time, 25)
-                + 0.5 * Waveforms::sine(freq, time)
-                + 0.25 * Waveforms::sawtooth(freq, time)
-                + 0.0001 * Waveforms::noise());
+            return 0.5 * (Waveforms::pulse(freq * 2, time, 25) + 0.5 * Waveforms::sine(freq, time) + 0.25 * Waveforms::sawtooth(freq, time) + 0.0001 * Waveforms::noise());
         };
         const ADSREnvelope REED_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 0.05f);
 
         const Patch GLOCKENSPIEL = [](double freq, double time) {
-            return 0.5 * (Waveforms::sine(freq * 2, time)
-                            + 0.0001 * Waveforms::noise());
+            return 0.5 * (Waveforms::sine(freq * 2, time) + 0.0001 * Waveforms::noise());
         };
-        const ADSREnvelope GLOCKENSPIEL_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 0.40f, false);
+        const ADSREnvelope GLOCKENSPIEL_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 1.00f, true);
+
+        const Patch GUITAR = [](double freq, double time) {
+            return 0.5 * (Waveforms::sawtooth(freq, time, 0.0001 * freq * Waveforms::sine(10, time)) +
+                          0.5 * (Waveforms::sine(freq*2, time)) + 0.0001 * Waveforms::noise());
+        };
+        const ADSREnvelope GUITAR_ENVELOPE(1.00f, 0.15f, 0.001f, 0.1f, 0.80f, false);
 
         const Patch XYLOPHONE = [](double freq, double time) {
             return 0.5 * (Waveforms::triangle(freq, time) +

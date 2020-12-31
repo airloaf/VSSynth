@@ -40,9 +40,7 @@ namespace VSynth
                 mAmplitude -= (decaySlope * deltaTime);
                 if(mAmplitude <= mADSR.sustain){
                     mAmplitude = mADSR.sustain;
-                    
-                    mCurrentCurve = mADSR.sustainable?
-                        Curves::SUSTAIN: Curves::RELEASE;
+                    mCurrentCurve = Curves::SUSTAIN;    
                 }
             break;
             case Curves::SUSTAIN:
@@ -66,14 +64,13 @@ namespace VSynth
 
     void Envelope::hold()
     {
-        mHold = true;
+        mHold = mADSR.sustainable? true: false;
         mCurrentCurve = Curves::ATTACK;
     }
 
     void Envelope::release()
     {
         mHold = false;
-        mCurrentCurve = Curves::RELEASE;
     }
 
 }; // namespace VSynth

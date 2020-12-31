@@ -31,22 +31,22 @@ const VSynth::Patches::Patch PATCHES[] = {
     ORGAN,        //22 Accordion
     ORGAN,        //23 Harmonica
     ORGAN,        //24 Tango Accordion
-    PIANO,        //25 Acoustic Guitar (nylon)
-    PIANO,        //26 Acoustic Guitar (steel)
-    PIANO,        //27 Electric Guitar (jazz)
-    PIANO,        //28 Electric Guitar (clean)
-    PIANO,        //29 Electric Guitar (muted)
-    PIANO,        //30 Overdriven Guitar
-    PIANO,        //31 Distortion Guitar
-    PIANO,        //32 Guitar Harmonics
-    BRASS,        //33 Acoustic Bass
-    BRASS,        //34 Electric Bass (finger)
-    BRASS,        //35 Electric Bass (pick)
-    BRASS,        //36 Fretless Bass
-    BRASS,        //37 Slap Bass 1
-    BRASS,        //38 Slap Bass 2
-    BRASS,        //39 Synth Bass 1
-    BRASS,        //40 Synth Bass 2
+    GUITAR,       //25 Acoustic Guitar (nylon)
+    GUITAR,       //26 Acoustic Guitar (steel)
+    GUITAR,       //27 Electric Guitar (jazz)
+    GUITAR,       //28 Electric Guitar (clean)
+    GUITAR,       //29 Electric Guitar (muted)
+    GUITAR,       //30 Overdriven Guitar
+    GUITAR,       //31 Distortion Guitar
+    GUITAR,       //32 Guitar Harmonics
+    GUITAR,       //33 Acoustic Bass
+    GUITAR,       //34 Electric Bass (finger)
+    GUITAR,       //35 Electric Bass (pick)
+    GUITAR,       //36 Fretless Bass
+    GUITAR,       //37 Slap Bass 1
+    GUITAR,       //38 Slap Bass 2
+    GUITAR,       //39 Synth Bass 1
+    GUITAR,       //40 Synth Bass 2
     PIANO,        //41 Violin
     PIANO,        //42 Viola
     PIANO,        //43 Cello
