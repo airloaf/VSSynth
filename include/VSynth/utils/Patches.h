@@ -30,7 +30,7 @@ namespace VSynth
         const ADSREnvelope BRASS_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 0.05f);
 
         const Patch REED = [](double freq, double time) {
-            return 0.5 * (Waveforms::pulse(freq * 2, time, 25) + 0.5 * Waveforms::sine(freq, time) + 0.25 * Waveforms::sawtooth(freq, time) + 0.0001 * Waveforms::noise());
+            return 0.5 * (Waveforms::triangle(freq * 2, time) + 0.5 * Waveforms::sine(freq, time) + 0.25 * Waveforms::sawtooth(freq, time) + 0.04 * Waveforms::noise());
         };
         const ADSREnvelope REED_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 0.05f);
 
