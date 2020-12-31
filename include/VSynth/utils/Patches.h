@@ -40,26 +40,16 @@ namespace VSynth
         const ADSREnvelope GLOCKENSPIEL_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 1.00f, true);
 
         const Patch BASS = [](double freq, double time) {
-            return 0.5 * (Waveforms::pulse(freq/2, time, 10) +
+            return 0.5 * (Waveforms::pulse(freq / 2, time, 10) +
                           0.5 * (Waveforms::square(freq, time)) + 0.0001 * Waveforms::noise());
         };
         const ADSREnvelope BASS_ENVELOPE(1.00f, 0.15f, 0.001f, 0.1f, 0.80f, false);
 
         const Patch GUITAR = [](double freq, double time) {
             return 0.5 * (Waveforms::pulse(freq, time, 10) +
-                          0.5 * (Waveforms::square(freq*2, time)) + 0.0001 * Waveforms::noise());
+                          0.5 * (Waveforms::square(freq * 2, time)) + 0.0001 * Waveforms::noise());
         };
         const ADSREnvelope GUITAR_ENVELOPE(1.00f, 0.15f, 0.001f, 0.1f, 0.80f, false);
-
-        const Patch XYLOPHONE = [](double freq, double time) {
-            return 0.5 * (Waveforms::triangle(freq, time) +
-                          0.5 * Waveforms::triangle(freq, time) +
-                          0.25 * Waveforms::triangle(freq, time) +
-                          0.125 * Waveforms::triangle(freq, time) +
-                          0.0625 * Waveforms::triangle(freq, time) +
-                          0.03125 * Waveforms::triangle(freq, time) +
-                          0.015625 * Waveforms::triangle(freq, time));
-        };
 
         const Patch ORGAN = [](double freq, double time) {
             return 0.5 * (Waveforms::sine(freq, time) +
@@ -71,5 +61,11 @@ namespace VSynth
                           0.015625 * Waveforms::sine(freq * 64, time));
         };
         const ADSREnvelope ORGAN_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 0.40f);
+
+        const Patch CYMBAL = [](double freq, double time) {
+            return 0.25 * Waveforms::noise();
+        };
+        const ADSREnvelope CYMBAL_ENVELOPE(0.90f, 0.30f, 0.001f, 0.5f, 1.00f);
+
     }; // namespace Patches
 };     // namespace VSynth

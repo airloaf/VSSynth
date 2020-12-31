@@ -127,7 +127,7 @@ const VSynth::ADSREnvelope ENVELOPES[] = {
     PIANO_ENVELOPE,        //117 Taiko Drum
     PIANO_ENVELOPE,        //118 Melodic Tom
     PIANO_ENVELOPE,        //119 Synth Drum
-    PIANO_ENVELOPE,        //120 Reverse Cymbal
+    CYMBAL_ENVELOPE,       //120 Reverse Cymbal
     PIANO_ENVELOPE,        //121 Guitar Fret Noise
     PIANO_ENVELOPE,        //122 Breath Noise
     PIANO_ENVELOPE,        //123 Seashore

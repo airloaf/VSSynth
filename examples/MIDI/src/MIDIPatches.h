@@ -87,8 +87,8 @@ const VSynth::Patches::Patch PATCHES[] = {
     REED,         //78 Shakuhachi
     REED,         //79 Whistle
     REED,         //80 Ocarina
-    PIANO,        //81 Lead 1 (square)
-    PIANO,        //82 Lead 2 (sawtooth)
+    [](double frequency, double time){return VSynth::Waveforms::square(frequency, time);},        //81 Lead 1 (square)
+    [](double frequency, double time){return VSynth::Waveforms::sawtooth(frequency, time);},        //82 Lead 2 (sawtooth)
     PIANO,        //83 Lead 3 (calliope)
     PIANO,        //84 Lead 4 (chiff)
     PIANO,        //85 Lead 5 (charang)
@@ -126,7 +126,7 @@ const VSynth::Patches::Patch PATCHES[] = {
     PIANO,        //117 Taiko Drum
     PIANO,        //118 Melodic Tom
     PIANO,        //119 Synth Drum
-    PIANO,        //120 Reverse Cymbal
+    CYMBAL,       //120 Reverse Cymbal
     PIANO,        //121 Guitar Fret Noise
     PIANO,        //122 Breath Noise
     PIANO,        //123 Seashore
