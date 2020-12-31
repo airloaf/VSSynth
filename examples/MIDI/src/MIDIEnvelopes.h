@@ -40,14 +40,14 @@ const VSynth::ADSREnvelope ENVELOPES[] = {
     GUITAR_ENVELOPE,       //30 Overdriven Guitar
     GUITAR_ENVELOPE,       //31 Distortion Guitar
     GUITAR_ENVELOPE,       //32 Guitar Harmonics
-    GUITAR_ENVELOPE,       //33 Acoustic Bass
-    GUITAR_ENVELOPE,       //34 Electric Bass (finger)
-    GUITAR_ENVELOPE,       //35 Electric Bass (pick)
-    GUITAR_ENVELOPE,       //36 Fretless Bass
-    GUITAR_ENVELOPE,       //37 Slap Bass 1
-    GUITAR_ENVELOPE,       //38 Slap Bass 2
-    GUITAR_ENVELOPE,       //39 Synth Bass 1
-    GUITAR_ENVELOPE,       //40 Synth Bass 2
+    BASS_ENVELOPE,         //33 Acoustic Bass
+    BASS_ENVELOPE,         //34 Electric Bass (finger)
+    BASS_ENVELOPE,         //35 Electric Bass (pick)
+    BASS_ENVELOPE,         //36 Fretless Bass
+    BASS_ENVELOPE,         //37 Slap Bass 1
+    BASS_ENVELOPE,         //38 Slap Bass 2
+    BASS_ENVELOPE,         //39 Synth Bass 1
+    BASS_ENVELOPE,         //40 Synth Bass 2
     PIANO_ENVELOPE,        //41 Violin
     PIANO_ENVELOPE,        //42 Viola
     PIANO_ENVELOPE,        //43 Cello

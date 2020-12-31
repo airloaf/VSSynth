@@ -39,14 +39,14 @@ const VSynth::Patches::Patch PATCHES[] = {
     GUITAR,       //30 Overdriven Guitar
     GUITAR,       //31 Distortion Guitar
     GUITAR,       //32 Guitar Harmonics
-    GUITAR,       //33 Acoustic Bass
-    GUITAR,       //34 Electric Bass (finger)
-    GUITAR,       //35 Electric Bass (pick)
-    GUITAR,       //36 Fretless Bass
-    GUITAR,       //37 Slap Bass 1
-    GUITAR,       //38 Slap Bass 2
-    GUITAR,       //39 Synth Bass 1
-    GUITAR,       //40 Synth Bass 2
+    BASS,         //33 Acoustic Bass
+    BASS,         //34 Electric Bass (finger)
+    BASS,         //35 Electric Bass (pick)
+    BASS,         //36 Fretless Bass
+    BASS,         //37 Slap Bass 1
+    BASS,         //38 Slap Bass 2
+    BASS,         //39 Synth Bass 1
+    BASS,         //40 Synth Bass 2
     PIANO,        //41 Violin
     PIANO,        //42 Viola
     PIANO,        //43 Cello
