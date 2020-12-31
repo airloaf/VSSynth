@@ -40,8 +40,8 @@ namespace VSynth
         const ADSREnvelope GLOCKENSPIEL_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 1.00f, true);
 
         const Patch GUITAR = [](double freq, double time) {
-            return 0.5 * (Waveforms::sawtooth(freq, time, 0.0001 * freq * Waveforms::sine(10, time)) +
-                          0.5 * (Waveforms::sine(freq*2, time)) + 0.0001 * Waveforms::noise());
+            return 0.5 * (Waveforms::pulse(freq, time, 10) +
+                          0.5 * (Waveforms::square(freq*2, time)) + 0.0001 * Waveforms::noise());
         };
         const ADSREnvelope GUITAR_ENVELOPE(1.00f, 0.15f, 0.001f, 0.1f, 0.80f, false);
 
