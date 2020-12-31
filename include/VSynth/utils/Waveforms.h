@@ -9,7 +9,6 @@ namespace VSynth
      * 
      * This namespace encompasses many of the common waveforms an
      * audio synthesizer would want to use.
-     * 
      */
     namespace Waveforms
     {
@@ -66,23 +65,6 @@ namespace VSynth
          * @return const double 
          */
         const double noise();
-
-        /**
-         * @brief Generates a waveform with a low frequency oscillator
-         * 
-         * @param wave - base waveform
-         * @param frequency - base frequency
-         * @param modulatorAmplitude - modulator amplitude (higher value makes the oscillator more pronounced)
-         * @param freqOsc - the frequency oscillator
-         * @param time 
-         * @return double 
-         */
-        const double modulatedWave(
-            std::function<double(double, double)> wave,
-            double frequency,
-            double modulatorAmplitude,
-            std::function<double(double)> freqOsc,
-            double time);
 
     }; // namespace Waveforms
 };     // namespace VSynth
