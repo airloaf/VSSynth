@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "SoundGenerator.h"
+#include "WAVWriter.h"
 
 namespace VSynth
 {
@@ -15,6 +16,7 @@ namespace VSynth
         double *time;
         double sampleDeltaTime;
         std::vector<SoundGenerator *> soundGenerators;
+        WAVWriter *writer;
     };
 
     /**
@@ -76,6 +78,7 @@ namespace VSynth
         unsigned int mNumFrames;
 
         SynthData mSynthData;
+        WAVWriter mWAVWriter;
     };
 
 }; // namespace VSynth
