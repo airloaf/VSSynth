@@ -1,6 +1,8 @@
 #include <VSynth/WAVWriter.h>
 
-#define BUFFER_SIZE 480000
+#include <iostream>
+
+#define BUFFER_SIZE 48000
 
 void writeUint32ToFile_LE(std::ofstream &file, uint32_t value)
 {
@@ -86,6 +88,7 @@ namespace VSynth
         mAudioBuffers[mSampleBuffer][mSampleBufferIndex++] = sample;
         if (mSampleBufferIndex >= BUFFER_SIZE)
         {
+            std::cout << "Swap Buffers" << std::endl;
             mSampleBufferIndex = 0;
             mSampleBuffer = (mSampleBuffer + 1) % 2;
             mReadyToWrite = true;
