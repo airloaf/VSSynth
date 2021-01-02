@@ -39,7 +39,7 @@ namespace VSynth
          * @brief Writes the sample to file
          * @param sample
          */
-        void writeSample(int sample);
+        void writeSample(int16_t sample);
 
         /**
          * @brief Function for the writer thread to initialize on.
@@ -50,7 +50,10 @@ namespace VSynth
         void writerThreadFunction();
 
     private:
-        void writeWAVHeader();
+        void writeRIFFHeader();
+        void writeFormatSubChunk();
+        void writeDataSubChunkHeader();
+        void writeChunkSizes();
         void writeSamplesToFile();
 
         bool mReadyToWrite;
@@ -66,6 +69,9 @@ namespace VSynth
         unsigned int mSampleBufferIndex;
         unsigned int mSampleBuffer;
         std::vector<std::vector<short int>> mAudioBuffers;
+
+        unsigned long int mNumWritten;
+
     };
 
 }; // namespace VSynth
