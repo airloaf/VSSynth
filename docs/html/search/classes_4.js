@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['polyphonicinstrument_48',['PolyphonicInstrument',['../classVSynth_1_1PolyphonicInstrument.html',1,'VSynth']]]
+  ['polyphonicinstrument_49',['PolyphonicInstrument',['../classVSynth_1_1Generators_1_1PolyphonicInstrument.html',1,'VSynth::Generators']]]
 ];

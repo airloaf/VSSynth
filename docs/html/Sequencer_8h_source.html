@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_275d33c551e9d3c8e9a219fd3aed934e.html">VSynth</a></li><li class="navelem"><a class="el" href="dir_43e76f917e5c1010527eb1e0b84148f9.html">Generators</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_275d33c551e9d3c8e9a219fd3aed934e.html">VSynth</a></li><li class="navelem"><a class="el" href="dir_9b7d52bc0e05ea0cfb5ab76b74a54176.html">generators</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -79,48 +79,51 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>VSynth</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classVSynth_1_1Sequencer.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classVSynth_1_1Sequencer.html">Sequencer</a> : <span class="keyword">public</span> <a class="code" href="classVSynth_1_1SoundGenerator.html">SoundGenerator</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classVSynth_1_1Sequencer.html">Sequencer</a>(<a class="code" href="classVSynth_1_1Instrument.html">Instrument</a> *instrument);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classVSynth_1_1Sequencer.html">Sequencer</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">double</span> sample(<span class="keywordtype">double</span> time);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classVSynth_1_1Sequencer.html#a6bf0325ad956a4712d12fd0d7884c522">   32</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Sequencer.html#a6bf0325ad956a4712d12fd0d7884c522">queueNote</a>(<span class="keywordtype">double</span> note, <span class="keywordtype">double</span> startTime, <span class="keywordtype">double</span> duration);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classVSynth_1_1Sequencer.html#a462217f2e8c6786c8d321637ba5331df">   46</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Sequencer.html#a462217f2e8c6786c8d321637ba5331df">sortNotes</a>();</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">namespace </span>Generators</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1Sequencer.html">   18</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classVSynth_1_1Generators_1_1Sequencer.html">Sequencer</a> : <span class="keyword">public</span> <a class="code" href="classVSynth_1_1SoundGenerator.html">SoundGenerator</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classVSynth_1_1Generators_1_1Sequencer.html">Sequencer</a>(<a class="code" href="classVSynth_1_1Generators_1_1Instrument.html">Instrument</a> *instrument);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keyword">virtual</span> ~<a class="code" href="classVSynth_1_1Generators_1_1Sequencer.html">Sequencer</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1Sequencer.html#a02bb7bc678a2d1a5de316c56aa6bffce">   24</a></span>&#160;            <span class="keywordtype">double</span> <a class="code" href="classVSynth_1_1Generators_1_1Sequencer.html#a02bb7bc678a2d1a5de316c56aa6bffce">sample</a>(<span class="keywordtype">double</span> time);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1Sequencer.html#aa5182022d640f682cb5406b9b7d12cb3">   33</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Generators_1_1Sequencer.html#aa5182022d640f682cb5406b9b7d12cb3">queueNote</a>(<span class="keywordtype">double</span> note, <span class="keywordtype">double</span> startTime, <span class="keywordtype">double</span> duration);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1Sequencer.html#a5cb1134615229c5d635da59b053b3e29">   46</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Generators_1_1Sequencer.html#a5cb1134615229c5d635da59b053b3e29">sortNotes</a>();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classVSynth_1_1Sequencer.html#a39b820c232e6912d7b9172e2cba10c41">   52</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Sequencer.html#a39b820c232e6912d7b9172e2cba10c41">setLooping</a>(<span class="keywordtype">bool</span> loop);</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1Sequencer.html#a9e8a8a194958bf180ae4de1fc5236c4b">   52</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Generators_1_1Sequencer.html#a9e8a8a194958bf180ae4de1fc5236c4b">setLooping</a>(<span class="keywordtype">bool</span> loop);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">struct </span>NoteEvent</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">double</span> note;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordtype">bool</span> hold;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        };</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">struct </span>NoteEvent</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordtype">double</span> note;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordtype">bool</span> hold;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            };</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classVSynth_1_1Instrument.html">Instrument</a> *mInstrument;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="classVSynth_1_1Generators_1_1Instrument.html">Instrument</a> *mInstrument;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">double</span> mStartTime;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">double</span> mCurTime;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">double</span> mStartTime;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordtype">double</span> mCurTime;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">bool</span> mLoop;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordtype">bool</span> mLoop;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        std::vector&lt;std::pair&lt;NoteEvent, double&gt;&gt; mEvents;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        std::vector&lt;std::pair&lt;NoteEvent, double&gt;&gt;::iterator mEventIt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    };</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            std::vector&lt;std::pair&lt;NoteEvent, double&gt;&gt; mEvents;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            std::vector&lt;std::pair&lt;NoteEvent, double&gt;&gt;::iterator mEventIt;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        };</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;} <span class="comment">// namespace VSynth</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    } <span class="comment">// namespace Generators</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">// namespace VSynth</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassVSynth_1_1Sequencer_html_a6bf0325ad956a4712d12fd0d7884c522"><div class="ttname"><a href="classVSynth_1_1Sequencer.html#a6bf0325ad956a4712d12fd0d7884c522">VSynth::Sequencer::queueNote</a></div><div class="ttdeci">void queueNote(double note, double startTime, double duration)</div><div class="ttdoc">Queue a note to be played.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Instrument_html"><div class="ttname"><a href="classVSynth_1_1Instrument.html">VSynth::Instrument</a></div><div class="ttdoc">Device capable of playing multiple notes with an ADSR envelope.</div><div class="ttdef"><b>Definition:</b> <a href="Instrument_8h_source.html#l00013">Instrument.h:14</a></div></div>
-<div class="ttc" id="aclassVSynth_1_1Sequencer_html_a39b820c232e6912d7b9172e2cba10c41"><div class="ttname"><a href="classVSynth_1_1Sequencer.html#a39b820c232e6912d7b9172e2cba10c41">VSynth::Sequencer::setLooping</a></div><div class="ttdeci">void setLooping(bool loop)</div><div class="ttdoc">Set the sequencer to loop at end of note sequence.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Sequencer_html"><div class="ttname"><a href="classVSynth_1_1Sequencer.html">VSynth::Sequencer</a></div><div class="ttdoc">Note Sequencer for Instruments.</div><div class="ttdef"><b>Definition:</b> <a href="Sequencer_8h_source.html#l00017">Sequencer.h:18</a></div></div>
-<div class="ttc" id="aclassVSynth_1_1SoundGenerator_html"><div class="ttname"><a href="classVSynth_1_1SoundGenerator.html">VSynth::SoundGenerator</a></div><div class="ttdoc">Sound generator.</div><div class="ttdef"><b>Definition:</b> <a href="SoundGenerator_8h_source.html#l00011">SoundGenerator.h:12</a></div></div>
-<div class="ttc" id="aclassVSynth_1_1Sequencer_html_a462217f2e8c6786c8d321637ba5331df"><div class="ttname"><a href="classVSynth_1_1Sequencer.html#a462217f2e8c6786c8d321637ba5331df">VSynth::Sequencer::sortNotes</a></div><div class="ttdeci">void sortNotes()</div><div class="ttdoc">Sort all notes by their queued times.</div></div>
+<div class="ttc" id="aclassVSynth_1_1Generators_1_1Sequencer_html"><div class="ttname"><a href="classVSynth_1_1Generators_1_1Sequencer.html">VSynth::Generators::Sequencer</a></div><div class="ttdoc">Note Sequencer for Instruments.</div><div class="ttdef"><b>Definition:</b> <a href="Sequencer_8h_source.html#l00018">Sequencer.h:19</a></div></div>
+<div class="ttc" id="aclassVSynth_1_1Generators_1_1Sequencer_html_a02bb7bc678a2d1a5de316c56aa6bffce"><div class="ttname"><a href="classVSynth_1_1Generators_1_1Sequencer.html#a02bb7bc678a2d1a5de316c56aa6bffce">VSynth::Generators::Sequencer::sample</a></div><div class="ttdeci">double sample(double time)</div><div class="ttdoc">Sample the SoundGenerator at the given time.</div></div>
+<div class="ttc" id="aclassVSynth_1_1Generators_1_1Instrument_html"><div class="ttname"><a href="classVSynth_1_1Generators_1_1Instrument.html">VSynth::Generators::Instrument</a></div><div class="ttdoc">Device capable of playing multiple notes with an ADSR envelope.</div><div class="ttdef"><b>Definition:</b> <a href="Instrument_8h_source.html#l00015">Instrument.h:16</a></div></div>
+<div class="ttc" id="aclassVSynth_1_1Generators_1_1Sequencer_html_a5cb1134615229c5d635da59b053b3e29"><div class="ttname"><a href="classVSynth_1_1Generators_1_1Sequencer.html#a5cb1134615229c5d635da59b053b3e29">VSynth::Generators::Sequencer::sortNotes</a></div><div class="ttdeci">void sortNotes()</div><div class="ttdoc">Sort all notes by their queued times.</div></div>
+<div class="ttc" id="aclassVSynth_1_1Generators_1_1Sequencer_html_a9e8a8a194958bf180ae4de1fc5236c4b"><div class="ttname"><a href="classVSynth_1_1Generators_1_1Sequencer.html#a9e8a8a194958bf180ae4de1fc5236c4b">VSynth::Generators::Sequencer::setLooping</a></div><div class="ttdeci">void setLooping(bool loop)</div><div class="ttdoc">Set the sequencer to loop at end of note sequence.</div></div>
+<div class="ttc" id="aclassVSynth_1_1SoundGenerator_html"><div class="ttname"><a href="classVSynth_1_1SoundGenerator.html">VSynth::SoundGenerator</a></div><div class="ttdoc">Sound generator.</div><div class="ttdef"><b>Definition:</b> <a href="SoundGenerator_8h_source.html#l00017">SoundGenerator.h:18</a></div></div>
+<div class="ttc" id="aclassVSynth_1_1Generators_1_1Sequencer_html_aa5182022d640f682cb5406b9b7d12cb3"><div class="ttname"><a href="classVSynth_1_1Generators_1_1Sequencer.html#aa5182022d640f682cb5406b9b7d12cb3">VSynth::Generators::Sequencer::queueNote</a></div><div class="ttdeci">void queueNote(double note, double startTime, double duration)</div><div class="ttdoc">Queue a note to be played.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

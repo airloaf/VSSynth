@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['middleware_46',['Middleware',['../classVSynth_1_1Middleware_1_1Middleware.html',1,'VSynth::Middleware']]],
-  ['monophonicinstrument_47',['MonophonicInstrument',['../classVSynth_1_1MonophonicInstrument.html',1,'VSynth']]]
+  ['monophonicinstrument_48',['MonophonicInstrument',['../classVSynth_1_1Generators_1_1MonophonicInstrument.html',1,'VSynth::Generators']]]
 ];

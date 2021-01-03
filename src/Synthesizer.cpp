@@ -46,7 +46,7 @@ namespace VSynth
         mSynthData.soundGenerators.push_back(soundGenerator);
     }
 
-    void Synthesizer::addMiddleware(Middleware::Middleware *middleware)
+    void Synthesizer::addMiddleware(SynthMiddleware *middleware)
     {
         mSynthData.middleware.push_back(middleware);
     }

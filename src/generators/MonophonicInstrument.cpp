@@ -4,41 +4,44 @@
 
 namespace VSynth
 {
-
-    MonophonicInstrument::MonophonicInstrument(
-        std::function<double(double, double)> wave,
-        const ADSREnvelope &adsr)
-        : Instrument(wave), mEnvelope(adsr), mPrevSample(0)
+    namespace Generators
     {
-    }
 
-    MonophonicInstrument::~MonophonicInstrument()
-    {
-    }
-
-    double MonophonicInstrument::sample(double time)
-    {
-        double delta = time - mPrevSample;
-        mPrevSample = time;
-
-        double sample = 0;
-        mEnvelope.update(delta);
-        sample += mWave(mCurrentNote, time) * mEnvelope.getAmplitude();
-
-        return sample;
-    }
-
-    void MonophonicInstrument::holdNote(double frequency)
-    {
-        mCurrentNote = frequency;
-        mEnvelope.hold();
-    }
-
-    void MonophonicInstrument::releaseNote(double frequency)
-    {
-        if (mCurrentNote == frequency)
+        MonophonicInstrument::MonophonicInstrument(
+            std::function<double(double, double)> wave,
+            const ADSREnvelope &adsr)
+            : Instrument(wave), mEnvelope(adsr), mPrevSample(0)
         {
-            mEnvelope.release();
         }
-    }
+
+        MonophonicInstrument::~MonophonicInstrument()
+        {
+        }
+
+        double MonophonicInstrument::sample(double time)
+        {
+            double delta = time - mPrevSample;
+            mPrevSample = time;
+
+            double sample = 0;
+            mEnvelope.update(delta);
+            sample += mWave(mCurrentNote, time) * mEnvelope.getAmplitude();
+
+            return sample;
+        }
+
+        void MonophonicInstrument::holdNote(double frequency)
+        {
+            mCurrentNote = frequency;
+            mEnvelope.hold();
+        }
+
+        void MonophonicInstrument::releaseNote(double frequency)
+        {
+            if (mCurrentNote == frequency)
+            {
+                mEnvelope.release();
+            }
+        }
+    } // namespace Generators
 } // namespace VSynth

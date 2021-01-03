@@ -14,6 +14,7 @@
 #include <vector>
 
 using namespace VSynth;
+using namespace Generators;
 
 struct PianoKey
 {

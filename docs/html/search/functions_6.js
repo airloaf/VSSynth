@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['open_66',['open',['../classVSynth_1_1Middleware_1_1WAVWriter.html#adb47de791b077c809381a0f3bfb786d9',1,'VSynth::Middleware::WAVWriter::open()'],['../classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec',1,'VSynth::Synthesizer::open()']]]
+  ['noise_70',['noise',['../namespaceVSynth_1_1Waveforms.html#aa861df1bc469397b3ef02f8fd6fa9439',1,'VSynth::Waveforms']]]
 ];

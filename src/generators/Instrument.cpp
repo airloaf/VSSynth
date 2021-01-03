@@ -4,14 +4,18 @@
 
 namespace VSynth
 {
-
-    Instrument::Instrument(
-        std::function<double(double, double)> wave)
-        : mWave(wave)
+    namespace Generators
     {
-    }
 
-    Instrument::~Instrument()
-    {
-    }
+        Instrument::Instrument(
+            std::function<double(double, double)> wave)
+            : mWave(wave)
+        {
+        }
+
+        Instrument::~Instrument()
+        {
+        }
+
+    } // namespace Generators
 } // namespace VSynth

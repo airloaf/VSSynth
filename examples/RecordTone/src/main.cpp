@@ -7,6 +7,7 @@
 #include <VSynth/utils/Waveforms.h>
 
 using namespace VSynth;
+using namespace Generators;
 
 int main(int argc, char *argv[])
 {

@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis." alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node1" href="$classVSynth_1_1SynthMiddleware.html" title="Read and modify samples prior to sending them to the speaker." alt="" coords="5,13,177,39"/>
+<area shape="rect" id="node2" href="$classVSynth_1_1Middleware_1_1WAVWriter.html" title="Outputs Audio Samples to a wave file." alt="" coords="225,5,364,47"/>
 </map>

@@ -8,43 +8,45 @@
 
 namespace VSynth
 {
-
-    /**
-     * @brief 
-     * 
-     */
-    class Tone : public SoundGenerator
+    namespace Generators
     {
-    public:
-        /**
-         * @brief Construct a new Tone object
-         * 
-         * @param wave 
-         */
-        Tone(const std::function<double(double, double)> wave);
-        virtual ~Tone();
-
-        double sample(double time);
 
         /**
-         * @brief Plays the waveform at the given frequency
-         * 
-         * @param frequency 
+         * @brief Generates a given tone at multiple frequencies.
          */
-        void playNote(double frequency);
+        class Tone : public SoundGenerator
+        {
+        public:
+            /**
+             * @brief Construct a new Tone object
+             * 
+             * @param wave : soundwave to output
+             */
+            Tone(const std::function<double(double, double)> wave);
+            virtual ~Tone();
 
-        /**
-         * @brief Stops playing the waveform at the given frequency
-         * 
-         * @param frequency 
-         */
-        void stopNote(double frequency);
+            double sample(double time);
 
-    private:
-        std::mutex mNoteLock;
-        std::vector<double> mNotes;
+            /**
+             * @brief Plays the waveform at the given frequency
+             * 
+             * @param frequency 
+             */
+            void playNote(double frequency);
 
-        std::function<double(double, double)> mWave;
-    };
+            /**
+             * @brief Stops playing the waveform at the given frequency
+             * 
+             * @param frequency 
+             */
+            void stopNote(double frequency);
 
-}; // namespace VSynth
+        private:
+            std::mutex mNoteLock;
+            std::vector<double> mNotes;
+
+            std::function<double(double, double)> mWave;
+        };
+
+    } // namespace Generators
+};    // namespace VSynth

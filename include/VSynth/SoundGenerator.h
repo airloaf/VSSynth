@@ -2,6 +2,12 @@
 
 namespace VSynth
 {
+    /**
+     * @brief Collection of sound generators provided with VSynth
+     */
+    namespace Generators
+    {
+    }
 
     /**
      * @brief Sound generator
@@ -14,6 +20,12 @@ namespace VSynth
         SoundGenerator();
         virtual ~SoundGenerator();
 
+        /**
+         * @brief Sample the SoundGenerator at the given time
+         * 
+         * @param time - in seconds
+         * @return double - sound sample in range [-1.0,1.0]
+         */
         virtual double sample(double time) = 0;
 
         /**
@@ -24,9 +36,9 @@ namespace VSynth
         void setVolume(double percent);
 
         /**
-         * @brief Gets the current volume as a percent [0, 100]
+         * @brief Gets the current volume as a percent
          * 
-         * @return double 
+         * @return double - volume as a percent [0, 100]
          */
         double getVolume();
 
@@ -37,6 +49,9 @@ namespace VSynth
          * This value will be multiplied by the amplitude returned by this
          * function. The amplitude will be a value such that it can fit
          * in a 16-bit signed integer.
+         * 
+         * This function is mainly for the Synthesizer. You shouldn't
+         * really have a reason to call this function.
          * 
          * @return double 
          */
