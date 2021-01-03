@@ -2,7 +2,9 @@
 
 #include <iostream>
 
-#define BUFFER_SIZE 48000
+#define SAMPLING_RATE 24000
+#define BUFFER_SIZE (SAMPLING_RATE * 2)
+#define NUM_CHANNELS 2
 
 void writeUint32ToFile_LE(std::ofstream &file, uint32_t value)
 {
@@ -48,32 +50,32 @@ namespace VSynth
     void WAVWriter::open(std::string filePath)
     {
         // Open up the WAV file
-        mWAVFile.open(filePath);
+        mWAVFile.open(filePath, std::ios::out | std::ios::binary);
 
         writeRIFFHeader();
         writeFormatSubChunk();
         writeDataSubChunkHeader();
 
         // Create WAVWriter Thread
-        mWriterThread = new std::thread(
-            [this]() {
-                this->writerThreadFunction();
-            });
+        // mWriterThread = new std::thread(
+        //     [this]() {
+        //         this->writerThreadFunction();
+        //     });
     }
 
     void WAVWriter::close()
     {
         // Tell the thread to end
-        mWriteLock.lock();
-        mReadyToWrite = true;
-        mEndSampling = true;
-        mWriteLock.unlock();
+        // mWriteLock.lock();
+        // mReadyToWrite = true;
+        // mEndSampling = true;
+        // mWriteLock.unlock();
         // mWriteCondition.notify_all();
 
         // Join the WAVWriter Thread and free it
-        mWriterThread->join();
-        delete mWriterThread;
-        mWriterThread = nullptr;
+        // mWriterThread->join();
+        // delete mWriterThread;
+        // mWriterThread = nullptr;
 
         writeChunkSizes();
 
@@ -84,14 +86,17 @@ namespace VSynth
     void WAVWriter::writeSample(int16_t sample)
     {
         // short int le_sample = ((sample & 0x00FF) << 8) | ((sample &0xFF00) >> 8);
-        mAudioBuffers[mSampleBuffer][mSampleBufferIndex++] = sample;
-        mAudioBuffers[mSampleBuffer][mSampleBufferIndex++] = sample;
+        for(int i = 0; i < NUM_CHANNELS; i++){
+            mAudioBuffers[mSampleBuffer][mSampleBufferIndex++] = sample;
+            mWAVFile.write((char *) &sample, sizeof(short));
+            mNumWritten += sizeof(short);
+        }
         if (mSampleBufferIndex >= BUFFER_SIZE)
         {
-            std::cout << "Swap Buffers" << std::endl;
-            mSampleBufferIndex = 0;
-            mSampleBuffer = (mSampleBuffer + 1) % 2;
-            mReadyToWrite = true;
+            // std::cout << "Swap Buffers" << std::endl;
+            // mSampleBufferIndex = 0;
+            // mSampleBuffer = (mSampleBuffer + 1) % 2;
+            // mReadyToWrite = true;
             // mWriteCondition.notify_all();
         }
     }
@@ -130,15 +135,16 @@ namespace VSynth
 
     void WAVWriter::writeFormatSubChunk()
     {
-        uint32_t samplingRate = 24000u;
-        uint32_t byteRate = samplingRate * 2u * 2u;
+        uint32_t samplingRate = SAMPLING_RATE;
+        int numChannels = NUM_CHANNELS;
+        uint32_t byteRate = samplingRate * numChannels * sizeof(short);
         mWAVFile.write("fmt ", 4);
         writeUint32ToFile_LE(mWAVFile, 16u);
         writeUint16ToFile_LE(mWAVFile, 1u);
-        writeUint16ToFile_LE(mWAVFile, 2u);
+        writeUint16ToFile_LE(mWAVFile, numChannels);
         writeUint32ToFile_LE(mWAVFile, samplingRate);
         writeUint32ToFile_LE(mWAVFile, byteRate);
-        writeUint16ToFile_LE(mWAVFile, 4u);
+        writeUint16ToFile_LE(mWAVFile, numChannels * sizeof(short));
         writeUint16ToFile_LE(mWAVFile, 16u);
     }
     void WAVWriter::writeDataSubChunkHeader()
@@ -151,7 +157,7 @@ namespace VSynth
     void WAVWriter::writeChunkSizes()
     {
         mWAVFile.seekp(4, std::ios::beg);
-        writeUint32ToFile_LE(mWAVFile, 60u + mNumWritten);
+        writeUint32ToFile_LE(mWAVFile, 44u + mNumWritten);
         mWAVFile.seekp(40, std::ios::beg);
         writeUint32ToFile_LE(mWAVFile, mNumWritten);
     }
