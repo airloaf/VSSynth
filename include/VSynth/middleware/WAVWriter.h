@@ -26,18 +26,18 @@ namespace VSynth
             ~WAVWriter();
 
             /**
-             * @brief Opens a file for writing and spawns a writer thread
+             * @brief Opens a file for writing
              * @param filePath 
              */
             void open(std::string filePath);
 
             /**
-             * @brief Closes a file for writing and joins the writer thread
+             * @brief Closes a file for writing
              */
             void close();
 
             /**
-             * @brief Writes the sample to file
+             * @brief Writes the given sample to file
              * @param sample
              */
             short processSample(short sample, double time);
