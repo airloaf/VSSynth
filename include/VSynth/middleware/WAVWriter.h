@@ -22,7 +22,7 @@ namespace VSynth
         class WAVWriter : public Middleware
         {
         public:
-            WAVWriter(unsigned long int samplingRate, unsigned int channels);
+            WAVWriter(unsigned long int samplingRate, unsigned int channels=2);
             ~WAVWriter();
 
             /**

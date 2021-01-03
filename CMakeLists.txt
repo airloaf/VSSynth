@@ -29,6 +29,15 @@ target_link_libraries(SimpleTone VSynth)
 
 target_include_directories(SimpleTone PUBLIC include)
 
+# Record Tone Example
+file(GLOB_RECURSE RECORD_TONE_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/RecordTone/src/*.cpp)
+add_executable(RecordTone ${RECORD_TONE_SRCS})
+target_link_libraries(RecordTone SDL2)
+target_link_libraries(RecordTone SDL2main)
+target_link_libraries(RecordTone VSynth)
+
+target_include_directories(RecordTone PUBLIC include)
+
 # Piano Example
 file(GLOB_RECURSE PIANO_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/piano/src/*.cpp)
 add_executable(Piano ${PIANO_SRCS})
