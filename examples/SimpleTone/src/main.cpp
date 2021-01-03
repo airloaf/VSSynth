@@ -22,9 +22,10 @@ int main(int argc, char *argv[])
     // See the Patches.h file within utils
     Tone tone(
         [](double frequency, double time) {
-            return Waveforms::sine(frequency, time);
+            return Waveforms::triangle(frequency, time);
         });
-    tone.playNote(Notes::C4);
+    // tone.playNote(Notes::C4);
+    tone.playNote(100);
 
     // Create a synthesizer, with default settings
     Synthesizer synth;

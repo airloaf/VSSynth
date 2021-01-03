@@ -5,6 +5,7 @@
 #include <VSynth/Synthesizer.h>
 #include <VSynth/utils/Envelope.h>
 #include <VSynth/utils/Patches.h>
+#include <VSynth/middleware/WAVWriter.h>
 
 #include "MIDIPatches.h"
 #include "MIDISequencer.h"
@@ -68,14 +69,16 @@ int main(int argc, char *argv[])
     {
         MIDISequencer seq(new MIDIChannel(
             VSynth::Patches::GLOCKENSPIEL,
-            VSynth::Patches::GLOCKENSPIEL_ENVELOPE
-            ));
+            VSynth::Patches::GLOCKENSPIEL_ENVELOPE));
         sequencers.push_back(seq);
     }
 
     addNotesToSequencer(sequencers, midifile);
 
-    VSynth::Synthesizer synth(25000, 50);
+    VSynth::Middleware::WAVWriter wavWriter(24000, 2);
+    wavWriter.open("MIDI_OUT.wav");
+
+    VSynth::Synthesizer synth(24000, 50);
     synth.open();
     for (int i = 0; i < 16; i++)
     {
@@ -83,6 +86,7 @@ int main(int argc, char *argv[])
         sequencers[i].sortEventsByTime();
         synth.addSoundGenerator(&sequencers[i]);
     }
+    synth.addMiddleware(&wavWriter);
     synth.unpause();
 
     bool running = true;
@@ -101,6 +105,7 @@ int main(int argc, char *argv[])
     synth.pause();
     synth.close();
 
+    wavWriter.close();
     SDL_DestroyWindow(window);
     SDL_Quit();
 

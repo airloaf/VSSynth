@@ -20,6 +20,11 @@ namespace VSynth
                 sampleValue += (*it)->sample(*(synthData->time)) * (*it)->getAmplitude();
             }
 
+            for (auto it = synthData->middleware.begin(); it != synthData->middleware.end(); it++)
+            {
+                sampleValue = (*it)->processSample(sampleValue, *(synthData->time));
+            }
+
             *sampleBuffer++ = sampleValue; // Left channel value
             *sampleBuffer++ = sampleValue; // Right channel value
         }
@@ -39,6 +44,11 @@ namespace VSynth
     void Synthesizer::addSoundGenerator(SoundGenerator *soundGenerator)
     {
         mSynthData.soundGenerators.push_back(soundGenerator);
+    }
+
+    void Synthesizer::addMiddleware(Middleware::Middleware *middleware)
+    {
+        mSynthData.middleware.push_back(middleware);
     }
 
     void Synthesizer::open()
