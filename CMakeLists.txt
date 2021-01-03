@@ -49,16 +49,6 @@ target_link_libraries(SeqBeat VSynth)
 
 target_include_directories(SeqBeat PUBLIC include)
 
-# Test Example
-file(GLOB_RECURSE TEST_OUT_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/TestOut/src/*.cpp)
-add_executable(TestOut ${TEST_OUT_SRCS})
-target_link_libraries(TestOut SDL2)
-target_link_libraries(TestOut SDL2_image)
-target_link_libraries(TestOut SDL2main)
-target_link_libraries(TestOut VSynth)
-
-target_include_directories(SeqBeat PUBLIC include)
-
 # MIDI Example
 file(GLOB_RECURSE MIDI_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/midi/src/*.cpp)
 add_executable(MIDI ${MIDI_SRCS})

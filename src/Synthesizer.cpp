@@ -20,18 +20,21 @@ namespace VSynth
                 sampleValue += (*it)->sample(*(synthData->time)) * (*it)->getAmplitude();
             }
 
+            for (auto it = synthData->middleware.begin(); it != synthData->middleware.end(); it++)
+            {
+                sampleValue = (*it)->processSample(sampleValue, *(synthData->time));
+            }
+
             *sampleBuffer++ = sampleValue; // Left channel value
             *sampleBuffer++ = sampleValue; // Right channel value
-            synthData->writer->writeSample(sampleValue);
         }
     }
 
     Synthesizer::Synthesizer(unsigned int samplingRate, unsigned int numFrames)
-        : mSamplingRate(samplingRate), mNumFrames(numFrames), mWAVWriter(samplingRate, 2)
+        : mSamplingRate(samplingRate), mNumFrames(numFrames)
     {
         mSynthData.sampleDeltaTime = 1.0 / (double)mSamplingRate;
         mSynthData.time = &mTime;
-        mSynthData.writer = &mWAVWriter;
     }
 
     Synthesizer::~Synthesizer()
@@ -43,9 +46,13 @@ namespace VSynth
         mSynthData.soundGenerators.push_back(soundGenerator);
     }
 
+    void Synthesizer::addMiddleware(Middleware::Middleware *middleware)
+    {
+        mSynthData.middleware.push_back(middleware);
+    }
+
     void Synthesizer::open()
     {
-        mWAVWriter.open("SOUND_OUT.wav");
         mTime = 0;
 
         SDL_AudioSpec obtained = {};
@@ -63,7 +70,6 @@ namespace VSynth
     void Synthesizer::close()
     {
         SDL_CloseAudioDevice(mDeviceID);
-        mWAVWriter.close();
     }
 
     void Synthesizer::unpause()

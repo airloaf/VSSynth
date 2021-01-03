@@ -6,7 +6,7 @@
 #include <vector>
 
 #include "SoundGenerator.h"
-#include "WAVWriter.h"
+#include "middleware/WAVWriter.h"
 
 namespace VSynth
 {
@@ -16,7 +16,7 @@ namespace VSynth
         double *time;
         double sampleDeltaTime;
         std::vector<SoundGenerator *> soundGenerators;
-        WAVWriter *writer;
+        std::vector<Middleware::Middleware *> middleware;
     };
 
     /**
@@ -33,7 +33,7 @@ namespace VSynth
          * @param samplingRates - Sampling rate (# of samples per second). 48,000 is a common number, but higher values are computationally intensive
          * @param numFrames - Number of sampling frames. A sampling frame is an instance where sound generators are sampled. 
          */
-        Synthesizer(unsigned int samplingRates=24000, unsigned int numFrames=20);
+        Synthesizer(unsigned int samplingRates = 24000, unsigned int numFrames = 20);
         virtual ~Synthesizer();
 
         /**
@@ -69,6 +69,13 @@ namespace VSynth
          */
         void addSoundGenerator(SoundGenerator *soundGenerator);
 
+        /**
+         * @brief Adds a middleware to the synthesizer
+         * 
+         * @param middleware 
+         */
+        void addMiddleware(Middleware::Middleware *middleware);
+
     private:
         SDL_AudioDeviceID mDeviceID;
 
@@ -78,7 +85,6 @@ namespace VSynth
         unsigned int mNumFrames;
 
         SynthData mSynthData;
-        WAVWriter mWAVWriter;
     };
 
 }; // namespace VSynth

@@ -4,8 +4,6 @@
 
 #define VELCOCITY_MAX 127.0
 
-#include <iostream>
-
 MIDIChannel::MIDIChannel(
     const std::function<double(double, double)> patch,
     const VSynth::ADSREnvelope adsr)
@@ -59,7 +57,6 @@ void MIDIChannel::handleEvent(const MIDI_EVENT &event)
     else if (event.type == MIDI_EVENT_TYPE::PROGRAM_CHANGE)
     {
         mPatch = PATCHES[event.program];
-        std::cout << "Program Change: " << (int) event.program << std::endl;
         for(auto it = mNotes.begin(); it != mNotes.end(); it++){
             it->env.setADSR(ENVELOPES[event.program]);
         }
