@@ -94,8 +94,8 @@ namespace VSynth
         if (mSampleBufferIndex >= BUFFER_SIZE)
         {
             // std::cout << "Swap Buffers" << std::endl;
-            // mSampleBufferIndex = 0;
-            // mSampleBuffer = (mSampleBuffer + 1) % 2;
+            mSampleBufferIndex = 0;
+            mSampleBuffer = (mSampleBuffer + 1) % 2;
             // mReadyToWrite = true;
             // mWriteCondition.notify_all();
         }

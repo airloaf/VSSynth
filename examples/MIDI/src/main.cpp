@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 
     addNotesToSequencer(sequencers, midifile);
 
-    VSynth::Synthesizer synth(25000, 50);
+    VSynth::Synthesizer synth(24000, 50);
     synth.open();
     for (int i = 0; i < 16; i++)
     {

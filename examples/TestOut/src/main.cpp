@@ -15,10 +15,12 @@ int main(int argc, char *argv[]){
     double frequency = 500;
     double amp = 4000;
 
-    for(int i = 0; i < SAMPLING_RATE * 1; i++){
-        short sample = amp * sin(frequency * time * 2.0 * 3.1415926);
-        writer.writeSample(sample);
-        time += timeStep;
+    for(int second = 0; second < 10; second++){
+        for(int i = 0; i < SAMPLING_RATE; i++){
+            short sample = amp * sin(frequency * time * 2.0 * 3.1415926);
+            writer.writeSample(sample);
+            time += timeStep;
+        }
     }
 
     writer.close();
