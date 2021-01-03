@@ -13,19 +13,26 @@ namespace VSynth
     * Attack Time
     * Decay Time
     * Release Time
+    * 
+    * An optional sixth paramater, sustainable, can also be taken.
+    * Sustainable means that the envelope can enter the sustain section of the curve.
+    * If sustainable is false, the curve will go directly from decay to release.
+    *
     */
     struct ADSREnvelope
     {
-        ADSREnvelope(double attack, double sustain, double attackTime, double decayTime, double releaseTime, bool sustainable=true)
-            : attack(attack), sustain(sustain), attackTime(attackTime), decayTime(decayTime), releaseTime(releaseTime), sustainable(sustainable)
-        {
-        }
-        ADSREnvelope() : sustainable(true)
+        ADSREnvelope(double attack, double sustain, double attackTime, double decayTime, double releaseTime, bool sustainable = true)
+            : attack(attack),
+              sustain(sustain),
+              attackTime(attackTime),
+              decayTime(decayTime),
+              releaseTime(releaseTime),
+              sustainable(sustainable)
         {
         }
 
-        double attack, sustain;
-        double attackTime, decayTime, releaseTime;
+        double attack, sustain; // Amplitudes
+        double attackTime, decayTime, releaseTime; // Time-lengths
         bool sustainable;
     };
 
@@ -96,9 +103,9 @@ namespace VSynth
         void release();
 
     private:
-
         // Different curves of the ADSR + an invalid section to represent no sound
-        enum Curves {
+        enum Curves
+        {
             ATTACK,
             DECAY,
             SUSTAIN,
@@ -107,7 +114,7 @@ namespace VSynth
         } mCurrentCurve;
 
         ADSREnvelope mADSR;
-        
+
         bool mHold;
         double mAmplitude;
     };
