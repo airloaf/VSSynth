@@ -27,7 +27,7 @@ namespace VSynth
     }
 
     Synthesizer::Synthesizer(unsigned int samplingRate, unsigned int numFrames)
-        : mSamplingRate(samplingRate), mNumFrames(numFrames)
+        : mSamplingRate(samplingRate), mNumFrames(numFrames), mWAVWriter(samplingRate, 2)
     {
         mSynthData.sampleDeltaTime = 1.0 / (double)mSamplingRate;
         mSynthData.time = &mTime;

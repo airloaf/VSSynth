@@ -1,11 +1,7 @@
 #pragma once
 
-#include <condition_variable>
 #include <fstream>
-#include <mutex>
 #include <string>
-#include <thread>
-#include <vector>
 
 namespace VSynth
 {
@@ -21,7 +17,7 @@ namespace VSynth
     class WAVWriter
     {
     public:
-        WAVWriter();
+        WAVWriter(unsigned long int samplingRate, unsigned int channels);
         ~WAVWriter();
 
         /**
@@ -41,36 +37,17 @@ namespace VSynth
          */
         void writeSample(int16_t sample);
 
-        /**
-         * @brief Function for the writer thread to initialize on.
-         * 
-         * You should not be calling this method.
-         * It is simply for initializing the writer thread.
-         */
-        void writerThreadFunction();
-
     private:
         void writeRIFFHeader();
         void writeFormatSubChunk();
         void writeDataSubChunkHeader();
         void writeChunkSizes();
-        void writeSamplesToFile();
-
-        bool mReadyToWrite;
-        bool mEndSampling;
-
-        std::condition_variable mWriteCondition;
-        std::mutex mWriteLock;
-
-        std::thread *mWriterThread;
 
         std::ofstream mWAVFile;
-
-        unsigned int mSampleBufferIndex;
-        unsigned int mSampleBuffer;
-        std::vector<std::vector<short int>> mAudioBuffers;
-
+        
         unsigned long int mNumWritten;
+        unsigned long int mSamplingRate;
+        unsigned int mNumChannels;
 
     };
 

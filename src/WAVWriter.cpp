@@ -1,51 +1,19 @@
 #include <VSynth/WAVWriter.h>
 
-#include <iostream>
-
-#define SAMPLING_RATE 24000
-#define BUFFER_SIZE (SAMPLING_RATE * 2)
-#define NUM_CHANNELS 2
-
-void writeUint32ToFile_LE(std::ofstream &file, uint32_t value)
-{
-    file.put((value & 0x000000FF) >> 0);
-    file.put((value & 0x0000FF00) >> 8);
-    file.put((value & 0x00FF0000) >> 16);
-    file.put((value & 0xFF000000) >> 24);
-}
-
-void writeUint16ToFile_LE(std::ofstream &file, uint16_t value)
-{
-    file.put((value & 0x000000FF) >> 0);
-    file.put((value & 0x0000FF00) >> 8);
-}
+void writeUint16ToFile_LE(std::ofstream &file, uint16_t value);
+void writeUint32ToFile_LE(std::ofstream &file, uint32_t value);
 
 namespace VSynth
 {
 
-    WAVWriter::WAVWriter()
-        : mWriterThread(nullptr),
-          mReadyToWrite(false),
-          mEndSampling(false),
-          mSampleBuffer(0),
-          mSampleBufferIndex(0),
-          mNumWritten(0)
+    WAVWriter::WAVWriter(unsigned long int samplingRate, unsigned int channels)
+        : mNumWritten(0),
+          mNumChannels(channels),
+          mSamplingRate(samplingRate)
     {
-        // Create two large buffers
-        for (int i = 0; i < 2; i++)
-        {
-            mAudioBuffers.push_back(std::vector<short int>(BUFFER_SIZE, 0));
-        }
     }
 
-    WAVWriter::~WAVWriter()
-    {
-        if (mWriterThread)
-        {
-            mWriterThread->join();
-            delete mWriterThread;
-        }
-    }
+    WAVWriter::~WAVWriter() {}
 
     void WAVWriter::open(std::string filePath)
     {
@@ -55,102 +23,46 @@ namespace VSynth
         writeRIFFHeader();
         writeFormatSubChunk();
         writeDataSubChunkHeader();
-
-        // Create WAVWriter Thread
-        // mWriterThread = new std::thread(
-        //     [this]() {
-        //         this->writerThreadFunction();
-        //     });
     }
 
     void WAVWriter::close()
     {
-        // Tell the thread to end
-        // mWriteLock.lock();
-        // mReadyToWrite = true;
-        // mEndSampling = true;
-        // mWriteLock.unlock();
-        // mWriteCondition.notify_all();
-
-        // Join the WAVWriter Thread and free it
-        // mWriterThread->join();
-        // delete mWriterThread;
-        // mWriterThread = nullptr;
-
         writeChunkSizes();
 
-        // Close the WAV file
         mWAVFile.close();
     }
 
     void WAVWriter::writeSample(int16_t sample)
     {
-        // short int le_sample = ((sample & 0x00FF) << 8) | ((sample &0xFF00) >> 8);
-        for(int i = 0; i < NUM_CHANNELS; i++){
-            mAudioBuffers[mSampleBuffer][mSampleBufferIndex++] = sample;
-            mWAVFile.write((char *) &sample, sizeof(short));
+        for (int i = 0; i < mNumChannels; i++)
+        {
+            mWAVFile.write((char *)&sample, sizeof(short));
             mNumWritten += sizeof(short);
-        }
-        if (mSampleBufferIndex >= BUFFER_SIZE)
-        {
-            // std::cout << "Swap Buffers" << std::endl;
-            mSampleBufferIndex = 0;
-            mSampleBuffer = (mSampleBuffer + 1) % 2;
-            // mReadyToWrite = true;
-            // mWriteCondition.notify_all();
-        }
-    }
-
-    void WAVWriter::writerThreadFunction()
-    {
-        bool doneWriting = false;
-        while (!doneWriting)
-        {
-            mWriteLock.lock();
-            if (mReadyToWrite)
-            {
-                mWriteLock.unlock();
-                writeSamplesToFile();
-                mWriteLock.lock();
-                mReadyToWrite = false;
-            }
-            else if (!mEndSampling)
-            {
-                // std::unique_lock<std::mutex> uniqueLock;
-                // mWriteCondition.wait(uniqueLock);
-            }
-
-            doneWriting = mEndSampling;
-            mWriteLock.unlock();
         }
     }
 
     void WAVWriter::writeRIFFHeader()
     {
         mWAVFile.write("RIFF", 4);
-        // TODO: Write Chunk Size properly. For now I will write 36
-        writeUint32ToFile_LE(mWAVFile, 36u);
+        writeUint32ToFile_LE(mWAVFile, 0);
         mWAVFile.write("WAVE", 4);
     }
 
     void WAVWriter::writeFormatSubChunk()
     {
-        uint32_t samplingRate = SAMPLING_RATE;
-        int numChannels = NUM_CHANNELS;
-        uint32_t byteRate = samplingRate * numChannels * sizeof(short);
+        uint32_t byteRate = mSamplingRate * mNumChannels * sizeof(short);
         mWAVFile.write("fmt ", 4);
         writeUint32ToFile_LE(mWAVFile, 16u);
         writeUint16ToFile_LE(mWAVFile, 1u);
-        writeUint16ToFile_LE(mWAVFile, numChannels);
-        writeUint32ToFile_LE(mWAVFile, samplingRate);
+        writeUint16ToFile_LE(mWAVFile, mNumChannels);
+        writeUint32ToFile_LE(mWAVFile, mSamplingRate);
         writeUint32ToFile_LE(mWAVFile, byteRate);
-        writeUint16ToFile_LE(mWAVFile, numChannels * sizeof(short));
-        writeUint16ToFile_LE(mWAVFile, 16u);
+        writeUint16ToFile_LE(mWAVFile, mNumChannels * sizeof(short));
+        writeUint16ToFile_LE(mWAVFile, sizeof(short) * 8);
     }
     void WAVWriter::writeDataSubChunkHeader()
     {
         mWAVFile.write("data", 4);
-        // TODO: Write Data Chunk Size properly. For now I will write 0
         writeUint32ToFile_LE(mWAVFile, 0u);
     }
 
@@ -162,12 +74,18 @@ namespace VSynth
         writeUint32ToFile_LE(mWAVFile, mNumWritten);
     }
 
-    void WAVWriter::writeSamplesToFile()
-    {
-        // Possible ENDIAN issue. May be unsuitable for some platforms
-        unsigned int writeBuffer = (mSampleBuffer + 1) % 2;
-        mWAVFile.write((char *)mAudioBuffers[writeBuffer].data(), sizeof(short int) * BUFFER_SIZE);
-        mNumWritten += 2 * BUFFER_SIZE;
-    }
-
 }; // namespace VSynth
+
+void writeUint16ToFile_LE(std::ofstream &file, uint16_t value)
+{
+    file.put((value & 0x000000FF) >> 0);
+    file.put((value & 0x0000FF00) >> 8);
+}
+
+void writeUint32ToFile_LE(std::ofstream &file, uint32_t value)
+{
+    file.put((value & 0x000000FF) >> 0);
+    file.put((value & 0x0000FF00) >> 8);
+    file.put((value & 0x00FF0000) >> 16);
+    file.put((value & 0xFF000000) >> 24);
+}
