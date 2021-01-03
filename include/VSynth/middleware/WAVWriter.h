@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Middleware.h"
+#include "../SynthMiddleware.h"
 
 #include <fstream>
 #include <string>
@@ -19,7 +19,7 @@ namespace VSynth
          * delay writing to a file until a large buffer has been filled.
          * Also a separate thread will be created to write to the file.
          */
-        class WAVWriter : public Middleware
+        class WAVWriter : public SynthMiddleware
         {
         public:
             WAVWriter(unsigned long int samplingRate, unsigned int channels=2);

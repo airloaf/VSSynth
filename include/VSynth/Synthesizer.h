@@ -6,17 +6,16 @@
 #include <vector>
 
 #include "SoundGenerator.h"
-#include "middleware/WAVWriter.h"
+#include "SynthMiddleware.h"
 
 namespace VSynth
 {
-
     struct SynthData
     {
         double *time;
         double sampleDeltaTime;
         std::vector<SoundGenerator *> soundGenerators;
-        std::vector<Middleware::Middleware *> middleware;
+        std::vector<SynthMiddleware *> middleware;
     };
 
     /**
@@ -74,7 +73,7 @@ namespace VSynth
          * 
          * @param middleware 
          */
-        void addMiddleware(Middleware::Middleware *middleware);
+        void addMiddleware(SynthMiddleware *middleware);
 
     private:
         SDL_AudioDeviceID mDeviceID;
