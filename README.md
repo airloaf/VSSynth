@@ -38,6 +38,7 @@ The CMake files will generate a library called "VSynth", which you should link t
 |Example|Description|
 | --- | --- |
 | [Simple Tone](https://github.com/airloaf/VSynth/tree/master/examples/SimpleTone) | The "Hello World!" of VSynth. Produces a Sine Wave with the note C4. |
+| [Record Tone](https://github.com/airloaf/VSynth/tree/master/examples/RecordTone) | Produces a WAVE file with a Sine Wave with the note C4. |
 | [Piano](https://github.com/airloaf/VSynth/tree/master/examples/piano) | A piano which can play notes on keyboard input. |
 | [Sequenced Beat](https://github.com/airloaf/VSynth/tree/master/examples/sequenced_beat) | Extension of the Piano example. The song, "Mary had a little lamb", will play on repeat in the background while you control the  piano. |
 | [MIDI Player](https://github.com/airloaf/VSynth/tree/master/examples/MIDI) | A MIDI player using synthesized instruments included with VSynth. Does not fully support all MIDI messages, but the majority of songs play well on this. |
