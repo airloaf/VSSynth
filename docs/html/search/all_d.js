@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['unpause_29',['unpause',['../classVSynth_1_1Synthesizer.html#adf40f3db8fe52fdf582c7d4a2bec71a7',1,'VSynth::Synthesizer']]],
-  ['update_30',['update',['../classVSynth_1_1Envelope.html#aeb815fcefbb8502327ac8bce7fbe848e',1,'VSynth::Envelope']]]
+  ['tone_35',['Tone',['../classVSynth_1_1Tone.html',1,'VSynth::Tone'],['../classVSynth_1_1Tone.html#a52844a5b7991126de851ec2126a4cf91',1,'VSynth::Tone::Tone()']]],
+  ['triangle_36',['triangle',['../namespaceVSynth_1_1Waveforms.html#a5a36f0b0693b7a4ba3c29ee683a7e9da',1,'VSynth::Waveforms']]]
 ];

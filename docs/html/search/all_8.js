@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['patch_12',['Patch',['../namespaceVSynth_1_1Patches.html#a517e5c73d60a382ee22e247f71017d09',1,'VSynth::Patches']]],
-  ['pause_13',['pause',['../classVSynth_1_1Synthesizer.html#a56bb0e89b47f4fa18603e1fe1d39b79e',1,'VSynth::Synthesizer']]],
-  ['polyphonicinstrument_14',['PolyphonicInstrument',['../classVSynth_1_1PolyphonicInstrument.html',1,'VSynth']]]
+  ['open_13',['open',['../classVSynth_1_1Middleware_1_1WAVWriter.html#adb47de791b077c809381a0f3bfb786d9',1,'VSynth::Middleware::WAVWriter::open()'],['../classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec',1,'VSynth::Synthesizer::open()']]]
 ];

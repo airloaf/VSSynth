@@ -85,12 +85,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a22eea838c70b36f4f70f329756055ebf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Envelope.html#a22eea838c70b36f4f70f329756055ebf">Envelope</a> (const <a class="el" href="structVSynth_1_1ADSREnvelope.html">ADSREnvelope</a> adsr)</td></tr>
 <tr class="memdesc:a22eea838c70b36f4f70f329756055ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVSynth_1_1Envelope.html" title="Waveform modulator.">Envelope</a> object.  <a href="classVSynth_1_1Envelope.html#a22eea838c70b36f4f70f329756055ebf">More...</a><br /></td></tr>
 <tr class="separator:a22eea838c70b36f4f70f329756055ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dd74edd2b24e2283e9e2a99d9785d19"><td class="memItemLeft" align="right" valign="top"><a id="a8dd74edd2b24e2283e9e2a99d9785d19"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Envelope.html#a8dd74edd2b24e2283e9e2a99d9785d19">Envelope</a> ()</td></tr>
+<tr class="memdesc:a8dd74edd2b24e2283e9e2a99d9785d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVSynth_1_1Envelope.html" title="Waveform modulator.">Envelope</a> object. <br /></td></tr>
+<tr class="separator:a8dd74edd2b24e2283e9e2a99d9785d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1930a80f83e0f9f438c81f1cb18b9de2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Envelope.html#a1930a80f83e0f9f438c81f1cb18b9de2">getAmplitude</a> () const</td></tr>
 <tr class="memdesc:a1930a80f83e0f9f438c81f1cb18b9de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current amplitude modifier.  <a href="classVSynth_1_1Envelope.html#a1930a80f83e0f9f438c81f1cb18b9de2">More...</a><br /></td></tr>
 <tr class="separator:a1930a80f83e0f9f438c81f1cb18b9de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb815fcefbb8502327ac8bce7fbe848e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Envelope.html#aeb815fcefbb8502327ac8bce7fbe848e">update</a> (double deltaTime)</td></tr>
 <tr class="memdesc:aeb815fcefbb8502327ac8bce7fbe848e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the timestamp for the envelope.  <a href="classVSynth_1_1Envelope.html#aeb815fcefbb8502327ac8bce7fbe848e">More...</a><br /></td></tr>
 <tr class="separator:aeb815fcefbb8502327ac8bce7fbe848e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f3a28f5459fc3900e6c708ccd211390"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Envelope.html#a1f3a28f5459fc3900e6c708ccd211390">setADSR</a> (const <a class="el" href="structVSynth_1_1ADSREnvelope.html">ADSREnvelope</a> adsr)</td></tr>
+<tr class="memdesc:a1f3a28f5459fc3900e6c708ccd211390"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a new ADSR for this envelope.  <a href="classVSynth_1_1Envelope.html#a1f3a28f5459fc3900e6c708ccd211390">More...</a><br /></td></tr>
+<tr class="separator:a1f3a28f5459fc3900e6c708ccd211390"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14ed477880ae3870d16687312edde90e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Envelope.html#a14ed477880ae3870d16687312edde90e">hold</a> ()</td></tr>
 <tr class="memdesc:a14ed477880ae3870d16687312edde90e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the envelopes modulation.  <a href="classVSynth_1_1Envelope.html#a14ed477880ae3870d16687312edde90e">More...</a><br /></td></tr>
 <tr class="separator:a14ed477880ae3870d16687312edde90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,6 +198,32 @@ Public Member Functions</h2></td></tr>
 
 <p>releases </p>
 <p>Starts the ending for the envelope, or in other terms "releases the key". Calling this function will transition the envelope to the release state. </p>
+
+</div>
+</div>
+<a id="a1f3a28f5459fc3900e6c708ccd211390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f3a28f5459fc3900e6c708ccd211390">&#9670;&nbsp;</a></span>setADSR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VSynth::Envelope::setADSR </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structVSynth_1_1ADSREnvelope.html">ADSREnvelope</a>&#160;</td>
+          <td class="paramname"><em>adsr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a new ADSR for this envelope. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">adsr</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
