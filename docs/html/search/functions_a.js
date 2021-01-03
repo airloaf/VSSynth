@@ -1,13 +1,5 @@
 var searchData=
 [
-  ['sample_74',['sample',['../classVSynth_1_1Instrument.html#a932d579da2eba6673bf281719921706d',1,'VSynth::Instrument::sample()'],['../classVSynth_1_1MonophonicInstrument.html#a7aabc271f1c4d5e864d55b5f6ecbd37c',1,'VSynth::MonophonicInstrument::sample()'],['../classVSynth_1_1PolyphonicInstrument.html#a1a2065dd209d53f6e633ab95d0673162',1,'VSynth::PolyphonicInstrument::sample()']]],
-  ['sawtooth_75',['sawtooth',['../namespaceVSynth_1_1Waveforms.html#a5a57437f4d791b30979b3bc0b002bbda',1,'VSynth::Waveforms']]],
-  ['setadsr_76',['setADSR',['../classVSynth_1_1Envelope.html#a1f3a28f5459fc3900e6c708ccd211390',1,'VSynth::Envelope']]],
-  ['setlooping_77',['setLooping',['../classVSynth_1_1Sequencer.html#a39b820c232e6912d7b9172e2cba10c41',1,'VSynth::Sequencer']]],
-  ['setvolume_78',['setVolume',['../classVSynth_1_1SoundGenerator.html#a35f376e137010e541adc8e6a36247258',1,'VSynth::SoundGenerator']]],
-  ['sine_79',['sine',['../namespaceVSynth_1_1Waveforms.html#a85f5a2b3f51b80931cdb9b4120587825',1,'VSynth::Waveforms']]],
-  ['sortnotes_80',['sortNotes',['../classVSynth_1_1Sequencer.html#a462217f2e8c6786c8d321637ba5331df',1,'VSynth::Sequencer']]],
-  ['square_81',['square',['../namespaceVSynth_1_1Waveforms.html#ab62bf8575ba6b26fe529f1b4251b694e',1,'VSynth::Waveforms']]],
-  ['stopnote_82',['stopNote',['../classVSynth_1_1Tone.html#aa2828b3ec183aada5a7ca6ba4183684d',1,'VSynth::Tone']]],
-  ['synthesizer_83',['Synthesizer',['../classVSynth_1_1Synthesizer.html#aa8a33f816c3cf5b5c18aa0fc39458901',1,'VSynth::Synthesizer']]]
+  ['release_78',['release',['../classVSynth_1_1Envelope.html#a26c90903b8ac458b76407f2b5545ab54',1,'VSynth::Envelope']]],
+  ['releasenote_79',['releaseNote',['../classVSynth_1_1Generators_1_1Instrument.html#a328f0ccfad77574fd2eccc2716de503b',1,'VSynth::Generators::Instrument::releaseNote()'],['../classVSynth_1_1Generators_1_1MonophonicInstrument.html#a09763b8afc020cda0927db9b77b4dd13',1,'VSynth::Generators::MonophonicInstrument::releaseNote()'],['../classVSynth_1_1Generators_1_1PolyphonicInstrument.html#a67b6246f5b390315405bb80abe36700b',1,'VSynth::Generators::PolyphonicInstrument::releaseNote()']]]
 ];

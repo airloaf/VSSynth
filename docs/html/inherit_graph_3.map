@@ -1,8 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classVSynth_1_1SoundGenerator.html" title="Sound generator." alt="" coords="5,81,172,108"/>
-<area shape="rect" id="node2" href="$classVSynth_1_1Instrument.html" title="Device capable of playing multiple notes with an ADSR envelope." alt="" coords="220,31,355,57"/>
-<area shape="rect" id="node5" href="$classVSynth_1_1Sequencer.html" title="Note Sequencer for Instruments." alt="" coords="220,81,355,108"/>
-<area shape="rect" id="node6" href="$classVSynth_1_1Tone.html" title=" " alt="" coords="237,132,338,159"/>
-<area shape="rect" id="node3" href="$classVSynth_1_1MonophonicInstrument.html" title="Device capable of playing a single note at a time. A monophonic instrument is capable of playing only..." alt="" coords="403,5,607,32"/>
-<area shape="rect" id="node4" href="$classVSynth_1_1PolyphonicInstrument.html" title="Device capable of playing notes simultaneously A polyphonic instrument is capable of playing multiple..." alt="" coords="405,56,604,83"/>
+<area shape="rect" id="node1" href="$classVSynth_1_1SoundGenerator.html" title="Sound generator." alt="" coords="5,110,172,137"/>
+<area shape="rect" id="node2" href="$classVSynth_1_1Generators_1_1Instrument.html" title="Device capable of playing multiple notes with an ADSR envelope." alt="" coords="220,37,357,79"/>
+<area shape="rect" id="node5" href="$classVSynth_1_1Generators_1_1Sequencer.html" title="Note Sequencer for Instruments." alt="" coords="220,103,357,144"/>
+<area shape="rect" id="node6" href="$classVSynth_1_1Generators_1_1Tone.html" title="Generates a given tone at multiple frequencies." alt="" coords="220,168,357,209"/>
+<area shape="rect" id="node3" href="$classVSynth_1_1Generators_1_1MonophonicInstrument.html" title="Device capable of playing a single note at a time. A monophonic instrument is capable of playing only..." alt="" coords="405,5,567,47"/>
+<area shape="rect" id="node4" href="$classVSynth_1_1Generators_1_1PolyphonicInstrument.html" title="Device capable of playing notes simultaneously A polyphonic instrument is capable of playing multiple..." alt="" coords="409,71,563,112"/>
 </map>

@@ -81,33 +81,37 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>VSynth</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classVSynth_1_1Tone.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classVSynth_1_1Tone.html">Tone</a> : <span class="keyword">public</span> <a class="code" href="classVSynth_1_1SoundGenerator.html">SoundGenerator</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classVSynth_1_1Tone.html#a52844a5b7991126de851ec2126a4cf91">   24</a></span>&#160;        <a class="code" href="classVSynth_1_1Tone.html#a52844a5b7991126de851ec2126a4cf91">Tone</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">double</span>(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>)&gt; wave);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classVSynth_1_1Tone.html">Tone</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">double</span> sample(<span class="keywordtype">double</span> time);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classVSynth_1_1Tone.html#a77b8e85ae43846ca4093c5a6da5550d5">   34</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Tone.html#a77b8e85ae43846ca4093c5a6da5550d5">playNote</a>(<span class="keywordtype">double</span> frequency);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classVSynth_1_1Tone.html#aa2828b3ec183aada5a7ca6ba4183684d">   41</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Tone.html#aa2828b3ec183aada5a7ca6ba4183684d">stopNote</a>(<span class="keywordtype">double</span> frequency);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::mutex mNoteLock;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::vector&lt;double&gt; mNotes;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        std::function&lt;double(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>)&gt; mWave;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    };</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}; <span class="comment">// namespace VSynth</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">namespace </span>Generators</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1Tone.html">   17</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classVSynth_1_1Generators_1_1Tone.html">Tone</a> : <span class="keyword">public</span> <a class="code" href="classVSynth_1_1SoundGenerator.html">SoundGenerator</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1Tone.html#ab994b058a81c0391c6114dc53d87240b">   25</a></span>&#160;            <a class="code" href="classVSynth_1_1Generators_1_1Tone.html#ab994b058a81c0391c6114dc53d87240b">Tone</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">double</span>(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>)&gt; wave);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">virtual</span> ~<a class="code" href="classVSynth_1_1Generators_1_1Tone.html">Tone</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1Tone.html#a24ee7f67c2b1143d23d107ce6663ee47">   28</a></span>&#160;            <span class="keywordtype">double</span> <a class="code" href="classVSynth_1_1Generators_1_1Tone.html#a24ee7f67c2b1143d23d107ce6663ee47">sample</a>(<span class="keywordtype">double</span> time);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1Tone.html#aab877dd944324134a2a934f0e1f94298">   35</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Generators_1_1Tone.html#aab877dd944324134a2a934f0e1f94298">playNote</a>(<span class="keywordtype">double</span> frequency);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1Tone.html#a05e0847ab9d04853b20049fc4cbc349a">   42</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Generators_1_1Tone.html#a05e0847ab9d04853b20049fc4cbc349a">stopNote</a>(<span class="keywordtype">double</span> frequency);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            std::mutex mNoteLock;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            std::vector&lt;double&gt; mNotes;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            std::function&lt;double(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>)&gt; mWave;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    } <span class="comment">// namespace Generators</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};    <span class="comment">// namespace VSynth</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassVSynth_1_1Tone_html"><div class="ttname"><a href="classVSynth_1_1Tone.html">VSynth::Tone</a></div><div class="ttdef"><b>Definition:</b> <a href="Tone_8h_source.html#l00016">Tone.h:17</a></div></div>
-<div class="ttc" id="aclassVSynth_1_1Tone_html_a52844a5b7991126de851ec2126a4cf91"><div class="ttname"><a href="classVSynth_1_1Tone.html#a52844a5b7991126de851ec2126a4cf91">VSynth::Tone::Tone</a></div><div class="ttdeci">Tone(const std::function&lt; double(double, double)&gt; wave)</div><div class="ttdoc">Construct a new Tone object.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Tone_html_a77b8e85ae43846ca4093c5a6da5550d5"><div class="ttname"><a href="classVSynth_1_1Tone.html#a77b8e85ae43846ca4093c5a6da5550d5">VSynth::Tone::playNote</a></div><div class="ttdeci">void playNote(double frequency)</div><div class="ttdoc">Plays the waveform at the given frequency.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Tone_html_aa2828b3ec183aada5a7ca6ba4183684d"><div class="ttname"><a href="classVSynth_1_1Tone.html#aa2828b3ec183aada5a7ca6ba4183684d">VSynth::Tone::stopNote</a></div><div class="ttdeci">void stopNote(double frequency)</div><div class="ttdoc">Stops playing the waveform at the given frequency.</div></div>
-<div class="ttc" id="aclassVSynth_1_1SoundGenerator_html"><div class="ttname"><a href="classVSynth_1_1SoundGenerator.html">VSynth::SoundGenerator</a></div><div class="ttdoc">Sound generator.</div><div class="ttdef"><b>Definition:</b> <a href="SoundGenerator_8h_source.html#l00011">SoundGenerator.h:12</a></div></div>
+<div class="ttc" id="aclassVSynth_1_1Generators_1_1Tone_html_aab877dd944324134a2a934f0e1f94298"><div class="ttname"><a href="classVSynth_1_1Generators_1_1Tone.html#aab877dd944324134a2a934f0e1f94298">VSynth::Generators::Tone::playNote</a></div><div class="ttdeci">void playNote(double frequency)</div><div class="ttdoc">Plays the waveform at the given frequency.</div></div>
+<div class="ttc" id="aclassVSynth_1_1Generators_1_1Tone_html"><div class="ttname"><a href="classVSynth_1_1Generators_1_1Tone.html">VSynth::Generators::Tone</a></div><div class="ttdoc">Generates a given tone at multiple frequencies.</div><div class="ttdef"><b>Definition:</b> <a href="Tone_8h_source.html#l00017">Tone.h:18</a></div></div>
+<div class="ttc" id="aclassVSynth_1_1Generators_1_1Tone_html_a24ee7f67c2b1143d23d107ce6663ee47"><div class="ttname"><a href="classVSynth_1_1Generators_1_1Tone.html#a24ee7f67c2b1143d23d107ce6663ee47">VSynth::Generators::Tone::sample</a></div><div class="ttdeci">double sample(double time)</div><div class="ttdoc">Sample the SoundGenerator at the given time.</div></div>
+<div class="ttc" id="aclassVSynth_1_1Generators_1_1Tone_html_a05e0847ab9d04853b20049fc4cbc349a"><div class="ttname"><a href="classVSynth_1_1Generators_1_1Tone.html#a05e0847ab9d04853b20049fc4cbc349a">VSynth::Generators::Tone::stopNote</a></div><div class="ttdeci">void stopNote(double frequency)</div><div class="ttdoc">Stops playing the waveform at the given frequency.</div></div>
+<div class="ttc" id="aclassVSynth_1_1SoundGenerator_html"><div class="ttname"><a href="classVSynth_1_1SoundGenerator.html">VSynth::SoundGenerator</a></div><div class="ttdoc">Sound generator.</div><div class="ttdef"><b>Definition:</b> <a href="SoundGenerator_8h_source.html#l00017">SoundGenerator.h:18</a></div></div>
+<div class="ttc" id="aclassVSynth_1_1Generators_1_1Tone_html_ab994b058a81c0391c6114dc53d87240b"><div class="ttname"><a href="classVSynth_1_1Generators_1_1Tone.html#ab994b058a81c0391c6114dc53d87240b">VSynth::Generators::Tone::Tone</a></div><div class="ttdeci">Tone(const std::function&lt; double(double, double)&gt; wave)</div><div class="ttdoc">Construct a new Tone object.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

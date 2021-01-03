@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['noise_65',['noise',['../namespaceVSynth_1_1Waveforms.html#aa861df1bc469397b3ef02f8fd6fa9439',1,'VSynth::Waveforms']]]
+  ['monophonicinstrument_69',['MonophonicInstrument',['../classVSynth_1_1Generators_1_1MonophonicInstrument.html#a2c6e5610893c7a96b5f414746eeca9f6',1,'VSynth::Generators::MonophonicInstrument']]]
 ];
