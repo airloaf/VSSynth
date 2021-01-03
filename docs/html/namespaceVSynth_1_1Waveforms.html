@@ -79,41 +79,58 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae41261225654aae72693dbe07aabf3bd"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVSynth_1_1Waveforms.html#ae41261225654aae72693dbe07aabf3bd">square</a> (double frequency, double time)</td></tr>
-<tr class="memdesc:ae41261225654aae72693dbe07aabf3bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a 50% pulse wave.  <a href="namespaceVSynth_1_1Waveforms.html#ae41261225654aae72693dbe07aabf3bd">More...</a><br /></td></tr>
-<tr class="separator:ae41261225654aae72693dbe07aabf3bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9386af7f189e0671673361f650b4f895"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVSynth_1_1Waveforms.html#a9386af7f189e0671673361f650b4f895">sine</a> (double frequency, double time)</td></tr>
-<tr class="memdesc:a9386af7f189e0671673361f650b4f895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sine wave.  <a href="namespaceVSynth_1_1Waveforms.html#a9386af7f189e0671673361f650b4f895">More...</a><br /></td></tr>
-<tr class="separator:a9386af7f189e0671673361f650b4f895"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3886f521488dff667ecbccec766cdb84"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVSynth_1_1Waveforms.html#a3886f521488dff667ecbccec766cdb84">sawtooth</a> (double frequency, double time)</td></tr>
-<tr class="memdesc:a3886f521488dff667ecbccec766cdb84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sawtooth wave.  <a href="namespaceVSynth_1_1Waveforms.html#a3886f521488dff667ecbccec766cdb84">More...</a><br /></td></tr>
-<tr class="separator:a3886f521488dff667ecbccec766cdb84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa47fd0a3aa6a39457c0143d5bc9674a3"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVSynth_1_1Waveforms.html#aa47fd0a3aa6a39457c0143d5bc9674a3">triangle</a> (double frequency, double time)</td></tr>
-<tr class="memdesc:aa47fd0a3aa6a39457c0143d5bc9674a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a triangle wave.  <a href="namespaceVSynth_1_1Waveforms.html#aa47fd0a3aa6a39457c0143d5bc9674a3">More...</a><br /></td></tr>
-<tr class="separator:aa47fd0a3aa6a39457c0143d5bc9674a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab39960a6c231817ad54097546ce788b4"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVSynth_1_1Waveforms.html#ab39960a6c231817ad54097546ce788b4">modulatedWave</a> (std::function&lt; double(double, double)&gt; wave, double frequency, double modulatorAmplitude, std::function&lt; double(double)&gt; freqOsc, double time)</td></tr>
-<tr class="memdesc:ab39960a6c231817ad54097546ce788b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a waveform with a low frequency oscillator.  <a href="namespaceVSynth_1_1Waveforms.html#ab39960a6c231817ad54097546ce788b4">More...</a><br /></td></tr>
-<tr class="separator:ab39960a6c231817ad54097546ce788b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d6d0d0eb7d415d87603cbb2dc3dd9f9"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVSynth_1_1Waveforms.html#a3d6d0d0eb7d415d87603cbb2dc3dd9f9">pulse</a> (double frequency, double time, double percent, double phase=0)</td></tr>
+<tr class="memdesc:a3d6d0d0eb7d415d87603cbb2dc3dd9f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a pulse wave at a given percent.  <a href="namespaceVSynth_1_1Waveforms.html#a3d6d0d0eb7d415d87603cbb2dc3dd9f9">More...</a><br /></td></tr>
+<tr class="separator:a3d6d0d0eb7d415d87603cbb2dc3dd9f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab62bf8575ba6b26fe529f1b4251b694e"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVSynth_1_1Waveforms.html#ab62bf8575ba6b26fe529f1b4251b694e">square</a> (double frequency, double time, double phase=0)</td></tr>
+<tr class="memdesc:ab62bf8575ba6b26fe529f1b4251b694e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a 50% pulse wave.  <a href="namespaceVSynth_1_1Waveforms.html#ab62bf8575ba6b26fe529f1b4251b694e">More...</a><br /></td></tr>
+<tr class="separator:ab62bf8575ba6b26fe529f1b4251b694e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85f5a2b3f51b80931cdb9b4120587825"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVSynth_1_1Waveforms.html#a85f5a2b3f51b80931cdb9b4120587825">sine</a> (double frequency, double time, double phase=0)</td></tr>
+<tr class="memdesc:a85f5a2b3f51b80931cdb9b4120587825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sine wave.  <a href="namespaceVSynth_1_1Waveforms.html#a85f5a2b3f51b80931cdb9b4120587825">More...</a><br /></td></tr>
+<tr class="separator:a85f5a2b3f51b80931cdb9b4120587825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a57437f4d791b30979b3bc0b002bbda"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVSynth_1_1Waveforms.html#a5a57437f4d791b30979b3bc0b002bbda">sawtooth</a> (double frequency, double time, double phase=0)</td></tr>
+<tr class="memdesc:a5a57437f4d791b30979b3bc0b002bbda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sawtooth wave.  <a href="namespaceVSynth_1_1Waveforms.html#a5a57437f4d791b30979b3bc0b002bbda">More...</a><br /></td></tr>
+<tr class="separator:a5a57437f4d791b30979b3bc0b002bbda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a36f0b0693b7a4ba3c29ee683a7e9da"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVSynth_1_1Waveforms.html#a5a36f0b0693b7a4ba3c29ee683a7e9da">triangle</a> (double frequency, double time, double phase=0)</td></tr>
+<tr class="memdesc:a5a36f0b0693b7a4ba3c29ee683a7e9da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a triangle wave.  <a href="namespaceVSynth_1_1Waveforms.html#a5a36f0b0693b7a4ba3c29ee683a7e9da">More...</a><br /></td></tr>
+<tr class="separator:a5a36f0b0693b7a4ba3c29ee683a7e9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa861df1bc469397b3ef02f8fd6fa9439"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVSynth_1_1Waveforms.html#aa861df1bc469397b3ef02f8fd6fa9439">noise</a> ()</td></tr>
+<tr class="memdesc:aa861df1bc469397b3ef02f8fd6fa9439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates random noise.  <a href="namespaceVSynth_1_1Waveforms.html#aa861df1bc469397b3ef02f8fd6fa9439">More...</a><br /></td></tr>
+<tr class="separator:aa861df1bc469397b3ef02f8fd6fa9439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Collection of waveform primitives. </p>
 <p>This namespace encompasses many of the common waveforms an audio synthesizer would want to use. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ab39960a6c231817ad54097546ce788b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab39960a6c231817ad54097546ce788b4">&#9670;&nbsp;</a></span>modulatedWave()</h2>
+<a id="aa861df1bc469397b3ef02f8fd6fa9439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa861df1bc469397b3ef02f8fd6fa9439">&#9670;&nbsp;</a></span>noise()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const double VSynth::Waveforms::modulatedWave </td>
+          <td class="memname">const double VSynth::Waveforms::noise </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; double(double, double)&gt;&#160;</td>
-          <td class="paramname"><em>wave</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates random noise. </p>
+<dl class="section return"><dt>Returns</dt><dd>const double </dd></dl>
+
+</div>
+</div>
+<a id="a3d6d0d0eb7d415d87603cbb2dc3dd9f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d6d0d0eb7d415d87603cbb2dc3dd9f9">&#9670;&nbsp;</a></span>pulse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double VSynth::Waveforms::pulse </td>
+          <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>frequency</em>, </td>
         </tr>
@@ -121,19 +138,19 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>modulatorAmplitude</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::function&lt; double(double)&gt;&#160;</td>
-          <td class="paramname"><em>freqOsc</em>, </td>
+          <td class="paramname"><em>time</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
+          <td class="paramname"><em>percent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>phase</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -143,23 +160,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Generates a waveform with a low frequency oscillator. </p>
+<p>Generates a pulse wave at a given percent. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">wave</td><td>- base waveform </td></tr>
-    <tr><td class="paramname">frequency</td><td>- base frequency </td></tr>
-    <tr><td class="paramname">modulatorAmplitude</td><td>- modulator amplitude (higher value makes the oscillator more pronounced) </td></tr>
-    <tr><td class="paramname">freqOsc</td><td>- the frequency oscillator </td></tr>
+    <tr><td class="paramname">frequency</td><td></td></tr>
     <tr><td class="paramname">time</td><td></td></tr>
+    <tr><td class="paramname">percent</td><td>in range [0, 100] </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const double </dd></dl>
 
 </div>
 </div>
-<a id="a3886f521488dff667ecbccec766cdb84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3886f521488dff667ecbccec766cdb84">&#9670;&nbsp;</a></span>sawtooth()</h2>
+<a id="a5a57437f4d791b30979b3bc0b002bbda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a57437f4d791b30979b3bc0b002bbda">&#9670;&nbsp;</a></span>sawtooth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +189,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>phase</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -196,8 +217,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9386af7f189e0671673361f650b4f895"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9386af7f189e0671673361f650b4f895">&#9670;&nbsp;</a></span>sine()</h2>
+<a id="a85f5a2b3f51b80931cdb9b4120587825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85f5a2b3f51b80931cdb9b4120587825">&#9670;&nbsp;</a></span>sine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,7 +233,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>phase</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -234,8 +261,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae41261225654aae72693dbe07aabf3bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae41261225654aae72693dbe07aabf3bd">&#9670;&nbsp;</a></span>square()</h2>
+<a id="ab62bf8575ba6b26fe529f1b4251b694e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab62bf8575ba6b26fe529f1b4251b694e">&#9670;&nbsp;</a></span>square()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +277,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>phase</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -272,8 +305,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa47fd0a3aa6a39457c0143d5bc9674a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa47fd0a3aa6a39457c0143d5bc9674a3">&#9670;&nbsp;</a></span>triangle()</h2>
+<a id="a5a36f0b0693b7a4ba3c29ee683a7e9da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a36f0b0693b7a4ba3c29ee683a7e9da">&#9670;&nbsp;</a></span>triangle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,7 +321,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>phase</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>

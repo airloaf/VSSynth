@@ -1,7 +1,8 @@
 <map id="VSynth::SoundGenerator" name="VSynth::SoundGenerator">
-<area shape="rect" id="node1" title="Sound generator." alt="" coords="215,5,381,32"/>
+<area shape="rect" id="node1" title="Sound generator." alt="" coords="295,5,461,32"/>
 <area shape="rect" id="node2" href="$classVSynth_1_1Instrument.html" title="Device capable of playing multiple notes with an ADSR envelope." alt="" coords="152,80,287,107"/>
 <area shape="rect" id="node5" href="$classVSynth_1_1Sequencer.html" title="Note Sequencer for Instruments." alt="" coords="311,80,445,107"/>
+<area shape="rect" id="node6" href="$classVSynth_1_1Tone.html" title=" " alt="" coords="470,80,571,107"/>
 <area shape="rect" id="node3" href="$classVSynth_1_1MonophonicInstrument.html" title="Device capable of playing a single note at a time. A monophonic instrument is capable of playing only..." alt="" coords="5,155,209,181"/>
 <area shape="rect" id="node4" href="$classVSynth_1_1PolyphonicInstrument.html" title="Device capable of playing notes simultaneously A polyphonic instrument is capable of playing multiple..." alt="" coords="233,155,432,181"/>
 </map>

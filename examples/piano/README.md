@@ -1,10 +1,10 @@
 # Piano
 
-Plays the notes C4 -> E5, including the sharp and flat notes in between.
+Plays a variety of notes including sharp/flat notes. An image will render to the screen indicating which keys to press.
 
-## Usage
+## What you will learn
 
-The Homerow keys [A -> ;] correspond to C4 -> E5.
-
-Sharp and flat notes are on the QWERTY row.
-Keys {W, E, T, Y, U} correspond to {C#4, D#4, F#4, G#4, A#4} respectively.
+- Creating an instrument sound generator
+- Creating an envelope to produce richer tones
+- Using the provided instrument patches and envelopes
+- Manipulating sound generators with user input

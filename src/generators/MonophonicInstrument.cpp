@@ -1,4 +1,4 @@
-#include <VSynth/Generators/MonophonicInstrument.h>
+#include <VSynth/generators/MonophonicInstrument.h>
 
 #include <algorithm>
 

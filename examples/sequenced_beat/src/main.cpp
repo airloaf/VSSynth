@@ -9,6 +9,7 @@
 #include <VSynth/utils/Notes.h>
 #include <VSynth/utils/Patches.h>
 
+#include <algorithm>
 #include <map>
 #include <vector>
 
@@ -20,6 +21,8 @@ struct PianoKey
     double frequency;
 };
 
+// Keyboard to Piano Notes
+// First item is the keyboard key, second item is the note to play
 std::vector<PianoKey> pianoKeys = {
     {SDLK_a, Notes::C4},
     {SDLK_w, Notes::Cs4},
@@ -39,23 +42,8 @@ std::vector<PianoKey> pianoKeys = {
     {SDLK_p, Notes::Ds5},
     {SDLK_SEMICOLON, Notes::E5}};
 
-void setSequencerBeat(Sequencer &seq)
-{
-    seq.queueNote(Notes::E4, 1.00, 0.25);
-    seq.queueNote(Notes::D4, 1.25, 0.25);
-    seq.queueNote(Notes::C4, 1.50, 0.25);
-    seq.queueNote(Notes::D4, 1.75, 0.25);
-    seq.queueNote(Notes::E4, 2.00, 0.25);
-    seq.queueNote(Notes::E4, 2.25, 0.25);
-    seq.queueNote(Notes::E4, 2.50, 0.50);
-    seq.queueNote(Notes::D4, 3.00, 0.25);
-    seq.queueNote(Notes::D4, 3.25, 0.25);
-    seq.queueNote(Notes::D4, 3.50, 0.50);
-    seq.queueNote(Notes::E4, 4.00, 0.25);
-    seq.queueNote(Notes::G4, 4.25, 0.25);
-    seq.queueNote(Notes::G4, 4.50, 0.50);
-    seq.sortNotes();
-}
+void renderKeyBindings(SDL_Window *window);
+void setSequencerBeat(Sequencer &seq);
 
 int main(int argc, char *argv[])
 {
@@ -66,23 +54,19 @@ int main(int argc, char *argv[])
     // Create SDL Window to grab keyboard input
     SDL_Window *window;
     window = SDL_CreateWindow("Piano Example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
-    SDL_Surface *windowSurface = SDL_GetWindowSurface(window);
+    renderKeyBindings(window);
 
-    // Render Keybindings to screen
-    SDL_Surface *keyBindImage = IMG_Load("assets/KeyMap.png");
-    SDL_BlitSurface(keyBindImage, nullptr, windowSurface, nullptr);
-    SDL_UpdateWindowSurface(window);
-
-    // Create an instrument with the following envelope and patch
-    ADSREnvelope pianoEnvelope(0.90f, 0.30f, 0.10f, 0.10f, 0.50f);
+    // Create an instrument with the following envelope and patch. VSynth provides some sample patches and envelopes, but you can write your own as well.
     Instrument *piano = new PolyphonicInstrument(
         Patches::PIANO,
-        pianoEnvelope);
+        Patches::PIANO_ENVELOPE
+    );
 
     // Create a sequencer for the beat
     Sequencer seq(new PolyphonicInstrument(
-        Patches::ORGAN,
-        pianoEnvelope));
+        Patches::GUITAR,
+        Patches::GUITAR_ENVELOPE));
+    seq.setLooping(true);
 
     // Set the sequencer beat
     setSequencerBeat(seq);
@@ -138,10 +122,50 @@ int main(int argc, char *argv[])
     synth.pause();
     synth.close();
 
-    SDL_FreeSurface(keyBindImage);
     SDL_DestroyWindow(window);
     IMG_Quit();
     SDL_Quit();
 
     return 0;
+}
+
+void renderKeyBindings(SDL_Window *window)
+{
+    SDL_Surface *windowSurface = SDL_GetWindowSurface(window);
+    SDL_Surface *keyBindImage = IMG_Load("assets/KeyMap.png");
+
+    // Scale Image to fit screen better
+    double scaleWidth = (double)windowSurface->w / (double)keyBindImage->w;
+    double scaleHeight = (double)windowSurface->h / (double)keyBindImage->h;
+    double scale = std::min(scaleHeight, scaleWidth);
+
+    SDL_Rect dest = {(windowSurface->w - (keyBindImage->w * scale)) / 2,
+                     (windowSurface->h - (keyBindImage->h * scale)) / 2,
+                     (double)keyBindImage->w * scale,
+                     (double)keyBindImage->h * scale};
+
+    // Scaled rendering
+    SDL_BlitScaled(keyBindImage, nullptr, windowSurface, &dest);
+    SDL_UpdateWindowSurface(window);
+
+    // Free Key Bind Image
+    SDL_FreeSurface(keyBindImage);
+}
+
+void setSequencerBeat(Sequencer &seq)
+{
+    seq.queueNote(Notes::E4, 1.00, 0.25);
+    seq.queueNote(Notes::D4, 1.25, 0.25);
+    seq.queueNote(Notes::C4, 1.50, 0.25);
+    seq.queueNote(Notes::D4, 1.75, 0.25);
+    seq.queueNote(Notes::E4, 2.00, 0.25);
+    seq.queueNote(Notes::E4, 2.25, 0.25);
+    seq.queueNote(Notes::E4, 2.50, 0.50);
+    seq.queueNote(Notes::D4, 3.00, 0.25);
+    seq.queueNote(Notes::D4, 3.25, 0.25);
+    seq.queueNote(Notes::D4, 3.50, 0.50);
+    seq.queueNote(Notes::E4, 4.00, 0.25);
+    seq.queueNote(Notes::G4, 4.25, 0.25);
+    seq.queueNote(Notes::G4, 4.50, 0.50);
+    seq.sortNotes();
 }

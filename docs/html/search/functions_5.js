@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['modulatedwave_52',['modulatedWave',['../namespaceVSynth_1_1Waveforms.html#ab39960a6c231817ad54097546ce788b4',1,'VSynth::Waveforms']]]
+  ['noise_65',['noise',['../namespaceVSynth_1_1Waveforms.html#aa861df1bc469397b3ef02f8fd6fa9439',1,'VSynth::Waveforms']]]
 ];

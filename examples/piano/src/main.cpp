@@ -9,8 +9,10 @@
 #include <VSynth/utils/Patches.h>
 #include <VSynth/utils/Waveforms.h>
 
+#include <algorithm>
 #include <map>
 #include <vector>
+#include <iostream>
 
 using namespace VSynth;
 
@@ -21,6 +23,7 @@ struct PianoKey
 };
 
 // Keyboard to Piano Notes
+// First item is the keyboard key, second item is the note to play
 std::vector<PianoKey> pianoKeys = {
     {SDLK_a, Notes::C4},
     {SDLK_w, Notes::Cs4},
@@ -40,6 +43,8 @@ std::vector<PianoKey> pianoKeys = {
     {SDLK_p, Notes::Ds5},
     {SDLK_SEMICOLON, Notes::E5}};
 
+void renderKeyBindings(SDL_Window *window);
+
 int main(int argc, char *argv[])
 {
     // SDL initialization
@@ -49,18 +54,13 @@ int main(int argc, char *argv[])
     // Create SDL Window to grab keyboard input
     SDL_Window *window;
     window = SDL_CreateWindow("Piano Example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
-    SDL_Surface *windowSurface = SDL_GetWindowSurface(window);
+    renderKeyBindings(window);
 
-    // Render Keybindings to screen
-    SDL_Surface *keyBindImage = IMG_Load("assets/KeyMap.png");
-    SDL_BlitSurface(keyBindImage, nullptr, windowSurface, nullptr);
-    SDL_UpdateWindowSurface(window);
-
-    // Create an instrument with the following envelope and patch
-    ADSREnvelope pianoEnvelope(1.00f, 0.30f, 0.10f, 0.10f, 0.50f);
+    // Create an instrument with the following envelope and patch. VSynth provides some sample patches and envelopes, but you can write your own as well.
     Instrument *piano = new PolyphonicInstrument(
         Patches::PIANO,
-        pianoEnvelope);
+        Patches::PIANO_ENVELOPE
+    );
 
     // Creating a synthesizer
     Synthesizer synth;
@@ -112,10 +112,32 @@ int main(int argc, char *argv[])
     synth.pause();
     synth.close();
 
-    SDL_FreeSurface(keyBindImage);
     SDL_DestroyWindow(window);
     IMG_Quit();
     SDL_Quit();
 
     return 0;
+}
+
+void renderKeyBindings(SDL_Window *window)
+{
+    SDL_Surface *windowSurface = SDL_GetWindowSurface(window);
+    SDL_Surface *keyBindImage = IMG_Load("assets/KeyMap.png");
+
+    // Scale Image to fit screen better
+    double scaleWidth = (double)windowSurface->w / (double)keyBindImage->w;
+    double scaleHeight = (double)windowSurface->h / (double)keyBindImage->h;
+    double scale = std::min(scaleHeight, scaleWidth);
+
+    SDL_Rect dest = {(windowSurface->w - (keyBindImage->w * scale)) / 2,
+                     (windowSurface->h - (keyBindImage->h * scale)) / 2,
+                     (double)keyBindImage->w * scale,
+                     (double)keyBindImage->h * scale};
+
+    // Scaled rendering
+    SDL_BlitScaled(keyBindImage, nullptr, windowSurface, &dest);
+    SDL_UpdateWindowSurface(window);
+
+    // Free Key Bind Image
+    SDL_FreeSurface(keyBindImage);
 }

@@ -4,29 +4,44 @@ Audio synthesizer library for SDL2. Written in C++.
 
 ## Features
 
-- Primitive waveforms (Sine, Square, Sawtooth, Triangle)
-- ADSR envelopes
+- Primitive waveforms (Sine, Square, Sawtooth, Triangle, Noise)
+- ADSR (Attack Decay Sustain Release) envelopes
 - Polyphony
+- LFO (Low Frequency Oscillation)
 - Sequencer
-- Prebuilt synth patches (Piano, Organ, Xylophone)
+- Sample synth patches (Guitar, Piano, Glockenspiel, etc.)
 - Volume control
 - [Doxygen Documentation](https://airloaf.github.io/VSynth/html/index.html)
 
+## Use Cases
+
+There are many things you could possible make with VSynth!
+
+- Chiptune playback/composition
+- Digital Keyboard
+- Retro console emulators (NES, Genesis, Atari, Chip-8 interpreter) 
+- Video games (Mario Paint, Minecraft Note Block)
+
 ## Dependencies
 
-- CMake (Version 3.9 is specified, but lower versions will probably work fine)
-- SDL2
+- [CMake](https://cmake.org/) (Version 3.9 is specified, but lower versions will probably work fine)
+- [SDL2](https://www.libsdl.org/)
 
 ## How to build
 
-Use the accompanying CMakeLists.txt to generate your project. CMake will generate a library called "VSynth", which you should link to your executables. CMake will also generate some examples as listed below.
+Use the accompanying CMakeLists.txt to generate your project. You will need to change some of the variables to reflect your development environment.
+
+The CMake files will generate a library called "VSynth", which you should link to your executables. CMake can also generate some examples as listed below.
 
 ## Examples
 
 |Example|Description|
 | --- | --- |
+| [Simple Tone](https://github.com/airloaf/VSynth/tree/master/examples/SimpleTone) | The "Hello World!" of VSynth. Produces a Sine Wave with the note C4. |
+| [Record Tone](https://github.com/airloaf/VSynth/tree/master/examples/RecordTone) | Produces a WAVE file with a Sine Wave with the note C4. |
 | [Piano](https://github.com/airloaf/VSynth/tree/master/examples/piano) | A piano which can play notes on keyboard input. |
-| [Sequenced Beats](https://github.com/airloaf/VSynth/tree/master/examples/sequenced_beat) | Extension of the Piano example. The song, "Mary had a little lamb", will play on repeat in the background while you control the  piano. |
+| [Sequenced Beat](https://github.com/airloaf/VSynth/tree/master/examples/sequenced_beat) | Extension of the Piano example. The song, "Mary had a little lamb", will play on repeat in the background while you control the  piano. |
+| [MIDI Player](https://github.com/airloaf/VSynth/tree/master/examples/MIDI) | A MIDI player using synthesized instruments included with VSynth. Does not fully support all MIDI messages, but the majority of songs play well on this. |
 
 ## Resources
 

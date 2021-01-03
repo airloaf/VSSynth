@@ -1,4 +1,4 @@
-#include <VSynth/Generators/Instrument.h>
+#include <VSynth/generators/Instrument.h>
 
 #include <algorithm>
 
