@@ -2,6 +2,9 @@
 
 namespace VSynth
 {
+    /**
+     * @brief Collection of middleware for use by the synthesizer
+     */
     namespace Middleware
     {
         /**
