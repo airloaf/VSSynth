@@ -21,20 +21,20 @@ const FILE_URLS = [
 
 const TITLES = [
     "Simple Sine Wave",
-    "Piano with ADSR envelopes",
+    "Piano with an ADSR envelope",
     "Sequencer playing Piano"
 ]
 
 const WAVES = [
     "audio/RecordTone.wav",
-    "audio/RecordTone.wav",
-    "audio/RecordTone.wav"
+    "audio/Piano.wav",
+    "audio/SequencedBeat.wav"
 ]
 
 const DESCRIPTIONS = [
     "Sine wave playing Middle-C",
-    "Piano controllable by the keyboard keys",
-    "Sequencer playing a tune in the background. Piano controls are still available."
+    "Piano controllable by the keyboard keys. Here the C major scale is being played. Using prebuilt patches that came with VSynth, you can get an instrument up and running fast!",
+    "Sequencer playing a tune in the background. Piano keys are playable as well, but I didn't play them while recording the sequencer beat."
 ]
 
 export default class CodeExamples extends React.Component {
@@ -79,12 +79,14 @@ export default class CodeExamples extends React.Component {
                             />
                         </Col>
                         <Col lg={6}>
-                            <h2 class="mb-5">{TITLES[i]}</h2>
-                            <a href={FILE_URLS[i]}>View on GitHub!</a>
+                            <h2 class="mb-5" align={"center"}>{TITLES[i]}</h2>
                             <h3>{DESCRIPTIONS[i]}</h3>
-                            <audio controls>
-                                <source src={WAVES[i]} type="audio/wav" />
-                            </audio>
+                            <h4><a href={FILE_URLS[i]}><i class="fab fa-github"></i>View on GitHub!</a></h4>
+                            <div align={"center"}>
+                                <audio controls>
+                                    <source src={WAVES[i]} type="audio/wav" />
+                                </audio>
+                            </div>
                         </Col>
                     </Row>
                 </Carousel.Item>

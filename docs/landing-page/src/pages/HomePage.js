@@ -39,15 +39,17 @@ export default class HomePage extends React.Component {
                         <Col lg={6} className="my-auto">
                             <div class="header-content mx-auto">
                                 <h1 class="mb-5">
-                                    <img src="img/LogoLarge.png" />
-                                    </h1>
+                                    <img
+                                        src="img/LogoLarge.png"
+                                    />
+                                </h1>
                                 <h2 class="mb-5">
                                     Open source audio synthesizer for SDL2, written in C++
                                 </h2>
                                 <ButtonGroup>
-                                    <Button variant="success">Download</Button>
-                                    <Button variant="success">Documentation</Button>
-                                    <Button variant="success">Examples</Button>
+                                    <Button variant="info" href="https://github.com/airloaf/VSynth/releases">Download</Button>
+                                    <Button variant="info" href="https://airloaf.github.io/VSynth/html/annotated.html">Documentation</Button>
+                                    <Button variant="info" href="https://github.com/airloaf/VSynth/"><i class="fab fa-github"></i>{" GitHub"}</Button>
                                 </ButtonGroup>
                             </div>
                         </Col>
@@ -94,7 +96,7 @@ export default class HomePage extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Navbar />
+                {/* <Navbar /> */}
                 {this.intro()}
                 {this.examples()}
 
