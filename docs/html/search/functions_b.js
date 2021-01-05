@@ -9,5 +9,5 @@ var searchData=
   ['sortnotes_86',['sortNotes',['../classVSynth_1_1Generators_1_1Sequencer.html#a5cb1134615229c5d635da59b053b3e29',1,'VSynth::Generators::Sequencer']]],
   ['square_87',['square',['../namespaceVSynth_1_1Waveforms.html#ab62bf8575ba6b26fe529f1b4251b694e',1,'VSynth::Waveforms']]],
   ['stopnote_88',['stopNote',['../classVSynth_1_1Generators_1_1Tone.html#a05e0847ab9d04853b20049fc4cbc349a',1,'VSynth::Generators::Tone']]],
-  ['synthesizer_89',['Synthesizer',['../classVSynth_1_1Synthesizer.html#aa8a33f816c3cf5b5c18aa0fc39458901',1,'VSynth::Synthesizer']]]
+  ['synthesizer_89',['Synthesizer',['../classVSynth_1_1Synthesizer.html#ac27501d936cf99ec13e628a978ce86e2',1,'VSynth::Synthesizer']]]
 ];

@@ -11,6 +11,6 @@ var searchData=
   ['soundgenerator_30',['SoundGenerator',['../classVSynth_1_1SoundGenerator.html',1,'VSynth']]],
   ['square_31',['square',['../namespaceVSynth_1_1Waveforms.html#ab62bf8575ba6b26fe529f1b4251b694e',1,'VSynth::Waveforms']]],
   ['stopnote_32',['stopNote',['../classVSynth_1_1Generators_1_1Tone.html#a05e0847ab9d04853b20049fc4cbc349a',1,'VSynth::Generators::Tone']]],
-  ['synthesizer_33',['Synthesizer',['../classVSynth_1_1Synthesizer.html',1,'VSynth::Synthesizer'],['../classVSynth_1_1Synthesizer.html#aa8a33f816c3cf5b5c18aa0fc39458901',1,'VSynth::Synthesizer::Synthesizer()']]],
+  ['synthesizer_33',['Synthesizer',['../classVSynth_1_1Synthesizer.html',1,'VSynth::Synthesizer'],['../classVSynth_1_1Synthesizer.html#ac27501d936cf99ec13e628a978ce86e2',1,'VSynth::Synthesizer::Synthesizer()']]],
   ['synthmiddleware_34',['SynthMiddleware',['../classVSynth_1_1SynthMiddleware.html',1,'VSynth']]]
 ];
