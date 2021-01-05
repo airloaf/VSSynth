@@ -32,7 +32,7 @@ namespace VSynth
          * @param samplingRates - Sampling rate (# of samples per second). 48,000 is a common number, but higher values are computationally intensive
          * @param numFrames - Number of sampling frames. A sampling frame is an instance where sound generators are sampled. 
          */
-        Synthesizer(unsigned int samplingRates = 24000, unsigned int numFrames = 20);
+        Synthesizer(unsigned int samplingRates = 48000, unsigned int numFrames = 20);
         virtual ~Synthesizer();
 
         /**
