@@ -104,12 +104,12 @@ export default class CodeExamples extends React.Component {
                 </Carousel>
                 <Row>
                     <Col lg={2}>
-                        <Button onClick={() => { this.changeExample(NUM_EXAMPLES - 1) }} block>Previous</Button>
+                        <Button onClick={() => { this.changeExample(NUM_EXAMPLES - 1) }} block variant="outline-success">Previous</Button>
                     </Col>
                     <Col lg={8}>
                     </Col>
                     <Col lg={2}>
-                        <Button onClick={() => { this.changeExample(1) }} block>Next</Button>
+                        <Button onClick={() => { this.changeExample(1) }} block variant="outline-success">Next</Button>
                     </Col>
                 </Row>
             </React.Fragment>
