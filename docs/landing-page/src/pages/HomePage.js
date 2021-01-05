@@ -1,14 +1,33 @@
-import React from 'react';
-import Navbar from "../components/Navbar"
-import { Container, Row, Col, ButtonGroup, Button } from "react-bootstrap"
+import CodeExamples from "../components/CodeExamples"
 import Iframe from 'react-iframe'
+import Navbar from "../components/Navbar"
+import React from 'react';
+import axios from 'axios';
+
+import { CodeBlock, dracula } from "react-code-blocks";
+import { Container, Row, Col, ButtonGroup, Button, Carousel } from "react-bootstrap"
+
 
 export default class HomePage extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            pianoCode: ""
+        };
+
         this.intro = this.intro.bind(this);
         this.features = this.features.bind(this);
+        this.examples = this.examples.bind(this);
+    }
+
+    componentDidMount() {
+        axios.get('https://raw.githubusercontent.com/airloaf/VSynth/master/examples/SimpleTone/src/main.cpp')
+            .then(res => {
+                this.setState({ pianoCode: res.data });
+            })
+            .catch(err => {
+            })
     }
 
     intro() {
@@ -19,7 +38,9 @@ export default class HomePage extends React.Component {
 
                         <Col lg={6} className="my-auto">
                             <div class="header-content mx-auto">
-                                <h1 class="mb-5">VSynth</h1>
+                                <h1 class="mb-5">
+                                    <img src="img/LogoLarge.png" />
+                                    </h1>
                                 <h2 class="mb-5">
                                     Open source audio synthesizer for SDL2, written in C++
                                 </h2>
@@ -36,7 +57,7 @@ export default class HomePage extends React.Component {
                             </h4>
                             <Iframe
                                 width="100%"
-                                height="300"
+                                height="500"
                                 scrolling="no"
                                 frameborder="no"
                                 allow="autoplay"
@@ -50,10 +71,22 @@ export default class HomePage extends React.Component {
         );
     }
 
-    features(){
+    features() {
         return (
             <React.Fragment>
 
+            </React.Fragment>
+        );
+    }
+
+    examples() {
+        return (
+            <React.Fragment>
+                <section className="">
+                    <Container fluid>
+                        <CodeExamples />
+                    </Container>
+                </section>
             </React.Fragment>
         );
     }
@@ -63,6 +96,7 @@ export default class HomePage extends React.Component {
             <React.Fragment>
                 <Navbar />
                 {this.intro()}
+                {this.examples()}
 
                 <section class="download bg-primary text-center" id="download">
                     <div class="container">
