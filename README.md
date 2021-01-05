@@ -1,17 +1,25 @@
-# VSynth
+<center>
+<img src="branding/LogoLarge.png"/>
+</center>
 
-Audio synthesizer library for SDL2. Written in C++.
+<h2>
+    Audio synthesizer library for SDL2. Written in C++.
+</h2>
+
+<h2>
+    <a href="https://airloaf.github.io/VSynth">VSynth Website</a>
+</h2>
 
 ## Features
 
 - Primitive waveforms (Sine, Square, Sawtooth, Triangle, Noise)
 - ADSR (Attack Decay Sustain Release) envelopes
 - Polyphony
+- WAV file output
 - LFO (Low Frequency Oscillation)
 - Sequencer
 - Sample synth patches (Guitar, Piano, Glockenspiel, etc.)
 - Volume control
-- [Doxygen Documentation](https://airloaf.github.io/VSynth/html/index.html)
 
 ## Use Cases
 
