@@ -23,7 +23,7 @@
 
 ## Use Cases
 
-There are many things you could possible make with VSynth!
+There are many things you could possibly make with VSynth!
 
 - Chiptune playback/composition
 - Digital Keyboard
