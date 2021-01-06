@@ -1,13 +1,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-#include <VSynth/Synthesizer.h>
-#include <VSynth/generators/MonophonicInstrument.h>
-#include <VSynth/generators/PolyphonicInstrument.h>
-#include <VSynth/utils/Envelope.h>
-#include <VSynth/utils/Notes.h>
-#include <VSynth/utils/Patches.h>
-#include <VSynth/utils/Waveforms.h>
+#include <VSynth/VSynth.h>
 
 #include <algorithm>
 #include <map>
@@ -46,27 +40,36 @@ std::vector<PianoKey> pianoKeys = {
 
 void renderKeyBindings(SDL_Window *window);
 
+void initSDL();
+
+SDL_Window *createWindow();
+
 int main(int argc, char *argv[])
 {
-    // SDL initialization
-    SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO);
-    IMG_Init(IMG_INIT_PNG);
-
-    // Create SDL Window to grab keyboard input
-    SDL_Window *window;
-    window = SDL_CreateWindow("Piano Example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
+    // Init SDL and create Window
+    initSDL();
+    SDL_Window *window = createWindow();
     renderKeyBindings(window);
 
-    // Create an instrument with the following envelope and patch. VSynth provides some sample patches and envelopes, but you can write your own as well.
+    /**
+     * Create an instrument with the Piano
+     * patch and envelope.
+     * VSynth provides some patches and
+     * envelopes within Patches.h.
+     * You can write your own as well.
+     */
     Instrument *piano = new PolyphonicInstrument(
         Patches::PIANO,
-        Patches::PIANO_ENVELOPE
-    );
+        Patches::PIANO_ENVELOPE);
 
     // Creating a synthesizer
     Synthesizer synth;
-    synth.open();
+
+    // Add our instrument to the synth
     synth.addSoundGenerator(piano);
+
+    // Open the synth for playback
+    synth.open();
     synth.unpause();
 
     // Keep track of pressed keys, this is important since the
@@ -94,14 +97,16 @@ int main(int argc, char *argv[])
                         {
                             if (!pressedKeys[it->key])
                             {
+                                // Hold note plays the given note (frequency)
                                 piano->holdNote(it->frequency);
                                 pressedKeys[it->key] = true;
                             }
                         }
                         else if (e.type == SDL_KEYUP)
                         {
-                            pressedKeys[it->key] = false;
+                            // Release note stops the given note (frequency)
                             piano->releaseNote(it->frequency);
+                            pressedKeys[it->key] = false;
                         }
                     }
                 }
@@ -113,6 +118,7 @@ int main(int argc, char *argv[])
     synth.pause();
     synth.close();
 
+    // Exit SDL
     SDL_DestroyWindow(window);
     IMG_Quit();
     SDL_Quit();
@@ -141,4 +147,21 @@ void renderKeyBindings(SDL_Window *window)
 
     // Free Key Bind Image
     SDL_FreeSurface(keyBindImage);
+}
+
+void initSDL()
+{
+    // SDL initialization
+    SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO);
+    IMG_Init(IMG_INIT_PNG);
+}
+
+SDL_Window *createWindow()
+{
+    return SDL_CreateWindow("Piano Example",
+                            SDL_WINDOWPOS_UNDEFINED,
+                            SDL_WINDOWPOS_UNDEFINED,
+                            1600,
+                            900,
+                            SDL_WINDOW_SHOWN);
 }

@@ -1,13 +1,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-#include <VSynth/Synthesizer.h>
-#include <VSynth/generators/MonophonicInstrument.h>
-#include <VSynth/generators/PolyphonicInstrument.h>
-#include <VSynth/generators/Sequencer.h>
-#include <VSynth/utils/Envelope.h>
-#include <VSynth/utils/Notes.h>
-#include <VSynth/utils/Patches.h>
+#include <VSynth/VSynth.h>
 
 #include <algorithm>
 #include <map>
@@ -46,22 +40,24 @@ std::vector<PianoKey> pianoKeys = {
 void renderKeyBindings(SDL_Window *window);
 void setSequencerBeat(Sequencer &seq);
 
+void initSDL();
+SDL_Window *createWindow();
+
 int main(int argc, char *argv[])
 {
     // SDL initialization
-    SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO);
-    IMG_Init(IMG_INIT_PNG);
+    initSDL();
 
     // Create SDL Window to grab keyboard input
-    SDL_Window *window;
-    window = SDL_CreateWindow("Piano Example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900, SDL_WINDOW_SHOWN);
+    SDL_Window *window = createWindow();
     renderKeyBindings(window);
 
-    // Create an instrument with the following envelope and patch. VSynth provides some sample patches and envelopes, but you can write your own as well.
+    // Create an instrument with the following envelope and patch.
+    // VSynth provides some sample patches and envelopes,
+    // but you can write your own as well.
     Instrument *piano = new PolyphonicInstrument(
         Patches::PIANO,
-        Patches::PIANO_ENVELOPE
-    );
+        Patches::PIANO_ENVELOPE);
 
     // Create a sequencer for the beat
     Sequencer seq(new PolyphonicInstrument(
@@ -169,4 +165,21 @@ void setSequencerBeat(Sequencer &seq)
     seq.queueNote(Notes::G4, 4.25, 0.25);
     seq.queueNote(Notes::G4, 4.50, 0.50);
     seq.sortNotes();
+}
+
+void initSDL()
+{
+    // SDL initialization
+    SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO);
+    IMG_Init(IMG_INIT_PNG);
+}
+
+SDL_Window *createWindow()
+{
+    return SDL_CreateWindow("Sequenced Beat Example",
+                            SDL_WINDOWPOS_UNDEFINED,
+                            SDL_WINDOWPOS_UNDEFINED,
+                            1600,
+                            900,
+                            SDL_WINDOW_SHOWN);
 }

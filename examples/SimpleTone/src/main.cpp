@@ -1,12 +1,12 @@
 #include <SDL2/SDL.h>
 
-#include <VSynth/generators/Tone.h>
-#include <VSynth/Synthesizer.h>
-#include <VSynth/utils/Notes.h>
-#include <VSynth/utils/Waveforms.h>
+#include <VSynth/VSynth.h>
 
 using namespace VSynth;
 using namespace Generators;
+
+void initSDL();
+SDL_Window *createWindow();
 
 int main(int argc, char *argv[])
 {
@@ -59,4 +59,20 @@ int main(int argc, char *argv[])
     SDL_Quit();
 
     return 0;
+}
+
+void initSDL()
+{
+    // SDL initialization
+    SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO);
+}
+
+SDL_Window *createWindow()
+{
+    return SDL_CreateWindow("Simple Tone Example",
+                            SDL_WINDOWPOS_UNDEFINED,
+                            SDL_WINDOWPOS_UNDEFINED,
+                            1600,
+                            900,
+                            SDL_WINDOW_SHOWN);
 }

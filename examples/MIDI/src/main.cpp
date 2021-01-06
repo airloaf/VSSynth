@@ -2,10 +2,7 @@
 
 #include <SDL2/SDL.h>
 
-#include <VSynth/Synthesizer.h>
-#include <VSynth/utils/Envelope.h>
-#include <VSynth/utils/Patches.h>
-#include <VSynth/middleware/WAVWriter.h>
+#include <VSynth/VSynth.h>
 
 #include "MIDIPatches.h"
 #include "MIDISequencer.h"
