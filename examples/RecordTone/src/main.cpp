@@ -1,20 +1,18 @@
 #include <SDL2/SDL.h>
 
-#include <VSynth/Synthesizer.h>
-#include <VSynth/generators/Tone.h>
-#include <VSynth/middleware/WAVWriter.h>
-#include <VSynth/utils/Notes.h>
-#include <VSynth/utils/Waveforms.h>
+#include <VSynth/VSynth.h>
 
 using namespace VSynth;
 using namespace Generators;
 
+void initSDL();
+SDL_Window *createWindow();
+
 int main(int argc, char *argv[])
 {
     // SDL initialization
-    SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO);
-    SDL_Window *window;
-    window = SDL_CreateWindow("Simple Tone Example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 450, SDL_WINDOW_SHOWN);
+    initSDL();
+    SDL_Window *window = createWindow();
 
     // Creates a Sine wave at "Middle C"
     Tone tone(
@@ -23,19 +21,22 @@ int main(int argc, char *argv[])
         });
     tone.playNote(Notes::C4);
 
-    // Create a synthesizer at 48 KHz
-    Synthesizer synth(48000);
-
     // Create a WAVWriter to save the waveform
     VSynth::Middleware::WAVWriter wavWriter(48000);
     wavWriter.open("tone.wav");
 
+    // Create synthesizer
+    Synthesizer synth;
+
     // Add WAVWriter to the synthesizer
     synth.addMiddleware(&wavWriter);
 
-    // Open the synth for playback with the sine wave we have created
-    synth.open();
+    // Add our tone to the sound generator 
     synth.addSoundGenerator(&tone);
+
+    // Open the synth for playback with the
+    // sine wave we have created
+    synth.open();
     synth.unpause();
 
     // Wait until user closes window
@@ -65,4 +66,20 @@ int main(int argc, char *argv[])
     SDL_Quit();
 
     return 0;
+}
+
+void initSDL()
+{
+    // SDL initialization
+    SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO);
+}
+
+SDL_Window *createWindow()
+{
+    return SDL_CreateWindow("Record Tone Example",
+                            SDL_WINDOWPOS_UNDEFINED,
+                            SDL_WINDOWPOS_UNDEFINED,
+                            1600,
+                            900,
+                            SDL_WINDOW_SHOWN);
 }

@@ -29,6 +29,15 @@ target_link_libraries(SimpleTone VSynth)
 
 target_include_directories(SimpleTone PUBLIC include)
 
+# LFO Example
+file(GLOB_RECURSE LFO_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/LowFrequencyOscillator/src/*.cpp)
+add_executable(LFO ${LFO_SRCS})
+target_link_libraries(LFO SDL2)
+target_link_libraries(LFO SDL2main)
+target_link_libraries(LFO VSynth)
+
+target_include_directories(LFO PUBLIC include)
+
 # Record Tone Example
 file(GLOB_RECURSE RECORD_TONE_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/RecordTone/src/*.cpp)
 add_executable(RecordTone ${RECORD_TONE_SRCS})
@@ -49,7 +58,7 @@ target_link_libraries(Piano VSynth)
 target_include_directories(Piano PUBLIC include)
 
 # Sequenced Beat Example
-file(GLOB_RECURSE SEQ_BEAT_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/sequenced_beat/src/*.cpp)
+file(GLOB_RECURSE SEQ_BEAT_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/SequencedBeat/src/*.cpp)
 add_executable(SeqBeat ${SEQ_BEAT_SRCS})
 target_link_libraries(SeqBeat SDL2)
 target_link_libraries(SeqBeat SDL2_image)

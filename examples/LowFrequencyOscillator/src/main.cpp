@@ -11,19 +11,16 @@ SDL_Window *createWindow();
 int main(int argc, char *argv[])
 {
     // SDL initialization
-    // SDL has to be initialized with SDL_INIT_AUDIO
-    // otherwise the synthesizer will not work!
     initSDL();
     SDL_Window *window = createWindow();
 
-    // Creates a Sine wave at "Middle C"
-    // In this example we create the sine wave in-line,
-    // there are synth patches available with the library
-    // that produce richer noises than just a sine wave.
-    // See the Patches.h file within utils
+    // Create a Low frequency oscillator
     Tone tone(
         [](double frequency, double time) {
-            return Waveforms::sine(frequency, time);
+            return Waveforms::sawtooth(
+                frequency,
+                time,
+                0.01 * frequency * Waveforms::sine(5, time)); // LFO
         });
     tone.playNote(Notes::C4);
 
