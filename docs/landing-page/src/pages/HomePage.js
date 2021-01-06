@@ -44,7 +44,7 @@ export default class HomePage extends React.Component {
                                     />
                                 </h1>
                                 <h2 class="mb-5">
-                                    Open source audio synthesizer for SDL2, written in C++
+                                    An open source audio synthesizer library for SDL2, written in C++
                                 </h2>
                                 <ButtonGroup>
                                     <Button variant="info" href="https://github.com/airloaf/VSynth/releases">Download</Button>
