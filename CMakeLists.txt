@@ -29,6 +29,15 @@ target_link_libraries(SimpleTone VSynth)
 
 target_include_directories(SimpleTone PUBLIC include)
 
+# LFO Example
+file(GLOB_RECURSE LFO_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/LowFrequencyOscillator/src/*.cpp)
+add_executable(LFO ${LFO_SRCS})
+target_link_libraries(LFO SDL2)
+target_link_libraries(LFO SDL2main)
+target_link_libraries(LFO VSynth)
+
+target_include_directories(LFO PUBLIC include)
+
 # Record Tone Example
 file(GLOB_RECURSE RECORD_TONE_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/RecordTone/src/*.cpp)
 add_executable(RecordTone ${RECORD_TONE_SRCS})
