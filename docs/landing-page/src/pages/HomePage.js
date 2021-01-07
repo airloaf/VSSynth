@@ -16,9 +16,10 @@ export default class HomePage extends React.Component {
             pianoCode: ""
         };
 
-        this.intro = this.intro.bind(this);
-        this.features = this.features.bind(this);
+        this.dataflow = this.dataflow.bind(this);
         this.examples = this.examples.bind(this);
+        this.features = this.features.bind(this);
+        this.intro = this.intro.bind(this);
     }
 
     componentDidMount() {
@@ -81,6 +82,58 @@ export default class HomePage extends React.Component {
         );
     }
 
+    dataflow() {
+        return (
+            <React.Fragment>
+                <section className="bg-info">
+                    <Container fluid>
+                        <div class="section-heading text-center">
+                            <h2>How it works</h2>
+                            <p>VSynth is separated into 3 modules:</p>
+                            <br />
+                            <Row>
+                                <Col lg={4}>
+                                    <div class="feature-item">
+                                        <h3>Middleware</h3>
+                                        <p>
+                                            Optional component which processes sound data before it reaches the speakers.
+                                            Useful for many things such as: outputting to a WAV file, filters, transforms, etc.
+                                        </p>
+                                    </div>
+                                </Col>
+                                <Col lg={4}>
+                                    <div class="feature-item">
+                                        <h3>Synthesizer</h3>
+                                        <p>
+                                            Main building block of VSynth.
+                                            Creates a new thread and samples each of
+                                            its sound generators at the given sampling rate.
+                                            The sum of the samples are then processed
+                                            by its middleware prior to reaching
+                                            the hardware speakers.
+                                        </p>
+                                    </div>
+                                </Col>
+                                <Col lg={4}>
+                                    <div class="feature-item">
+                                        <h3>Sound Generator</h3>
+                                        <p>
+                                            Generates sound data. Think of instruments, sequencers, tones, etc.
+                                        </p>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <hr />
+                        </div>
+                        <img
+                            src="img/VSynthDataFlow.svg"
+                        />
+                    </Container>
+                </section>
+            </React.Fragment>
+        );
+    }
+
     examples() {
         return (
             <React.Fragment>
@@ -112,14 +165,14 @@ export default class HomePage extends React.Component {
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="feature-item">
-                                                <img src={"img/Waves.png"}/>
+                                                <img src={"img/Waves.png"} />
                                                 <h3>Basic Waveforms</h3>
                                                 <p>All your basic waveforms included! (Sine, Triangle, Square, Sawtooth, Pulse and Noise)</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="feature-item">
-                                                <img src={"img/ADSR.png"}/>
+                                                <img src={"img/ADSR.png"} />
                                                 <h3>ADSR Envelopes</h3>
                                                 <p>Control waveform amplitudes with ADSR envelopes!</p>
                                             </div>
@@ -128,14 +181,14 @@ export default class HomePage extends React.Component {
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="feature-item">
-                                                <img src={"img/Polyphony.png"}/>
+                                                <img src={"img/Polyphony.png"} />
                                                 <h3>Polyphony</h3>
                                                 <p>Play multiple notes, sounds, instruments, etc!</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="feature-item">
-                                                <img src={"img/WAV.png"}/>
+                                                <img src={"img/WAV.png"} />
                                                 <h3>WAV file output</h3>
                                                 <p>Save your synthesized audio to .WAV files!</p>
                                             </div>
@@ -146,8 +199,10 @@ export default class HomePage extends React.Component {
                         </div>
                     </div>
                 </section>
+                <hr />
+                {this.dataflow()}
 
-                <hr /> 
+                <hr />
                 {this.examples()}
 
             </React.Fragment>
