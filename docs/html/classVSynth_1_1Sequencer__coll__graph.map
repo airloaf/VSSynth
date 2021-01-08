@@ -1,4 +1,0 @@
-<map id="VSynth::Sequencer" name="VSynth::Sequencer">
-<area shape="rect" id="node1" title="Note Sequencer for Instruments." alt="" coords="21,80,156,107"/>
-<area shape="rect" id="node2" href="$classVSynth_1_1SoundGenerator.html" title="Sound generator." alt="" coords="5,5,172,32"/>
-</map>
