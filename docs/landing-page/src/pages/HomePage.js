@@ -1,11 +1,8 @@
 import CodeExamples from "../components/CodeExamples"
 import Iframe from 'react-iframe'
-import Navbar from "../components/Navbar"
 import React from 'react';
-import axios from 'axios';
 
-import { CodeBlock, dracula } from "react-code-blocks";
-import { Container, Row, Col, ButtonGroup, Button, Carousel } from "react-bootstrap"
+import { Container, Row, Col, ButtonGroup, Button } from "react-bootstrap"
 
 
 export default class HomePage extends React.Component {
