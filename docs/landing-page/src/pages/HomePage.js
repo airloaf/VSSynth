@@ -33,7 +33,7 @@ export default class HomePage extends React.Component {
                                 </h2>
                                 <ButtonGroup>
                                     <Button variant="info" href="https://github.com/airloaf/VSynth/releases">Download</Button>
-                                    <Button variant="info" href="https://airloaf.github.io/VSynth/html/annotated.html">Documentation</Button>
+                                    <Button variant="info" href="https://airloaf.github.io/VSynth/doxygen/annotated.html">Documentation</Button>
                                     <Button variant="info" href="https://github.com/airloaf/VSynth/"><i class="fab fa-github"></i>{" GitHub"}</Button>
                                 </ButtonGroup>
                             </div>
