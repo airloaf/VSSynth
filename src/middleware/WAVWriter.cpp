@@ -37,7 +37,7 @@ namespace VSynth
 
         short WAVWriter::processSample(short sample, double time)
         {
-            for (int i = 0; i < mNumChannels; i++)
+            for (unsigned int i = 0; i < mNumChannels; i++)
             {
                 mWAVFile.write((char *)&sample, sizeof(short));
                 mNumWritten += sizeof(short);
@@ -61,7 +61,7 @@ namespace VSynth
             writeUint16ToFile_LE(mWAVFile, mNumChannels);
             writeUint32ToFile_LE(mWAVFile, mSamplingRate);
             writeUint32ToFile_LE(mWAVFile, byteRate);
-            writeUint16ToFile_LE(mWAVFile, mNumChannels * sizeof(short));
+            writeUint16ToFile_LE(mWAVFile, (uint16_t) mNumChannels * sizeof(short));
             writeUint16ToFile_LE(mWAVFile, sizeof(short) * 8);
         }
         void WAVWriter::writeDataSubChunkHeader()

@@ -17,7 +17,7 @@ namespace VSynth
             *(synthData->time) += sampleDeltaTime;
             for (auto it = synthData->soundGenerators.begin(); it != synthData->soundGenerators.end(); ++it)
             {
-                sampleValue += (*it)->sample(*(synthData->time)) * (*it)->getAmplitude();
+                sampleValue += (Sint16) ((*it)->sample(*(synthData->time)) * (*it)->getAmplitude());
             }
 
             for (auto it = synthData->middleware.begin(); it != synthData->middleware.end(); it++)
