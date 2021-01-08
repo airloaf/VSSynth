@@ -12,23 +12,10 @@ export default class HomePage extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            pianoCode: ""
-        };
-
         this.dataflow = this.dataflow.bind(this);
         this.examples = this.examples.bind(this);
         this.features = this.features.bind(this);
         this.intro = this.intro.bind(this);
-    }
-
-    componentDidMount() {
-        axios.get('https://raw.githubusercontent.com/airloaf/VSynth/master/examples/SimpleTone/src/main.cpp')
-            .then(res => {
-                this.setState({ pianoCode: res.data });
-            })
-            .catch(err => {
-            })
     }
 
     intro() {
@@ -200,9 +187,7 @@ export default class HomePage extends React.Component {
                 {this.features()}
                 {this.dataflow()}
                 {this.examples()}
-
             </React.Fragment>
-
         );
     }
 }
