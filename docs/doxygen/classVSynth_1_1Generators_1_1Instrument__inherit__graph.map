@@ -2,5 +2,5 @@
 <area shape="rect" id="node1" title="Device capable of playing multiple notes with an ADSR envelope." alt="" coords="108,80,245,121"/>
 <area shape="rect" id="node3" href="$classVSynth_1_1Generators_1_1MonophonicInstrument.html" title="Device capable of playing a single note at a time. A monophonic instrument is capable of playing only..." alt="" coords="5,169,167,211"/>
 <area shape="rect" id="node4" href="$classVSynth_1_1Generators_1_1PolyphonicInstrument.html" title="Device capable of playing notes simultaneously A polyphonic instrument is capable of playing multiple..." alt="" coords="191,169,346,211"/>
-<area shape="rect" id="node2" href="$classVSynth_1_1SoundGenerator.html" title="Sound generator." alt="" coords="93,5,260,32"/>
+<area shape="rect" id="node2" href="$classVSynth_1_1SoundGenerator.html" title="Sound generating device." alt="" coords="93,5,260,32"/>
 </map>

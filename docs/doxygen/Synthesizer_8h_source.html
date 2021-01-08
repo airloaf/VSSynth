@@ -24,7 +24,7 @@
    <div id="projectname">VSynth
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">C++ Audio Synthesizer using SDL 2</div>
+   <div id="projectbrief">C++ Audio Synthesis Library using SDL 2</div>
   </td>
  </tr>
  </tbody>
@@ -91,47 +91,47 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        std::vector&lt;SynthMiddleware *&gt; middleware;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    };</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classVSynth_1_1Synthesizer.html">Synthesizer</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#ac27501d936cf99ec13e628a978ce86e2">   35</a></span>&#160;        <a class="code" href="classVSynth_1_1Synthesizer.html#ac27501d936cf99ec13e628a978ce86e2">Synthesizer</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> samplingRates = 48000, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numFrames = 20);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classVSynth_1_1Synthesizer.html">Synthesizer</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec">   42</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec">open</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#a4376b0239221a4472c72485f0acd1130">   48</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Synthesizer.html#a4376b0239221a4472c72485f0acd1130">close</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#adf40f3db8fe52fdf582c7d4a2bec71a7">   55</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Synthesizer.html#adf40f3db8fe52fdf582c7d4a2bec71a7">unpause</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#a56bb0e89b47f4fa18603e1fe1d39b79e">   62</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Synthesizer.html#a56bb0e89b47f4fa18603e1fe1d39b79e">pause</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#ac06c573c03814ec7b5f0f29561f709ca">   69</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Synthesizer.html#ac06c573c03814ec7b5f0f29561f709ca">addSoundGenerator</a>(<a class="code" href="classVSynth_1_1SoundGenerator.html">SoundGenerator</a> *soundGenerator);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#a075bd8d3648f1e500680b0b1bcbb263d">   76</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Synthesizer.html#a075bd8d3648f1e500680b0b1bcbb263d">addMiddleware</a>(<a class="code" href="classVSynth_1_1SynthMiddleware.html">SynthMiddleware</a> *middleware);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        SDL_AudioDeviceID mDeviceID;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html">   34</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classVSynth_1_1Synthesizer.html">Synthesizer</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#ac27501d936cf99ec13e628a978ce86e2">   44</a></span>&#160;        <a class="code" href="classVSynth_1_1Synthesizer.html#ac27501d936cf99ec13e628a978ce86e2">Synthesizer</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> samplingRates = 48000, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numFrames = 20);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classVSynth_1_1Synthesizer.html">Synthesizer</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec">   52</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec">open</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#a4376b0239221a4472c72485f0acd1130">   58</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Synthesizer.html#a4376b0239221a4472c72485f0acd1130">close</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#a56bb0e89b47f4fa18603e1fe1d39b79e">   65</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Synthesizer.html#a56bb0e89b47f4fa18603e1fe1d39b79e">pause</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#adf40f3db8fe52fdf582c7d4a2bec71a7">   72</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Synthesizer.html#adf40f3db8fe52fdf582c7d4a2bec71a7">unpause</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#ac06c573c03814ec7b5f0f29561f709ca">   79</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Synthesizer.html#ac06c573c03814ec7b5f0f29561f709ca">addSoundGenerator</a>(<a class="code" href="classVSynth_1_1SoundGenerator.html">SoundGenerator</a> *soundGenerator);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">double</span> mTime;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mSamplingRate;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNumFrames;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        SynthData mSynthData;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}; <span class="comment">// namespace VSynth</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classVSynth_1_1Synthesizer.html#a075bd8d3648f1e500680b0b1bcbb263d">   86</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Synthesizer.html#a075bd8d3648f1e500680b0b1bcbb263d">addMiddleware</a>(<a class="code" href="classVSynth_1_1SynthMiddleware.html">SynthMiddleware</a> *middleware);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        SDL_AudioDeviceID mDeviceID;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">double</span> mTime;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mSamplingRate;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mNumFrames;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        SynthData mSynthData;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    };</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}; <span class="comment">// namespace VSynth</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassVSynth_1_1Synthesizer_html"><div class="ttname"><a href="classVSynth_1_1Synthesizer.html">VSynth::Synthesizer</a></div><div class="ttdoc">Entrypoint and interface for audio synthesis.</div><div class="ttdef"><b>Definition:</b> <a href="Synthesizer_8h_source.html#l00026">Synthesizer.h:27</a></div></div>
-<div class="ttc" id="aclassVSynth_1_1Synthesizer_html_ac27501d936cf99ec13e628a978ce86e2"><div class="ttname"><a href="classVSynth_1_1Synthesizer.html#ac27501d936cf99ec13e628a978ce86e2">VSynth::Synthesizer::Synthesizer</a></div><div class="ttdeci">Synthesizer(unsigned int samplingRates=48000, unsigned int numFrames=20)</div><div class="ttdoc">Construct a new Synthesizer object.</div></div>
+<div class="ttc" id="aclassVSynth_1_1Synthesizer_html"><div class="ttname"><a href="classVSynth_1_1Synthesizer.html">VSynth::Synthesizer</a></div><div class="ttdoc">Entrypoint and interface for audio synthesis.</div><div class="ttdef"><b>Definition:</b> <a href="Synthesizer_8h_source.html#l00034">Synthesizer.h:35</a></div></div>
+<div class="ttc" id="aclassVSynth_1_1Synthesizer_html_ac27501d936cf99ec13e628a978ce86e2"><div class="ttname"><a href="classVSynth_1_1Synthesizer.html#ac27501d936cf99ec13e628a978ce86e2">VSynth::Synthesizer::Synthesizer</a></div><div class="ttdeci">Synthesizer(unsigned int samplingRates=48000, unsigned int numFrames=20)</div><div class="ttdoc">Create a new Synthesizer.</div></div>
 <div class="ttc" id="aclassVSynth_1_1Synthesizer_html_a075bd8d3648f1e500680b0b1bcbb263d"><div class="ttname"><a href="classVSynth_1_1Synthesizer.html#a075bd8d3648f1e500680b0b1bcbb263d">VSynth::Synthesizer::addMiddleware</a></div><div class="ttdeci">void addMiddleware(SynthMiddleware *middleware)</div><div class="ttdoc">Adds a middleware to the synthesizer.</div></div>
 <div class="ttc" id="aclassVSynth_1_1Synthesizer_html_a4376b0239221a4472c72485f0acd1130"><div class="ttname"><a href="classVSynth_1_1Synthesizer.html#a4376b0239221a4472c72485f0acd1130">VSynth::Synthesizer::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Destroys the internal audio device.</div></div>
-<div class="ttc" id="aclassVSynth_1_1SynthMiddleware_html"><div class="ttname"><a href="classVSynth_1_1SynthMiddleware.html">VSynth::SynthMiddleware</a></div><div class="ttdoc">Read and modify samples prior to sending them to the speaker.</div><div class="ttdef"><b>Definition:</b> <a href="SynthMiddleware_8h_source.html#l00019">SynthMiddleware.h:20</a></div></div>
+<div class="ttc" id="aclassVSynth_1_1SynthMiddleware_html"><div class="ttname"><a href="classVSynth_1_1SynthMiddleware.html">VSynth::SynthMiddleware</a></div><div class="ttdoc">Read and modify samples prior to sending them to the speaker.</div><div class="ttdef"><b>Definition:</b> <a href="SynthMiddleware_8h_source.html#l00021">SynthMiddleware.h:22</a></div></div>
 <div class="ttc" id="aclassVSynth_1_1Synthesizer_html_a56bb0e89b47f4fa18603e1fe1d39b79e"><div class="ttname"><a href="classVSynth_1_1Synthesizer.html#a56bb0e89b47f4fa18603e1fe1d39b79e">VSynth::Synthesizer::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdoc">Pauses the synthesizer.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Synthesizer_html_a983a672d0bcb0f0f126b1ee05ecd16ec"><div class="ttname"><a href="classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec">VSynth::Synthesizer::open</a></div><div class="ttdeci">void open()</div><div class="ttdoc">Creates the internal audio device.</div></div>
+<div class="ttc" id="aclassVSynth_1_1Synthesizer_html_a983a672d0bcb0f0f126b1ee05ecd16ec"><div class="ttname"><a href="classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec">VSynth::Synthesizer::open</a></div><div class="ttdeci">void open()</div><div class="ttdoc">Creates the internal audio device (SDL should be initialized prior to calling this)</div></div>
 <div class="ttc" id="aclassVSynth_1_1Synthesizer_html_adf40f3db8fe52fdf582c7d4a2bec71a7"><div class="ttname"><a href="classVSynth_1_1Synthesizer.html#adf40f3db8fe52fdf582c7d4a2bec71a7">VSynth::Synthesizer::unpause</a></div><div class="ttdeci">void unpause()</div><div class="ttdoc">Unpauses the synthesizer.</div></div>
 <div class="ttc" id="aclassVSynth_1_1Synthesizer_html_ac06c573c03814ec7b5f0f29561f709ca"><div class="ttname"><a href="classVSynth_1_1Synthesizer.html#ac06c573c03814ec7b5f0f29561f709ca">VSynth::Synthesizer::addSoundGenerator</a></div><div class="ttdeci">void addSoundGenerator(SoundGenerator *soundGenerator)</div><div class="ttdoc">Adds a sound generator to the synthesizer.</div></div>
-<div class="ttc" id="aclassVSynth_1_1SoundGenerator_html"><div class="ttname"><a href="classVSynth_1_1SoundGenerator.html">VSynth::SoundGenerator</a></div><div class="ttdoc">Sound generator.</div><div class="ttdef"><b>Definition:</b> <a href="SoundGenerator_8h_source.html#l00017">SoundGenerator.h:18</a></div></div>
+<div class="ttc" id="aclassVSynth_1_1SoundGenerator_html"><div class="ttname"><a href="classVSynth_1_1SoundGenerator.html">VSynth::SoundGenerator</a></div><div class="ttdoc">Sound generating device.</div><div class="ttdef"><b>Definition:</b> <a href="SoundGenerator_8h_source.html#l00018">SoundGenerator.h:19</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

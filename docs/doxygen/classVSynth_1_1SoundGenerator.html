@@ -24,7 +24,7 @@
    <div id="projectname">VSynth
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">C++ Audio Synthesizer using SDL 2</div>
+   <div id="projectbrief">C++ Audio Synthesis Library using SDL 2</div>
   </td>
  </tr>
  </tbody>
@@ -76,7 +76,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Sound generator.  
+<p>Sound generating device.  
  <a href="classVSynth_1_1SoundGenerator.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="SoundGenerator_8h_source.html">SoundGenerator.h</a>&gt;</code></p>
@@ -85,7 +85,7 @@ Inheritance diagram for VSynth::SoundGenerator:</div>
 <div class="dyncontent">
 <div class="center"><img src="classVSynth_1_1SoundGenerator__inherit__graph.png" border="0" usemap="#aVSynth_1_1SoundGenerator_inherit__map" alt="Inheritance graph"/></div>
 <map name="VSynth_1_1SoundGenerator_inherit__map" id="VSynth_1_1SoundGenerator_inherit__map">
-<area shape="rect" title="Sound generator." alt="" coords="5,110,172,137"/>
+<area shape="rect" title="Sound generating device." alt="" coords="5,110,172,137"/>
 <area shape="rect" href="classVSynth_1_1Generators_1_1Instrument.html" title="Device capable of playing multiple notes with an ADSR envelope." alt="" coords="220,37,357,79"/>
 <area shape="rect" href="classVSynth_1_1Generators_1_1Sequencer.html" title="Note Sequencer for Instruments." alt="" coords="220,103,357,144"/>
 <area shape="rect" href="classVSynth_1_1Generators_1_1Tone.html" title="Generates a given tone at multiple frequencies." alt="" coords="220,168,357,209"/>
@@ -97,7 +97,7 @@ Inheritance diagram for VSynth::SoundGenerator:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5991bc46057fc03fe42b695d42d08428"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1SoundGenerator.html#a5991bc46057fc03fe42b695d42d08428">sample</a> (double time)=0</td></tr>
-<tr class="memdesc:a5991bc46057fc03fe42b695d42d08428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample the <a class="el" href="classVSynth_1_1SoundGenerator.html" title="Sound generator.">SoundGenerator</a> at the given time.  <a href="classVSynth_1_1SoundGenerator.html#a5991bc46057fc03fe42b695d42d08428">More...</a><br /></td></tr>
+<tr class="memdesc:a5991bc46057fc03fe42b695d42d08428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample the <a class="el" href="classVSynth_1_1SoundGenerator.html" title="Sound generating device.">SoundGenerator</a> at the given time.  <a href="classVSynth_1_1SoundGenerator.html#a5991bc46057fc03fe42b695d42d08428">More...</a><br /></td></tr>
 <tr class="separator:a5991bc46057fc03fe42b695d42d08428"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35f376e137010e541adc8e6a36247258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1SoundGenerator.html#a35f376e137010e541adc8e6a36247258">setVolume</a> (double percent)</td></tr>
 <tr class="memdesc:a35f376e137010e541adc8e6a36247258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the volume at a certain percent.  <a href="classVSynth_1_1SoundGenerator.html#a35f376e137010e541adc8e6a36247258">More...</a><br /></td></tr>
@@ -116,10 +116,10 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mAmplitude</b></td>
 <tr class="separator:a6adcd34e842e5272e970d3a87d15f4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Sound generator. </p>
-<p>Interface for creating sound generating devices </p>
+<div class="textblock"><p>Sound generating device. </p>
+<p>A sound generator is responsible for creating the sound output which will be eventually sent to the speaker. Sound generators can be simple waveforms, a modulated waveform from an ADSR envelope, or it can playback PCM audio from a file. </p>
 
-<p class="definition">Definition at line <a class="el" href="SoundGenerator_8h_source.html#l00017">17</a> of file <a class="el" href="SoundGenerator_8h_source.html">SoundGenerator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SoundGenerator_8h_source.html#l00018">18</a> of file <a class="el" href="SoundGenerator_8h_source.html">SoundGenerator.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7bbad7e35d93abb2618b139c83fc4018"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7bbad7e35d93abb2618b139c83fc4018">&#9670;&nbsp;</a></span>getAmplitude()</h2>
@@ -139,6 +139,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mAmplitude</b></td>
 <p>Amplitude for synthesizer. </p>
 <p>Sound generators, when sampled, return a value in [-1.0, 1.0]. This value will be multiplied by the amplitude returned by this function. The amplitude will be a value such that it can fit in a 16-bit signed integer.</p>
 <p>This function is mainly for the <a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a>. You shouldn't really have a reason to call this function.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a> </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
 
 </div>
@@ -187,14 +188,17 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mAmplitude</b></td>
 </table>
 </div><div class="memdoc">
 
-<p>Sample the <a class="el" href="classVSynth_1_1SoundGenerator.html" title="Sound generator.">SoundGenerator</a> at the given time. </p>
+<p>Sample the <a class="el" href="classVSynth_1_1SoundGenerator.html" title="Sound generating device.">SoundGenerator</a> at the given time. </p>
+<p>This is the main interaction between the <a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a> and the <a class="el" href="classVSynth_1_1SoundGenerator.html" title="Sound generating device.">SoundGenerator</a>. This method will be called at the rate of the sampling rate specified by the <a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a>'s constructor.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Since this function is called so frequently you should make computations as fast and efficient as possible. Needless to say, do not block the running thread when implementing this function.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">time</td><td>- in seconds </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>double - sound sample in range [-1.0,1.0] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>double - sound sample in range [-1.0,1.0]</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a> </dd></dl>
 
 <p>Implemented in <a class="el" href="classVSynth_1_1Generators_1_1Instrument.html#a4bbd50cdd8bef47838a0aa8c66a6d712">VSynth::Generators::Instrument</a>, <a class="el" href="classVSynth_1_1Generators_1_1Tone.html#a24ee7f67c2b1143d23d107ce6663ee47">VSynth::Generators::Tone</a>, <a class="el" href="classVSynth_1_1Generators_1_1Sequencer.html#a02bb7bc678a2d1a5de316c56aa6bffce">VSynth::Generators::Sequencer</a>, <a class="el" href="classVSynth_1_1Generators_1_1PolyphonicInstrument.html#af33c6fb0986374c91a7424a15cf61a85">VSynth::Generators::PolyphonicInstrument</a>, and <a class="el" href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#a40c9b8d114d1acf71ce7c7f7cc0084d3">VSynth::Generators::MonophonicInstrument</a>.</p>
 

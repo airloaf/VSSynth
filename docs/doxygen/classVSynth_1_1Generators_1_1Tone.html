@@ -24,7 +24,7 @@
    <div id="projectname">VSynth
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">C++ Audio Synthesizer using SDL 2</div>
+   <div id="projectbrief">C++ Audio Synthesis Library using SDL 2</div>
   </td>
  </tr>
  </tbody>
@@ -85,7 +85,7 @@ Inheritance diagram for VSynth::Generators::Tone:</div>
 <div class="center"><img src="classVSynth_1_1Generators_1_1Tone__inherit__graph.png" border="0" usemap="#aVSynth_1_1Generators_1_1Tone_inherit__map" alt="Inheritance graph"/></div>
 <map name="VSynth_1_1Generators_1_1Tone_inherit__map" id="VSynth_1_1Generators_1_1Tone_inherit__map">
 <area shape="rect" title="Generates a given tone at multiple frequencies." alt="" coords="20,80,157,121"/>
-<area shape="rect" href="classVSynth_1_1SoundGenerator.html" title="Sound generator." alt="" coords="5,5,172,32"/>
+<area shape="rect" href="classVSynth_1_1SoundGenerator.html" title="Sound generating device." alt="" coords="5,5,172,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -94,7 +94,7 @@ Collaboration diagram for VSynth::Generators::Tone:</div>
 <div class="center"><img src="classVSynth_1_1Generators_1_1Tone__coll__graph.png" border="0" usemap="#aVSynth_1_1Generators_1_1Tone_coll__map" alt="Collaboration graph"/></div>
 <map name="VSynth_1_1Generators_1_1Tone_coll__map" id="VSynth_1_1Generators_1_1Tone_coll__map">
 <area shape="rect" title="Generates a given tone at multiple frequencies." alt="" coords="20,80,157,121"/>
-<area shape="rect" href="classVSynth_1_1SoundGenerator.html" title="Sound generator." alt="" coords="5,5,172,32"/>
+<area shape="rect" href="classVSynth_1_1SoundGenerator.html" title="Sound generating device." alt="" coords="5,5,172,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -104,7 +104,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab994b058a81c0391c6114dc53d87240b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVSynth_1_1Generators_1_1Tone.html" title="Generates a given tone at multiple frequencies.">Tone</a> object.  <a href="classVSynth_1_1Generators_1_1Tone.html#ab994b058a81c0391c6114dc53d87240b">More...</a><br /></td></tr>
 <tr class="separator:ab994b058a81c0391c6114dc53d87240b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24ee7f67c2b1143d23d107ce6663ee47"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Generators_1_1Tone.html#a24ee7f67c2b1143d23d107ce6663ee47">sample</a> (double time)</td></tr>
-<tr class="memdesc:a24ee7f67c2b1143d23d107ce6663ee47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample the <a class="el" href="classVSynth_1_1SoundGenerator.html" title="Sound generator.">SoundGenerator</a> at the given time.  <a href="classVSynth_1_1Generators_1_1Tone.html#a24ee7f67c2b1143d23d107ce6663ee47">More...</a><br /></td></tr>
+<tr class="memdesc:a24ee7f67c2b1143d23d107ce6663ee47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample the <a class="el" href="classVSynth_1_1SoundGenerator.html" title="Sound generating device.">SoundGenerator</a> at the given time.  <a href="classVSynth_1_1Generators_1_1Tone.html#a24ee7f67c2b1143d23d107ce6663ee47">More...</a><br /></td></tr>
 <tr class="separator:a24ee7f67c2b1143d23d107ce6663ee47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab877dd944324134a2a934f0e1f94298"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Generators_1_1Tone.html#aab877dd944324134a2a934f0e1f94298">playNote</a> (double frequency)</td></tr>
 <tr class="memdesc:aab877dd944324134a2a934f0e1f94298"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays the waveform at the given frequency.  <a href="classVSynth_1_1Generators_1_1Tone.html#aab877dd944324134a2a934f0e1f94298">More...</a><br /></td></tr>
@@ -212,14 +212,17 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>mAmplitude</b></td>
 </table>
 </div><div class="memdoc">
 
-<p>Sample the <a class="el" href="classVSynth_1_1SoundGenerator.html" title="Sound generator.">SoundGenerator</a> at the given time. </p>
+<p>Sample the <a class="el" href="classVSynth_1_1SoundGenerator.html" title="Sound generating device.">SoundGenerator</a> at the given time. </p>
+<p>This is the main interaction between the <a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a> and the <a class="el" href="classVSynth_1_1SoundGenerator.html" title="Sound generating device.">SoundGenerator</a>. This method will be called at the rate of the sampling rate specified by the <a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a>'s constructor.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Since this function is called so frequently you should make computations as fast and efficient as possible. Needless to say, do not block the running thread when implementing this function.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">time</td><td>- in seconds </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>double - sound sample in range [-1.0,1.0] </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>double - sound sample in range [-1.0,1.0]</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a> </dd></dl>
 
 <p>Implements <a class="el" href="classVSynth_1_1SoundGenerator.html#a5991bc46057fc03fe42b695d42d08428">VSynth::SoundGenerator</a>.</p>
 

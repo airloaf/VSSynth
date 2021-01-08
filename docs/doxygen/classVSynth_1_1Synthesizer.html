@@ -24,7 +24,7 @@
    <div id="projectname">VSynth
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">C++ Audio Synthesizer using SDL 2</div>
+   <div id="projectbrief">C++ Audio Synthesis Library using SDL 2</div>
   </td>
  </tr>
  </tbody>
@@ -83,22 +83,21 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac27501d936cf99ec13e628a978ce86e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Synthesizer.html#ac27501d936cf99ec13e628a978ce86e2">Synthesizer</a> (unsigned int samplingRates=48000, unsigned int numFrames=20)</td></tr>
-<tr class="memdesc:ac27501d936cf99ec13e628a978ce86e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a> object.  <a href="classVSynth_1_1Synthesizer.html#ac27501d936cf99ec13e628a978ce86e2">More...</a><br /></td></tr>
+<tr class="memdesc:ac27501d936cf99ec13e628a978ce86e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a>.  <a href="classVSynth_1_1Synthesizer.html#ac27501d936cf99ec13e628a978ce86e2">More...</a><br /></td></tr>
 <tr class="separator:ac27501d936cf99ec13e628a978ce86e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a983a672d0bcb0f0f126b1ee05ecd16ec"><td class="memItemLeft" align="right" valign="top"><a id="a983a672d0bcb0f0f126b1ee05ecd16ec"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec">open</a> ()</td></tr>
-<tr class="memdesc:a983a672d0bcb0f0f126b1ee05ecd16ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the internal audio device. <br /></td></tr>
+<tr class="memitem:a983a672d0bcb0f0f126b1ee05ecd16ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec">open</a> ()</td></tr>
+<tr class="memdesc:a983a672d0bcb0f0f126b1ee05ecd16ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the internal audio device (SDL should be initialized prior to calling this)  <a href="classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec">More...</a><br /></td></tr>
 <tr class="separator:a983a672d0bcb0f0f126b1ee05ecd16ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4376b0239221a4472c72485f0acd1130"><td class="memItemLeft" align="right" valign="top"><a id="a4376b0239221a4472c72485f0acd1130"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Synthesizer.html#a4376b0239221a4472c72485f0acd1130">close</a> ()</td></tr>
 <tr class="memdesc:a4376b0239221a4472c72485f0acd1130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the internal audio device. <br /></td></tr>
 <tr class="separator:a4376b0239221a4472c72485f0acd1130"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf40f3db8fe52fdf582c7d4a2bec71a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Synthesizer.html#adf40f3db8fe52fdf582c7d4a2bec71a7">unpause</a> ()</td></tr>
-<tr class="memdesc:adf40f3db8fe52fdf582c7d4a2bec71a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unpauses the synthesizer.  <a href="classVSynth_1_1Synthesizer.html#adf40f3db8fe52fdf582c7d4a2bec71a7">More...</a><br /></td></tr>
-<tr class="separator:adf40f3db8fe52fdf582c7d4a2bec71a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56bb0e89b47f4fa18603e1fe1d39b79e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Synthesizer.html#a56bb0e89b47f4fa18603e1fe1d39b79e">pause</a> ()</td></tr>
 <tr class="memdesc:a56bb0e89b47f4fa18603e1fe1d39b79e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses the synthesizer.  <a href="classVSynth_1_1Synthesizer.html#a56bb0e89b47f4fa18603e1fe1d39b79e">More...</a><br /></td></tr>
 <tr class="separator:a56bb0e89b47f4fa18603e1fe1d39b79e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf40f3db8fe52fdf582c7d4a2bec71a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Synthesizer.html#adf40f3db8fe52fdf582c7d4a2bec71a7">unpause</a> ()</td></tr>
+<tr class="memdesc:adf40f3db8fe52fdf582c7d4a2bec71a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unpauses the synthesizer.  <a href="classVSynth_1_1Synthesizer.html#adf40f3db8fe52fdf582c7d4a2bec71a7">More...</a><br /></td></tr>
+<tr class="separator:adf40f3db8fe52fdf582c7d4a2bec71a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac06c573c03814ec7b5f0f29561f709ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVSynth_1_1Synthesizer.html#ac06c573c03814ec7b5f0f29561f709ca">addSoundGenerator</a> (<a class="el" href="classVSynth_1_1SoundGenerator.html">SoundGenerator</a> *soundGenerator)</td></tr>
 <tr class="memdesc:ac06c573c03814ec7b5f0f29561f709ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a sound generator to the synthesizer.  <a href="classVSynth_1_1Synthesizer.html#ac06c573c03814ec7b5f0f29561f709ca">More...</a><br /></td></tr>
 <tr class="separator:ac06c573c03814ec7b5f0f29561f709ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,9 +107,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Entrypoint and interface for audio synthesis. </p>
-<p>Creates a software synthesizer. The synthesizer can be manipulated by adding instruments. </p>
+<p>The synthesizer is the main building block of the VSynth audio synthesizer. This synthesizer uses additive synthesis to create sound.</p>
+<p>SoundGenerators are responsible for creating the sounds and must be added to this synth.</p>
+<p><a class="el" href="namespaceVSynth_1_1Middleware.html" title="Collection of middleware for use with the synthesizer.">Middleware</a> can be added to read and/or modify the sound output prior to reaching the speaker.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classVSynth_1_1SoundGenerator.html" title="Sound generating device.">SoundGenerator</a> </dd>
+<dd>
+<a class="el" href="namespaceVSynth_1_1Middleware.html" title="Collection of middleware for use with the synthesizer.">Middleware</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Synthesizer_8h_source.html#l00026">26</a> of file <a class="el" href="Synthesizer_8h_source.html">Synthesizer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Synthesizer_8h_source.html#l00034">34</a> of file <a class="el" href="Synthesizer_8h_source.html">Synthesizer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac27501d936cf99ec13e628a978ce86e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac27501d936cf99ec13e628a978ce86e2">&#9670;&nbsp;</a></span>Synthesizer()</h2>
@@ -138,10 +142,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a> object. </p>
+<p>Create a new <a class="el" href="classVSynth_1_1Synthesizer.html" title="Entrypoint and interface for audio synthesis.">Synthesizer</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">samplingRates</td><td>- Sampling rate (# of samples per second). 48,000 is a common number, but higher values are computationally intensive </td></tr>
+    <tr><td class="paramname">samplingRates</td><td>- Sampling rate (# of samples per second). Higher values are computationally intensive while lower values have a limit scope of sound frequencies. </td></tr>
     <tr><td class="paramname">numFrames</td><td>- Number of sampling frames. A sampling frame is an instance where sound generators are sampled. </td></tr>
   </table>
   </dd>
@@ -199,6 +203,26 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a983a672d0bcb0f0f126b1ee05ecd16ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a983a672d0bcb0f0f126b1ee05ecd16ec">&#9670;&nbsp;</a></span>open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VSynth::Synthesizer::open </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates the internal audio device (SDL should be initialized prior to calling this) </p>
+<dl class="section warning"><dt>Warning</dt><dd>SDL AUDIO must be initialized prior to calling <a class="el" href="classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec" title="Creates the internal audio device (SDL should be initialized prior to calling this)">open()</a> </dd></dl>
 
 </div>
 </div>
