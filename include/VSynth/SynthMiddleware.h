@@ -15,6 +15,8 @@ namespace VSynth
      * 
      * Middleware has the ability to modify any samples prior to sending it to the speaker.
      * This can allow for the creation of filters, sample analyzers or audio file writers.
+     * 
+     * @see Synthesizer
      */
     class SynthMiddleware
     {

@@ -1,0 +1,5 @@
+<map id="VSynth::Generators::PolyphonicInstrument" name="VSynth::Generators::PolyphonicInstrument">
+<area shape="rect" id="node1" title="Device capable of playing notes simultaneously A polyphonic instrument is capable of playing multiple..." alt="" coords="11,169,166,211"/>
+<area shape="rect" id="node2" href="$classVSynth_1_1Generators_1_1Instrument.html" title="Device capable of playing multiple notes with an ADSR envelope." alt="" coords="20,80,157,121"/>
+<area shape="rect" id="node3" href="$classVSynth_1_1SoundGenerator.html" title="Sound generating device." alt="" coords="5,5,172,32"/>
+</map>

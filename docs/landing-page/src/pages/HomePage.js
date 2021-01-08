@@ -1,34 +1,18 @@
 import CodeExamples from "../components/CodeExamples"
 import Iframe from 'react-iframe'
-import Navbar from "../components/Navbar"
 import React from 'react';
-import axios from 'axios';
 
-import { CodeBlock, dracula } from "react-code-blocks";
-import { Container, Row, Col, ButtonGroup, Button, Carousel } from "react-bootstrap"
+import { Container, Row, Col, ButtonGroup, Button } from "react-bootstrap"
 
 
 export default class HomePage extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            pianoCode: ""
-        };
-
         this.dataflow = this.dataflow.bind(this);
         this.examples = this.examples.bind(this);
         this.features = this.features.bind(this);
         this.intro = this.intro.bind(this);
-    }
-
-    componentDidMount() {
-        axios.get('https://raw.githubusercontent.com/airloaf/VSynth/master/examples/SimpleTone/src/main.cpp')
-            .then(res => {
-                this.setState({ pianoCode: res.data });
-            })
-            .catch(err => {
-            })
     }
 
     intro() {
@@ -49,7 +33,7 @@ export default class HomePage extends React.Component {
                                 </h2>
                                 <ButtonGroup>
                                     <Button variant="info" href="https://github.com/airloaf/VSynth/releases">Download</Button>
-                                    <Button variant="info" href="https://airloaf.github.io/VSynth/html/annotated.html">Documentation</Button>
+                                    <Button variant="info" href="https://airloaf.github.io/VSynth/doxygen/annotated.html">Documentation</Button>
                                     <Button variant="info" href="https://github.com/airloaf/VSynth/"><i class="fab fa-github"></i>{" GitHub"}</Button>
                                 </ButtonGroup>
                             </div>
@@ -77,7 +61,53 @@ export default class HomePage extends React.Component {
     features() {
         return (
             <React.Fragment>
-
+                <section class="features" id="features">
+                    <div class="container">
+                        <div class="section-heading text-center">
+                            <h2>Features</h2>
+                            <p>With VSynth you have access to these features and many more!</p>
+                            <hr />
+                        </div>
+                        <div class="row">
+                            <div class="col my-auto">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="feature-item">
+                                                <img src={"img/Waves.png"} />
+                                                <h3>Basic Waveforms</h3>
+                                                <p>All your basic waveforms included! (Sine, Triangle, Square, Sawtooth, Pulse and Noise)</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="feature-item">
+                                                <img src={"img/ADSR.png"} />
+                                                <h3>ADSR Envelopes</h3>
+                                                <p>Control waveform amplitudes with ADSR envelopes!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="feature-item">
+                                                <img src={"img/Polyphony.png"} />
+                                                <h3>Polyphony</h3>
+                                                <p>Play multiple notes, sounds, instruments, etc!</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="feature-item">
+                                                <img src={"img/WAV.png"} />
+                                                <h3>WAV file output</h3>
+                                                <p>Save your synthesized audio to .WAV files!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </React.Fragment>
         );
     }
@@ -149,64 +179,12 @@ export default class HomePage extends React.Component {
     render() {
         return (
             <React.Fragment>
-                {/* <Navbar /> */}
                 {this.intro()}
 
-                <section class="features" id="features">
-                    <div class="container">
-                        <div class="section-heading text-center">
-                            <h2>Features</h2>
-                            <p>With VSynth you have access to many of these features and more!</p>
-                            <hr />
-                        </div>
-                        <div class="row">
-                            <div class="col my-auto">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="feature-item">
-                                                <img src={"img/Waves.png"} />
-                                                <h3>Basic Waveforms</h3>
-                                                <p>All your basic waveforms included! (Sine, Triangle, Square, Sawtooth, Pulse and Noise)</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="feature-item">
-                                                <img src={"img/ADSR.png"} />
-                                                <h3>ADSR Envelopes</h3>
-                                                <p>Control waveform amplitudes with ADSR envelopes!</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="feature-item">
-                                                <img src={"img/Polyphony.png"} />
-                                                <h3>Polyphony</h3>
-                                                <p>Play multiple notes, sounds, instruments, etc!</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="feature-item">
-                                                <img src={"img/WAV.png"} />
-                                                <h3>WAV file output</h3>
-                                                <p>Save your synthesized audio to .WAV files!</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <hr />
+                {this.features()}
                 {this.dataflow()}
-
-                <hr />
                 {this.examples()}
-
             </React.Fragment>
-
         );
     }
 }

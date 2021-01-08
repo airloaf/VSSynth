@@ -10,9 +10,10 @@ namespace VSynth
     }
 
     /**
-     * @brief Sound generator
-     * 
-     * Interface for creating sound generating devices
+     * @brief Sound generating device
+     *
+     * A sound generator is responsible for creating the sound output which will be eventually sent to the speaker.
+     * Sound generators can be simple waveforms, a modulated waveform from an ADSR envelope, or it can playback PCM audio from a file.
      */
     class SoundGenerator
     {
@@ -23,8 +24,15 @@ namespace VSynth
         /**
          * @brief Sample the SoundGenerator at the given time
          * 
+         * This is the main interaction between the Synthesizer and the SoundGenerator. This method will be called at the rate of the sampling rate specified by the Synthesizer's constructor.
+         * 
+         * @warning Since this function is called so frequently you should make computations as fast and efficient as possible.
+         * Needless to say, do not block the running thread when implementing this function.
+         * 
          * @param time - in seconds
          * @return double - sound sample in range [-1.0,1.0]
+         *
+         * @see Synthesizer
          */
         virtual double sample(double time) = 0;
 
@@ -53,6 +61,7 @@ namespace VSynth
          * This function is mainly for the Synthesizer. You shouldn't
          * really have a reason to call this function.
          * 
+         * @see Synthesizer
          * @return double 
          */
         double getAmplitude();

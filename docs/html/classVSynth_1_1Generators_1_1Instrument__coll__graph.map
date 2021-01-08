@@ -1,4 +1,0 @@
-<map id="VSynth::Generators::Instrument" name="VSynth::Generators::Instrument">
-<area shape="rect" id="node1" title="Device capable of playing multiple notes with an ADSR envelope." alt="" coords="20,80,157,121"/>
-<area shape="rect" id="node2" href="$classVSynth_1_1SoundGenerator.html" title="Sound generator." alt="" coords="5,5,172,32"/>
-</map>
