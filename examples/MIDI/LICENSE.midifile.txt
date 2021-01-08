@@ -1,3 +1,6 @@
+In the MIDI example, the midifile library is used for reading midi files. Below is the license.
+---
+
 Copyright (c) 1999-2018, Craig Stuart Sapp
 All rights reserved.
 
