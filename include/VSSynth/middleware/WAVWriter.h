@@ -5,7 +5,7 @@
 #include <fstream>
 #include <string>
 
-namespace VSynth
+namespace VSSynth
 {
 
     namespace Middleware
@@ -22,7 +22,7 @@ namespace VSynth
         class WAVWriter : public SynthMiddleware
         {
         public:
-            WAVWriter(unsigned long int samplingRate, unsigned int channels=2);
+            WAVWriter(unsigned long int samplingRate, unsigned int channels = 2);
             ~WAVWriter();
 
             /**
@@ -57,4 +57,4 @@ namespace VSynth
 
     }; // namespace Middleware
 
-} // namespace VSynth
+} // namespace VSSynth

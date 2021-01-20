@@ -5,7 +5,7 @@
 
 #include "MIDIChannel.h"
 
-class MIDISequencer: public VSynth::SoundGenerator
+class MIDISequencer : public VSSynth::SoundGenerator
 {
 public:
     MIDISequencer(MIDIChannel *channel);
@@ -22,7 +22,6 @@ public:
     void sortEventsByTime();
 
 private:
-
     MIDIChannel *mChannel;
 
     double mStartTime;
@@ -30,5 +29,4 @@ private:
 
     std::vector<std::pair<MIDI_EVENT, double>> mEvents;
     std::vector<std::pair<MIDI_EVENT, double>>::iterator mEventIt;
-
 };

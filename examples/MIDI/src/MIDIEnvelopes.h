@@ -1,13 +1,13 @@
 #pragma once
 
-#include <VSynth/utils/Envelope.h>
-#include <VSynth/utils/Patches.h>
+#include <VSSynth/utils/Envelope.h>
+#include <VSSynth/utils/Patches.h>
 
-using namespace VSynth::Patches;
+using namespace VSSynth::Patches;
 
 // PATCH Table found at (https://en.wikipedia.org/wiki/General_MIDI#Program_change_events)
 
-const VSynth::ADSREnvelope ENVELOPES[] = {
+const VSSynth::ADSREnvelope ENVELOPES[] = {
     PIANO_ENVELOPE,        //1 Acoustic Grand Piano
     PIANO_ENVELOPE,        //2 Bright Acoustic Piano
     PIANO_ENVELOPE,        //3 Electric Grand Piano

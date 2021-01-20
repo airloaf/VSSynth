@@ -8,7 +8,7 @@
 #include "SoundGenerator.h"
 #include "SynthMiddleware.h"
 
-namespace VSynth
+namespace VSSynth
 {
     struct SynthData
     {
@@ -21,7 +21,7 @@ namespace VSynth
     /**
      * @brief Entrypoint and interface for audio synthesis
      * 
-     * The synthesizer is the main building block of the VSynth audio synthesizer.
+     * The synthesizer is the main building block of the VSSynth audio synthesizer.
      * This synthesizer uses additive synthesis to create sound.
      * 
      * SoundGenerators are responsible for creating the sounds and must be added to this synth.
@@ -96,4 +96,4 @@ namespace VSynth
         SynthData mSynthData;
     };
 
-}; // namespace VSynth
+}; // namespace VSSynth

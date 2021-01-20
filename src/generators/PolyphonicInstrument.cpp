@@ -1,8 +1,8 @@
-#include <VSynth/generators/PolyphonicInstrument.h>
+#include <VSSynth/generators/PolyphonicInstrument.h>
 
 #include <algorithm>
 
-namespace VSynth
+namespace VSSynth
 {
     namespace Generators
     {
@@ -62,4 +62,4 @@ namespace VSynth
             mEnvLock.unlock();
         }
     } // namespace Generators
-} // namespace VSynth
+} // namespace VSSynth

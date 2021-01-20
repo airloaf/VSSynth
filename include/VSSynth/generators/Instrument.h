@@ -5,7 +5,7 @@
 #include "../utils/Envelope.h"
 #include "../SoundGenerator.h"
 
-namespace VSynth
+namespace VSSynth
 {
     namespace Generators
     {
@@ -44,4 +44,4 @@ namespace VSynth
             std::function<double(double, double)> mWave;
         };
     } // namespace Generators
-} // namespace VSynth
+} // namespace VSSynth

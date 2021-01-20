@@ -1,8 +1,8 @@
 #include <SDL2/SDL.h>
 
-#include <VSynth/VSynth.h>
+#include <VSSynth/VSSynth.h>
 
-using namespace VSynth;
+using namespace VSSynth;
 using namespace Generators;
 
 void initSDL();
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     tone.playNote(Notes::C4);
 
     // Create a WAVWriter to save the waveform
-    VSynth::Middleware::WAVWriter wavWriter(48000);
+    VSSynth::Middleware::WAVWriter wavWriter(48000);
     wavWriter.open("tone.wav");
 
     // Create synthesizer
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     // Add WAVWriter to the synthesizer
     synth.addMiddleware(&wavWriter);
 
-    // Add our tone to the sound generator 
+    // Add our tone to the sound generator
     synth.addSoundGenerator(&tone);
 
     // Open the synth for playback with the

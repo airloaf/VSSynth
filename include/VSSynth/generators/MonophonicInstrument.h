@@ -2,7 +2,7 @@
 
 #include "Instrument.h"
 
-namespace VSynth
+namespace VSSynth
 {
     namespace Generators
     {
@@ -41,4 +41,4 @@ namespace VSynth
         };
 
     } // namespace Generators
-} // namespace VSynth
+} // namespace VSSynth

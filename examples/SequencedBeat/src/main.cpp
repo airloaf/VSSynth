@@ -1,13 +1,13 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-#include <VSynth/VSynth.h>
+#include <VSSynth/VSSynth.h>
 
 #include <algorithm>
 #include <map>
 #include <vector>
 
-using namespace VSynth;
+using namespace VSSynth;
 using namespace Generators;
 
 struct PianoKey
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
     renderKeyBindings(window);
 
     // Create an instrument with the following envelope and patch.
-    // VSynth provides some sample patches and envelopes,
+    // VSSynth provides some sample patches and envelopes,
     // but you can write your own as well.
     Instrument *piano = new PolyphonicInstrument(
         Patches::PIANO,

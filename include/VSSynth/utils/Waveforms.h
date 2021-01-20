@@ -2,7 +2,7 @@
 
 #include <functional>
 
-namespace VSynth
+namespace VSSynth
 {
     /**
      * @brief Collection of waveform primitives
@@ -21,7 +21,7 @@ namespace VSynth
          * @param percent in range [0, 100]
          * @return const double 
          */
-        const double pulse(double frequency, double time, double percent, double phase=0);
+        const double pulse(double frequency, double time, double percent, double phase = 0);
 
         /**
          * @brief Generates a 50% pulse wave
@@ -30,7 +30,7 @@ namespace VSynth
          * @param time 
          * @return double 
          */
-        const double square(double frequency, double time, double phase=0);
+        const double square(double frequency, double time, double phase = 0);
 
         /**
          * @brief Generates a sine wave
@@ -39,7 +39,7 @@ namespace VSynth
          * @param time 
          * @return double 
          */
-        const double sine(double frequency, double time, double phase=0);
+        const double sine(double frequency, double time, double phase = 0);
 
         /**
          * @brief Generates a sawtooth wave
@@ -48,7 +48,7 @@ namespace VSynth
          * @param time 
          * @return double 
          */
-        const double sawtooth(double frequency, double time, double phase=0);
+        const double sawtooth(double frequency, double time, double phase = 0);
 
         /**
          * @brief Generates a triangle wave
@@ -57,7 +57,7 @@ namespace VSynth
          * @param time 
          * @return double 
          */
-        const double triangle(double frequency, double time, double phase=0);
+        const double triangle(double frequency, double time, double phase = 0);
 
         /**
          * @brief Generates random noise
@@ -67,4 +67,4 @@ namespace VSynth
         const double noise();
 
     }; // namespace Waveforms
-};     // namespace VSynth
+};     // namespace VSSynth

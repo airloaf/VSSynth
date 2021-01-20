@@ -1,9 +1,9 @@
 #pragma once
 
-namespace VSynth
+namespace VSSynth
 {
     /**
-     * @brief Collection of sound generators provided with VSynth
+     * @brief Collection of sound generators provided with VSSynth
      */
     namespace Generators
     {
@@ -69,4 +69,4 @@ namespace VSynth
     protected:
         double mAmplitude;
     };
-} // namespace VSynth
+} // namespace VSSynth

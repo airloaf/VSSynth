@@ -2,7 +2,7 @@
 
 #include <SDL2/SDL.h>
 
-#include <VSynth/VSynth.h>
+#include <VSSynth/VSSynth.h>
 
 #include "MIDIPatches.h"
 #include "MIDISequencer.h"
@@ -65,17 +65,17 @@ int main(int argc, char *argv[])
     for (int i = 0; i < 16; i++)
     {
         MIDISequencer seq(new MIDIChannel(
-            VSynth::Patches::GLOCKENSPIEL,
-            VSynth::Patches::GLOCKENSPIEL_ENVELOPE));
+            VSSynth::Patches::GLOCKENSPIEL,
+            VSSynth::Patches::GLOCKENSPIEL_ENVELOPE));
         sequencers.push_back(seq);
     }
 
     addNotesToSequencer(sequencers, midifile);
 
-    VSynth::Middleware::WAVWriter wavWriter(24000, 2);
+    VSSynth::Middleware::WAVWriter wavWriter(24000, 2);
     wavWriter.open("MIDI_OUT.wav");
 
-    VSynth::Synthesizer synth(24000, 50);
+    VSSynth::Synthesizer synth(24000, 50);
     synth.open();
     for (int i = 0; i < 16; i++)
     {

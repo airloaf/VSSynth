@@ -1,6 +1,6 @@
 #pragma once
 
-namespace VSynth
+namespace VSSynth
 {
     /**
      * @brief Collection of middleware for use with the synthesizer
@@ -29,4 +29,4 @@ namespace VSynth
          */
         virtual short processSample(short currentSample, double time) = 0;
     };
-} // namespace VSynth
+} // namespace VSSynth

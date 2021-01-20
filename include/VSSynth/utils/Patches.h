@@ -3,7 +3,7 @@
 #include "Envelope.h"
 #include "Waveforms.h"
 
-namespace VSynth
+namespace VSSynth
 {
     /**
      * @brief A collection of different synth patches and their envelopes
@@ -64,4 +64,4 @@ namespace VSynth
         const ADSREnvelope REED_ENVELOPE(0.90f, 0.30f, 0.1f, 0.1f, 0.05f);
 
     }; // namespace Patches
-};     // namespace VSynth
+};     // namespace VSSynth

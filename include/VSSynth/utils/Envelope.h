@@ -1,6 +1,6 @@
 #pragma once
 
-namespace VSynth
+namespace VSSynth
 {
 
     /**
@@ -31,7 +31,7 @@ namespace VSynth
         {
         }
 
-        double attack, sustain; // Amplitudes
+        double attack, sustain;                    // Amplitudes
         double attackTime, decayTime, releaseTime; // Time-lengths
         bool sustainable;
     };
@@ -118,4 +118,4 @@ namespace VSynth
         bool mHold;
         double mAmplitude;
     };
-}; // namespace VSynth
+}; // namespace VSSynth

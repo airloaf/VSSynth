@@ -1,8 +1,8 @@
-#include <VSynth/generators/Instrument.h>
+#include <VSSynth/generators/Instrument.h>
 
 #include <algorithm>
 
-namespace VSynth
+namespace VSSynth
 {
     namespace Generators
     {
@@ -18,4 +18,4 @@ namespace VSynth
         }
 
     } // namespace Generators
-} // namespace VSynth
+} // namespace VSSynth

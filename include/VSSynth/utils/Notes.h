@@ -1,6 +1,6 @@
 #pragma once
 
-namespace VSynth
+namespace VSSynth
 {
     /**
      * @brief Notes and their respective frequencies
@@ -164,4 +164,4 @@ namespace VSynth
         const double Bb8 = 7458.62;
         const double B8 = 7902.13;
     } // namespace Notes
-} // namespace VSynth
+} // namespace VSSynth
