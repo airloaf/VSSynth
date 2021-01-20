@@ -1,9 +1,9 @@
-#include <VSynth/middleware/WAVWriter.h>
+#include <VSSynth/middleware/WAVWriter.h>
 
 void writeUint16ToFile_LE(std::ofstream &file, uint16_t value);
 void writeUint32ToFile_LE(std::ofstream &file, uint32_t value);
 
-namespace VSynth
+namespace VSSynth
 {
 
     namespace Middleware
@@ -61,7 +61,7 @@ namespace VSynth
             writeUint16ToFile_LE(mWAVFile, mNumChannels);
             writeUint32ToFile_LE(mWAVFile, mSamplingRate);
             writeUint32ToFile_LE(mWAVFile, byteRate);
-            writeUint16ToFile_LE(mWAVFile, (uint16_t) mNumChannels * sizeof(short));
+            writeUint16ToFile_LE(mWAVFile, (uint16_t)mNumChannels * sizeof(short));
             writeUint16ToFile_LE(mWAVFile, sizeof(short) * 8);
         }
         void WAVWriter::writeDataSubChunkHeader()
@@ -80,7 +80,7 @@ namespace VSynth
 
     }; // namespace Middleware
 
-} // namespace VSynth
+} // namespace VSSynth
 
 void writeUint16ToFile_LE(std::ofstream &file, uint16_t value)
 {

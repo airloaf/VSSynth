@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VSynth: MonophonicInstrument.h Source File</title>
+<title>VSSynth: MonophonicInstrument.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,8 +20,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="LogoLarge.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">VSynth
+   <div id="projectname">VSSynth
    &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">C++ Audio Synthesis Library using SDL 2</div>
@@ -63,7 +64,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_275d33c551e9d3c8e9a219fd3aed934e.html">VSynth</a></li><li class="navelem"><a class="el" href="dir_9b7d52bc0e05ea0cfb5ab76b74a54176.html">generators</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_170010d3817298888de49ae4d2112d09.html">VSSynth</a></li><li class="navelem"><a class="el" href="dir_03577aa4f08cdb45db5228415243ccb9.html">generators</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -75,42 +76,42 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;Instrument.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>VSynth</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>VSSynth</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">namespace </span>Generators</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1MonophonicInstrument.html">   16</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classVSynth_1_1Generators_1_1MonophonicInstrument.html">MonophonicInstrument</a> : <span class="keyword">public</span> <a class="code" href="classVSynth_1_1Generators_1_1Instrument.html">Instrument</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html">   16</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html">MonophonicInstrument</a> : <span class="keyword">public</span> <a class="code" href="classVSSynth_1_1Generators_1_1Instrument.html">Instrument</a></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#a2c6e5610893c7a96b5f414746eeca9f6">   25</a></span>&#160;            <a class="code" href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#a2c6e5610893c7a96b5f414746eeca9f6">MonophonicInstrument</a>(</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html#adeb5cea1caf3aa6beeb60c33e3d29b6b">   25</a></span>&#160;            <a class="code" href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html#adeb5cea1caf3aa6beeb60c33e3d29b6b">MonophonicInstrument</a>(</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                std::function&lt;<span class="keywordtype">double</span>(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>)&gt; wave,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keyword">const</span> <a class="code" href="structVSynth_1_1ADSREnvelope.html">ADSREnvelope</a> &amp;adsr);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keyword">const</span> <a class="code" href="structVSSynth_1_1ADSREnvelope.html">ADSREnvelope</a> &amp;adsr);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">virtual</span> ~<a class="code" href="classVSynth_1_1Generators_1_1MonophonicInstrument.html">MonophonicInstrument</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">virtual</span> ~<a class="code" href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html">MonophonicInstrument</a>();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#a40c9b8d114d1acf71ce7c7f7cc0084d3">   31</a></span>&#160;            <span class="keywordtype">double</span> <a class="code" href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#a40c9b8d114d1acf71ce7c7f7cc0084d3">sample</a>(<span class="keywordtype">double</span> time);</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html#acdf609c2220ed4b3c51e79490f1cb585">   31</a></span>&#160;            <span class="keywordtype">double</span> <a class="code" href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html#acdf609c2220ed4b3c51e79490f1cb585">sample</a>(<span class="keywordtype">double</span> time);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#ad8aa2d81949f1ec27c0230a9f834af34">   33</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#ad8aa2d81949f1ec27c0230a9f834af34">holdNote</a>(<span class="keywordtype">double</span> frequency);</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#a09763b8afc020cda0927db9b77b4dd13">   34</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#a09763b8afc020cda0927db9b77b4dd13">releaseNote</a>(<span class="keywordtype">double</span> frequency);</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html#af9282899bcef16f787ac27350656243e">   33</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html#af9282899bcef16f787ac27350656243e">holdNote</a>(<span class="keywordtype">double</span> frequency);</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html#a5737238dc1e48aabcc597debcba48c1d">   34</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html#a5737238dc1e48aabcc597debcba48c1d">releaseNote</a>(<span class="keywordtype">double</span> frequency);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="classVSynth_1_1Envelope.html">Envelope</a> mEnvelope;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="classVSSynth_1_1Envelope.html">Envelope</a> mEnvelope;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordtype">double</span> mCurrentNote;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordtype">double</span> mPrevSample;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        };</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    } <span class="comment">// namespace Generators</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <span class="comment">// namespace VSynth</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <span class="comment">// namespace VSSynth</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassVSynth_1_1Generators_1_1MonophonicInstrument_html_a40c9b8d114d1acf71ce7c7f7cc0084d3"><div class="ttname"><a href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#a40c9b8d114d1acf71ce7c7f7cc0084d3">VSynth::Generators::MonophonicInstrument::sample</a></div><div class="ttdeci">double sample(double time)</div><div class="ttdoc">Samples the instrument at the given time.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Generators_1_1MonophonicInstrument_html_a09763b8afc020cda0927db9b77b4dd13"><div class="ttname"><a href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#a09763b8afc020cda0927db9b77b4dd13">VSynth::Generators::MonophonicInstrument::releaseNote</a></div><div class="ttdeci">void releaseNote(double frequency)</div><div class="ttdoc">Releases the given note.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Generators_1_1MonophonicInstrument_html_ad8aa2d81949f1ec27c0230a9f834af34"><div class="ttname"><a href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#ad8aa2d81949f1ec27c0230a9f834af34">VSynth::Generators::MonophonicInstrument::holdNote</a></div><div class="ttdeci">void holdNote(double frequency)</div><div class="ttdoc">Holds the given note.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Generators_1_1Instrument_html"><div class="ttname"><a href="classVSynth_1_1Generators_1_1Instrument.html">VSynth::Generators::Instrument</a></div><div class="ttdoc">Device capable of playing multiple notes with an ADSR envelope.</div><div class="ttdef"><b>Definition:</b> <a href="Instrument_8h_source.html#l00015">Instrument.h:16</a></div></div>
-<div class="ttc" id="astructVSynth_1_1ADSREnvelope_html"><div class="ttname"><a href="structVSynth_1_1ADSREnvelope.html">VSynth::ADSREnvelope</a></div><div class="ttdoc">ADSR envelope data.</div><div class="ttdef"><b>Definition:</b> <a href="Envelope_8h_source.html#l00022">Envelope.h:23</a></div></div>
-<div class="ttc" id="aclassVSynth_1_1Envelope_html"><div class="ttname"><a href="classVSynth_1_1Envelope.html">VSynth::Envelope</a></div><div class="ttdoc">Waveform modulator.</div><div class="ttdef"><b>Definition:</b> <a href="Envelope_8h_source.html#l00048">Envelope.h:49</a></div></div>
-<div class="ttc" id="aclassVSynth_1_1Generators_1_1MonophonicInstrument_html_a2c6e5610893c7a96b5f414746eeca9f6"><div class="ttname"><a href="classVSynth_1_1Generators_1_1MonophonicInstrument.html#a2c6e5610893c7a96b5f414746eeca9f6">VSynth::Generators::MonophonicInstrument::MonophonicInstrument</a></div><div class="ttdeci">MonophonicInstrument(std::function&lt; double(double, double)&gt; wave, const ADSREnvelope &amp;adsr)</div><div class="ttdoc">Creates a Monophonic instrument with the given waveform and adsr curve.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Generators_1_1MonophonicInstrument_html"><div class="ttname"><a href="classVSynth_1_1Generators_1_1MonophonicInstrument.html">VSynth::Generators::MonophonicInstrument</a></div><div class="ttdoc">Device capable of playing a single note at a time. A monophonic instrument is capable of playing only...</div><div class="ttdef"><b>Definition:</b> <a href="MonophonicInstrument_8h_source.html#l00016">MonophonicInstrument.h:17</a></div></div>
+<div class="ttc" id="aclassVSSynth_1_1Generators_1_1MonophonicInstrument_html_a5737238dc1e48aabcc597debcba48c1d"><div class="ttname"><a href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html#a5737238dc1e48aabcc597debcba48c1d">VSSynth::Generators::MonophonicInstrument::releaseNote</a></div><div class="ttdeci">void releaseNote(double frequency)</div><div class="ttdoc">Releases the given note.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1Generators_1_1Instrument_html"><div class="ttname"><a href="classVSSynth_1_1Generators_1_1Instrument.html">VSSynth::Generators::Instrument</a></div><div class="ttdoc">Device capable of playing multiple notes with an ADSR envelope.</div><div class="ttdef"><b>Definition:</b> <a href="Instrument_8h_source.html#l00015">Instrument.h:16</a></div></div>
+<div class="ttc" id="aclassVSSynth_1_1Generators_1_1MonophonicInstrument_html_adeb5cea1caf3aa6beeb60c33e3d29b6b"><div class="ttname"><a href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html#adeb5cea1caf3aa6beeb60c33e3d29b6b">VSSynth::Generators::MonophonicInstrument::MonophonicInstrument</a></div><div class="ttdeci">MonophonicInstrument(std::function&lt; double(double, double)&gt; wave, const ADSREnvelope &amp;adsr)</div><div class="ttdoc">Creates a Monophonic instrument with the given waveform and adsr curve.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1Envelope_html"><div class="ttname"><a href="classVSSynth_1_1Envelope.html">VSSynth::Envelope</a></div><div class="ttdoc">Waveform modulator.</div><div class="ttdef"><b>Definition:</b> <a href="Envelope_8h_source.html#l00048">Envelope.h:49</a></div></div>
+<div class="ttc" id="aclassVSSynth_1_1Generators_1_1MonophonicInstrument_html_acdf609c2220ed4b3c51e79490f1cb585"><div class="ttname"><a href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html#acdf609c2220ed4b3c51e79490f1cb585">VSSynth::Generators::MonophonicInstrument::sample</a></div><div class="ttdeci">double sample(double time)</div><div class="ttdoc">Samples the instrument at the given time.</div></div>
+<div class="ttc" id="astructVSSynth_1_1ADSREnvelope_html"><div class="ttname"><a href="structVSSynth_1_1ADSREnvelope.html">VSSynth::ADSREnvelope</a></div><div class="ttdoc">ADSR envelope data.</div><div class="ttdef"><b>Definition:</b> <a href="Envelope_8h_source.html#l00022">Envelope.h:23</a></div></div>
+<div class="ttc" id="aclassVSSynth_1_1Generators_1_1MonophonicInstrument_html"><div class="ttname"><a href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html">VSSynth::Generators::MonophonicInstrument</a></div><div class="ttdoc">Device capable of playing a single note at a time. A monophonic instrument is capable of playing only...</div><div class="ttdef"><b>Definition:</b> <a href="MonophonicInstrument_8h_source.html#l00016">MonophonicInstrument.h:17</a></div></div>
+<div class="ttc" id="aclassVSSynth_1_1Generators_1_1MonophonicInstrument_html_af9282899bcef16f787ac27350656243e"><div class="ttname"><a href="classVSSynth_1_1Generators_1_1MonophonicInstrument.html#af9282899bcef16f787ac27350656243e">VSSynth::Generators::MonophonicInstrument::holdNote</a></div><div class="ttdeci">void holdNote(double frequency)</div><div class="ttdoc">Holds the given note.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

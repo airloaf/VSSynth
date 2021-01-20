@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['release_78',['release',['../classVSynth_1_1Envelope.html#a26c90903b8ac458b76407f2b5545ab54',1,'VSynth::Envelope']]],
-  ['releasenote_79',['releaseNote',['../classVSynth_1_1Generators_1_1Instrument.html#a328f0ccfad77574fd2eccc2716de503b',1,'VSynth::Generators::Instrument::releaseNote()'],['../classVSynth_1_1Generators_1_1MonophonicInstrument.html#a09763b8afc020cda0927db9b77b4dd13',1,'VSynth::Generators::MonophonicInstrument::releaseNote()'],['../classVSynth_1_1Generators_1_1PolyphonicInstrument.html#a67b6246f5b390315405bb80abe36700b',1,'VSynth::Generators::PolyphonicInstrument::releaseNote()']]]
+  ['release_78',['release',['../classVSSynth_1_1Envelope.html#a6dce6dc9eedbf1d543db36d9ea0b2464',1,'VSSynth::Envelope']]],
+  ['releasenote_79',['releaseNote',['../classVSSynth_1_1Generators_1_1Instrument.html#ab2c4429117ab8f1ad7ff3e2086de1428',1,'VSSynth::Generators::Instrument::releaseNote()'],['../classVSSynth_1_1Generators_1_1MonophonicInstrument.html#a5737238dc1e48aabcc597debcba48c1d',1,'VSSynth::Generators::MonophonicInstrument::releaseNote()'],['../classVSSynth_1_1Generators_1_1PolyphonicInstrument.html#a395e7abb002dbe3fa6a0f7c065e902aa',1,'VSSynth::Generators::PolyphonicInstrument::releaseNote()']]]
 ];

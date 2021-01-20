@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['getamplitude_65',['getAmplitude',['../classVSynth_1_1SoundGenerator.html#a7bbad7e35d93abb2618b139c83fc4018',1,'VSynth::SoundGenerator::getAmplitude()'],['../classVSynth_1_1Envelope.html#a1930a80f83e0f9f438c81f1cb18b9de2',1,'VSynth::Envelope::getAmplitude()']]],
-  ['getvolume_66',['getVolume',['../classVSynth_1_1SoundGenerator.html#a56b1d543b7cb8d56fb0e48118981ea10',1,'VSynth::SoundGenerator']]]
+  ['getamplitude_65',['getAmplitude',['../classVSSynth_1_1SoundGenerator.html#a3ecd65f7084c5d447d924f2021ee5ca3',1,'VSSynth::SoundGenerator::getAmplitude()'],['../classVSSynth_1_1Envelope.html#a8d273dd69cf3a50a2036050c5e14bb0e',1,'VSSynth::Envelope::getAmplitude()']]],
+  ['getvolume_66',['getVolume',['../classVSSynth_1_1SoundGenerator.html#aae4ecefb9cb9d6a79a8a654de60bb0b4',1,'VSSynth::SoundGenerator']]]
 ];

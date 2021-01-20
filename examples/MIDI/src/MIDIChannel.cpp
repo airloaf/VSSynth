@@ -6,8 +6,8 @@
 
 MIDIChannel::MIDIChannel(
     const std::function<double(double, double)> patch,
-    const VSynth::ADSREnvelope adsr)
-    : mPatch(patch), mNotes(128, {false, 0, VSynth::ADSREnvelope(adsr)}), mPrevSample(0)
+    const VSSynth::ADSREnvelope adsr)
+    : mPatch(patch), mNotes(128, {false, 0, VSSynth::ADSREnvelope(adsr)}), mPrevSample(0)
 {
 }
 

@@ -1,8 +1,8 @@
 #include <SDL2/SDL.h>
 
-#include <VSynth/VSynth.h>
+#include <VSSynth/VSSynth.h>
 
-using namespace VSynth;
+using namespace VSSynth;
 using namespace Generators;
 
 void initSDL();

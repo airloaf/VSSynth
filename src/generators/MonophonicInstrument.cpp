@@ -1,8 +1,8 @@
-#include <VSynth/generators/MonophonicInstrument.h>
+#include <VSSynth/generators/MonophonicInstrument.h>
 
 #include <algorithm>
 
-namespace VSynth
+namespace VSSynth
 {
     namespace Generators
     {
@@ -44,4 +44,4 @@ namespace VSynth
             }
         }
     } // namespace Generators
-} // namespace VSynth
+} // namespace VSSynth

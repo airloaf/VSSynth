@@ -1,8 +1,8 @@
-#include <VSynth/generators/Sequencer.h>
+#include <VSSynth/generators/Sequencer.h>
 
 #include <algorithm>
 
-namespace VSynth
+namespace VSSynth
 {
     namespace Generators
     {
@@ -76,4 +76,4 @@ namespace VSynth
         }
 
     }; // namespace Generators
-} // namespace VSynth
+} // namespace VSSynth

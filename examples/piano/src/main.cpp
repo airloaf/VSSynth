@@ -1,14 +1,14 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-#include <VSynth/VSynth.h>
+#include <VSSynth/VSSynth.h>
 
 #include <algorithm>
 #include <map>
 #include <vector>
 #include <iostream>
 
-using namespace VSynth;
+using namespace VSSynth;
 using namespace Generators;
 
 struct PianoKey
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     /**
      * Create an instrument with the Piano
      * patch and envelope.
-     * VSynth provides some patches and
+     * VSSynth provides some patches and
      * envelopes within Patches.h.
      * You can write your own as well.
      */

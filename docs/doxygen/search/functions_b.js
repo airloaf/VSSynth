@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['sample_80',['sample',['../classVSynth_1_1Generators_1_1Instrument.html#a4bbd50cdd8bef47838a0aa8c66a6d712',1,'VSynth::Generators::Instrument::sample()'],['../classVSynth_1_1Generators_1_1MonophonicInstrument.html#a40c9b8d114d1acf71ce7c7f7cc0084d3',1,'VSynth::Generators::MonophonicInstrument::sample()'],['../classVSynth_1_1Generators_1_1PolyphonicInstrument.html#af33c6fb0986374c91a7424a15cf61a85',1,'VSynth::Generators::PolyphonicInstrument::sample()'],['../classVSynth_1_1Generators_1_1Sequencer.html#a02bb7bc678a2d1a5de316c56aa6bffce',1,'VSynth::Generators::Sequencer::sample()'],['../classVSynth_1_1Generators_1_1Tone.html#a24ee7f67c2b1143d23d107ce6663ee47',1,'VSynth::Generators::Tone::sample()'],['../classVSynth_1_1SoundGenerator.html#a5991bc46057fc03fe42b695d42d08428',1,'VSynth::SoundGenerator::sample()']]],
-  ['sawtooth_81',['sawtooth',['../namespaceVSynth_1_1Waveforms.html#a5a57437f4d791b30979b3bc0b002bbda',1,'VSynth::Waveforms']]],
-  ['setadsr_82',['setADSR',['../classVSynth_1_1Envelope.html#a1f3a28f5459fc3900e6c708ccd211390',1,'VSynth::Envelope']]],
-  ['setlooping_83',['setLooping',['../classVSynth_1_1Generators_1_1Sequencer.html#a9e8a8a194958bf180ae4de1fc5236c4b',1,'VSynth::Generators::Sequencer']]],
-  ['setvolume_84',['setVolume',['../classVSynth_1_1SoundGenerator.html#a35f376e137010e541adc8e6a36247258',1,'VSynth::SoundGenerator']]],
-  ['sine_85',['sine',['../namespaceVSynth_1_1Waveforms.html#a85f5a2b3f51b80931cdb9b4120587825',1,'VSynth::Waveforms']]],
-  ['sortnotes_86',['sortNotes',['../classVSynth_1_1Generators_1_1Sequencer.html#a5cb1134615229c5d635da59b053b3e29',1,'VSynth::Generators::Sequencer']]],
-  ['square_87',['square',['../namespaceVSynth_1_1Waveforms.html#ab62bf8575ba6b26fe529f1b4251b694e',1,'VSynth::Waveforms']]],
-  ['stopnote_88',['stopNote',['../classVSynth_1_1Generators_1_1Tone.html#a05e0847ab9d04853b20049fc4cbc349a',1,'VSynth::Generators::Tone']]],
-  ['synthesizer_89',['Synthesizer',['../classVSynth_1_1Synthesizer.html#ac27501d936cf99ec13e628a978ce86e2',1,'VSynth::Synthesizer']]]
+  ['sample_80',['sample',['../classVSSynth_1_1Generators_1_1Instrument.html#a73c6f1b6bfc2cec3072082c41c61de18',1,'VSSynth::Generators::Instrument::sample()'],['../classVSSynth_1_1Generators_1_1MonophonicInstrument.html#acdf609c2220ed4b3c51e79490f1cb585',1,'VSSynth::Generators::MonophonicInstrument::sample()'],['../classVSSynth_1_1Generators_1_1PolyphonicInstrument.html#afbff2c8387aff57548fa42db587b412a',1,'VSSynth::Generators::PolyphonicInstrument::sample()'],['../classVSSynth_1_1Generators_1_1Sequencer.html#a1f149aa90ff221d743538a8dd0261d72',1,'VSSynth::Generators::Sequencer::sample()'],['../classVSSynth_1_1Generators_1_1Tone.html#ac44d78c5f1ab6b39b88d9116d81271d4',1,'VSSynth::Generators::Tone::sample()'],['../classVSSynth_1_1SoundGenerator.html#a6846ce9f37e5fe849c60e8d222e7d1e1',1,'VSSynth::SoundGenerator::sample()']]],
+  ['sawtooth_81',['sawtooth',['../namespaceVSSynth_1_1Waveforms.html#a1a3d03844616486b033f18ce48beeeca',1,'VSSynth::Waveforms']]],
+  ['setadsr_82',['setADSR',['../classVSSynth_1_1Envelope.html#a0039c68c39a26736d4570dbba069f78b',1,'VSSynth::Envelope']]],
+  ['setlooping_83',['setLooping',['../classVSSynth_1_1Generators_1_1Sequencer.html#aad880c30ada8c0f89e7471db2d04649b',1,'VSSynth::Generators::Sequencer']]],
+  ['setvolume_84',['setVolume',['../classVSSynth_1_1SoundGenerator.html#a670f2c8eb6de02a27fa7d274050c095b',1,'VSSynth::SoundGenerator']]],
+  ['sine_85',['sine',['../namespaceVSSynth_1_1Waveforms.html#a25a60d218aabd743d6558ba88dbe260a',1,'VSSynth::Waveforms']]],
+  ['sortnotes_86',['sortNotes',['../classVSSynth_1_1Generators_1_1Sequencer.html#a37a546c235e671d248e454e0289d87b2',1,'VSSynth::Generators::Sequencer']]],
+  ['square_87',['square',['../namespaceVSSynth_1_1Waveforms.html#a4620890acc7f2e2d091458a8711cf88b',1,'VSSynth::Waveforms']]],
+  ['stopnote_88',['stopNote',['../classVSSynth_1_1Generators_1_1Tone.html#a76b46075490a1a5c1f23cc01d8c62611',1,'VSSynth::Generators::Tone']]],
+  ['synthesizer_89',['Synthesizer',['../classVSSynth_1_1Synthesizer.html#a6c002e5692286b02e067585c4076b27d',1,'VSSynth::Synthesizer']]]
 ];

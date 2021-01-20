@@ -6,26 +6,26 @@ set(LIB_DIR C:/DevelopmentLibraries/lib/x64)
 
 set(LIB_TYPE STATIC)
 
-# Create a project for VSynth
-project(VSynth_project)
+# Create a project for VSSynth
+project(VSSynth_project)
 
 file(GLOB_RECURSE VSYNTH_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} src/*.cpp)
-add_library(VSynth ${LIB_TYPE} ${VSYNTH_SRCS})
-target_include_directories(VSynth PUBLIC include)
+add_library(VSSynth ${LIB_TYPE} ${VSYNTH_SRCS})
+target_include_directories(VSSynth PUBLIC include)
 
 # Set include and link directories
-target_include_directories(VSynth PUBLIC ${INCLUDE_DIR})
-target_link_directories(VSynth PUBLIC ${LIB_DIR})
+target_include_directories(VSSynth PUBLIC ${INCLUDE_DIR})
+target_link_directories(VSSynth PUBLIC ${LIB_DIR})
 
 # Link Libraries for SDL2
-target_link_libraries(VSynth PUBLIC SDL2)
+target_link_libraries(VSSynth PUBLIC SDL2)
 
 # Tone Example
 file(GLOB_RECURSE SIMPLE_TONE_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/SimpleTone/src/*.cpp)
 add_executable(SimpleTone ${SIMPLE_TONE_SRCS})
 target_link_libraries(SimpleTone SDL2)
 target_link_libraries(SimpleTone SDL2main)
-target_link_libraries(SimpleTone VSynth)
+target_link_libraries(SimpleTone VSSynth)
 
 target_include_directories(SimpleTone PUBLIC include)
 
@@ -34,7 +34,7 @@ file(GLOB_RECURSE LFO_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/LowFreq
 add_executable(LFO ${LFO_SRCS})
 target_link_libraries(LFO SDL2)
 target_link_libraries(LFO SDL2main)
-target_link_libraries(LFO VSynth)
+target_link_libraries(LFO VSSynth)
 
 target_include_directories(LFO PUBLIC include)
 
@@ -43,7 +43,7 @@ file(GLOB_RECURSE RECORD_TONE_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples
 add_executable(RecordTone ${RECORD_TONE_SRCS})
 target_link_libraries(RecordTone SDL2)
 target_link_libraries(RecordTone SDL2main)
-target_link_libraries(RecordTone VSynth)
+target_link_libraries(RecordTone VSSynth)
 
 target_include_directories(RecordTone PUBLIC include)
 
@@ -53,7 +53,7 @@ add_executable(Piano ${PIANO_SRCS})
 target_link_libraries(Piano SDL2)
 target_link_libraries(Piano SDL2_image)
 target_link_libraries(Piano SDL2main)
-target_link_libraries(Piano VSynth)
+target_link_libraries(Piano VSSynth)
 
 target_include_directories(Piano PUBLIC include)
 
@@ -63,7 +63,7 @@ add_executable(SeqBeat ${SEQ_BEAT_SRCS})
 target_link_libraries(SeqBeat SDL2)
 target_link_libraries(SeqBeat SDL2_image)
 target_link_libraries(SeqBeat SDL2main)
-target_link_libraries(SeqBeat VSynth)
+target_link_libraries(SeqBeat VSSynth)
 
 target_include_directories(SeqBeat PUBLIC include)
 
@@ -72,7 +72,7 @@ file(GLOB_RECURSE MIDI_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} examples/midi/s
 add_executable(MIDI ${MIDI_SRCS})
 target_link_libraries(MIDI SDL2)
 target_link_libraries(MIDI SDL2main)
-target_link_libraries(MIDI VSynth)
+target_link_libraries(MIDI VSSynth)
 target_link_libraries(MIDI midifile)
 
 target_include_directories(MIDI PUBLIC include)

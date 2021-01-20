@@ -1,12 +1,12 @@
 #pragma once
 
-#include <VSynth/utils/Patches.h>
+#include <VSSynth/utils/Patches.h>
 
-using namespace VSynth::Patches;
+using namespace VSSynth::Patches;
 
 // PATCH Table found at (https://en.wikipedia.org/wiki/General_MIDI#Program_change_events)
 
-const VSynth::Patches::Patch PATCHES[] = {
+const VSSynth::Patches::Patch PATCHES[] = {
     PIANO,        //1 Acoustic Grand Piano
     PIANO,        //2 Bright Acoustic Piano
     PIANO,        //3 Electric Grand Piano
@@ -87,8 +87,8 @@ const VSynth::Patches::Patch PATCHES[] = {
     REED,         //78 Shakuhachi
     REED,         //79 Whistle
     REED,         //80 Ocarina
-    [](double frequency, double time){return VSynth::Waveforms::square(frequency, time);},        //81 Lead 1 (square)
-    [](double frequency, double time){return VSynth::Waveforms::sawtooth(frequency, time);},        //82 Lead 2 (sawtooth)
+    [](double frequency, double time){return VSSynth::Waveforms::square(frequency, time);},        //81 Lead 1 (square)
+    [](double frequency, double time){return VSSynth::Waveforms::sawtooth(frequency, time);},        //82 Lead 2 (sawtooth)
     PIANO,        //83 Lead 3 (calliope)
     PIANO,        //84 Lead 4 (chiff)
     PIANO,        //85 Lead 5 (charang)

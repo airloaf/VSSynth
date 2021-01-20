@@ -1,10 +1,10 @@
-#include <VSynth/utils/Waveforms.h>
+#include <VSSynth/utils/Waveforms.h>
 
 #include <cmath>
 #include <cstdlib>
 #define _USE_MATH_DEFINES // PI definition
 
-namespace VSynth
+namespace VSSynth
 {
     namespace Waveforms
     {
@@ -19,7 +19,7 @@ namespace VSynth
 
         const double square(double frequency, double time, double phase)
         {
-            frequency += (phase / (time * 2.0 *3.1415926535)); // Allows for LFO
+            frequency += (phase / (time * 2.0 * 3.1415926535)); // Allows for LFO
             double period = 1.0 / frequency;
             double offset = fmod(time, period);
             return offset > (0.5 * period) ? 1.0 : -1.0;
@@ -37,7 +37,7 @@ namespace VSynth
 
         const double sawtooth(double frequency, double time, double phase)
         {
-            frequency += (phase / (time * 2.0 *3.1415926535)); // Allows for LFO
+            frequency += (phase / (time * 2.0 * 3.1415926535)); // Allows for LFO
             return 2 * frequency * fmod(time, (1.0f / (float)frequency)) - 1;
         }
 
@@ -52,4 +52,4 @@ namespace VSynth
         }
 
     }; // namespace Waveforms
-};     // namespace VSynth
+};     // namespace VSSynth

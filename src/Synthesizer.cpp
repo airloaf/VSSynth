@@ -1,6 +1,6 @@
-#include <VSynth/Synthesizer.h>
+#include <VSSynth/Synthesizer.h>
 
-namespace VSynth
+namespace VSSynth
 {
     void fillBuffer(void *userData, Uint8 *buffer, int length)
     {
@@ -17,7 +17,7 @@ namespace VSynth
             *(synthData->time) += sampleDeltaTime;
             for (auto it = synthData->soundGenerators.begin(); it != synthData->soundGenerators.end(); ++it)
             {
-                sampleValue += (Sint16) ((*it)->sample(*(synthData->time)) * (*it)->getAmplitude());
+                sampleValue += (Sint16)((*it)->sample(*(synthData->time)) * (*it)->getAmplitude());
             }
 
             for (auto it = synthData->middleware.begin(); it != synthData->middleware.end(); it++)
@@ -82,4 +82,4 @@ namespace VSynth
         SDL_PauseAudioDevice(mDeviceID, 1);
     }
 
-}; // namespace VSynth
+}; // namespace VSSynth

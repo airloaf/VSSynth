@@ -1,7 +1,7 @@
 #pragma once
 
-#include <VSynth/SoundGenerator.h>
-#include <VSynth/utils/Envelope.h>
+#include <VSSynth/SoundGenerator.h>
+#include <VSSynth/utils/Envelope.h>
 
 #include <functional>
 #include <vector>
@@ -38,13 +38,13 @@ struct MIDI_EVENT
     };
 };
 
-class MIDIChannel: public VSynth::SoundGenerator
+class MIDIChannel: public VSSynth::SoundGenerator
 {
 
 public:
     MIDIChannel(
         const std::function<double(double, double)> patch,
-        const VSynth::ADSREnvelope adsr
+        const VSSynth::ADSREnvelope adsr
         );
     ~MIDIChannel();
 
@@ -57,7 +57,7 @@ private:
     struct NoteData {
         bool on;
         uint8_t velocity;
-        VSynth::Envelope env;
+        VSSynth::Envelope env;
     };
 
     double mPrevSample;

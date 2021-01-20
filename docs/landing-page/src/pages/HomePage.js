@@ -25,7 +25,7 @@ export default class HomePage extends React.Component {
                             <div class="header-content mx-auto">
                                 <h1 class="mb-5">
                                     <img
-                                        src="img/LogoLarge.png"
+                                        src="https://raw.githubusercontent.com/airloaf/VSynth/master/branding/LogoLarge.png"
                                     />
                                 </h1>
                                 <h2 class="mb-5">
@@ -40,7 +40,7 @@ export default class HomePage extends React.Component {
                         </Col>
                         <Col lg={6} className="my-auto">
                             <h4>
-                                MIDI Player made with VSynth! Here are some recorded tracks.
+                                MIDI Player made with VSSynth! Here are some recorded tracks.
                             </h4>
                             <Iframe
                                 width="100%"
@@ -65,7 +65,7 @@ export default class HomePage extends React.Component {
                     <div class="container">
                         <div class="section-heading text-center">
                             <h2>Features</h2>
-                            <p>With VSynth you have access to these features and many more!</p>
+                            <p>With VSSynth you have access to these features and many more!</p>
                             <hr />
                         </div>
                         <div class="row">
@@ -119,7 +119,7 @@ export default class HomePage extends React.Component {
                     <Container fluid>
                         <div class="section-heading text-center">
                             <h2>How it works</h2>
-                            <p>VSynth is separated into 3 modules:</p>
+                            <p>VSSynth is separated into 3 modules:</p>
                             <br />
                             <Row>
                                 <Col lg={4}>
@@ -135,7 +135,7 @@ export default class HomePage extends React.Component {
                                     <div class="feature-item">
                                         <h3>Synthesizer</h3>
                                         <p>
-                                            Main building block of VSynth.
+                                            Main building block of VSSynth.
                                             Creates a new thread and samples each of
                                             its sound generators at the given sampling rate.
                                             The sum of the samples are then processed
@@ -156,7 +156,7 @@ export default class HomePage extends React.Component {
                             <hr />
                         </div>
                         <img
-                            src="img/VSynthDataFlow.svg"
+                            src="img/VSSynthDataFlow.svg"
                         />
                     </Container>
                 </section>

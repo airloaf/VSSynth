@@ -1,4 +1,4 @@
-#include <VSynth/SoundGenerator.h>
+#include <VSSynth/SoundGenerator.h>
 
 #include <algorithm>
 
@@ -6,7 +6,7 @@
 // Amplitude must fit in a 16 bit signed integer
 static const double MAX_AMPLITUDE = 6000;
 
-namespace VSynth
+namespace VSSynth
 {
 
     SoundGenerator::SoundGenerator()
@@ -17,11 +17,13 @@ namespace VSynth
     {
     }
 
-    double linearToLog(double linear){
+    double linearToLog(double linear)
+    {
         return ((exp(linear) - 1) / 1.718);
     }
 
-    double logToLinear(double logarithmic){
+    double logToLinear(double logarithmic)
+    {
         return log((logarithmic * 1.718) + 1);
     }
 
@@ -45,4 +47,4 @@ namespace VSynth
         return mAmplitude;
     }
 
-}; // namespace VSynth
+}; // namespace VSSynth

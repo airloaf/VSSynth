@@ -1,6 +1,6 @@
-#include <VSynth/generators/Tone.h>
+#include <VSSynth/generators/Tone.h>
 
-namespace VSynth
+namespace VSSynth
 {
     namespace Generators
     {
@@ -53,4 +53,4 @@ namespace VSynth
         }
 
     }; // namespace Generators
-} // namespace VSynth
+} // namespace VSSynth

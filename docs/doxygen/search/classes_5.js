@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['sequencer_50',['Sequencer',['../classVSynth_1_1Generators_1_1Sequencer.html',1,'VSynth::Generators']]],
-  ['soundgenerator_51',['SoundGenerator',['../classVSynth_1_1SoundGenerator.html',1,'VSynth']]],
-  ['synthesizer_52',['Synthesizer',['../classVSynth_1_1Synthesizer.html',1,'VSynth']]],
-  ['synthmiddleware_53',['SynthMiddleware',['../classVSynth_1_1SynthMiddleware.html',1,'VSynth']]]
+  ['sequencer_50',['Sequencer',['../classVSSynth_1_1Generators_1_1Sequencer.html',1,'VSSynth::Generators']]],
+  ['soundgenerator_51',['SoundGenerator',['../classVSSynth_1_1SoundGenerator.html',1,'VSSynth']]],
+  ['synthesizer_52',['Synthesizer',['../classVSSynth_1_1Synthesizer.html',1,'VSSynth']]],
+  ['synthmiddleware_53',['SynthMiddleware',['../classVSSynth_1_1SynthMiddleware.html',1,'VSSynth']]]
 ];

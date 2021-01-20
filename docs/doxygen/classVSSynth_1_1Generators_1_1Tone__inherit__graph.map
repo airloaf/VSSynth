@@ -1,0 +1,4 @@
+<map id="VSSynth::Generators::Tone" name="VSSynth::Generators::Tone">
+<area shape="rect" id="node1" title="Generates a given tone at multiple frequencies." alt="" coords="20,80,167,121"/>
+<area shape="rect" id="node2" href="$classVSSynth_1_1SoundGenerator.html" title="Sound generating device." alt="" coords="5,5,181,32"/>
+</map>

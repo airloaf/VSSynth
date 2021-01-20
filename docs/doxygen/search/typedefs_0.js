@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['patch_94',['Patch',['../namespaceVSynth_1_1Patches.html#a517e5c73d60a382ee22e247f71017d09',1,'VSynth::Patches']]]
+  ['patch_94',['Patch',['../namespaceVSSynth_1_1Patches.html#ae3d1af03a9840d8b87c153a45b873e93',1,'VSSynth::Patches']]]
 ];
