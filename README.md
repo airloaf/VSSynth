@@ -7,7 +7,7 @@
 </h2>
 
 <h2>
-    <a href="https://airloaf.github.io/VSynth">VSynth Website</a>
+    <a href="https://airloaf.github.io/VSynth">VSSynth Website</a>
 </h2>
 
 ## Features
@@ -23,7 +23,7 @@
 
 ## Use Cases
 
-There are many things you could possibly make with VSynth!
+There are many things you could possibly make with VSSynth!
 
 - Chiptune playback/composition
 - Digital Keyboard
@@ -39,18 +39,18 @@ There are many things you could possibly make with VSynth!
 
 Use the accompanying CMakeLists.txt to generate your project. You will need to change some of the variables to reflect your development environment.
 
-The CMake files will generate a library called "VSynth", which you should link to your executables. CMake can also generate some examples as listed below.
+The CMake files will generate a library called "VSSynth", which you should link to your executables. CMake can also generate some examples as listed below.
 
 ## Examples
 
 |Example|Description|
 | --- | --- |
-| [Simple Tone](https://github.com/airloaf/VSynth/tree/master/examples/SimpleTone) | The "Hello World!" of VSynth. Produces a Sine Wave with the note C4. |
+| [Simple Tone](https://github.com/airloaf/VSynth/tree/master/examples/SimpleTone) | The "Hello World!" of VSSynth. Produces a Sine Wave with the note C4. |
 | [Low Frequency Oscillator](https://github.com/airloaf/VSynth/tree/master/examples/LowFrequencyOscillator) | Produces a Sawtooth Wave with a low frequency oscillator attached. |
 | [Record Tone](https://github.com/airloaf/VSynth/tree/master/examples/RecordTone) | Produces a WAVE file with a Sine Wave with the note C4. |
 | [Piano](https://github.com/airloaf/VSynth/tree/master/examples/piano) | A piano which can play notes on keyboard input. |
 | [Sequenced Beat](https://github.com/airloaf/VSynth/tree/master/examples/sequenced_beat) | Extension of the Piano example. The song, "Mary had a little lamb", will play on repeat in the background while you control the  piano. |
-| [MIDI Player](https://github.com/airloaf/VSynth/tree/master/examples/MIDI) | A MIDI player using synthesized instruments included with VSynth. Does not fully support all MIDI messages, but the majority of songs play well on this. |
+| [MIDI Player](https://github.com/airloaf/VSynth/tree/master/examples/MIDI) | A MIDI player using synthesized instruments included with VSSynth. Does not fully support all MIDI messages, but the majority of songs play well on this. |
 
 ## Resources
 
