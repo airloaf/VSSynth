@@ -7,7 +7,7 @@
 </h2>
 
 <h2>
-    <a href="https://airloaf.github.io/VSynth">VSSynth Website</a>
+    <a href="https://airloaf.github.io/VSSynth">VSSynth Website</a>
 </h2>
 
 ## Features
@@ -45,12 +45,12 @@ The CMake files will generate a library called "VSSynth", which you should link 
 
 |Example|Description|
 | --- | --- |
-| [Simple Tone](https://github.com/airloaf/VSynth/tree/master/examples/SimpleTone) | The "Hello World!" of VSSynth. Produces a Sine Wave with the note C4. |
-| [Low Frequency Oscillator](https://github.com/airloaf/VSynth/tree/master/examples/LowFrequencyOscillator) | Produces a Sawtooth Wave with a low frequency oscillator attached. |
-| [Record Tone](https://github.com/airloaf/VSynth/tree/master/examples/RecordTone) | Produces a WAVE file with a Sine Wave with the note C4. |
-| [Piano](https://github.com/airloaf/VSynth/tree/master/examples/piano) | A piano which can play notes on keyboard input. |
-| [Sequenced Beat](https://github.com/airloaf/VSynth/tree/master/examples/sequenced_beat) | Extension of the Piano example. The song, "Mary had a little lamb", will play on repeat in the background while you control the  piano. |
-| [MIDI Player](https://github.com/airloaf/VSynth/tree/master/examples/MIDI) | A MIDI player using synthesized instruments included with VSSynth. Does not fully support all MIDI messages, but the majority of songs play well on this. |
+| [Simple Tone](https://github.com/airloaf/VSSynth/tree/master/examples/SimpleTone) | The "Hello World!" of VSSynth. Produces a Sine Wave with the note C4. |
+| [Low Frequency Oscillator](https://github.com/airloaf/VSSynth/tree/master/examples/LowFrequencyOscillator) | Produces a Sawtooth Wave with a low frequency oscillator attached. |
+| [Record Tone](https://github.com/airloaf/VSSynth/tree/master/examples/RecordTone) | Produces a WAVE file with a Sine Wave with the note C4. |
+| [Piano](https://github.com/airloaf/VSSynth/tree/master/examples/piano) | A piano which can play notes on keyboard input. |
+| [Sequenced Beat](https://github.com/airloaf/VSSynth/tree/master/examples/sequenced_beat) | Extension of the Piano example. The song, "Mary had a little lamb", will play on repeat in the background while you control the  piano. |
+| [MIDI Player](https://github.com/airloaf/VSSynth/tree/master/examples/MIDI) | A MIDI player using synthesized instruments included with VSSynth. Does not fully support all MIDI messages, but the majority of songs play well on this. |
 
 ## Resources
 
