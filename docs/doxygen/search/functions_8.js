@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['pause_72',['pause',['../classVSynth_1_1Synthesizer.html#a56bb0e89b47f4fa18603e1fe1d39b79e',1,'VSynth::Synthesizer']]],
-  ['playnote_73',['playNote',['../classVSynth_1_1Generators_1_1Tone.html#aab877dd944324134a2a934f0e1f94298',1,'VSynth::Generators::Tone']]],
-  ['polyphonicinstrument_74',['PolyphonicInstrument',['../classVSynth_1_1Generators_1_1PolyphonicInstrument.html#a1ae4ddb4a07420aefddc6611a7d625e2',1,'VSynth::Generators::PolyphonicInstrument']]],
-  ['processsample_75',['processSample',['../classVSynth_1_1Middleware_1_1WAVWriter.html#ab54da91577bbc70205619adc755076b1',1,'VSynth::Middleware::WAVWriter::processSample()'],['../classVSynth_1_1SynthMiddleware.html#aae078e50a75fecc23510fe4665958043',1,'VSynth::SynthMiddleware::processSample()']]],
-  ['pulse_76',['pulse',['../namespaceVSynth_1_1Waveforms.html#a3d6d0d0eb7d415d87603cbb2dc3dd9f9',1,'VSynth::Waveforms']]]
+  ['pause_72',['pause',['../classVSSynth_1_1Synthesizer.html#a93cb818a16783fb5e4370c1fb943ca04',1,'VSSynth::Synthesizer']]],
+  ['playnote_73',['playNote',['../classVSSynth_1_1Generators_1_1Tone.html#a17540fef1bbae02631b0b59cfc5a7115',1,'VSSynth::Generators::Tone']]],
+  ['polyphonicinstrument_74',['PolyphonicInstrument',['../classVSSynth_1_1Generators_1_1PolyphonicInstrument.html#a7b9d88ac9eb48c8e8c70de89ad6093ff',1,'VSSynth::Generators::PolyphonicInstrument']]],
+  ['processsample_75',['processSample',['../classVSSynth_1_1Middleware_1_1WAVWriter.html#ae506477ee648dded130161c4d28ebc7c',1,'VSSynth::Middleware::WAVWriter::processSample()'],['../classVSSynth_1_1SynthMiddleware.html#a01930170f02a52960fe314eb745c6f36',1,'VSSynth::SynthMiddleware::processSample()']]],
+  ['pulse_76',['pulse',['../namespaceVSSynth_1_1Waveforms.html#a4cd7eb29e19f6a3c953f5614a8e2b1cc',1,'VSSynth::Waveforms']]]
 ];

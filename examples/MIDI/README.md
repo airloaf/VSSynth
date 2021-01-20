@@ -1,10 +1,10 @@
 # MIDI
 
-A MIDI player using VSynth to synthesize instruments. You can consider this to be the "Capstone" of the VSynth examples.
+A MIDI player using VSSynth to synthesize instruments. You can consider this to be the "Capstone" of the VSynth examples.
 
 ## Dependencies
 
-Since this example shows how VSynth handles playing MIDI files and not how to parse MIDI files, I have used the following library to parse the MIDI files.
+Since this example shows how VSSynth handles playing MIDI files and not how to parse MIDI files, I have used the following library to parse the MIDI files.
 
 - [Midifile](https://github.com/craigsapp/midifile)
 

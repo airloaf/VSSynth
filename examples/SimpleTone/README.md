@@ -1,6 +1,6 @@
 # Simple Tone
 
-Plays "Middle C" (C4) as a sine wave. You can consider this to be the "Hello World!" of VSynth.
+Plays "Middle C" (C4) as a sine wave. You can consider this to be the "Hello World!" of VSSynth.
 
 ## What you will learn
 

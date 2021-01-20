@@ -1,0 +1,4 @@
+<map id="VSSynth::Middleware::WAVWriter" name="VSSynth::Middleware::WAVWriter">
+<area shape="rect" id="node1" title="Outputs Audio Samples to a wave file." alt="" coords="23,80,169,121"/>
+<area shape="rect" id="node2" href="$classVSSynth_1_1SynthMiddleware.html" title="Read and modify samples prior to sending them to the speaker." alt="" coords="5,5,187,32"/>
+</map>

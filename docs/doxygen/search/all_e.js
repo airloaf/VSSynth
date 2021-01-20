@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['unpause_37',['unpause',['../classVSynth_1_1Synthesizer.html#adf40f3db8fe52fdf582c7d4a2bec71a7',1,'VSynth::Synthesizer']]],
-  ['update_38',['update',['../classVSynth_1_1Envelope.html#aeb815fcefbb8502327ac8bce7fbe848e',1,'VSynth::Envelope']]]
+  ['unpause_37',['unpause',['../classVSSynth_1_1Synthesizer.html#a406b3eb636cfd7a8704b5d1424bce7da',1,'VSSynth::Synthesizer']]],
+  ['update_38',['update',['../classVSSynth_1_1Envelope.html#a210fc6f4b64b4299378be25f1b9deca7',1,'VSSynth::Envelope']]]
 ];

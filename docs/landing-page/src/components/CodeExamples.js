@@ -38,7 +38,7 @@ const WAVES = [
 const DESCRIPTIONS = [
     "Sine wave playing Middle-C",
     "Sawtooth with a low frequency oscillator attached! All waveforms, except for noise(), have a 3rd parameter representing the phase shift/offset. You can attach another waveform to this parameter to create low frequency oscillation.",
-    "Piano controllable by the keyboard keys. Here the C major scale is being played. Using prebuilt patches that came with VSynth, you can get an instrument up and running fast!",
+    "Piano controllable by the keyboard keys. Here the C major scale is being played. Using prebuilt patches that came with VSSynth, you can get an instrument up and running fast!",
     "Sequencer playing a tune in the background. Piano keys are playable as well, but I didn't play them while recording the sequencer beat."
 ]
 

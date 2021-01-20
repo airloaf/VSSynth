@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VSynth: Envelope.h Source File</title>
+<title>VSSynth: Envelope.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,8 +20,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="LogoLarge.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">VSynth
+   <div id="projectname">VSSynth
    &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">C++ Audio Synthesis Library using SDL 2</div>
@@ -63,7 +64,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_275d33c551e9d3c8e9a219fd3aed934e.html">VSynth</a></li><li class="navelem"><a class="el" href="dir_f35553fbdc64b699a6cdd35330c324be.html">utils</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_170010d3817298888de49ae4d2112d09.html">VSSynth</a></li><li class="navelem"><a class="el" href="dir_7064eafbf556c9bc022f9545b35ef804.html">utils</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -73,12 +74,12 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>VSynth</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>VSSynth</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structVSynth_1_1ADSREnvelope.html">   22</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structVSynth_1_1ADSREnvelope.html">ADSREnvelope</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structVSSynth_1_1ADSREnvelope.html">   22</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structVSSynth_1_1ADSREnvelope.html">ADSREnvelope</a></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="structVSynth_1_1ADSREnvelope.html">ADSREnvelope</a>(<span class="keywordtype">double</span> attack, <span class="keywordtype">double</span> sustain, <span class="keywordtype">double</span> attackTime, <span class="keywordtype">double</span> decayTime, <span class="keywordtype">double</span> releaseTime, <span class="keywordtype">bool</span> sustainable = <span class="keyword">true</span>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="structVSSynth_1_1ADSREnvelope.html">ADSREnvelope</a>(<span class="keywordtype">double</span> attack, <span class="keywordtype">double</span> sustain, <span class="keywordtype">double</span> attackTime, <span class="keywordtype">double</span> decayTime, <span class="keywordtype">double</span> releaseTime, <span class="keywordtype">bool</span> sustainable = <span class="keyword">true</span>)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            : attack(attack),</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;              sustain(sustain),</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;              attackTime(attackTime),</div>
@@ -88,29 +89,29 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">double</span> attack, sustain; <span class="comment">// Amplitudes</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">double</span> attack, sustain;                    <span class="comment">// Amplitudes</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">double</span> attackTime, decayTime, releaseTime; <span class="comment">// Time-lengths</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">bool</span> sustainable;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    };</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classVSynth_1_1Envelope.html">   48</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classVSynth_1_1Envelope.html">Envelope</a></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Envelope.html">   48</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classVSSynth_1_1Envelope.html">Envelope</a></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classVSynth_1_1Envelope.html#a22eea838c70b36f4f70f329756055ebf">   56</a></span>&#160;        <a class="code" href="classVSynth_1_1Envelope.html#a22eea838c70b36f4f70f329756055ebf">Envelope</a>(<span class="keyword">const</span> <a class="code" href="structVSynth_1_1ADSREnvelope.html">ADSREnvelope</a> adsr);</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Envelope.html#a25917268c6e11842ad301f7c456f7d76">   56</a></span>&#160;        <a class="code" href="classVSSynth_1_1Envelope.html#a25917268c6e11842ad301f7c456f7d76">Envelope</a>(<span class="keyword">const</span> <a class="code" href="structVSSynth_1_1ADSREnvelope.html">ADSREnvelope</a> adsr);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classVSynth_1_1Envelope.html#a8dd74edd2b24e2283e9e2a99d9785d19">   61</a></span>&#160;        <a class="code" href="classVSynth_1_1Envelope.html#a8dd74edd2b24e2283e9e2a99d9785d19">Envelope</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Envelope.html#ad05de5e6f585a4c49e5e573ee5deb123">   61</a></span>&#160;        <a class="code" href="classVSSynth_1_1Envelope.html#ad05de5e6f585a4c49e5e573ee5deb123">Envelope</a>();</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classVSynth_1_1Envelope.html">Envelope</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classVSSynth_1_1Envelope.html">Envelope</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classVSynth_1_1Envelope.html#a1930a80f83e0f9f438c81f1cb18b9de2">   69</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classVSynth_1_1Envelope.html#a1930a80f83e0f9f438c81f1cb18b9de2">getAmplitude</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Envelope.html#a8d273dd69cf3a50a2036050c5e14bb0e">   69</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classVSSynth_1_1Envelope.html#a8d273dd69cf3a50a2036050c5e14bb0e">getAmplitude</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classVSynth_1_1Envelope.html#aeb815fcefbb8502327ac8bce7fbe848e">   81</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Envelope.html#aeb815fcefbb8502327ac8bce7fbe848e">update</a>(<span class="keywordtype">double</span> deltaTime);</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Envelope.html#a210fc6f4b64b4299378be25f1b9deca7">   81</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSSynth_1_1Envelope.html#a210fc6f4b64b4299378be25f1b9deca7">update</a>(<span class="keywordtype">double</span> deltaTime);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classVSynth_1_1Envelope.html#a1f3a28f5459fc3900e6c708ccd211390">   87</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Envelope.html#a1f3a28f5459fc3900e6c708ccd211390">setADSR</a>(<span class="keyword">const</span> <a class="code" href="structVSynth_1_1ADSREnvelope.html">ADSREnvelope</a> adsr);</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Envelope.html#a0039c68c39a26736d4570dbba069f78b">   87</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSSynth_1_1Envelope.html#a0039c68c39a26736d4570dbba069f78b">setADSR</a>(<span class="keyword">const</span> <a class="code" href="structVSSynth_1_1ADSREnvelope.html">ADSREnvelope</a> adsr);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classVSynth_1_1Envelope.html#a14ed477880ae3870d16687312edde90e">   95</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Envelope.html#a14ed477880ae3870d16687312edde90e">hold</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Envelope.html#a17e1fbf60376f62a0c6bbb1d4de2c96a">   95</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSSynth_1_1Envelope.html#a17e1fbf60376f62a0c6bbb1d4de2c96a">hold</a>();</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classVSynth_1_1Envelope.html#a26c90903b8ac458b76407f2b5545ab54">  103</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1Envelope.html#a26c90903b8ac458b76407f2b5545ab54">release</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classVSSynth_1_1Envelope.html#a6dce6dc9eedbf1d543db36d9ea0b2464">  103</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSSynth_1_1Envelope.html#a6dce6dc9eedbf1d543db36d9ea0b2464">release</a>();</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="comment">// Different curves of the ADSR + an invalid section to represent no sound</span></div>
@@ -123,22 +124,22 @@ $(function() {
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            INACTIVE</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        } mCurrentCurve;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="structVSynth_1_1ADSREnvelope.html">ADSREnvelope</a> mADSR;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="structVSSynth_1_1ADSREnvelope.html">ADSREnvelope</a> mADSR;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordtype">bool</span> mHold;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordtype">double</span> mAmplitude;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    };</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}; <span class="comment">// namespace VSynth</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}; <span class="comment">// namespace VSSynth</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassVSynth_1_1Envelope_html_a22eea838c70b36f4f70f329756055ebf"><div class="ttname"><a href="classVSynth_1_1Envelope.html#a22eea838c70b36f4f70f329756055ebf">VSynth::Envelope::Envelope</a></div><div class="ttdeci">Envelope(const ADSREnvelope adsr)</div><div class="ttdoc">Construct a new Envelope object.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Envelope_html_a26c90903b8ac458b76407f2b5545ab54"><div class="ttname"><a href="classVSynth_1_1Envelope.html#a26c90903b8ac458b76407f2b5545ab54">VSynth::Envelope::release</a></div><div class="ttdeci">void release()</div><div class="ttdoc">releases</div></div>
-<div class="ttc" id="aclassVSynth_1_1Envelope_html_a8dd74edd2b24e2283e9e2a99d9785d19"><div class="ttname"><a href="classVSynth_1_1Envelope.html#a8dd74edd2b24e2283e9e2a99d9785d19">VSynth::Envelope::Envelope</a></div><div class="ttdeci">Envelope()</div><div class="ttdoc">Construct a new Envelope object.</div></div>
-<div class="ttc" id="astructVSynth_1_1ADSREnvelope_html"><div class="ttname"><a href="structVSynth_1_1ADSREnvelope.html">VSynth::ADSREnvelope</a></div><div class="ttdoc">ADSR envelope data.</div><div class="ttdef"><b>Definition:</b> <a href="Envelope_8h_source.html#l00022">Envelope.h:23</a></div></div>
-<div class="ttc" id="aclassVSynth_1_1Envelope_html"><div class="ttname"><a href="classVSynth_1_1Envelope.html">VSynth::Envelope</a></div><div class="ttdoc">Waveform modulator.</div><div class="ttdef"><b>Definition:</b> <a href="Envelope_8h_source.html#l00048">Envelope.h:49</a></div></div>
-<div class="ttc" id="aclassVSynth_1_1Envelope_html_aeb815fcefbb8502327ac8bce7fbe848e"><div class="ttname"><a href="classVSynth_1_1Envelope.html#aeb815fcefbb8502327ac8bce7fbe848e">VSynth::Envelope::update</a></div><div class="ttdeci">void update(double deltaTime)</div><div class="ttdoc">Update the timestamp for the envelope.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Envelope_html_a1f3a28f5459fc3900e6c708ccd211390"><div class="ttname"><a href="classVSynth_1_1Envelope.html#a1f3a28f5459fc3900e6c708ccd211390">VSynth::Envelope::setADSR</a></div><div class="ttdeci">void setADSR(const ADSREnvelope adsr)</div><div class="ttdoc">Sets a new ADSR for this envelope.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Envelope_html_a1930a80f83e0f9f438c81f1cb18b9de2"><div class="ttname"><a href="classVSynth_1_1Envelope.html#a1930a80f83e0f9f438c81f1cb18b9de2">VSynth::Envelope::getAmplitude</a></div><div class="ttdeci">double getAmplitude() const</div><div class="ttdoc">Get the current amplitude modifier.</div></div>
-<div class="ttc" id="aclassVSynth_1_1Envelope_html_a14ed477880ae3870d16687312edde90e"><div class="ttname"><a href="classVSynth_1_1Envelope.html#a14ed477880ae3870d16687312edde90e">VSynth::Envelope::hold</a></div><div class="ttdeci">void hold()</div><div class="ttdoc">Starts the envelopes modulation.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1Envelope_html_a210fc6f4b64b4299378be25f1b9deca7"><div class="ttname"><a href="classVSSynth_1_1Envelope.html#a210fc6f4b64b4299378be25f1b9deca7">VSSynth::Envelope::update</a></div><div class="ttdeci">void update(double deltaTime)</div><div class="ttdoc">Update the timestamp for the envelope.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1Envelope_html_a8d273dd69cf3a50a2036050c5e14bb0e"><div class="ttname"><a href="classVSSynth_1_1Envelope.html#a8d273dd69cf3a50a2036050c5e14bb0e">VSSynth::Envelope::getAmplitude</a></div><div class="ttdeci">double getAmplitude() const</div><div class="ttdoc">Get the current amplitude modifier.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1Envelope_html"><div class="ttname"><a href="classVSSynth_1_1Envelope.html">VSSynth::Envelope</a></div><div class="ttdoc">Waveform modulator.</div><div class="ttdef"><b>Definition:</b> <a href="Envelope_8h_source.html#l00048">Envelope.h:49</a></div></div>
+<div class="ttc" id="aclassVSSynth_1_1Envelope_html_ad05de5e6f585a4c49e5e573ee5deb123"><div class="ttname"><a href="classVSSynth_1_1Envelope.html#ad05de5e6f585a4c49e5e573ee5deb123">VSSynth::Envelope::Envelope</a></div><div class="ttdeci">Envelope()</div><div class="ttdoc">Construct a new Envelope object.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1Envelope_html_a25917268c6e11842ad301f7c456f7d76"><div class="ttname"><a href="classVSSynth_1_1Envelope.html#a25917268c6e11842ad301f7c456f7d76">VSSynth::Envelope::Envelope</a></div><div class="ttdeci">Envelope(const ADSREnvelope adsr)</div><div class="ttdoc">Construct a new Envelope object.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1Envelope_html_a0039c68c39a26736d4570dbba069f78b"><div class="ttname"><a href="classVSSynth_1_1Envelope.html#a0039c68c39a26736d4570dbba069f78b">VSSynth::Envelope::setADSR</a></div><div class="ttdeci">void setADSR(const ADSREnvelope adsr)</div><div class="ttdoc">Sets a new ADSR for this envelope.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1Envelope_html_a17e1fbf60376f62a0c6bbb1d4de2c96a"><div class="ttname"><a href="classVSSynth_1_1Envelope.html#a17e1fbf60376f62a0c6bbb1d4de2c96a">VSSynth::Envelope::hold</a></div><div class="ttdeci">void hold()</div><div class="ttdoc">Starts the envelopes modulation.</div></div>
+<div class="ttc" id="astructVSSynth_1_1ADSREnvelope_html"><div class="ttname"><a href="structVSSynth_1_1ADSREnvelope.html">VSSynth::ADSREnvelope</a></div><div class="ttdoc">ADSR envelope data.</div><div class="ttdef"><b>Definition:</b> <a href="Envelope_8h_source.html#l00022">Envelope.h:23</a></div></div>
+<div class="ttc" id="aclassVSSynth_1_1Envelope_html_a6dce6dc9eedbf1d543db36d9ea0b2464"><div class="ttname"><a href="classVSSynth_1_1Envelope.html#a6dce6dc9eedbf1d543db36d9ea0b2464">VSSynth::Envelope::release</a></div><div class="ttdeci">void release()</div><div class="ttdoc">releases</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['open_12',['open',['../classVSynth_1_1Middleware_1_1WAVWriter.html#adb47de791b077c809381a0f3bfb786d9',1,'VSynth::Middleware::WAVWriter::open()'],['../classVSynth_1_1Synthesizer.html#a983a672d0bcb0f0f126b1ee05ecd16ec',1,'VSynth::Synthesizer::open()']]]
+  ['open_12',['open',['../classVSSynth_1_1Middleware_1_1WAVWriter.html#a215a944e67f48a43def0f0bda8fe5906',1,'VSSynth::Middleware::WAVWriter::open()'],['../classVSSynth_1_1Synthesizer.html#af14704c5b38ccb5bb8a806137a454da2',1,'VSSynth::Synthesizer::open()']]]
 ];

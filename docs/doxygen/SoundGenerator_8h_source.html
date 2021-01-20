@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VSynth: SoundGenerator.h Source File</title>
+<title>VSSynth: SoundGenerator.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,8 +20,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="LogoLarge.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">VSynth
+   <div id="projectname">VSSynth
    &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">C++ Audio Synthesis Library using SDL 2</div>
@@ -63,7 +64,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_275d33c551e9d3c8e9a219fd3aed934e.html">VSynth</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_170010d3817298888de49ae4d2112d09.html">VSSynth</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -73,36 +74,36 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>VSynth</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>VSSynth</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>Generators</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    }</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classVSynth_1_1SoundGenerator.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classVSynth_1_1SoundGenerator.html">SoundGenerator</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classVSSynth_1_1SoundGenerator.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classVSSynth_1_1SoundGenerator.html">SoundGenerator</a></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classVSynth_1_1SoundGenerator.html">SoundGenerator</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classVSynth_1_1SoundGenerator.html">SoundGenerator</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classVSSynth_1_1SoundGenerator.html">SoundGenerator</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classVSSynth_1_1SoundGenerator.html">SoundGenerator</a>();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classVSynth_1_1SoundGenerator.html#a5991bc46057fc03fe42b695d42d08428">   37</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classVSynth_1_1SoundGenerator.html#a5991bc46057fc03fe42b695d42d08428">sample</a>(<span class="keywordtype">double</span> time) = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classVSSynth_1_1SoundGenerator.html#a6846ce9f37e5fe849c60e8d222e7d1e1">   37</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classVSSynth_1_1SoundGenerator.html#a6846ce9f37e5fe849c60e8d222e7d1e1">sample</a>(<span class="keywordtype">double</span> time) = 0;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classVSynth_1_1SoundGenerator.html#a35f376e137010e541adc8e6a36247258">   44</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSynth_1_1SoundGenerator.html#a35f376e137010e541adc8e6a36247258">setVolume</a>(<span class="keywordtype">double</span> percent);</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classVSSynth_1_1SoundGenerator.html#a670f2c8eb6de02a27fa7d274050c095b">   44</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classVSSynth_1_1SoundGenerator.html#a670f2c8eb6de02a27fa7d274050c095b">setVolume</a>(<span class="keywordtype">double</span> percent);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classVSynth_1_1SoundGenerator.html#a56b1d543b7cb8d56fb0e48118981ea10">   51</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classVSynth_1_1SoundGenerator.html#a56b1d543b7cb8d56fb0e48118981ea10">getVolume</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classVSSynth_1_1SoundGenerator.html#aae4ecefb9cb9d6a79a8a654de60bb0b4">   51</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classVSSynth_1_1SoundGenerator.html#aae4ecefb9cb9d6a79a8a654de60bb0b4">getVolume</a>();</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classVSynth_1_1SoundGenerator.html#a7bbad7e35d93abb2618b139c83fc4018">   67</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classVSynth_1_1SoundGenerator.html#a7bbad7e35d93abb2618b139c83fc4018">getAmplitude</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classVSSynth_1_1SoundGenerator.html#a3ecd65f7084c5d447d924f2021ee5ca3">   67</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classVSSynth_1_1SoundGenerator.html#a3ecd65f7084c5d447d924f2021ee5ca3">getAmplitude</a>();</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">double</span> mAmplitude;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    };</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;} <span class="comment">// namespace VSynth</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;} <span class="comment">// namespace VSSynth</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassVSynth_1_1SoundGenerator_html_a7bbad7e35d93abb2618b139c83fc4018"><div class="ttname"><a href="classVSynth_1_1SoundGenerator.html#a7bbad7e35d93abb2618b139c83fc4018">VSynth::SoundGenerator::getAmplitude</a></div><div class="ttdeci">double getAmplitude()</div><div class="ttdoc">Amplitude for synthesizer.</div></div>
-<div class="ttc" id="aclassVSynth_1_1SoundGenerator_html_a5991bc46057fc03fe42b695d42d08428"><div class="ttname"><a href="classVSynth_1_1SoundGenerator.html#a5991bc46057fc03fe42b695d42d08428">VSynth::SoundGenerator::sample</a></div><div class="ttdeci">virtual double sample(double time)=0</div><div class="ttdoc">Sample the SoundGenerator at the given time.</div></div>
-<div class="ttc" id="aclassVSynth_1_1SoundGenerator_html"><div class="ttname"><a href="classVSynth_1_1SoundGenerator.html">VSynth::SoundGenerator</a></div><div class="ttdoc">Sound generating device.</div><div class="ttdef"><b>Definition:</b> <a href="SoundGenerator_8h_source.html#l00018">SoundGenerator.h:19</a></div></div>
-<div class="ttc" id="aclassVSynth_1_1SoundGenerator_html_a56b1d543b7cb8d56fb0e48118981ea10"><div class="ttname"><a href="classVSynth_1_1SoundGenerator.html#a56b1d543b7cb8d56fb0e48118981ea10">VSynth::SoundGenerator::getVolume</a></div><div class="ttdeci">double getVolume()</div><div class="ttdoc">Gets the current volume as a percent.</div></div>
-<div class="ttc" id="aclassVSynth_1_1SoundGenerator_html_a35f376e137010e541adc8e6a36247258"><div class="ttname"><a href="classVSynth_1_1SoundGenerator.html#a35f376e137010e541adc8e6a36247258">VSynth::SoundGenerator::setVolume</a></div><div class="ttdeci">void setVolume(double percent)</div><div class="ttdoc">Sets the volume at a certain percent.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1SoundGenerator_html_a670f2c8eb6de02a27fa7d274050c095b"><div class="ttname"><a href="classVSSynth_1_1SoundGenerator.html#a670f2c8eb6de02a27fa7d274050c095b">VSSynth::SoundGenerator::setVolume</a></div><div class="ttdeci">void setVolume(double percent)</div><div class="ttdoc">Sets the volume at a certain percent.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1SoundGenerator_html_a3ecd65f7084c5d447d924f2021ee5ca3"><div class="ttname"><a href="classVSSynth_1_1SoundGenerator.html#a3ecd65f7084c5d447d924f2021ee5ca3">VSSynth::SoundGenerator::getAmplitude</a></div><div class="ttdeci">double getAmplitude()</div><div class="ttdoc">Amplitude for synthesizer.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1SoundGenerator_html_a6846ce9f37e5fe849c60e8d222e7d1e1"><div class="ttname"><a href="classVSSynth_1_1SoundGenerator.html#a6846ce9f37e5fe849c60e8d222e7d1e1">VSSynth::SoundGenerator::sample</a></div><div class="ttdeci">virtual double sample(double time)=0</div><div class="ttdoc">Sample the SoundGenerator at the given time.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1SoundGenerator_html_aae4ecefb9cb9d6a79a8a654de60bb0b4"><div class="ttname"><a href="classVSSynth_1_1SoundGenerator.html#aae4ecefb9cb9d6a79a8a654de60bb0b4">VSSynth::SoundGenerator::getVolume</a></div><div class="ttdeci">double getVolume()</div><div class="ttdoc">Gets the current volume as a percent.</div></div>
+<div class="ttc" id="aclassVSSynth_1_1SoundGenerator_html"><div class="ttname"><a href="classVSSynth_1_1SoundGenerator.html">VSSynth::SoundGenerator</a></div><div class="ttdoc">Sound generating device.</div><div class="ttdef"><b>Definition:</b> <a href="SoundGenerator_8h_source.html#l00018">SoundGenerator.h:19</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
