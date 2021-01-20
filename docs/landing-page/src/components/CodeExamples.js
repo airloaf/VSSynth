@@ -8,17 +8,17 @@ import { CodeBlock, dracula } from "react-code-blocks";
 const NUM_EXAMPLES = 4;
 
 const RAW_FILE_URLS = [
-    "https://raw.githubusercontent.com/airloaf/VSynth/master/examples/SimpleTone/src/main.cpp",
-    "https://raw.githubusercontent.com/airloaf/VSynth/master/examples/LowFrequencyOscillator/src/main.cpp",
-    "https://raw.githubusercontent.com/airloaf/VSynth/master/examples/piano/src/main.cpp",
-    "https://raw.githubusercontent.com/airloaf/VSynth/master/examples/SequencedBeat/src/main.cpp"
+    "https://raw.githubusercontent.com/airloaf/VSSynth/master/examples/SimpleTone/src/main.cpp",
+    "https://raw.githubusercontent.com/airloaf/VSSynth/master/examples/LowFrequencyOscillator/src/main.cpp",
+    "https://raw.githubusercontent.com/airloaf/VSSynth/master/examples/piano/src/main.cpp",
+    "https://raw.githubusercontent.com/airloaf/VSSynth/master/examples/SequencedBeat/src/main.cpp"
 ]
 
 const FILE_URLS = [
-    "https://github.com/airloaf/VSynth/tree/master/examples/SimpleTone",
-    "https://github.com/airloaf/VSynth/tree/master/examples/LowFrequencyOscillator",
-    "https://github.com/airloaf/VSynth/tree/master/examples/piano",
-    "https://github.com/airloaf/VSynth/tree/master/examples/SequencedBeat"
+    "https://github.com/airloaf/VSSynth/tree/master/examples/SimpleTone",
+    "https://github.com/airloaf/VSSynth/tree/master/examples/LowFrequencyOscillator",
+    "https://github.com/airloaf/VSSynth/tree/master/examples/piano",
+    "https://github.com/airloaf/VSSynth/tree/master/examples/SequencedBeat"
 ]
 
 const TITLES = [

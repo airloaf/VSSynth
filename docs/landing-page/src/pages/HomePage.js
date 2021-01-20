@@ -25,16 +25,16 @@ export default class HomePage extends React.Component {
                             <div class="header-content mx-auto">
                                 <h1 class="mb-5">
                                     <img
-                                        src="https://raw.githubusercontent.com/airloaf/VSynth/master/branding/LogoLarge.png"
+                                        src="https://raw.githubusercontent.com/airloaf/VSSynth/master/branding/LogoLarge.png"
                                     />
                                 </h1>
                                 <h2 class="mb-5">
                                     An open source audio synthesizer library for SDL2, written in C++
                                 </h2>
                                 <ButtonGroup>
-                                    <Button variant="info" href="https://github.com/airloaf/VSynth/releases">Download</Button>
-                                    <Button variant="info" href="https://airloaf.github.io/VSynth/doxygen/annotated.html">Documentation</Button>
-                                    <Button variant="info" href="https://github.com/airloaf/VSynth/"><i class="fab fa-github"></i>{" GitHub"}</Button>
+                                    <Button variant="info" href="https://github.com/airloaf/VSSynth/releases">Download</Button>
+                                    <Button variant="info" href="https://airloaf.github.io/VSSynth/doxygen/annotated.html">Documentation</Button>
+                                    <Button variant="info" href="https://github.com/airloaf/VSSynth/"><i class="fab fa-github"></i>{" GitHub"}</Button>
                                 </ButtonGroup>
                             </div>
                         </Col>
