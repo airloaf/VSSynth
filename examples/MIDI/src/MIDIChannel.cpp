@@ -2,6 +2,8 @@
 #include "MIDIEnvelopes.h"
 #include "MIDIPatches.h"
 
+#include <cmath>
+
 #define VELCOCITY_MAX 127.0
 
 MIDIChannel::MIDIChannel(

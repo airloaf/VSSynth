@@ -1,5 +1,7 @@
 #include <VSSynth/generators/Tone.h>
 
+#include <algorithm>
+
 namespace VSSynth
 {
     namespace Generators
