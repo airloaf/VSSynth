@@ -4,7 +4,9 @@
 #include <VSSynth/utils/Envelope.h>
 
 #include <functional>
+#include <stdint.h>
 #include <vector>
+
 
 enum MIDI_EVENT_TYPE
 {

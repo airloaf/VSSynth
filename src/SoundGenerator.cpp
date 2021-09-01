@@ -1,6 +1,7 @@
 #include <VSSynth/SoundGenerator.h>
 
 #include <algorithm>
+#include <cmath>
 
 // MAX amplitude for a waveform
 // Amplitude must fit in a 16 bit signed integer
